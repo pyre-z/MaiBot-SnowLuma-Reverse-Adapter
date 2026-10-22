@@ -50,12 +50,12 @@ def test_store_overlay_wins_and_persists(tmp_path: Path) -> None:
 
     store = FaceVisionStore(builtin)
     store.attach_overlay(tmp_path / "runtime")
-    assert store.describe("187") == "（QQ表情·幽灵｜内置描述）"
+    assert store.describe("187") == "[QQ小表情·幽灵｜内置描述]"
 
     store.put("203", {"name": "托脸", "desc": "白熊双手托腮发呆"})
     store.put("187", {"name": "幽灵", "desc": "运行时描述"})
-    assert store.describe("187") == "（QQ表情·幽灵｜运行时描述）"
-    assert store.describe("203") == "（QQ表情·托脸｜白熊双手托腮发呆）"
+    assert store.describe("187") == "[QQ小表情·幽灵｜运行时描述]"
+    assert store.describe("203") == "[QQ小表情·托脸｜白熊双手托腮发呆]"
 
     saved = json.loads((tmp_path / "runtime" / "face_vision_runtime.json").read_text(encoding="utf-8"))
     assert set(saved["faces"]) == {"187", "203"}
@@ -195,7 +195,7 @@ async def test_worker_generates_once_and_skips_known(tmp_path: Path, monkeypatch
     await worker.stop()
 
     assert calls == ["9001"]
-    assert store.describe("9001") == "（QQ表情·新表情｜一个新表情）"
+    assert store.describe("9001") == "[QQ小表情·新表情｜一个新表情]"
 
     worker.request("9001")
     assert worker._queue.qsize() == 0

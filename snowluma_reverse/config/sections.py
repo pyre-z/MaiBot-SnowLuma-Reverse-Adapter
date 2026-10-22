@@ -178,7 +178,7 @@ class QQPluginOptions(PluginConfigBase):
         json_schema_extra={
             "label": "QQ表情解析模式",
             "hint": (
-                "[vision]用离线生成的视觉描述（如“QQ表情·幽灵｜白色小幽灵上下漂浮眨眼…”），"
+                "[vision]用离线生成的视觉描述（如“[QQ小表情·幽灵｜白色小幽灵上下漂浮眨眼…”），"
                 "最贴近原图但要先跑 scripts/build_face_vision.py；"
                 "缺失时自动回退 [emoji] 再到 [流泪] 形式。"
             ),

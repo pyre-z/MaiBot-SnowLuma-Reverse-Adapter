@@ -78,7 +78,7 @@ class FaceVisionStore:
         if not desc:
             return None
         name = str(entry.get("name") or "").strip()
-        return f"（QQ表情·{name}｜{desc}）" if name else f"（QQ表情｜{desc}）"
+        return f"[QQ小表情·{name}｜{desc}]" if name else f"[QQ小表情｜{desc}]"
 
     # ------------------------------------------------------------------ 写入
     def put(self, face_id: str, entry: Dict[str, Any]) -> None:

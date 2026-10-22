@@ -79,7 +79,7 @@ async def test_face_vision_mode_uses_offline_description(logger, vision_overlay)
     converted, _ = await _codec_for_mode(logger, "vision").convert_segments(
         {"message": [{"type": "face", "data": {"id": "187"}}]}, "1"
     )
-    assert converted == [{"type": "text", "data": "（QQ表情·幽灵｜白色小幽灵上下漂浮眨眼）"}]
+    assert converted == [{"type": "text", "data": "[QQ小表情·幽灵｜白色小幽灵上下漂浮眨眼]"}]
 
 
 @pytest.mark.asyncio

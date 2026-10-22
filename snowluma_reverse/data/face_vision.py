@@ -13,7 +13,7 @@ from ..media.face_vision_store import STORE
 
 
 def describe_face(face_id: str) -> str | None:
-    """返回 ``（QQ表情·幽灵｜白色圆润的小幽灵上下漂浮眨眼…）`` 形式的文本。
+    """返回 ``[QQ小表情·幽灵｜白色圆润的小幽灵上下漂浮眨眼…]`` 形式的文本。
 
     Args:
         face_id: QQ 表情 ID（数字 ID 或 Unicode 表情字符）。
