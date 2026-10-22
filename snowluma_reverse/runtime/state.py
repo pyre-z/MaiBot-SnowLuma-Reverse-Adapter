@@ -2,7 +2,7 @@
 
 from typing import Any, Optional, Protocol
 
-from .config import QQServerConfig
+from ..config import QQServerConfig
 
 
 class _GatewayCapabilityProtocol(Protocol):

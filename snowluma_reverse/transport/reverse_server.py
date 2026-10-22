@@ -17,15 +17,15 @@ from __future__ import annotations
 
 import asyncio
 import contextlib
-import hmac
-import ipaddress
 import json
 from typing import TYPE_CHECKING, Any, Callable, Coroutine, Dict, Optional, Set
 from uuid import uuid4
 
+from .auth import authorize_request, authorize_self_id, is_ip_allowed, token_matches
+
 if TYPE_CHECKING:  # pragma: no cover - 仅用于类型检查
-    from .config import QQReverseServerConfig
-    from .profile import ProfileState
+    from ..config import QQReverseServerConfig
+    from ..profile import ProfileState
 
 try:
     from aiohttp import WSCloseCode, WSMsgType, web
@@ -217,14 +217,15 @@ class QQTransportServer:
         Returns:
             aiohttp 响应对象，包含监听与连接状态。
         """
-        return web.json_response(
-            {
-                "ok": True,
-                "listening": self._runner is not None,
-                "connected": self._ws is not None and not self._ws.closed,
-                "self_id": self._active_self_id,
-            }
-        )
+        result = {
+            "ok": True,
+            "listening": self._runner is not None,
+            "connected": self._ws is not None and not self._ws.closed,
+        }
+        config = self._config
+        if config is not None and config.token and token_matches(request, config.token):
+            result["self_id"] = self._active_self_id
+        return web.json_response(result)
 
     async def _handle_websocket(self, request: Any) -> Any:
         """处理 OneBot 反向 WebSocket 握手与消息循环。
@@ -244,6 +245,18 @@ class QQTransportServer:
             self._logger.warning(f"SnowLuma 反向连接被拒绝: {reason}（来源 {request.remote}）")
             return web.Response(status=401, text=reason)
 
+        self_id = str(request.headers.get("X-Self-ID") or "").strip()
+        allowed, reason = authorize_self_id(self_id, config)
+        if not allowed:
+            self._logger.warning(f"SnowLuma 反向连接被拒绝: {reason}（来源 {request.remote}）")
+            ws = web.WebSocketResponse()
+            await ws.prepare(request)
+            await ws.close(
+                code=WSCloseCode.POLICY_VIOLATION if WSCloseCode else 1008,
+                message=reason.encode("utf-8"),
+            )
+            return ws
+
         ws = web.WebSocketResponse(
             heartbeat=config.heartbeat_interval or None,
             # aiohttp 的回读超时会主动断开空闲连接，反向 WS 必须关闭它，
@@ -253,7 +266,6 @@ class QQTransportServer:
         )
         await ws.prepare(request)
 
-        self_id = str(request.headers.get("X-Self-ID") or "").strip()
         peer = self._describe_peer(request)
 
         async with self._connection_lock:
@@ -401,24 +413,7 @@ class QQTransportServer:
         Returns:
             tuple[bool, str]: 是否放行，以及拒绝原因。
         """
-        if not self._is_ip_allowed(request.remote, config.allowed_ips):
-            return False, "来源 IP 不在白名单内"
-
-        if not config.token:
-            return True, ""
-
-        provided = ""
-        authorization = str(request.headers.get("Authorization") or "").strip()
-        if authorization.lower().startswith("bearer "):
-            provided = authorization[7:].strip()
-        if not provided:
-            provided = str(request.query.get("access_token") or "").strip()
-        if not provided:
-            return False, "缺少访问令牌"
-
-        if not hmac.compare_digest(provided, config.token):
-            return False, "访问令牌不匹配"
-        return True, ""
+        return authorize_request(request, config)
 
     @staticmethod
     def _is_ip_allowed(remote: Optional[str], allowed_ips: list[str]) -> bool:
@@ -431,29 +426,7 @@ class QQTransportServer:
         Returns:
             bool: 命中或未配置白名单时返回 ``True``。
         """
-        if not allowed_ips:
-            return True
-        if not remote:
-            return False
-
-        try:
-            address = ipaddress.ip_address(remote)
-        except ValueError:
-            return False
-
-        for entry in allowed_ips:
-            candidate = str(entry or "").strip()
-            if not candidate:
-                continue
-            try:
-                if "/" in candidate:
-                    if address in ipaddress.ip_network(candidate, strict=False):
-                        return True
-                elif address == ipaddress.ip_address(candidate):
-                    return True
-            except ValueError:
-                continue
-        return False
+        return is_ip_allowed(remote, allowed_ips)
 
     # ------------------------------------------------------------------
     # 内部工具

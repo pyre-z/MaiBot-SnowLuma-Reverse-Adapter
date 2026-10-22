@@ -4,14 +4,14 @@ from __future__ import annotations
 
 from typing import Any, Awaitable, Callable, Coroutine
 
-from ..codecs.inbound import QQInboundCodec
-from ..codecs.notice import QQNoticeCodec
-from ..codecs.outbound import QQOutboundCodec
+from ..protocol.inbound import QQInboundCodec
+from ..protocol.notice import QQNoticeCodec
+from ..protocol.outbound import QQOutboundCodec
 from ..config import QQPluginSettings
 from ..filters import QQNoticeFilter, QQRegexFilter
-from ..heartbeat_monitor import QQHeartbeatMonitor
+from .heartbeat import QQHeartbeatMonitor
 from ..profile import ProfileState
-from ..runtime_state import QQRuntimeStateManager
+from .state import QQRuntimeStateManager
 from ..services import (
     QQActionService,
     QQBanStateStore,
@@ -19,8 +19,7 @@ from ..services import (
     QQOfficialBotGuard,
     QQQueryService,
 )
-from ..transport import QQTransportClient
-from ..transport_server import QQTransportServer
+from ..transport.factory import create_transport
 from .bundle import QQRuntimeBundle
 
 
@@ -67,8 +66,8 @@ class QQRuntimeBuilder:
         """
         notice_filter = QQNoticeFilter(self._logger)
         regex_filter = QQRegexFilter(self._logger)
-        transport_cls = QQTransportServer if transport_mode == "server" else QQTransportClient
-        transport = transport_cls(
+        transport = create_transport(
+            transport_mode,
             logger=self._logger,
             on_connection_opened=on_connection_opened,
             on_connection_closed=on_connection_closed,

@@ -17,13 +17,13 @@ except ImportError:
 
 if TYPE_CHECKING:
     from ..profile import ProfileState
-    from ..transport import QQTransportClient
+    from ..transport.base import Transport
 
 
 class QQActionService:
     """QQ 底层动作与资源访问服务。"""
 
-    def __init__(self, logger: Any, transport: "QQTransportClient", profile_state: "ProfileState") -> None:
+    def __init__(self, logger: Any, transport: "Transport", profile_state: "ProfileState") -> None:
         """初始化底层动作服务。
 
         Args:

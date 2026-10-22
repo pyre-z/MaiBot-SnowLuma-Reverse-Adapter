@@ -8,8 +8,8 @@ import asyncio
 import contextlib
 import json
 
-from .config import QQServerConfig
-from .profile import ProfileState
+from ..config import QQServerConfig
+from ..profile import ProfileState
 
 if TYPE_CHECKING:
     from aiohttp import ClientWebSocketResponse as AiohttpClientWebSocketResponse

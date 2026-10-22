@@ -11,10 +11,10 @@ import base64
 import hashlib
 import time
 
-from ...qq_face_map import QQ_FACE_DESCRIPTIONS, QQ_FACE_EMOJIS
+from ...data.faces import QQ_FACE_DESCRIPTIONS, QQ_FACE_EMOJIS
 from ...services import QQQueryService
 from ...types import QQIncomingSegment, QQIncomingSegments, QQPayload, QQSegment, QQSegments
-from ...voice import is_silk_voice_binary, transcode_silk_voice_binary
+from ...media.voice import is_silk_voice_binary, transcode_silk_voice_binary
 from ..notice.helpers import normalize_optional_string
 from .cards import QQInboundCardMixin
 from .text import QQInboundTextMixin

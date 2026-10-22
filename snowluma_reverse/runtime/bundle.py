@@ -4,13 +4,13 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from ..codecs.inbound import QQInboundCodec
-from ..codecs.notice import QQNoticeCodec
-from ..codecs.outbound import QQOutboundCodec
+from ..protocol.inbound import QQInboundCodec
+from ..protocol.notice import QQNoticeCodec
+from ..protocol.outbound import QQOutboundCodec
 from ..filters import QQNoticeFilter, QQRegexFilter
-from ..heartbeat_monitor import QQHeartbeatMonitor
+from .heartbeat import QQHeartbeatMonitor
 from ..profile import NAPCAT_PROFILE, ClientProfile, ProfileState
-from ..runtime_state import QQRuntimeStateManager
+from .state import QQRuntimeStateManager
 from ..services import (
     QQActionService,
     QQBanStateStore,
@@ -18,8 +18,7 @@ from ..services import (
     QQOfficialBotGuard,
     QQQueryService,
 )
-from ..transport import QQTransportClient
-from ..transport_server import QQTransportServer
+from ..transport.base import Transport
 
 
 @dataclass
@@ -38,7 +37,7 @@ class QQRuntimeBundle:
     query_service: QQQueryService
     runtime_state: QQRuntimeStateManager
     regex_filter: QQRegexFilter
-    transport: QQTransportClient | QQTransportServer
+    transport: Transport
     profile_state: ProfileState = field(default_factory=lambda: ProfileState(NAPCAT_PROFILE))
 
     @property

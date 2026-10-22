@@ -143,7 +143,7 @@ class QQEventRouter:
             return
 
         message_dict["account_id"] = self_id
-        message_dict["scope"] = settings.client.connection_id or None
+        message_dict["scope"] = settings.transport_config().connection_id or None
         external_message_id = str(payload.get("message_id") or "").strip()
         accepted = await self._gateway_capability.route_message(
             gateway_name=self._gateway_name,
@@ -166,7 +166,7 @@ class QQEventRouter:
         self_id = str(payload.get("self_id") or "").strip()
 
         await runtime.ban_tracker.record_notice(payload)
-        await self.route_notice_payload(payload, self_id, settings.client.connection_id)
+        await self.route_notice_payload(payload, self_id, settings.transport_config().connection_id)
 
     async def route_notice_payload(
         self,
@@ -250,7 +250,7 @@ class QQEventRouter:
         elif meta_event_type == "heartbeat" and not should_report_connected:
             await runtime.runtime_state.report_disconnected()
 
-        await runtime.heartbeat_monitor.observe_meta_event(payload, settings.client.heartbeat_interval)
+        await runtime.heartbeat_monitor.observe_meta_event(payload, settings.transport_config().heartbeat_interval)
         await runtime.notice_codec.handle_meta_event(payload)
 
     async def bootstrap_adapter_runtime_state(self) -> None:
@@ -290,7 +290,7 @@ class QQEventRouter:
                 login_info = await runtime.query_service.get_login_info()
                 self_id = self._extract_self_id_from_login_response(login_info)
                 await runtime.runtime_state.report_connected(self_id, settings.client)
-                await runtime.heartbeat_monitor.start(self_id, settings.client.heartbeat_interval)
+                await runtime.heartbeat_monitor.start(self_id, settings.transport_config().heartbeat_interval)
                 await runtime.ban_tracker.start()
                 return
             except asyncio.CancelledError:

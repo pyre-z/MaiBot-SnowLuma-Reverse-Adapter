@@ -20,7 +20,7 @@ import logging
 from maibot_sdk import Field, PluginConfigBase
 from pydantic import ValidationInfo, field_validator, model_validator
 
-from .constants import (
+from ..constants import (
     DEFAULT_ACTION_TIMEOUT_SEC,
     DEFAULT_CLIENT_HOST,
     DEFAULT_CLIENT_PORT,
@@ -859,10 +859,10 @@ class QQReverseServerConfig(PluginConfigBase):
             value: 原始配置值。
 
         Returns:
-            str: 去除首尾空白后的监听地址；若为空则回退到默认值。
+            str: 去除首尾空白后的监听地址；显式空值由运行时校验拒绝。
         """
 
-        return _normalize_string(value) or DEFAULT_SERVER_LISTEN_HOST
+        return _normalize_string(value)
 
     @field_validator("listen_path", mode="before")
     @classmethod
@@ -887,10 +887,12 @@ class QQReverseServerConfig(PluginConfigBase):
             value: 原始配置值。
 
         Returns:
-            int: 合法的正整数端口；非法时回退到默认端口。
+            int: 原始端口整数；非法值归零并交由运行时前置校验拒绝。
         """
-
-        return _normalize_positive_int(value, DEFAULT_SERVER_LISTEN_PORT)
+        try:
+            return int(value)
+        except (TypeError, ValueError):
+            return 0
 
     @field_validator("allowed_ips", mode="before")
     @classmethod

@@ -8,7 +8,7 @@ import hashlib
 import json
 import re
 
-from ...qq_emoji_list import QQ_FACE
+from ...data.emoji import QQ_FACE
 from ...types import QQSegment, QQSegments
 
 if TYPE_CHECKING:

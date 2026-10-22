@@ -124,14 +124,27 @@ SnowLuma 握手时携带 `X-Self-ID`（机器人 QQ 号）与 `Authorization`，
 
 ## 5. 安全
 
-- 监听端口只绑 `127.0.0.1`，公网入口交给反代；
+- 宿主侧端口映射只绑回环地址，容器内监听 `0.0.0.0` 由容器网络隔离；公网入口交给反代；
 - token 用 `hmac.compare_digest` 比较，避免时序侧信道；
 - `allowed_ips` 支持单 IP 与 CIDR；
 - 未配置任何鉴权手段时拒绝启动，不会静默裸奔。
 
-## 6. 已验证行为
+## 6. 开发与测试
 
-`tests/test_transport_server.py` 用 aiohttp 模拟 SnowLuma 反向客户端，覆盖：
+项目使用 uv 管理依赖，开发环境与测试命令：
+
+```bash
+uv sync --extra dev
+uv run pytest -q
+uv run ruff check .
+```
+
+实现位于根目录 flat 包 `snowluma_reverse/`，根目录 `plugin.py` 保持 MaiBot 插件包加载入口。
+更详细的模块职责和连接流程见 [docs/architecture.md](docs/architecture.md)。
+
+## 7. 已验证行为
+
+`uv run pytest -q` 使用 aiohttp 模拟反向客户端，并覆盖：
 
 - 错误 token → 401；
 - 事件上行到达 `on_payload`；
@@ -141,15 +154,13 @@ SnowLuma 握手时携带 `X-Self-ID`（机器人 QQ 号）与 `Authorization`，
 - 同账号重连替换旧连接；
 - 断线后 `call_action` 抛 `RuntimeError`。
 
-```bash
-python3 tests/test_transport_server.py
-```
+还覆盖双通道 token、IP/CIDR 白名单、`expect_self_id` 和 `/healthz` 信息保护，以及配置迁移与模式选择。
 
 真实宿主端到端（MaiBot v1.3.14 / SDK 2.16 / aiohttp 3.14）：模拟客户端连入容器内监听，
 依次触发 `get_version_info` → `get_login_info` → `get_group_info`，随后推送的群消息在
 `mai_messages` 中落库（`platform=qq`），证明「SnowLuma → 适配器 → MaiBot」整条链路可用。
 
-## 7. 已知限制
+## 8. 已知限制
 
 - 仅支持 WebSocket，不支持 OneBot HTTP 上报；
 - 单账号；多 QQ 号需要多个 MaiBot 实例或后续做连接隔离；

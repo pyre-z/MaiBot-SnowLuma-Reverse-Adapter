@@ -2,6 +2,25 @@
 
 本项目从 `MaiBot-SnowLuma-Adapter` 1.1.8 派生，上游历史见 `UPSTREAM-CHANGELOG.md`。
 
+## 2.0.0
+
+### 结构重构
+
+- 迁入 `snowluma_reverse/` flat 包，根目录 `plugin.py` 仅作为 `create_plugin()` 加载入口。
+- 使用 uv、pytest 和可选依赖组管理开发及运行环境。
+- 拆分配置、传输、协议、媒体、数据及运行时目录，新增架构说明和 GPL-3.0 LICENSE。
+
+### 缺陷修复
+
+- D1：反向握手校验 `expect_self_id`，缺少或不匹配时以 1008 拒绝。
+- D2：记录传输模式，热切换时停止旧连接并通过传输工厂重建运行时。
+- D3：活动传输的 `connection_id` 与 `heartbeat_interval` 统一从 `transport_config()` 获取。
+- D4：`/healthz` 默认不暴露 `self_id`，正确令牌可查看。
+- D5：修正文档监听地址说明并补齐 GPL-3.0 全文。
+- D6：manifest 升至 2.0.0，Host 最大版本放宽至 999.999.999，SDK 范围保持不变。
+- D7：动作服务使用 `Transport` 抽象接口。
+- D8：提交 uv.lock，保留运行时配置与虚拟环境忽略规则。
+
 ## 1.0.0
 
 ### 新增

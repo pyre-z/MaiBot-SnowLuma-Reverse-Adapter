@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any, Awaitable, Callable, List, Mapping
 
-from ...qq_face_map import QQ_FACE_DESCRIPTIONS
+from ...data.faces import QQ_FACE_DESCRIPTIONS
 
 DisplayNameResolver = Callable[[str, str, str], Awaitable[str]]
 

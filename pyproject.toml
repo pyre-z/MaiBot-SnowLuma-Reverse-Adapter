@@ -1,0 +1,28 @@
+[project]
+name = "snowluma-reverse-adapter"
+version = "2.0.0"
+description = "MaiBot 的 SnowLuma 反向 OneBot v11 适配器"
+requires-python = ">=3.11"
+dependencies = ["aiohttp>=3.9", "maibot-plugin-sdk>=2.16,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23", "ruff>=0.6"]
+silk = ["silk-python>=0.2.8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["snowluma_reverse"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]

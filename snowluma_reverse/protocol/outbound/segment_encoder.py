@@ -6,7 +6,7 @@ from typing import Any, Callable, Dict, List, Mapping, Optional
 
 import re
 
-from ...qq_face_map import QQ_FACE_DESCRIPTIONS
+from ...data.faces import QQ_FACE_DESCRIPTIONS
 
 SYNTHETIC_MESSAGE_ID_PREFIX = "qq-"
 

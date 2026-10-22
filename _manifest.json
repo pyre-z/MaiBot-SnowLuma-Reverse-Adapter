@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "name": "SnowLuma 反向适配器 / SnowLuma Reverse Adapter",
   "description": "QQ 反向 WebSocket 适配器：由 SnowLuma 主动连入 MaiBot（衍生自 MaiBot Team 的 SnowLuma 适配器）",
   "author": {
@@ -23,7 +23,7 @@
   },
   "host_application": {
     "min_version": "1.2.0",
-    "max_version": "1.3.99"
+    "max_version": "999.999.999"
   },
   "sdk": {
     "min_version": "2.5.0",

@@ -1,14 +1,15 @@
 __pycache__/
 *.pyc
 .venv/
+.pytest_cache/
+build/
+dist/
 config.toml
 config.toml.backup
 config.toml.backup.*
 config_back/
 data/
 config2.toml
-uv.lock
 logs/**
 .vscode
-test/**
 **/__pycache__/**
