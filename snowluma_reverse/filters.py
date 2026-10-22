@@ -127,6 +127,9 @@ class QQNoticeFilter:
         "group_decrease": "enable_group_decrease",
         "group_admin": "enable_group_admin",
         "essence": "enable_essence",
+        "friend_add": "enable_friend_add",
+        "group_card": "enable_group_card",
+        "bot_offline": "enabled",
     }
 
     def __init__(self, logger: Any) -> None:
@@ -161,6 +164,10 @@ class QQNoticeFilter:
                 return notice_config.enable_poke
             if sub_type == "group_name":
                 return notice_config.enable_group_name
+            if sub_type == "input_status":
+                return notice_config.forward_input_status
+            if sub_type in {"title", "profile_like"}:
+                return True
             # notify 下的其它子类型（如输入状态 input_status）默认不传递
             return False
 

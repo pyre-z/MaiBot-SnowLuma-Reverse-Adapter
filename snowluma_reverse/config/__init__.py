@@ -1,19 +1,21 @@
 """适配器配置模型公开接口。"""
 
-from .settings import (
+from .base import SUPPORTED_CONFIG_VERSION
+
+from .sections import (
     QQChatAbilitiesConfig,
     QQDebugConfig,
     QQFilterConfig,
     QQMuteConfig,
     QQNoticeConfig,
     QQPluginOptions,
-    QQPluginSettings,
     QQReverseServerConfig,
     QQServerConfig,
 )
+from .settings import QQPluginSettings
 
 __all__ = [
     "QQChatAbilitiesConfig", "QQDebugConfig", "QQFilterConfig", "QQMuteConfig",
     "QQNoticeConfig", "QQPluginOptions", "QQPluginSettings", "QQReverseServerConfig",
-    "QQServerConfig",
+    "QQServerConfig", "SUPPORTED_CONFIG_VERSION",
 ]

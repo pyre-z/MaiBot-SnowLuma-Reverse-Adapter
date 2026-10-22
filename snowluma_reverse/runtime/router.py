@@ -165,6 +165,18 @@ class QQEventRouter:
 
         self_id = str(payload.get("self_id") or "").strip()
 
+        notice_type = str(payload.get("notice_type") or "").strip()
+        sub_type = str(payload.get("sub_type") or "").strip()
+        known_notice_types = {"bot_offline", "essence", "friend_add", "friend_recall", "group_admin", "group_ban", "group_card", "group_decrease", "group_increase", "group_msg_emoji_like", "group_recall", "group_upload", "notify"}
+        known_notify_subtypes = {"poke", "group_name", "title", "input_status", "profile_like"}
+        if notice_type not in known_notice_types or (notice_type == "notify" and sub_type not in known_notify_subtypes):
+            self._logger.debug(f"未知通知事件，已跳过: {notice_type}.{sub_type}")
+            return
+        if notice_type == "bot_offline":
+            await self.route_notice_payload(payload, self_id, settings.transport_config().connection_id)
+            await runtime.runtime_state.report_disconnected()
+            return
+
         await runtime.ban_tracker.record_notice(payload)
         await self.route_notice_payload(payload, self_id, settings.transport_config().connection_id)
 

@@ -152,9 +152,14 @@ uv run ruff check .
 - 空闲 12 秒（超过 aiohttp 默认 10 秒回读超时）连接仍存活；
 - 不同 `X-Self-ID` 并发 → 1008 拒绝；
 - 同账号重连替换旧连接；
-- 断线后 `call_action` 抛 `RuntimeError`。
+- 断线后 `call_action` 抛 `RuntimeError`；
+- 同账号被新连接替换后，旧连接上挂起的 `call_action` 以 `RuntimeError("连接已中断")` 结束；
+- bootstrap 回调抛错（如 `get_version_info` 失败）时事件按正常路径暴露错误，下一次连接可重新 bootstrap；
+- 非法 CIDR 不导致启动失败，且不会误放行；
+- 空消息、空段数组、`group_id=0`、非法 JSON 与非字典载荷不会使队列或读循环崩溃。
 
 还覆盖双通道 token、IP/CIDR 白名单、`expect_self_id` 和 `/healthz` 信息保护，以及配置迁移与模式选择。
+测试数量以 `uv run pytest -q` 实时输出为准（当前为 64 passed）。
 
 真实宿主端到端（MaiBot v1.3.14 / SDK 2.16 / aiohttp 3.14）：模拟客户端连入容器内监听，
 依次触发 `get_version_info` → `get_login_info` → `get_group_info`，随后推送的群消息在

@@ -44,6 +44,21 @@ class QQNoticeTextRenderer:
         if notice_type == "notify" and sub_type == "group_name":
             new_name = str(payload.get("name_new") or payload.get("group_name") or "").strip()
             return f"[事件-群名变更] 群名称变更为 {new_name or '未知名称'}"
+        if notice_type == "notify" and sub_type == "title":
+            title = str(payload.get("title") or "").strip()
+            return f"[事件-群头衔变更] 用户 {payload.get('user_id', '未知')} 的头衔变更为 {title or '无'}"
+        if notice_type == "notify" and sub_type == "profile_like":
+            return f"[事件-名片点赞] 用户 {payload.get('user_id', '未知')} 收到 {payload.get('times', 1)} 次点赞"
+        if notice_type == "notify" and sub_type == "input_status":
+            return f"[事件-输入状态] 用户 {payload.get('user_id', '未知')} 正在输入"
+        if notice_type == "bot_offline":
+            return f"QQ 账号 {self_id or payload.get('self_id', '未知')} 已离线"
+        if notice_type == "friend_add":
+            user_id = str(payload.get("user_id") or "未知")
+            name = await resolve_display_name("", user_id, str(payload.get("nickname") or "新好友"))
+            return f"[事件-新好友] {name}（{user_id}）已添加为好友"
+        if notice_type == "group_card":
+            return f"[事件-群名片变更] 群 {group_id} 用户 {payload.get('user_id', '未知')}：{payload.get('card_old', '')} → {payload.get('card_new', '')}"
         if notice_type == "group_ban":
             return await self._build_group_ban_notice_text(payload, resolve_display_name, group_id, sub_type)
         if notice_type == "group_upload":

@@ -12,7 +12,9 @@ from .support import QQApiIdInput, QQApiSupportMixin, QQApiParamsInput
 class QQGroupApiMixin(QQApiSupportMixin):
     """QQ 群组、频道与群扩展相关 API。"""
 
-    @API("adapter.napcat.group.set_group_ban", description="设置群成员禁言", version="1", public=True)
+    @API(
+        "adapter.napcat.group.set_group_ban", description="设置群成员禁言", version="1", public=True
+    )
     async def api_set_group_ban(
         self,
         group_id: QQApiIdInput,
@@ -38,7 +40,12 @@ class QQGroupApiMixin(QQApiSupportMixin):
             duration=normalized_duration,
         )
 
-    @API("adapter.napcat.group.set_group_whole_ban", description="设置群全体禁言", version="1", public=True)
+    @API(
+        "adapter.napcat.group.set_group_whole_ban",
+        description="设置群全体禁言",
+        version="1",
+        public=True,
+    )
     async def api_set_group_whole_ban(self, group_id: QQApiIdInput, enable: bool) -> Dict[str, Any]:
         """设置群全体禁言。
 
@@ -54,7 +61,12 @@ class QQGroupApiMixin(QQApiSupportMixin):
             enable=self._normalize_bool(enable, "enable"),
         )
 
-    @API("adapter.napcat.group.set_group_kick", description="踢出单个群成员", version="1", public=True)
+    @API(
+        "adapter.napcat.group.set_group_kick",
+        description="踢出单个群成员",
+        version="1",
+        public=True,
+    )
     async def api_set_group_kick(
         self,
         group_id: QQApiIdInput,
@@ -77,7 +89,12 @@ class QQGroupApiMixin(QQApiSupportMixin):
             reject_add_request=bool(reject_add_request),
         )
 
-    @API("adapter.napcat.group.set_group_kick_members", description="批量踢出群成员", version="1", public=True)
+    @API(
+        "adapter.napcat.group.set_group_kick_members",
+        description="批量踢出群成员",
+        version="1",
+        public=True,
+    )
     async def api_set_group_kick_members(
         self,
         group_id: QQApiIdInput,
@@ -101,7 +118,9 @@ class QQGroupApiMixin(QQApiSupportMixin):
         )
 
     @API("adapter.napcat.group.set_group_name", description="设置群名称", version="1", public=True)
-    async def api_set_group_name(self, group_id: QQApiIdInput, group_name: object) -> Dict[str, Any]:
+    async def api_set_group_name(
+        self, group_id: QQApiIdInput, group_name: object
+    ) -> Dict[str, Any]:
         """设置群名称。
 
         Args:
@@ -130,7 +149,12 @@ class QQGroupApiMixin(QQApiSupportMixin):
             str(self._normalize_positive_int(group_id, "group_id"))
         )
 
-    @API("adapter.napcat.group.get_group_detail_info", description="获取群详细信息", version="1", public=True)
+    @API(
+        "adapter.napcat.group.get_group_detail_info",
+        description="获取群详细信息",
+        version="1",
+        public=True,
+    )
     async def api_get_group_detail_info(self, group_id: QQApiIdInput) -> Optional[Dict[str, Any]]:
         """获取群详细信息。
 
@@ -156,7 +180,12 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._require_query_service().get_group_list(no_cache=bool(no_cache))
 
-    @API("adapter.napcat.group.get_group_at_all_remain", description="获取群 @ 全体剩余次数", version="1", public=True)
+    @API(
+        "adapter.napcat.group.get_group_at_all_remain",
+        description="获取群 @ 全体剩余次数",
+        version="1",
+        public=True,
+    )
     async def api_get_group_at_all_remain(self, group_id: QQApiIdInput) -> Optional[Dict[str, Any]]:
         """获取群 @ 全体剩余次数。
 
@@ -170,7 +199,12 @@ class QQGroupApiMixin(QQApiSupportMixin):
             str(self._normalize_positive_int(group_id, "group_id"))
         )
 
-    @API("adapter.napcat.group.get_group_member_info", description="获取群成员信息", version="1", public=True)
+    @API(
+        "adapter.napcat.group.get_group_member_info",
+        description="获取群成员信息",
+        version="1",
+        public=True,
+    )
     async def api_get_group_member_info(
         self,
         group_id: QQApiIdInput,
@@ -193,7 +227,12 @@ class QQGroupApiMixin(QQApiSupportMixin):
             no_cache=bool(no_cache),
         )
 
-    @API("adapter.napcat.group.get_group_member_list", description="获取群成员列表", version="1", public=True)
+    @API(
+        "adapter.napcat.group.get_group_member_list",
+        description="获取群成员列表",
+        version="1",
+        public=True,
+    )
     async def api_get_group_member_list(
         self,
         group_id: QQApiIdInput,
@@ -213,8 +252,15 @@ class QQGroupApiMixin(QQApiSupportMixin):
             no_cache=bool(no_cache),
         )
 
-    @API("adapter.napcat.group.delete_essence_msg", description="移出精华消息", version="1", public=True)
-    async def api_action_delete_essence_msg(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.delete_essence_msg",
+        description="移出精华消息",
+        version="1",
+        public=True,
+    )
+    async def api_action_delete_essence_msg(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``delete_essence_msg`` 动作。
 
         Args:
@@ -225,8 +271,15 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("delete_essence_msg", params)
 
-    @API("adapter.napcat.group.delete_group_notice", description="删除群公告", version="1", public=True)
-    async def api_action_delete_group_notice(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.delete_group_notice",
+        description="删除群公告",
+        version="1",
+        public=True,
+    )
+    async def api_action_delete_group_notice(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``_del_group_notice`` 动作。
 
         Args:
@@ -237,8 +290,15 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("_del_group_notice", params)
 
-    @API("adapter.napcat.group.get_essence_msg_list", description="获取群精华消息", version="1", public=True)
-    async def api_action_get_essence_msg_list(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.get_essence_msg_list",
+        description="获取群精华消息",
+        version="1",
+        public=True,
+    )
+    async def api_action_get_essence_msg_list(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``get_essence_msg_list`` 动作。
 
         Args:
@@ -249,8 +309,15 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("get_essence_msg_list", params)
 
-    @API("adapter.napcat.group.get_group_honor_info", description="获取群荣誉信息", version="1", public=True)
-    async def api_action_get_group_honor_info(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.get_group_honor_info",
+        description="获取群荣誉信息",
+        version="1",
+        public=True,
+    )
+    async def api_action_get_group_honor_info(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``get_group_honor_info`` 动作。
 
         Args:
@@ -267,7 +334,9 @@ class QQGroupApiMixin(QQApiSupportMixin):
         version="1",
         public=True,
     )
-    async def api_action_get_group_ignore_add_request(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    async def api_action_get_group_ignore_add_request(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``get_group_ignore_add_request`` 动作。
 
         Args:
@@ -278,8 +347,15 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("get_group_ignore_add_request", params)
 
-    @API("adapter.napcat.group.get_group_ignored_notifies", description="获取群忽略通知", version="1", public=True)
-    async def api_action_get_group_ignored_notifies(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.get_group_ignored_notifies",
+        description="获取群忽略通知",
+        version="1",
+        public=True,
+    )
+    async def api_action_get_group_ignored_notifies(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``get_group_ignored_notifies`` 动作。
 
         Args:
@@ -290,7 +366,12 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("get_group_ignored_notifies", params)
 
-    @API("adapter.napcat.group.get_group_info_ex", description="获取群详细信息 (扩展)", version="1", public=True)
+    @API(
+        "adapter.napcat.group.get_group_info_ex",
+        description="获取群详细信息 (扩展)",
+        version="1",
+        public=True,
+    )
     async def api_action_get_group_info_ex(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``get_group_info_ex`` 动作。
 
@@ -302,7 +383,9 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("get_group_info_ex", params)
 
-    @API("adapter.napcat.group.get_group_notice", description="获取群公告", version="1", public=True)
+    @API(
+        "adapter.napcat.group.get_group_notice", description="获取群公告", version="1", public=True
+    )
     async def api_action_get_group_notice(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``_get_group_notice`` 动作。
 
@@ -314,8 +397,15 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("_get_group_notice", params)
 
-    @API("adapter.napcat.group.get_group_shut_list", description="获取群禁言列表", version="1", public=True)
-    async def api_action_get_group_shut_list(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.get_group_shut_list",
+        description="获取群禁言列表",
+        version="1",
+        public=True,
+    )
+    async def api_action_get_group_shut_list(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``get_group_shut_list`` 动作。
 
         Args:
@@ -326,8 +416,15 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("get_group_shut_list", params)
 
-    @API("adapter.napcat.group.get_group_system_msg", description="获取群系统消息", version="1", public=True)
-    async def api_action_get_group_system_msg(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.get_group_system_msg",
+        description="获取群系统消息",
+        version="1",
+        public=True,
+    )
+    async def api_action_get_group_system_msg(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``get_group_system_msg`` 动作。
 
         Args:
@@ -338,7 +435,9 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("get_group_system_msg", params)
 
-    @API("adapter.napcat.group.get_guild_list", description="获取频道列表", version="1", public=True)
+    @API(
+        "adapter.napcat.group.get_guild_list", description="获取频道列表", version="1", public=True
+    )
     async def api_action_get_guild_list(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``get_guild_list`` 动作。
 
@@ -350,8 +449,15 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("get_guild_list", params)
 
-    @API("adapter.napcat.group.get_guild_service_profile", description="获取频道个人信息", version="1", public=True)
-    async def api_action_get_guild_service_profile(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.get_guild_service_profile",
+        description="获取频道个人信息",
+        version="1",
+        public=True,
+    )
+    async def api_action_get_guild_service_profile(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``get_guild_service_profile`` 动作。
 
         Args:
@@ -374,8 +480,15 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("group_poke", params)
 
-    @API("adapter.napcat.group.handle_quick_operation_internal", description="处理快速操作", version="1", public=True)
-    async def api_action_handle_quick_operation_internal(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.handle_quick_operation_internal",
+        description="处理快速操作",
+        version="1",
+        public=True,
+    )
+    async def api_action_handle_quick_operation_internal(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``.handle_quick_operation`` 动作。
 
         Args:
@@ -398,7 +511,9 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("send_group_msg", params)
 
-    @API("adapter.napcat.group.send_group_notice", description="发送群公告", version="1", public=True)
+    @API(
+        "adapter.napcat.group.send_group_notice", description="发送群公告", version="1", public=True
+    )
     async def api_action_send_group_notice(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``_send_group_notice`` 动作。
 
@@ -422,7 +537,9 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("send_group_sign", params)
 
-    @API("adapter.napcat.group.set_essence_msg", description="设置精华消息", version="1", public=True)
+    @API(
+        "adapter.napcat.group.set_essence_msg", description="设置精华消息", version="1", public=True
+    )
     async def api_action_set_essence_msg(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``set_essence_msg`` 动作。
 
@@ -434,8 +551,15 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("set_essence_msg", params)
 
-    @API("adapter.napcat.group.set_group_add_option", description="设置群加群选项", version="1", public=True)
-    async def api_action_set_group_add_option(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.set_group_add_option",
+        description="设置群加群选项",
+        version="1",
+        public=True,
+    )
+    async def api_action_set_group_add_option(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``set_group_add_option`` 动作。
 
         Args:
@@ -446,8 +570,15 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("set_group_add_option", params)
 
-    @API("adapter.napcat.group.set_group_add_request", description="处理加群请求", version="1", public=True)
-    async def api_action_set_group_add_request(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.set_group_add_request",
+        description="处理加群请求",
+        version="1",
+        public=True,
+    )
+    async def api_action_set_group_add_request(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``set_group_add_request`` 动作。
 
         Args:
@@ -458,7 +589,9 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("set_group_add_request", params)
 
-    @API("adapter.napcat.group.set_group_admin", description="设置群管理员", version="1", public=True)
+    @API(
+        "adapter.napcat.group.set_group_admin", description="设置群管理员", version="1", public=True
+    )
     async def api_action_set_group_admin(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``set_group_admin`` 动作。
 
@@ -494,8 +627,15 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("set_group_leave", params)
 
-    @API("adapter.napcat.group.set_group_portrait", description="设置群头像", version="1", public=True)
-    async def api_action_set_group_portrait(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.set_group_portrait",
+        description="设置群头像",
+        version="1",
+        public=True,
+    )
+    async def api_action_set_group_portrait(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``set_group_portrait`` 动作。
 
         Args:
@@ -506,7 +646,9 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("set_group_portrait", params)
 
-    @API("adapter.napcat.group.set_group_remark", description="设置群备注", version="1", public=True)
+    @API(
+        "adapter.napcat.group.set_group_remark", description="设置群备注", version="1", public=True
+    )
     async def api_action_set_group_remark(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``set_group_remark`` 动作。
 
@@ -519,9 +661,14 @@ class QQGroupApiMixin(QQApiSupportMixin):
         return await self._call_napcat_action("set_group_remark", params)
 
     @API(
-        "adapter.napcat.group.set_group_robot_add_option", description="设置群机器人加群选项", version="1", public=True
+        "adapter.napcat.group.set_group_robot_add_option",
+        description="设置群机器人加群选项",
+        version="1",
+        public=True,
     )
-    async def api_action_set_group_robot_add_option(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    async def api_action_set_group_robot_add_option(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``set_group_robot_add_option`` 动作。
 
         Args:
@@ -532,7 +679,12 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("set_group_robot_add_option", params)
 
-    @API("adapter.napcat.group.set_group_search", description="设置群搜索选项", version="1", public=True)
+    @API(
+        "adapter.napcat.group.set_group_search",
+        description="设置群搜索选项",
+        version="1",
+        public=True,
+    )
     async def api_action_set_group_search(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``set_group_search`` 动作。
 
@@ -556,8 +708,15 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("set_group_sign", params)
 
-    @API("adapter.napcat.group.set_group_special_title", description="设置专属头衔", version="1", public=True)
-    async def api_action_set_group_special_title(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.set_group_special_title",
+        description="设置专属头衔",
+        version="1",
+        public=True,
+    )
+    async def api_action_set_group_special_title(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``set_group_special_title`` 动作。
 
         Args:
@@ -568,20 +727,198 @@ class QQGroupApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("set_group_special_title", params)
 
-    @API("adapter.napcat.group.set_group_todo", description="设置群待办", version="1", public=True)
-    async def api_action_set_group_todo(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.set_group_reaction",
+        description="设置群消息表情回应",
+        version="1",
+        public=True,
+    )
+    async def api_set_group_reaction(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``set_group_reaction`` 动作。
+
+        Args:
+            params: 动作参数字典；必填 ``message_id`` 与 ``code``，可选 ``is_set``。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+
+        Raises:
+            ValueError: 当必填参数缺失或不合法时抛出。
+        """
+        normalized_params = self._normalize_params(params)
+        normalized_params["message_id"] = self._normalize_message_id(
+            normalized_params.get("message_id"), "message_id"
+        )
+        normalized_params["code"] = self._normalize_non_empty_string(
+            normalized_params.get("code"), "code"
+        )
+        return await self._call_napcat_action("set_group_reaction", normalized_params)
+
+    @API(
+        "adapter.napcat.group.get_group_todo_list",
+        description="获取群待办列表",
+        version="1",
+        public=True,
+    )
+    async def api_get_group_todo_list(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``get_group_todo_list`` 动作。
+
+        Args:
+            params: 动作参数字典；通常必填 ``group_id``，由对端动作透传校验。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+        """
+        return await self._call_napcat_action("get_group_todo_list", params)
+
+    @API("adapter.napcat.group.set_group_todo", description="创建群待办", version="1", public=True)
+    async def api_create_group_todo(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``set_group_todo`` 动作。
 
         Args:
-            params: 传递给 对端的动作参数字典；具体字段请参考对端官方文档。
+            params: 动作参数字典；通常必填 ``group_id`` 与待办内容，由对端动作透传校验。
 
         Returns:
             Dict[str, Any]: 对端返回的原始响应字典。
         """
         return await self._call_napcat_action("set_group_todo", params)
 
-    @API("adapter.napcat.file.test_download_stream", description="测试下载流", version="1", public=True)
-    async def api_action_test_download_stream(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.group.complete_group_todo",
+        description="完成群待办",
+        version="1",
+        public=True,
+    )
+    async def api_complete_group_todo(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``complete_group_todo`` 动作。
+
+        Args:
+            params: 动作参数字典；通常必填待办标识，由对端动作透传校验。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+        """
+        return await self._call_napcat_action("complete_group_todo", params)
+
+    @API(
+        "adapter.napcat.group.cancel_group_todo", description="取消群待办", version="1", public=True
+    )
+    async def api_cancel_group_todo(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``cancel_group_todo`` 动作。
+
+        Args:
+            params: 动作参数字典；通常必填待办标识，由对端动作透传校验。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+        """
+        return await self._call_napcat_action("cancel_group_todo", params)
+
+    @API(
+        "adapter.napcat.group.get_group_tags",
+        description="获取群标签列表",
+        version="1",
+        public=True,
+    )
+    async def api_get_group_tags(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``get_group_tags`` 动作。
+
+        Args:
+            params: 动作参数字典；具体字段由对端动作透传校验。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+        """
+        return await self._call_napcat_action("get_group_tags", params)
+
+    @API("adapter.napcat.group.add_group_tag", description="新增群标签", version="1", public=True)
+    async def api_add_group_tag(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``add_group_tag`` 动作。
+
+        Args:
+            params: 动作参数字典；通常必填标签名称，由对端动作透传校验。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+        """
+        return await self._call_napcat_action("add_group_tag", params)
+
+    @API(
+        "adapter.napcat.group.delete_group_tag", description="删除群标签", version="1", public=True
+    )
+    async def api_delete_group_tag(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``delete_group_tag`` 动作。
+
+        Args:
+            params: 动作参数字典；通常必填标签标识，由对端动作透传校验。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+        """
+        return await self._call_napcat_action("delete_group_tag", params)
+
+    @API(
+        "adapter.napcat.group.get_group_share_link",
+        description="获取群分享链接",
+        version="1",
+        public=True,
+    )
+    async def api_get_group_share_link(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``get_group_share_link`` 动作。
+
+        Args:
+            params: 动作参数字典；通常必填 ``group_id``，由对端动作透传校验。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+        """
+        return await self._call_napcat_action("get_group_share_link", params)
+
+    @API(
+        "adapter.napcat.group.set_group_member_permissions",
+        description="设置群成员权限",
+        version="1",
+        public=True,
+    )
+    async def api_set_group_member_permissions(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
+        """调用对端的 ``set_group_member_permissions`` 动作。
+
+        Args:
+            params: 动作参数字典；通常必填 ``group_id``、``user_id`` 与权限字段，由对端动作透传校验。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+        """
+        return await self._call_napcat_action("set_group_member_permissions", params)
+
+    @API(
+        "adapter.napcat.group.get_group_admin_settings",
+        description="获取群管理设置",
+        version="1",
+        public=True,
+    )
+    async def api_get_group_admin_settings(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``get_group_admin_settings`` 动作。
+
+        Args:
+            params: 动作参数字典；通常必填 ``group_id``，由对端动作透传校验。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+        """
+        return await self._call_napcat_action("get_group_admin_settings", params)
+
+    @API(
+        "adapter.napcat.file.test_download_stream",
+        description="测试下载流",
+        version="1",
+        public=True,
+    )
+    async def api_action_test_download_stream(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``test_download_stream`` 动作。
 
         Args:

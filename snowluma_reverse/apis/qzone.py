@@ -30,7 +30,12 @@ class QQQzoneApiMixin(QQApiSupportMixin):
                 "该能力仅在连接 SnowLuma 客户端时可用"
             )
 
-    @API("adapter.napcat.qzone.get_qzone_msg_list", description="获取 QQ 空间说说列表", version="1", public=True)
+    @API(
+        "adapter.napcat.qzone.get_qzone_msg_list",
+        description="获取 QQ 空间说说列表",
+        version="1",
+        public=True,
+    )
     async def api_get_qzone_msg_list(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``get_qzone_msg_list`` 动作。
 
@@ -43,7 +48,12 @@ class QQQzoneApiMixin(QQApiSupportMixin):
         self._ensure_qzone_supported()
         return await self._call_napcat_action("get_qzone_msg_list", params)
 
-    @API("adapter.napcat.qzone.get_qzone_feeds", description="获取 QQ 空间好友动态", version="1", public=True)
+    @API(
+        "adapter.napcat.qzone.get_qzone_feeds",
+        description="获取 QQ 空间好友动态",
+        version="1",
+        public=True,
+    )
     async def api_get_qzone_feeds(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``get_qzone_feeds`` 动作。
 
@@ -56,7 +66,12 @@ class QQQzoneApiMixin(QQApiSupportMixin):
         self._ensure_qzone_supported()
         return await self._call_napcat_action("get_qzone_feeds", params)
 
-    @API("adapter.napcat.qzone.send_qzone_msg", description="发表 QQ 空间说说", version="1", public=True)
+    @API(
+        "adapter.napcat.qzone.send_qzone_msg",
+        description="发表 QQ 空间说说",
+        version="1",
+        public=True,
+    )
     async def api_send_qzone_msg(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``send_qzone_msg`` 动作。
 
@@ -69,7 +84,12 @@ class QQQzoneApiMixin(QQApiSupportMixin):
         self._ensure_qzone_supported()
         return await self._call_napcat_action("send_qzone_msg", params)
 
-    @API("adapter.napcat.qzone.delete_qzone_msg", description="删除 QQ 空间说说", version="1", public=True)
+    @API(
+        "adapter.napcat.qzone.delete_qzone_msg",
+        description="删除 QQ 空间说说",
+        version="1",
+        public=True,
+    )
     async def api_delete_qzone_msg(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``delete_qzone_msg`` 动作。
 
@@ -82,7 +102,9 @@ class QQQzoneApiMixin(QQApiSupportMixin):
         self._ensure_qzone_supported()
         return await self._call_napcat_action("delete_qzone_msg", params)
 
-    @API("adapter.napcat.qzone.like_qzone", description="点赞 QQ 空间说说", version="1", public=True)
+    @API(
+        "adapter.napcat.qzone.like_qzone", description="点赞 QQ 空间说说", version="1", public=True
+    )
     async def api_like_qzone(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``like_qzone`` 动作。
 
@@ -95,7 +117,12 @@ class QQQzoneApiMixin(QQApiSupportMixin):
         self._ensure_qzone_supported()
         return await self._call_napcat_action("like_qzone", params)
 
-    @API("adapter.napcat.qzone.unlike_qzone", description="取消点赞 QQ 空间说说", version="1", public=True)
+    @API(
+        "adapter.napcat.qzone.unlike_qzone",
+        description="取消点赞 QQ 空间说说",
+        version="1",
+        public=True,
+    )
     async def api_unlike_qzone(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``unlike_qzone`` 动作。
 
@@ -108,7 +135,12 @@ class QQQzoneApiMixin(QQApiSupportMixin):
         self._ensure_qzone_supported()
         return await self._call_napcat_action("unlike_qzone", params)
 
-    @API("adapter.napcat.qzone.comment_qzone", description="评论 QQ 空间说说", version="1", public=True)
+    @API(
+        "adapter.napcat.qzone.comment_qzone",
+        description="评论 QQ 空间说说",
+        version="1",
+        public=True,
+    )
     async def api_comment_qzone(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``comment_qzone`` 动作。
 
@@ -120,3 +152,21 @@ class QQQzoneApiMixin(QQApiSupportMixin):
         """
         self._ensure_qzone_supported()
         return await self._call_napcat_action("comment_qzone", params)
+
+    @API(
+        "adapter.napcat.qzone.get_qzone_msg_detail",
+        description="获取 QQ 空间说说详情",
+        version="1",
+        public=True,
+    )
+    async def api_get_qzone_msg_detail(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``get_qzone_msg_detail`` 动作。
+
+        Args:
+            params: 动作参数字典；通常必填说说标识，由对端动作透传校验。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+        """
+        self._ensure_qzone_supported()
+        return await self._call_napcat_action("get_qzone_msg_detail", params)

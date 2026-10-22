@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any, Dict, Mapping, Optional
+from ..protocol.actions import SNOWLUMA_PLACEHOLDER, SNOWLUMA_UNSUPPORTED
 
 import asyncio
 
@@ -34,6 +35,7 @@ class QQActionService:
         self._logger = logger
         self._transport = transport
         self._profile_state = profile_state
+        self._unsupported_warned: set[str] = set()
 
     async def call_action(self, action_name: str, params: Mapping[str, Any]) -> Dict[str, Any]:
         """调用 OneBot 动作并要求返回成功结果。
@@ -49,6 +51,13 @@ class QQActionService:
             RuntimeError: 当动作执行失败或平台返回非成功状态时抛出。
         """
         normalized_params = {str(key): value for key, value in params.items()}
+        if self._profile_state.profile.client_type == "snowluma" and action_name in SNOWLUMA_UNSUPPORTED:
+            if action_name not in self._unsupported_warned:
+                self._logger.warning(f"当前对端（SnowLuma）不支持 action={action_name}")
+                self._unsupported_warned.add(action_name)
+            return {"status": "failed", "retcode": 1404, "message": f"当前对端（SnowLuma）不支持 action={action_name}", "data": None}
+        if action_name in SNOWLUMA_PLACEHOLDER:
+            self._logger.debug(f"占位动作，返回值不代表实际生效: action={action_name}")
         try:
             response = await self._transport.call_action(action_name, normalized_params)
         except asyncio.CancelledError:

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from typing import Any, Callable, Dict, List, Mapping, Optional
 
+import logging
 import re
 
 from ...data.faces import QQ_FACE_DESCRIPTIONS
@@ -27,6 +28,7 @@ class QQOutboundSegmentEncoder:
 
     def __init__(self, enable_text_face_conversion: Optional[Callable[[], bool]] = None) -> None:
         """初始化出站消息段编码器。"""
+        self._logger = logging.getLogger(__name__)
         self._enable_text_face_conversion = enable_text_face_conversion
         self._segment_builders: Dict[str, Callable[[Mapping[str, Any]], List[Dict[str, Any]]]] = {
             "at": self._build_at_segments,
@@ -64,6 +66,10 @@ class QQOutboundSegmentEncoder:
                 continue
 
             item_type = str(item.get("type") or "").strip()
+            if item_type in {"mface", "poke", "inline_keyboard"}:
+                self._logger_debug(f"{item_type} 无 MaiBot 等价结构，降级为文本")
+                outbound_segments.append({"type": "text", "data": {"text": f"[{item_type}]"}})
+                continue
             segment_builder = self._segment_builders.get(item_type)
             if segment_builder is None:
                 fallback_text = f"[unsupported:{item_type or 'unknown'}]"
@@ -85,6 +91,10 @@ class QQOutboundSegmentEncoder:
         if not outbound_segments:
             outbound_segments.append({"type": "text", "data": {"text": ""}})
         return outbound_segments
+
+    def _logger_debug(self, message: str) -> None:
+        """Emit a debug explanation when a host-only segment is flattened."""
+        self._logger.debug(message)
 
     @staticmethod
     def _build_empty_segment_fallback(item_type: str) -> str:

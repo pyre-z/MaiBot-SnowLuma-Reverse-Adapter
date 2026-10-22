@@ -74,7 +74,12 @@ class QQMessageApiMixin(QQApiSupportMixin):
             message_id=self._normalize_message_id(message_id, "message_id")
         )
 
-    @API("adapter.napcat.message.send_group_ai_record", description="发送群 AI 语音", version="1", public=True)
+    @API(
+        "adapter.napcat.message.send_group_ai_record",
+        description="发送群 AI 语音",
+        version="1",
+        public=True,
+    )
     async def api_send_group_ai_record(
         self,
         group_id: QQApiIdInput,
@@ -97,7 +102,12 @@ class QQMessageApiMixin(QQApiSupportMixin):
             text=self._normalize_non_empty_string(text, "text"),
         )
 
-    @API("adapter.napcat.message.set_msg_emoji_like", description="给消息贴表情", version="1", public=True)
+    @API(
+        "adapter.napcat.message.set_msg_emoji_like",
+        description="给消息贴表情",
+        version="1",
+        public=True,
+    )
     async def api_set_msg_emoji_like(
         self,
         message_id: QQApiIdInput,
@@ -134,7 +144,12 @@ class QQMessageApiMixin(QQApiSupportMixin):
             str(self._normalize_message_id(message_id, "message_id"))
         )
 
-    @API("adapter.napcat.message.get_forward_msg", description="获取合并转发消息", version="1", public=True)
+    @API(
+        "adapter.napcat.message.get_forward_msg",
+        description="获取合并转发消息",
+        version="1",
+        public=True,
+    )
     async def api_get_forward_msg(
         self,
         message_id: object = "",
@@ -152,7 +167,11 @@ class QQMessageApiMixin(QQApiSupportMixin):
         normalized_message_id = str(message_id or "").strip()
         normalized_forward_id = str(id or "").strip()
 
-        if normalized_message_id and normalized_forward_id and normalized_message_id != normalized_forward_id:
+        if (
+            normalized_message_id
+            and normalized_forward_id
+            and normalized_message_id != normalized_forward_id
+        ):
             raise ValueError("message_id 与 id 不能同时传递不同的值")
         if not normalized_message_id and not normalized_forward_id:
             raise ValueError("message_id 或 id 至少提供一个")
@@ -162,7 +181,12 @@ class QQMessageApiMixin(QQApiSupportMixin):
             forward_id=normalized_forward_id or None,
         )
 
-    @API("adapter.napcat.message.ark_share_group", description="分享群 (Ark)", version="1", public=True)
+    @API(
+        "adapter.napcat.message.ark_share_group",
+        description="分享群 (Ark)",
+        version="1",
+        public=True,
+    )
     async def api_action_ark_share_group(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``ArkShareGroup`` 动作。
 
@@ -174,7 +198,12 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("ArkShareGroup", params)
 
-    @API("adapter.napcat.message.ark_share_peer", description="分享用户 (Ark)", version="1", public=True)
+    @API(
+        "adapter.napcat.message.ark_share_peer",
+        description="分享用户 (Ark)",
+        version="1",
+        public=True,
+    )
     async def api_action_ark_share_peer(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``ArkSharePeer`` 动作。
 
@@ -187,9 +216,14 @@ class QQMessageApiMixin(QQApiSupportMixin):
         return await self._call_napcat_action("ArkSharePeer", params)
 
     @API(
-        "adapter.napcat.message.click_inline_keyboard_button", description="点击内联键盘按钮", version="1", public=True
+        "adapter.napcat.message.click_inline_keyboard_button",
+        description="点击内联键盘按钮",
+        version="1",
+        public=True,
     )
-    async def api_action_click_inline_keyboard_button(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    async def api_action_click_inline_keyboard_button(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``click_inline_keyboard_button`` 动作。
 
         Args:
@@ -200,7 +234,12 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("click_inline_keyboard_button", params)
 
-    @API("adapter.napcat.message.fetch_emoji_like", description="获取表情点赞详情", version="1", public=True)
+    @API(
+        "adapter.napcat.message.fetch_emoji_like",
+        description="获取表情点赞详情",
+        version="1",
+        public=True,
+    )
     async def api_action_fetch_emoji_like(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``fetch_emoji_like`` 动作。
 
@@ -212,8 +251,15 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("fetch_emoji_like", params)
 
-    @API("adapter.napcat.message.forward_friend_single_msg", description="转发单条消息", version="1", public=True)
-    async def api_action_forward_friend_single_msg(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.message.forward_friend_single_msg",
+        description="转发单条消息",
+        version="1",
+        public=True,
+    )
+    async def api_action_forward_friend_single_msg(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``forward_friend_single_msg`` 动作。
 
         Args:
@@ -224,8 +270,15 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("forward_friend_single_msg", params)
 
-    @API("adapter.napcat.message.forward_group_single_msg", description="转发单条消息", version="1", public=True)
-    async def api_action_forward_group_single_msg(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.message.forward_group_single_msg",
+        description="转发单条消息",
+        version="1",
+        public=True,
+    )
+    async def api_action_forward_group_single_msg(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``forward_group_single_msg`` 动作。
 
         Args:
@@ -248,7 +301,9 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("friend_poke", params)
 
-    @API("adapter.napcat.message.get_ai_record", description="获取 AI 语音", version="1", public=True)
+    @API(
+        "adapter.napcat.message.get_ai_record", description="获取 AI 语音", version="1", public=True
+    )
     async def api_action_get_ai_record(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``get_ai_record`` 动作。
 
@@ -260,7 +315,12 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("get_ai_record", params)
 
-    @API("adapter.napcat.message.get_emoji_likes", description="获取消息表情点赞列表", version="1", public=True)
+    @API(
+        "adapter.napcat.message.get_emoji_likes",
+        description="获取消息表情点赞列表",
+        version="1",
+        public=True,
+    )
     async def api_action_get_emoji_likes(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``get_emoji_likes`` 动作。
 
@@ -272,8 +332,15 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("get_emoji_likes", params)
 
-    @API("adapter.napcat.message.get_friend_msg_history", description="获取好友历史消息", version="1", public=True)
-    async def api_action_get_friend_msg_history(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.message.get_friend_msg_history",
+        description="获取好友历史消息",
+        version="1",
+        public=True,
+    )
+    async def api_action_get_friend_msg_history(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``get_friend_msg_history`` 动作。
 
         Args:
@@ -284,8 +351,15 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("get_friend_msg_history", params)
 
-    @API("adapter.napcat.message.get_group_msg_history", description="获取群历史消息", version="1", public=True)
-    async def api_action_get_group_msg_history(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.message.get_group_msg_history",
+        description="获取群历史消息",
+        version="1",
+        public=True,
+    )
+    async def api_action_get_group_msg_history(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``get_group_msg_history`` 动作。
 
         Args:
@@ -296,7 +370,12 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("get_group_msg_history", params)
 
-    @API("adapter.napcat.message.mark_all_as_read", description="标记所有消息已读", version="1", public=True)
+    @API(
+        "adapter.napcat.message.mark_all_as_read",
+        description="标记所有消息已读",
+        version="1",
+        public=True,
+    )
     async def api_action_mark_all_as_read(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``_mark_all_as_read`` 动作。
 
@@ -308,8 +387,15 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("_mark_all_as_read", params)
 
-    @API("adapter.napcat.message.mark_group_msg_as_read", description="标记群聊已读", version="1", public=True)
-    async def api_action_mark_group_msg_as_read(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.message.mark_group_msg_as_read",
+        description="标记群聊已读",
+        version="1",
+        public=True,
+    )
+    async def api_action_mark_group_msg_as_read(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``mark_group_msg_as_read`` 动作。
 
         Args:
@@ -320,7 +406,12 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("mark_group_msg_as_read", params)
 
-    @API("adapter.napcat.message.mark_msg_as_read", description="标记消息已读 (Go-CQHTTP)", version="1", public=True)
+    @API(
+        "adapter.napcat.message.mark_msg_as_read",
+        description="标记消息已读 (Go-CQHTTP)",
+        version="1",
+        public=True,
+    )
     async def api_action_mark_msg_as_read(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``mark_msg_as_read`` 动作。
 
@@ -332,8 +423,15 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("mark_msg_as_read", params)
 
-    @API("adapter.napcat.message.mark_private_msg_as_read", description="标记私聊已读", version="1", public=True)
-    async def api_action_mark_private_msg_as_read(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.message.mark_private_msg_as_read",
+        description="标记私聊已读",
+        version="1",
+        public=True,
+    )
+    async def api_action_mark_private_msg_as_read(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``mark_private_msg_as_read`` 动作。
 
         Args:
@@ -344,7 +442,12 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("mark_private_msg_as_read", params)
 
-    @API("adapter.napcat.message.send_ark_share", description="分享用户 (Ark)", version="1", public=True)
+    @API(
+        "adapter.napcat.message.send_ark_share",
+        description="分享用户 (Ark)",
+        version="1",
+        public=True,
+    )
     async def api_action_send_ark_share(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``send_ark_share`` 动作。
 
@@ -356,7 +459,12 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("send_ark_share", params)
 
-    @API("adapter.napcat.message.send_forward_msg", description="发送合并转发消息", version="1", public=True)
+    @API(
+        "adapter.napcat.message.send_forward_msg",
+        description="发送合并转发消息",
+        version="1",
+        public=True,
+    )
     async def api_action_send_forward_msg(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``send_forward_msg`` 动作。
 
@@ -368,8 +476,15 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("send_forward_msg", params)
 
-    @API("adapter.napcat.message.send_group_ark_share", description="分享群 (Ark)", version="1", public=True)
-    async def api_action_send_group_ark_share(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.message.send_group_ark_share",
+        description="分享群 (Ark)",
+        version="1",
+        public=True,
+    )
+    async def api_action_send_group_ark_share(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``send_group_ark_share`` 动作。
 
         Args:
@@ -380,8 +495,15 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("send_group_ark_share", params)
 
-    @API("adapter.napcat.message.send_group_forward_msg", description="发送群合并转发消息", version="1", public=True)
-    async def api_action_send_group_forward_msg(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    @API(
+        "adapter.napcat.message.send_group_forward_msg",
+        description="发送群合并转发消息",
+        version="1",
+        public=True,
+    )
+    async def api_action_send_group_forward_msg(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``send_group_forward_msg`` 动作。
 
         Args:
@@ -405,9 +527,14 @@ class QQMessageApiMixin(QQApiSupportMixin):
         return await self._call_napcat_action("send_msg", params)
 
     @API(
-        "adapter.napcat.message.send_private_forward_msg", description="发送私聊合并转发消息", version="1", public=True
+        "adapter.napcat.message.send_private_forward_msg",
+        description="发送私聊合并转发消息",
+        version="1",
+        public=True,
     )
-    async def api_action_send_private_forward_msg(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+    async def api_action_send_private_forward_msg(
+        self, params: QQApiParamsInput = None
+    ) -> Dict[str, Any]:
         """调用对端的 ``send_private_forward_msg`` 动作。
 
         Args:
@@ -418,7 +545,12 @@ class QQMessageApiMixin(QQApiSupportMixin):
         """
         return await self._call_napcat_action("send_private_forward_msg", params)
 
-    @API("adapter.napcat.message.send_private_msg", description="发送私聊消息", version="1", public=True)
+    @API(
+        "adapter.napcat.message.send_private_msg",
+        description="发送私聊消息",
+        version="1",
+        public=True,
+    )
     async def api_action_send_private_msg(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
         """调用对端的 ``send_private_msg`` 动作。
 
@@ -429,3 +561,101 @@ class QQMessageApiMixin(QQApiSupportMixin):
             Dict[str, Any]: 对端返回的原始响应字典。
         """
         return await self._call_napcat_action("send_private_msg", params)
+
+    @API(
+        "adapter.napcat.message.get_msg_emoji_likes",
+        description="获取消息表情回应列表",
+        version="1",
+        public=True,
+    )
+    async def api_get_msg_emoji_likes(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``get_msg_emoji_likes`` 动作。
+
+        Args:
+            params: 动作参数字典；通常必填 ``message_id``，由对端动作透传校验。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+        """
+        return await self._call_napcat_action("get_msg_emoji_likes", params)
+
+    @API(
+        "adapter.napcat.message.send_custom_face",
+        description="发送收藏表情",
+        version="1",
+        public=True,
+    )
+    async def api_send_custom_face(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``send_custom_face`` 动作。
+
+        Args:
+            params: 动作参数字典；必填 ``emoji_id``，且 ``group_id`` 与 ``user_id`` 至少提供一个。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+
+        Raises:
+            ValueError: 当必填参数缺失或不合法时抛出。
+        """
+        normalized_params = self._normalize_params(params)
+        normalized_params["emoji_id"] = self._normalize_non_empty_string(
+            normalized_params.get("emoji_id"), "emoji_id"
+        )
+        group_id = normalized_params.get("group_id")
+        user_id = normalized_params.get("user_id")
+        if (group_id is None or str(group_id).strip() == "") and (
+            user_id is None or str(user_id).strip() == ""
+        ):
+            raise ValueError("group_id 与 user_id 必须至少提供一个")
+        return await self._call_napcat_action("send_custom_face", normalized_params)
+
+    @API(
+        "adapter.napcat.message.fetch_sys_faces",
+        description="获取系统表情目录",
+        version="1",
+        public=True,
+    )
+    async def api_fetch_sys_faces(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``fetch_sys_faces`` 动作。
+
+        Args:
+            params: 动作参数字典；具体字段由对端动作透传校验。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+        """
+        return await self._call_napcat_action("fetch_sys_faces", params)
+
+    @API(
+        "adapter.napcat.message.search_sys_faces",
+        description="搜索系统表情",
+        version="1",
+        public=True,
+    )
+    async def api_search_sys_faces(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``search_sys_faces`` 动作。
+
+        Args:
+            params: 动作参数字典；通常必填搜索关键词，由对端动作透传校验。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+        """
+        return await self._call_napcat_action("search_sys_faces", params)
+
+    @API(
+        "adapter.napcat.message.upload_forward_msg",
+        description="预上传合并转发节点",
+        version="1",
+        public=True,
+    )
+    async def api_upload_forward_msg(self, params: QQApiParamsInput = None) -> Dict[str, Any]:
+        """调用对端的 ``upload_forward_msg`` 动作。
+
+        Args:
+            params: 动作参数字典；通常必填合并转发节点列表，由对端动作透传校验。
+
+        Returns:
+            Dict[str, Any]: 对端返回的原始响应字典。
+        """
+        return await self._call_napcat_action("upload_forward_msg", params)
