@@ -4,7 +4,9 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Mapping, Optional, Tuple
 
+from ...data.face_vision import describe_face
 from ...data.faces import QQ_FACE_DESCRIPTIONS, QQ_FACE_EMOJIS
+from ...media import face_vision_worker
 from ...types import QQPayload, QQSegment, QQSegments
 from ...types import QQIncomingSegment, QQIncomingSegments
 from ..notice.helpers import normalize_optional_string
@@ -431,10 +433,21 @@ class QQInboundSegmentsMixin(QQInboundCardMixin, QQInboundTextMixin):
             str: 解析后的表情文本。
         """
         parse_mode = str(getattr(self._load_settings().plugin, "qq_face_parse_mode", "description") or "description")
-        if parse_mode == "emoji" and face_id in QQ_FACE_EMOJIS:
+        if parse_mode == "vision":
+            rendered = describe_face(face_id)
+            if rendered:
+                return rendered
+            # 未收录：本次仍按 emoji / 中文名回退，同时丢进后台队列补描述（不阻塞消息）。
+            face_vision_worker.request(face_id)
+        if parse_mode in {"emoji", "vision"} and face_id in QQ_FACE_EMOJIS:
             return str(QQ_FACE_EMOJIS[face_id])
         if face_id in QQ_FACE_DESCRIPTIONS:
             return f"[{QQ_FACE_DESCRIPTIONS[face_id]}]"
+        logger = getattr(self, "_logger", None)
+        if logger is not None:
+            # 走到这里说明名字表和描述表都没有：多半是腾讯新增的表情，重跑
+            # scripts/build_face_vision.py 即可补上（幂等，只补新增）。
+            logger.debug(f"未收录的 QQ 表情: id={face_id!r} mode={parse_mode}")
         return "[表情]"
 
     async def _resolve_group_name(self, payload: Mapping[str, Any], group_id: str) -> str:

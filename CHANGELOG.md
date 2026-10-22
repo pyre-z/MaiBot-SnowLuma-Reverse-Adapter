@@ -2,6 +2,21 @@
 
 本项目从 `MaiBot-SnowLuma-Adapter` 1.1.8 派生，上游历史见 `UPSTREAM-CHANGELOG.md`。
 
+## 2.1.0
+
+### 新特性
+
+- `qq_face_parse_mode` 新增 `vision`：把 QQ 内置表情渲染成离线生成的视觉描述
+  （`（QQ表情·幽灵｜白色圆润的小幽灵上下漂浮眨眼…）`），补上「模型只拿到名字、误以为图片没加载」的语义缺口。
+- 新增 `scripts/build_face_vision.py`：离线批量生成描述表。QFace 128px 静态图与 qzone 24px 动作帧条
+  **同一次调用**送入 VLM（静态定形象、动作帧定动作），产物 `snowluma_reverse/data/face_vision.json`；
+  幂等、可增量、缺表自动回退 `emoji` → `[中文名]`。
+
+### 修复
+
+- `.gitignore` 的 `data/` 会连带忽略 `snowluma_reverse/data/`，导致 `faces.py` / `emoji.py` 等
+  必需模块从未进入仓库（新克隆无法运行）；改为 `/data/` 仅忽略根目录运行时数据。
+
 ## 2.0.0
 
 ### 结构重构

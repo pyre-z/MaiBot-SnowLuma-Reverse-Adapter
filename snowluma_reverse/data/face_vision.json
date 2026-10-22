@@ -1,0 +1,6216 @@
+{
+  "meta": {
+    "generated_at": "2026-10-22T23:43:38+08:00",
+    "model": "gemini-3.8-flash",
+    "source_index": "https://koishi.js.org/QFace/assets/qq_emoji/_index.json",
+    "count": 537
+  },
+  "faces": {
+    "0": {
+      "name": "惊讶",
+      "desc": "黄色圆脸高挑眉毛、瞪大凸出的双眼并张长嘴巴，常用于表达极度震惊、出乎意料与目瞪口呆",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "0401766d890b7485331f3a5b70bec4b2ee0d91ac15a2dfa7d1b93c9e802546b8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:27:57+08:00",
+      "elapsed_s": 16.9
+    },
+    "☎": {
+      "name": "电话",
+      "desc": "红色按键座机剧烈震动响铃，常用于呼叫对方、催促回复或提示转为电话联系",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "6e8447457f09c482d17a4eea6475714185fd3c71821ee9ba965eb95a622912e6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:39+08:00",
+      "elapsed_s": 6.4
+    },
+    "⭕": {
+      "name": "正确",
+      "desc": "红色空心圆圈符号，表示正确、认可、赞同或通过，常用于肯定对方观点及确认答对",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "0482c312017153f366ea0207f3e22e911d962d7afee39298d73e9988c2513225",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:07+08:00",
+      "elapsed_s": 6.8
+    },
+    "🍧": {
+      "name": "刨冰",
+      "desc": "高脚碗中盛着淋有红色糖浆的粉白刨冰并插着蓝勺，静置不动，常用于夏日解暑或表达清凉惬意",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a835dd7325a543c8704e6a2d183e39e284fb7ecdd82e24c28370cd47e929e29d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:33+08:00",
+      "elapsed_s": 9.5
+    },
+    "🏧": {
+      "name": "取款机",
+      "desc": "蓝底方框中印有白色ATM字母，代表取款机，常用于涉及借钱、催款、买单或调侃提款机的语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "5efc4abbc7f35973131857e4dfb012da95e82e0a57af7d2a38334d401cf2b6bf",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:58+08:00",
+      "elapsed_s": 11.6
+    },
+    "〽": {
+      "name": "股票",
+      "desc": "黄色的股票行情折线呈断崖式急剧暴跌，常用于表达股市亏损、运势跌入谷底或情况急转直下的崩溃与",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "38591df6d09031148cfcd44f27a52f6d3adb92d611af47659cf73f0c504dcc54",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:35+08:00",
+      "elapsed_s": 8.3
+    },
+    "☀": {
+      "name": "晴天",
+      "desc": "金黄色太阳持续闪烁放射光芒，代表晴朗温暖，常用于天气交流、早安问候及表达积极开朗的心情",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "7554d1f925e8396d50ed26bd6981fbc05df71aa0ccdbe06c8d425f190062d923",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:36+08:00",
+      "elapsed_s": 7.2
+    },
+    "☁": {
+      "name": "云朵",
+      "desc": "白净蓬松带有淡灰边缘的云朵静静漂浮，常用于表示多云天气、放空发呆或淡然释怀的情绪",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "0d47be7f7b3b2cad59a53c310ca75a7b7d1ae25d7c2cb6fca5b38292316bfb97",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:41+08:00",
+      "elapsed_s": 9.4
+    },
+    "☔": {
+      "name": "雨天",
+      "desc": "雨水滴落在撑开的紫色雨伞上，常用来表示下雨天气、提醒带伞，或传达阴郁沮丧的心情",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "0c87e7acfc57f2f51c489a096d3aa731e61ef45114bc450bc5fb3ca509ae6615",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:43+08:00",
+      "elapsed_s": 8.4
+    },
+    "☕": {
+      "name": "咖啡",
+      "desc": "白色瓷杯中深色热咖啡正缓缓升腾热气，常用于表示放松休息、提神、下午茶邀约或客套问候",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c998f2dbcf42b6e595d46e821e6a8c321e739cf3bbd516943a09cc2d6de29d91",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:48+08:00",
+      "elapsed_s": 12.1
+    },
+    "☝": {
+      "name": "向上",
+      "desc": "黄色手势伸出食指向上指，常用于指向或赞同上一条发言，提示对方看楼上内容",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "92a06b18da7ae675ecee001f12f037e234cb39b698849458f1ca1b1a5e535408",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:45+08:00",
+      "elapsed_s": 7.8
+    },
+    "☺": {
+      "name": "可爱",
+      "desc": "带红晕的黄色圆脸眯眼微笑，常用于表达害羞腼腆、被夸后的欣喜或卖萌示好",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "19fd1def1f3a755d1d5c361a42cc612133b614702bb8570fa2498cd5e793f4f7",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:47+08:00",
+      "elapsed_s": 8.7
+    },
+    "♣": {
+      "name": "扑克",
+      "desc": "黑色扑克梅花花色图标，呈静止状态，常用于邀约打牌、讨论棋牌游戏或表达纸牌娱乐语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "192751bf68cc00c8c170ea56d841cd2338587991889816198d3f8dbbb21cb671",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:51+08:00",
+      "elapsed_s": 12.0
+    },
+    "♨": {
+      "name": "热",
+      "desc": "红色底座上冒着三缕升腾的波浪状热气，常用于吐槽天气酷热、饭菜滚烫或表达事物火爆",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "6fa559cfeaefbb35b46b94ef1ac25adb1492da2ea5cbb0868163d933e15ec5e9",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:50+08:00",
+      "elapsed_s": 8.8
+    },
+    "⚡": {
+      "name": "闪电",
+      "desc": "画着一道金黄色闪电凌空劈落，常用于表示震惊、晴天霹雳、被雷到了或形容速度极快",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "3cf50c7facee7a3ff5e87ab8a9a3f3c7a75d7328611180f5407f9acb541f675e",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:52+08:00",
+      "elapsed_s": 8.6
+    },
+    "⛄": {
+      "name": "雪人",
+      "desc": "头戴黑桶、张开树枝手摇晃的白色雪人，常用于表达天气寒冷、冬天下雪或冷场尴尬",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "101d89198c3e378663350a5046f63045547504395203221fdf5014e339ed9c22",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:57+08:00",
+      "elapsed_s": 12.0
+    },
+    "⛪": {
+      "name": "教堂",
+      "desc": "白色墙面带十字架和彩色花窗的欧式教堂建筑，静止无动作，常用于表达结婚、婚礼祝福或祈祷",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "cd0591ace5786eaba126ab80b2babd8dad7f35520b43ff54112bf10bab32561a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:55+08:00",
+      "elapsed_s": 7.9
+    },
+    "⛵": {
+      "name": "船",
+      "desc": "红黄相间条纹彩帆的木质小帆船乘风航行，常用于象征出海旅行度假，或表达一帆风顺的美好祝愿",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "a322b545e2babfbdb4457e9879cba673315084ab661dae3885be1a7e10e75bd8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:56+08:00",
+      "elapsed_s": 7.8
+    },
+    "✈": {
+      "name": "飞机",
+      "desc": "一架白身蓝翼的客机向右上飞行，常用于表示出差出行、去旅游，或调侃爽约放鸽子",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "febbb359904f099a3353928dd07417c2a274cba20eb18600f3c55509755035ab",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:57+08:00",
+      "elapsed_s": 7.9
+    },
+    "✌": {
+      "name": "胜利",
+      "desc": "黄色手势竖起两指比出V字剪刀手，常用于庆祝成功、表达胜利喜悦、搞定或开心比耶",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "a9c9030d6c709a31987ee48801d809703f628c92eeff2add0987a807448fc24f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:00+08:00",
+      "elapsed_s": 8.8
+    },
+    "✨": {
+      "name": "闪光",
+      "desc": "三颗金黄色四角星芒在空中闪烁发光，常用于表达眼前一亮、赞美出色、华丽登场或美好憧憬",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "3d692320b7e2647a9d71b3ae31a9d769e8966e96f5b83ca0989e85b209a87cad",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:00+08:00",
+      "elapsed_s": 8.2
+    },
+    "❌": {
+      "name": "错误",
+      "desc": "红色的粗线大叉号，呈现打叉标记，传达否定与反对情绪，常用于表示拒绝、不行或指出错误",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "fb59f6f940646468d5c99c1c6fdb1618d05e66604df89b6f0af3783877679ff0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:06+08:00",
+      "elapsed_s": 11.1
+    },
+    "❔": {
+      "name": "问号",
+      "desc": "灰白色立体问号符号，保持静止显示，用于表达困惑、疑问、不解或对对方话语提出质疑",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e10cc1eaaab66a7b6092809f9089758b87e1889b533a62356a3f2283651e6c0b",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:04+08:00",
+      "elapsed_s": 8.4
+    },
+    "❕": {
+      "name": "叹号",
+      "desc": "灰白立体感叹号符号静止呈现，传达震惊、警觉或强调，常用于提醒警示、引起对方注意",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "92654936928cedd56b8c10f1dc65bbf96959d109db46ed371e8ec83e5b821a47",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:03+08:00",
+      "elapsed_s": 6.5
+    },
+    "⭐": {
+      "name": "星星",
+      "desc": "闪烁微光的金黄色五角星，传达赞赏、优秀与闪耀之意，常用于夸奖认可、许愿或道晚安",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "4bcd1ab7c5a639f627f0840d24f83d45e9d6f7cec45ee7f32fc2ae3a0b1f53ce",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:05+08:00",
+      "elapsed_s": 7.4
+    },
+    "🀄": {
+      "name": "麻将",
+      "desc": "亮出一张白底红字的麻将红中牌，常用于相约打麻将，或借中字表示赞同、可以与中彩好运",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "a57c32debf3635c94ae0b041d0d64e73774fba2e0102149f8b0645772bf8ff84",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:11+08:00",
+      "elapsed_s": 11.3
+    },
+    "🌂": {
+      "name": "雨伞",
+      "desc": "一把粉红色收拢的长柄雨伞斜向放置，常用于下雨天话题、提醒出门带伞或表达遮蔽关怀",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "eb18b569908805f50f30d06d7dd298f73b45b4e9a566d0b0fa86ed43e1f5ce83",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:11+08:00",
+      "elapsed_s": 7.5
+    },
+    "🌙": {
+      "name": "月亮",
+      "desc": "一枚金黄色的静止弯月，象征夜晚与静谧，常用于睡前向对方道晚安或结束深夜聊天",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "26af5d8d3590ea44358a02bd8d89337415ce76d7b451d181ebaaff4d6a3f6405",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:11+08:00",
+      "elapsed_s": 6.9
+    },
+    "🌴": {
+      "name": "椰子树",
+      "desc": "棕干绿叶的像素椰子树静止直立，象征热带风情，常用于表达夏日海滩、海滨度假与悠闲放松",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "516e35b1d15a84a8190ef2a7799cd55a1099812cc0ce6125dd73eed7fabeada9",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:13+08:00",
+      "elapsed_s": 8.3
+    },
+    "🌹": {
+      "name": "玫瑰",
+      "desc": "一朵带绿茎花萼的红色玫瑰花苞静止直立，常用于表达爱意、示好、赞美或礼貌致谢",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "38516c2ef89d01dd1e416e59b5f5d83de1835de243ece206d85915bf62a17f7b",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:15+08:00",
+      "elapsed_s": 8.7
+    },
+    "🍉": {
+      "name": "西瓜",
+      "desc": "红瓤绿皮黑籽的切片西瓜静止放置，常用于表达围观八卦的吃瓜看热闹心态或夏日解暑",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "734666193e7c75abbf02a60024cc8e5ac696a2622118762b9b1d1dfd24a2d380",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:17+08:00",
+      "elapsed_s": 9.8
+    },
+    "🍊": {
+      "name": "橙子",
+      "desc": "顶带绿叶的橙黄色圆形鲜橙静止立着，常用于提及水果饮食或借谐音表达心想事成等祝愿",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "85ebba01d0b3e6e6fc32e286558136fabcdce69b8b2cf747adf34fb1ec0835c4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:20+08:00",
+      "elapsed_s": 9.1
+    },
+    "🍎": {
+      "name": "苹果",
+      "desc": "一颗顶着绿叶的饱满红苹果静止放置，常用于指代水果、平安夜送祝福或表达平安祈愿",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "fe1318ca6403958940d6fac1363d0eac4e72310bc6ffef2e32f78b03f4b61037",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:19+08:00",
+      "elapsed_s": 7.2
+    },
+    "🍓": {
+      "name": "草莓",
+      "desc": "一颗带绿叶的鲜红草莓静止放置，常表示可爱甜美的心情，或指代水果与情侣间的种草莓吻痕",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "d2b4b09d6e5889fd7d42060a1bce1c639b9e95b1c10fd78d8ab50647e8cbb1a0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:21+08:00",
+      "elapsed_s": 9.1
+    },
+    "🍔": {
+      "name": "汉堡",
+      "desc": "夹着深色肉排与黄色芝士的棕黄汉堡静置着，常用于表达肚子饿、想吃快餐或邀约干饭",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "9c634a327a8d0200d96f0725acef679f144d39e35f903bec8eee8c07a18ceca8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:20+08:00",
+      "elapsed_s": 6.6
+    },
+    "🍙": {
+      "name": "饭团",
+      "desc": "包裹着墨绿海苔的白色三角形饭团静止呈现，用于表达肚子饿、想吃饭或分享美食的轻松语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "b1d7ba16e4b51b18ab33a4e8901aeda2527f2a8c7f40e0f343520049309754f9",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:23+08:00",
+      "elapsed_s": 8.2
+    },
+    "🍚": {
+      "name": "米饭",
+      "desc": "白色瓷碗盛着满满的冒尖白米饭静止放置，常用于表示要去吃饭、肚子饿或邀约干饭",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "bdd678a976394390969742965238a14e5d5118042552d34b19e3aa184c7741e1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:23+08:00",
+      "elapsed_s": 6.7
+    },
+    "🍜": {
+      "name": "拉面",
+      "desc": "木筷不断从红纹白碗中挑起黄色面条，常用于表达肚子饿、正在吃饭或相约一起吃面干饭",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "ce621bafabe3bd0d6d61739aceb33cf20776f96442cb0d3cb195c6067aaa3b6c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:26+08:00",
+      "elapsed_s": 7.8
+    },
+    "🍝": {
+      "name": "意面",
+      "desc": "白盘红酱黄色意面正被银叉卷起挑高，常用于表达肚子饿、正在吃饭或邀约品尝美食",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "4dcbf24d3c54cf19c2c368f08255f7addfb261a998a70409de30163b5bceec4b",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:28+08:00",
+      "elapsed_s": 8.4
+    },
+    "🍞": {
+      "name": "面包",
+      "desc": "画着一块金黄外皮、切面米白的静止方包吐司，常用于表示早餐、饥饿想吃东西或指代物质生活",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "77c946a850b8dc7e221a68748e36207af03b668c91f34ff141b78e42d5aaf1ba",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:27+08:00",
+      "elapsed_s": 7.3
+    },
+    "🍟": {
+      "name": "薯条",
+      "desc": "红盒装的金黄色炸薯条，常用于讨论快餐美食、表达嘴馋想吃，或引用整点薯条梗表示想摸鱼摆烂",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "8012b1b5151143a62ebeaebe4a06e36e73e1beea9565c378b6056962ad1e0438",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:27+08:00",
+      "elapsed_s": 6.9
+    },
+    "🍣": {
+      "name": "寿司",
+      "desc": "红鱼片盖在白饭上的握寿司静止特写，常用于聊美食、日料、请客聚餐或表达饥饿想吃",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "ec108232de43ca87d4ed6306678a47aa0f1b99eb426a82863ab21c6834c474db",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:31+08:00",
+      "elapsed_s": 8.0
+    },
+    "🍳": {
+      "name": "煎蛋",
+      "desc": "黑色平底锅内煎着金黄荷包蛋，常用于表示做饭、进餐、肚子饿或调侃天气酷热",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "704565e321627e9a8645a9835f51a025d2eec6dca7421a25d471dd1b0690253b",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:34+08:00",
+      "elapsed_s": 7.9
+    },
+    "🍸": {
+      "name": "高脚杯",
+      "desc": "盛着浅色酒液且插有绿色橄榄的透明马天尼高脚杯，常用于邀约喝酒、干杯庆祝或表达惬意微醺",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "f7bca6452048da743bf7d3e86dd39848af2f73ff6d2ede945dfe5ea8327658d9",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:35+08:00",
+      "elapsed_s": 7.8
+    },
+    "🍺": {
+      "name": "啤酒",
+      "desc": "装满金黄色酒液与白色泡沫的玻璃扎啤杯，作干杯状，常用于聚会邀约、庆祝或表达豪爽与友好",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "4f84200921319c15df54776d3eafbb7579ba11a355c089807baaf5f4ca11566c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:36+08:00",
+      "elapsed_s": 8.9
+    },
+    "🍻": {
+      "name": "干杯",
+      "desc": "两杯金黄且顶覆白沫的啤酒相撞碰杯，常用于庆祝成功、表示赞同合作或朋友间致敬问候",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "f44cab623f208bbf707d4d1f3771df0581ca14b3fc354cf6524fd88aee381b7d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:38+08:00",
+      "elapsed_s": 9.9
+    },
+    "🎀": {
+      "name": "蝴蝶结",
+      "desc": "粉色丝带系成的蝴蝶结，静止展示，传达甜美可爱与少女心，常用于装扮、撒娇或送礼语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "7c2e6fd63035c19078e6ab1c8dae668c3fe9ae675975e29b9da15583b44f88a1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:39+08:00",
+      "elapsed_s": 8.4
+    },
+    "🎂": {
+      "name": "蛋糕",
+      "desc": "白色奶油蛋糕上点缀红樱桃并插着三根点燃的蜡烛，烛火微颤，常用于祝对方生日快乐或庆祝纪念日",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "df17108e7b99046a1a49f8b9be5f9961ebbb188f5f551b51e60dff5ddf336905",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:39+08:00",
+      "elapsed_s": 5.9
+    },
+    "🎄": {
+      "name": "圣诞树",
+      "desc": "顶缀星星且挂满彩色装饰球的绿色圣诞树，传达欢乐喜庆，常用于圣诞祝福及节日庆祝语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "b08af8edf473e485fa640cb3616e3a996de7487c087e31342fecfd0b503c32f7",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:41+08:00",
+      "elapsed_s": 6.7
+    },
+    "🎈": {
+      "name": "气球",
+      "desc": "系着细线的红色气球向上升起飘飞，传达欢快喜悦的心情，常用于庆祝、生日或放飞道别语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "f7a8446746c42ace8b96b631fcd2d721a6273f45d4adc9dd3e1181a5a6a4f636",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:42+08:00",
+      "elapsed_s": 7.3
+    },
+    "🎉": {
+      "name": "庆祝",
+      "desc": "金色礼花筒喷出缤纷彩带与纸屑，常用于庆祝好事、表达热烈祝贺与欢呼喜悦",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "dfc50223da6d136e466fd1389258c14e706dbe282841e41d7d95be96500bad10",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:45+08:00",
+      "elapsed_s": 8.6
+    },
+    "🎤": {
+      "name": "话筒",
+      "desc": "灰色手持麦克风旁飘动着音符，表现唱歌或发声，常用于K歌、开麦发言或活跃气氛",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "80479d4c910b7cda5faf1ef08f0ccfe4717a1c0fd78cbb7806ae95df988d04a0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:45+08:00",
+      "elapsed_s": 7.0
+    },
+    "🎥": {
+      "name": "摄影机",
+      "desc": "黑灰色的老式胶片电影摄影机，常用于表示正在录像、记录现场、围观吃瓜或见证名场面",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "098e7433c937af71af6f7d315bb3638550862c344e6e80a54ce176c0c805815f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:46+08:00",
+      "elapsed_s": 7.4
+    },
+    "🎰": {
+      "name": "老虎机",
+      "desc": "灰色复古老虎机摇出三个红色数字7的大奖画面，用于表达暴富、手气极佳或祈求中奖好运",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "275f693d237ae78aa07a913eb31a4d008130992bd4bdacba50aa3bf6e218cdc6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:46+08:00",
+      "elapsed_s": 6.5
+    },
+    "🎸": {
+      "name": "吉他",
+      "desc": "斜置弹奏的橙黄色电吉他，常用于聊音乐弹唱、助兴耍帅或活跃欢快氛围",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "b782a6e1017cf77c59a402dba6a2ebe3462ee0b67900d23450f7122eeaa0c6bc",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:51+08:00",
+      "elapsed_s": 9.6
+    },
+    "🏆": {
+      "name": "奖杯",
+      "desc": "金黄色的双耳冠军奖杯静止立着，象征荣耀与胜利，常用于祝贺获胜、夸赞优秀或颁奖表彰",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "7eb7082f0b059a3e23aa546f819f06500f6f715974025db1ced464992f9c5d73",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:49+08:00",
+      "elapsed_s": 6.5
+    },
+    "🏠": {
+      "name": "家",
+      "desc": "红屋顶、米黄墙壁且带有烟囱的卡通小房子，无动作，常用于表达回家、已到家、宅家或指代家庭",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "933c7f70866092b76c8423d6d9ed726b48bb0de633a6bb832107587fca6b1e38",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:53+08:00",
+      "elapsed_s": 8.4
+    },
+    "🏥": {
+      "name": "医院",
+      "desc": "带有红十字标志的白色医院建筑，常用于表达身体不适、生病就医，或调侃对方有病该去治疗",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "86ba343fb3f1eeb4036b1659559becbb11e3ba99d5e1729d8fda4cb27951db94",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:51+08:00",
+      "elapsed_s": 5.7
+    },
+    "🏦": {
+      "name": "银行",
+      "desc": "灰白立柱银行正中嵌着一枚美元金币，常用于表达借钱、存取款、转账或调侃对方有钱等语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "ce4ac9fd21bb77a58af48e566e3dd78f6dda814f5acc3aebb10becf17367c9d1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:56+08:00",
+      "elapsed_s": 9.6
+    },
+    "🏨": {
+      "name": "酒店",
+      "desc": "红顶米白色的酒店大楼，楼体印有红色大字母H，常用于表示开房、住宿、出差或旅行休息",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "62a69d79bd4d4450f09c7a6d66df7fab35a9f2caa21eebb00506eddebebd80ba",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:58+08:00",
+      "elapsed_s": 8.7
+    },
+    "🏪": {
+      "name": "便利店",
+      "desc": "白墙绿顶且立着24标志招牌的便利店建筑，常用于表示去买东西、通宵营业或熬夜随时待命",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "336a66326bdf444a7bd390ec3f556adaf359a68a9520289624d992cc8bb5bb0e",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:00+08:00",
+      "elapsed_s": 9.2
+    },
+    "🐎": {
+      "name": "骑马",
+      "desc": "背着绿色鞍垫的棕色骏马正在奋力疾驰，常用于表示马上就到、火速赶来或开溜等匆忙语境",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "16bbaf20cf8fccf7a1c1d04a2b66ed09960ed2ff3685a038f86eabeab8993110",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:40:59+08:00",
+      "elapsed_s": 8.7
+    },
+    "🐔": {
+      "name": "公鸡",
+      "desc": "红冠黄嘴的圆白公鸡头前后探头啄动，常用于谐音生肖鸡、调侃对方叽歪啰嗦或表示起哄卖萌",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "edaa03d62ab761583651de35295afafa7b8636085547eff4d5761127bc268d75",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:03+08:00",
+      "elapsed_s": 9.4
+    },
+    "🐙": {
+      "name": "章鱼",
+      "desc": "粉红色的圆头大眼睛小章鱼，触手向外张开摆动，神态呆滞无辜，常用于表达发呆、无语或卖萌",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "b914a9fe37dc185249b2a4b99e428e76258ad80eb768506942cb61091e4a46aa",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:02+08:00",
+      "elapsed_s": 6.1
+    },
+    "🐚": {
+      "name": "海螺",
+      "desc": "倾斜静置的灰白色螺旋海螺壳，常用于表示倾听心声、去海边度假或像海螺般缩壳自闭",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "ff139cbdc2b48e4c0c64019253fdd8d6d6549053512c87f7b90d123929f82c63",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:04+08:00",
+      "elapsed_s": 6.9
+    },
+    "🐛": {
+      "name": "虫",
+      "desc": "橙色脑袋、绿色身躯带刺的毛毛虫在蠕动爬行，常用于表达恶心、吓人或路过冒泡打酱油",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "0c517855f3292fda6b36490eae71a5d03dff8135eff7cd11fb75b187aa439055",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:06+08:00",
+      "elapsed_s": 8.3
+    },
+    "🐠": {
+      "name": "鱼",
+      "desc": "一条蓝背黄腹的小热带鱼摆尾游动，常用于表示摸鱼偷懒、水群潜水或钓鱼调侃的轻松语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "b4278c02e5276c927c67a25bd549755bafd4eda0392aac0ec2de947fab8e19f0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:07+08:00",
+      "elapsed_s": 7.5
+    },
+    "🐤": {
+      "name": "小鸡",
+      "desc": "黄头橙嘴的小鸡不停低头啄米，常用于表示卖萌装乖、疯狂点头赞同或无聊看戏",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "2602c343a8333c0e4231b830575217b24ded8895053e3eaa71755a2312dce274",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:10+08:00",
+      "elapsed_s": 10.0
+    },
+    "🐧": {
+      "name": "企鹅",
+      "desc": "黑白相间、橙黄嘴巴的圆滚小企鹅侧头呆立，神态呆萌无辜，常用于卖萌、打招呼或指代QQ",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "e1c9a74cc21e53e6cb0a9d23e550da6fe3725dffab861f180f84c62684ae48c2",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:11+08:00",
+      "elapsed_s": 9.7
+    },
+    "🐨": {
+      "name": "树懒",
+      "desc": "灰褐色圆脸大黑鼻的树懒呆滞发呆，常用于表达反应迟钝、慢半拍、放空无语或脑子宕机",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "20d49f91dbe3bc08d70d03a7f59429577b44c07ed68f400bebb608df62e04b76",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:15+08:00",
+      "elapsed_s": 12.6
+    },
+    "🐭": {
+      "name": "老鼠",
+      "desc": "灰白色大耳小老鼠快速挥动双爪，显得贼头贼脑，常用于表示胆怯、偷着乐或暗中开溜",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "d7a8af3e880573ced109da0068a6cc045207697b012d2e9bf624eefe1dfb46a3",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:16+08:00",
+      "elapsed_s": 11.7
+    },
+    "🐮": {
+      "name": "牛",
+      "desc": "灰白色的呆萌卡通牛头正面直视，表情憨态可掬，常用于指代生肖牛或夸赞对方很厉害、很牛",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a7be84ab2d85b1705210d64804c36b0f9a3fa23554077f929d3fc8db90c0d303",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:14+08:00",
+      "elapsed_s": 8.3
+    },
+    "🐯": {
+      "name": "老虎",
+      "desc": "黄色黑条纹的圆脸小老虎正面张着小嘴，常用于假装凶狠示威、嗷呜卖萌或打趣互动",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "779f1a22c33fdf14b4f97383dfc7c8adef0ef1a5cba67181161d04ca3524ff83",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:16+08:00",
+      "elapsed_s": 9.1
+    },
+    "🐳": {
+      "name": "鲸鱼",
+      "desc": "圆滚滚的蓝白小鲸鱼摆尾游动并向上喷出水柱，呆萌欢快，常用于卖萌、调侃水群或打招呼",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "6a4aef67480c1153811e8c4d54455f178b8ecf61e4214acd71c2898c865aa701",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:19+08:00",
+      "elapsed_s": 9.2
+    },
+    "🐵": {
+      "name": "猴",
+      "desc": "棕色小猴头像上下伸缩晃头并张嘴，神态呆萌调皮，常用于耍宝卖萌、调侃或自嘲装傻",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "bf867a1d7fb94027f3a24cc4f079bd65ab8ce8d2fbfa8f752cbf3d5e311c91b6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:20+08:00",
+      "elapsed_s": 8.6
+    },
+    "🐶": {
+      "name": "狗",
+      "desc": "棕色垂耳、单眼有斑的白色小狗吐着粉色舌头，常用于装乖卖萌、调侃或自嘲单身狗",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e0b1f11eb18c455e39b4adba1128496bbc71cf1b6290cba82337ef66403fca34",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:23+08:00",
+      "elapsed_s": 9.1
+    },
+    "🐷": {
+      "name": "猪",
+      "desc": "粉色圆脸黑眼睛的呆萌小猪头，直勾勾盯着前方，常用于调侃对方笨、贪睡或朋友情侣间嬉闹互损",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "ddc81ee3fde78e22bc8be43d1a0b10f308695790d07f256f175be035d36430b0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:27+08:00",
+      "elapsed_s": 11.8
+    },
+    "🐸": {
+      "name": "青蛙",
+      "desc": "绿色的青蛙大头咧嘴微笑并眨眼变色，常用于表达装傻卖萌、无语冷场或调侃打趣",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "77d818fd33d9126d8ee5c3886714623bac6f69478237e44ae4b0650b151f50ba",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:32+08:00",
+      "elapsed_s": 16.1
+    },
+    "👀": {
+      "name": "眼睛",
+      "desc": "一对白底棕瞳的椭圆大眼珠向左斜视，用于表达暗中观察、好奇窥视或吃瓜围观",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "580702d040e3a0b6b088e5a3f8bc2aa0cab27e5213e2e235ff24598e2a1cdff0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:26+08:00",
+      "elapsed_s": 9.8
+    },
+    "👂": {
+      "name": "耳朵",
+      "desc": "一只黄色的侧面人类耳朵，作侧耳倾听状，常用于表示洗耳恭听、打听八卦或正在认真听",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "27315c02c8b5575cbb0afb3c63f209fec59815e541891afa027cc8f1c6bc17ee",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:26+08:00",
+      "elapsed_s": 7.1
+    },
+    "👃": {
+      "name": "鼻子",
+      "desc": "金色立体大鼻子，多用于表示闻到异味、探听八卦动向，或与其他表情拼接五官搞笑",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "9d0ae91924a9a5f71df3eb0403fd4ad8660dc8044413e0f314eb92f5ac2efe4e",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:28+08:00",
+      "elapsed_s": 7.5
+    },
+    "👄": {
+      "name": "嘴唇",
+      "desc": "粉红色的丰满嘴唇微张露出洁白牙齿，表达亲吻、示爱或诱惑，常用于情侣暧昧调情语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "a8ca3ac11c1ae20f05b748834894e447bc666c5525891756c07085bdaafd1bc6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:32+08:00",
+      "elapsed_s": 8.3
+    },
+    "👆": {
+      "name": "向上",
+      "desc": "黄色手势伸出食指向上指，常用于提示注意上方发言、赞同楼上观点或表示加一附和",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "5ed8cc4bb10702cccbea410ddd5062012645325dea385d42d6c5ff6aee228f24",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:33+08:00",
+      "elapsed_s": 7.0
+    },
+    "👇": {
+      "name": "向下",
+      "desc": "一只黄色的手握拳并伸出食指向下指，常用于提示对方注意下方内容或引出下文",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "c0626c2733d62ffa1766c0e24f8fe59ec242a639a80eaa646e71b0683c20db76",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:36+08:00",
+      "elapsed_s": 9.7
+    },
+    "👈": {
+      "name": "向左",
+      "desc": "黄色手势伸出食指指向左侧，常用于指示方向、引导查看左边内容或表达指认、指点",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "4ccd21ffa5fa74a3cfe067e20a22700448f5ea7e4ccb5324582ded6370036f13",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:35+08:00",
+      "elapsed_s": 7.6
+    },
+    "👉": {
+      "name": "向右",
+      "desc": "黄色手掌握拳并伸直食指指向右方，常用于指示方向、引起注意或强调右侧及下文内容",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "d0b6e232268b957fa2e3a97d102a17d8d5b9b0634225ebca73ac4ee14747efaa",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:33+08:00",
+      "elapsed_s": 5.9
+    },
+    "👊": {
+      "name": "拳头",
+      "desc": "正面迎面挥出的黄色拳头，常用于加油打气、碰拳示好，或开玩笑表示愤怒想揍人",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "013520df2e4e84aafac024b8ca31edc7aad63fd8af4f2c2eca660fa469a4cfa0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:38+08:00",
+      "elapsed_s": 6.6
+    },
+    "👌": {
+      "name": "好的",
+      "desc": "一只黄色手掌比出OK手势轻微晃动，常用于表示赞同、认可、收到或没问题",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a129342b281da5439f0e11c9b8f6fd65a399b0a0ae7759a63c65ac24a3b86237",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:40+08:00",
+      "elapsed_s": 7.7
+    },
+    "👍": {
+      "name": "厉害",
+      "desc": "黄色手掌紧握并竖起大拇指做点赞动作，用于表达赞赏、认可、夸奖或佩服对方很厉害",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "3a318cccea461d3ca369fb093cfc4bd88b6f74a9fc71752753e64eb3d0f73bf8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:46+08:00",
+      "elapsed_s": 13.2
+    },
+    "👎": {
+      "name": "鄙视",
+      "desc": "黄色手掌握拳并将大拇指向下比划，常用于表达鄙视、差评、反对或喝倒彩的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "006062701d6039f8bf8014074685f67d114548a9f4fd76962bf0233be048c773",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:40+08:00",
+      "elapsed_s": 6.9
+    },
+    "👏": {
+      "name": "鼓掌",
+      "desc": "一双黄色手掌连续拍击并泛起声浪特效，正在热烈鼓掌，用于表达赞赏、祝贺、鼓励或欢迎",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "0640b94ef7c3c932958c0717f2a9420d9e14912e811c49b979b6eb1a3db0c812",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:45+08:00",
+      "elapsed_s": 10.5
+    },
+    "👑": {
+      "name": "皇冠",
+      "desc": "镶嵌彩色宝石的金色皇冠静止微闪，象征尊贵与胜利，常用于夸奖对方厉害或封神称王",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "3f8ddb839c0f0934c87bd135b8217faef0e2746653c73384aba43bf8b509bc11",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:45+08:00",
+      "elapsed_s": 9.5
+    },
+    "👒": {
+      "name": "帽子",
+      "desc": "系着绿色大蝴蝶结的黄色草帽上下晃动，常用于表达夏日出游、度假休闲或可爱打扮的心情",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "d571e9720c47607c03b474157709667c6ff653769f9c6845e5007f40472e6cce",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:48+08:00",
+      "elapsed_s": 9.7
+    },
+    "👕": {
+      "name": "衣服",
+      "desc": "一件浅蓝色短袖上衣静止展示，常用于表示穿衣、添衣保暖、买新衣服或讨论服饰等生活语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "f2f93f83ff3e4625f6adbd8fd958d9157d96f22401fd6aeaf68593a0347d5ec6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:48+08:00",
+      "elapsed_s": 7.7
+    },
+    "👗": {
+      "name": "连衣裙",
+      "desc": "一件系暗红腰带的青绿色吊带长裙，常用于讨论穿搭打扮、买衣服逛街、爱美展现或送礼等女性语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "9e93b331bc6ce4e200f8845aff1193c410e9be98e0154f8a582b461bd31737c4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:48+08:00",
+      "elapsed_s": 7.3
+    },
+    "👙": {
+      "name": "内衣",
+      "desc": "一套悬挂的粉色波点比基尼内衣，常用于调侃好色、开车逗趣或涉及性感话题等幽默暧昧语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "53db543f2f2d6ad2ea3255fa0295afcadea06f55c71920cbf5f1da511f8957cb",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:54+08:00",
+      "elapsed_s": 9.0
+    },
+    "👜": {
+      "name": "包",
+      "desc": "棕色双提手皮革女包静置展示，常用于逛街购物、求礼物或谐音包在我身上等语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "1043e5b9f06c12171c0b0475cda65211d258527aff13627c27a6c1a898aa07ac",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:53+08:00",
+      "elapsed_s": 7.7
+    },
+    "👟": {
+      "name": "鞋子",
+      "desc": "一只斜向飞出的灰白色帆布鞋，像被丢出砸人，常用于表达嫌弃、鄙视、拍打对方或叫人走开",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "2bcc790325cccb78497b6da0a301b97ccfe38afc0d8a3cb13cf16b726b2984cf",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:00+08:00",
+      "elapsed_s": 13.5
+    },
+    "👠": {
+      "name": "高跟鞋",
+      "desc": "红色的细高跟女鞋静止展示，表现女性气质与时尚性感，常用于指代女生、打扮或约会逛街",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "64448c637c678f347ff1cee22a9a66d9c33169b12dbae8b398c1d6de610f8efe",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:54+08:00",
+      "elapsed_s": 6.3
+    },
+    "👢": {
+      "name": "靴子",
+      "desc": "一只卡其色的高跟长筒女靴静止展示，常用于聊穿搭、逛街买鞋，或调侃想踹人与踩人",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "89804bbb7624ed5319826724cb411b6a9031553149eeb1d0989258d494e04cae",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:57+08:00",
+      "elapsed_s": 9.2
+    },
+    "👣": {
+      "name": "脚印",
+      "desc": "灰黑色光脚交替踩出的脚印，表示行走留痕，常用于路过、踩一踩空间或表示悄悄离去",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "abd921faf041af98dcd4443eadffec7f2db3df736765b94b31c880aa7816a552",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:41:55+08:00",
+      "elapsed_s": 7.1
+    },
+    "👦": {
+      "name": "男孩",
+      "desc": "黄色短发小男孩眨眼微笑，常用于表明男性身份或自我指代，表达乖巧友善与礼貌打招呼",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "4958ad63e728ff34b87ea04096b406b56318eb3676b3cc2364c3dc7ed0e07fd3",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:01+08:00",
+      "elapsed_s": 8.3
+    },
+    "👧": {
+      "name": "女孩",
+      "desc": "金发双马尾女孩黄脸表情眨眼微笑说话，神情活泼俏皮，多用于指代女生、打招呼或卖萌互动",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "b9a768f38f29c675c6b1386a35ee5b4af7a8f5b38e11d8d9573d0155264d94dd",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:03+08:00",
+      "elapsed_s": 9.4
+    },
+    "👨": {
+      "name": "爸爸",
+      "desc": "留短发蓄胡茬的黄脸中年男性严肃凝视，常用于朋友间开玩笑自称爸爸占便宜或展现长辈威严",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "fb093d19da3101ee80f8664b0a353b827af9274b1837ad27d5786bedcb0a5dad",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:05+08:00",
+      "elapsed_s": 10.7
+    },
+    "👩": {
+      "name": "妈妈",
+      "desc": "留着齐肩金发的黄脸女性面无表情地直视，常指代母亲或长辈身份，传达操心、无奈与严肃关切",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "3baeacc152b548b24856058b24392d8c7a3a6d134b7612b27c935ff055f92f8a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:04+08:00",
+      "elapsed_s": 8.9
+    },
+    "👻": {
+      "name": "幽灵",
+      "desc": "白色幽灵大小眼张嘴吐舌、高举双手飘动做鬼脸，用于调皮搞怪、开玩笑吓人或表示神出鬼没",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "7d16458bc53592909e92fc9217e4567fed1cbd7082dd6ebfb318fb81c165c425",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:16+08:00",
+      "elapsed_s": 19.4
+    },
+    "👼": {
+      "name": "天使",
+      "desc": "头顶光环、扑扇白翅的黄色小人，神情纯真无辜，常用于表现乖巧善良、装无辜或可爱",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "66ed942775c9dd98e21409b4d594d3810afa7a5bc791fe0d029ab163139e91e1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:06+08:00",
+      "elapsed_s": 6.7
+    },
+    "💀": {
+      "name": "骷髅",
+      "desc": "灰白色骷髅头正面静止直视，常用来表达极度无语、疲惫绝望、感到崩溃或自嘲快要死掉了",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "4def2fe1c723d174bc022329cf5cfc397cfbe3352a3e841fc2b0cbb990ec00b3",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:09+08:00",
+      "elapsed_s": 8.1
+    },
+    "💄": {
+      "name": "口红",
+      "desc": "黑金外壳中旋出一截鲜红色唇膏，常用于化妆打扮、变美出门、约会或美妆送礼等语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "eb28018186a9dd86aab5d681fecc6f4a310da63e87d706897d10bb480531b519",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:11+08:00",
+      "elapsed_s": 7.5
+    },
+    "💈": {
+      "name": "理发厅",
+      "desc": "红白蓝条纹的理发店旋转彩柱在不断旋转，常用于表示要去理发、做造型或调侃头晕转圈",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "074ac33f7e187e374e8e18895ad3b6547baddcc57912f8cdf7921764327f4b44",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:12+08:00",
+      "elapsed_s": 8.3
+    },
+    "💉": {
+      "name": "打针",
+      "desc": "装有红色药液的注射器正滴落药水，常用于表达生病就医或戏谑调侃对方有病该打针了",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "ebbff26c2a6a44352acbc85391ac826a3d38f685cf74cf40bd68a66ea206d7a3",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:13+08:00",
+      "elapsed_s": 8.4
+    },
+    "💊": {
+      "name": "药丸",
+      "desc": "红黄双色胶囊药丸静置，谐音要完，常用于自嘲大事不妙、陷入绝望或调侃对方该吃药了",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "348492ea98e279268a7a7a90a798f980f49ae1a22d0cdfd2dcf6891106f5cb77",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:17+08:00",
+      "elapsed_s": 10.8
+    },
+    "💍": {
+      "name": "戒指",
+      "desc": "倾斜展示一枚镶浅蓝色大钻石的银白色戒指，常用于求婚、结婚、表达爱意或誓言承诺",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "680826da2927622e14104dad235d35e9998e45469fdbc9be2c59ac2dbf85c618",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:18+08:00",
+      "elapsed_s": 8.9
+    },
+    "💓": {
+      "name": "爱心",
+      "desc": "一颗粉色爱心伴随心跳波纹扇动小翅膀跳跃，传达心动与爱意，常用于表白、示好或道谢",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "51baf7815a7e889125084fecb8bdb07ee6469966eefa1bad8ed19a7155ea708b",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:19+08:00",
+      "elapsed_s": 8.5
+    },
+    "💝": {
+      "name": "礼物",
+      "desc": "系着黄色蝴蝶结的粉色心形礼品盒轻轻晃动，用于表达赠送心意、爱意、节日祝福或表示感谢",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a53c123a7ef46e4aa875ea434c1f09cf5a6aee97c722204bc7af9f82a5ca55e5",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:22+08:00",
+      "elapsed_s": 9.2
+    },
+    "💣": {
+      "name": "炸弹",
+      "desc": "黑灰色球形炸弹顶部的引信冒火花燃烧，常用于表达愤怒暴躁、抓狂或开玩笑发泄与攻击",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "231de4799d3f8abe024fb5c290021c6671cb3b6271b088c06c5fcf2d31afc26c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:21+08:00",
+      "elapsed_s": 8.0
+    },
+    "💤": {
+      "name": "睡觉",
+      "desc": "三个由小到大的蓝色字母Z轻微闪烁，象征打鼾熟睡，用于表达困倦、道晚安或感到枯燥无聊",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "7c3e7e48374aba1ef025f45d9fe9809e3e9d5eb8408e28ad88aef97e8bdeaa85",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:27+08:00",
+      "elapsed_s": 10.5
+    },
+    "💦": {
+      "name": "水",
+      "desc": "三颗浅蓝色水滴向外飞溅，多表示尴尬、汗颜与无语，在群聊中也常用于灌水打卡",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "00127da7993d1bb465705f78d87a9c9b6e414d0e98b2815e8731ec31df043876",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:29+08:00",
+      "elapsed_s": 11.9
+    },
+    "💨": {
+      "name": "吹气",
+      "desc": "浅蓝色气团向右快速喷出气流，常用于表达叹气、吹散烦恼，或互动中戏谑地将人吹飞、开溜",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c09d4c53c5ef2fe25d48878f241ac7f46c6f6cfb7e1726ee580eba703bda058a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:27+08:00",
+      "elapsed_s": 8.7
+    },
+    "💩": {
+      "name": "便便",
+      "desc": "长着大圆眼与咧嘴笑脸的棕色螺旋便便，正瞪眼傻笑，常用于自嘲遭遇、调侃糟糕或恶搞互损",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "d11b08d20c188f7cdd109c982574b9bd2500f357747f905573004d98aef3836b",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:30+08:00",
+      "elapsed_s": 10.3
+    },
+    "💪": {
+      "name": "肌肉",
+      "desc": "黄色手臂屈肘握拳展示鼓起的二头肌，象征力量与强壮，常用于加油打气、展现自信与决心",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "466d6c427ec066524944f9c736f73a7eb9b211869f649cd5dfb40aa1a75ad616",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:28+08:00",
+      "elapsed_s": 7.1
+    },
+    "💰": {
+      "name": "钱",
+      "desc": "印有美元符号的金黄色扎口钱袋，常用于谈论金钱、转账付款、求暴富或调侃财富相关话题",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "c528022d422c5f9b3e4583e2b901540862f016657782654ab1e0db9953d59fa0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:27+08:00",
+      "elapsed_s": 5.2
+    },
+    "💻": {
+      "name": "电脑",
+      "desc": "银灰色笔记本电脑静置陈列，黑色屏幕微泛光，常用于表示正在用电脑办公、上网或指代数码设备",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "061c5c206607603c8e0213f5dc0b70fe6ff8bb7b09c93589994b9b773eab7bbb",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:36+08:00",
+      "elapsed_s": 9.0
+    },
+    "💿": {
+      "name": "光碟",
+      "desc": "银白色泛彩虹反光的CD光碟，静止展示，常用于指代音乐唱片、影视影碟或数据资料",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "7a51ed5b41d9bd97f89b16a58008dbbca97f84bb7af13d437fee843f3f99cc42",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:35+08:00",
+      "elapsed_s": 8.3
+    },
+    "📠": {
+      "name": "传真",
+      "desc": "米白色老式传真机正在打印传送纸张，常用于办公事务联络、发送文件或表示收到消息",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "f584a62108308b7b6ac8c53c55498c9c163d91ccfabc38d0e367720b5b8434bb",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:33+08:00",
+      "elapsed_s": 6.2
+    },
+    "📫": {
+      "name": "邮箱",
+      "desc": "蓝壳红旗的美式立式信箱静止竖着小旗，常用于提示发邮件、查收信件或索要电子邮箱",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "031b8c4b3803202d776929500e4c159e58b7bd2728736002a1ea69dbf30beb90",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:37+08:00",
+      "elapsed_s": 8.7
+    },
+    "📱": {
+      "name": "手机",
+      "desc": "白色智能手机屏幕亮起显示彩色应用，常用于表示玩手机、留联系方式或正在手机聊天",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "82342470b5cdb0aac106f228ea73f941cd91f0c7f15ff32997773658c59ff5d7",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:41+08:00",
+      "elapsed_s": 11.5
+    },
+    "📷": {
+      "name": "相机",
+      "desc": "银灰色数码相机正按下快门闪光拍照，常用于表达拍照留念、求对方发照片或打卡记录",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "f32592ae2f550b97c6c49446f06c9627bcbcd8c323691b21e441070041054fa8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:35+08:00",
+      "elapsed_s": 5.8
+    },
+    "🔑": {
+      "name": "钥匙",
+      "desc": "一把斜放的金黄色金属钥匙，常用于表示掌握关键解法、开锁进门、获取权限或严守秘密",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "ab135d5023266c967bd2964cf8eb0ca40623ec32fea9a2bb3cb47fcf43fdfd64",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:40+08:00",
+      "elapsed_s": 6.7
+    },
+    "🔒": {
+      "name": "锁",
+      "desc": "金黄色锁身搭配银色锁梁的闭合挂锁，常用于表示严加保密、锁死CP或话题终结禁止讨论",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "b7e48fc1607ba15fb8dad5dc8ec71f9f06858719602f7872736756368ab75190",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:45+08:00",
+      "elapsed_s": 9.9
+    },
+    "🔔": {
+      "name": "铃铛",
+      "desc": "金黄色铜质铃铛左右摇晃摆动，常用于提醒注意、呼唤对方、发布重要通知或提示开会",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "4612bb5b7a933d96992d0bc2225f4d91ec2dc9964c5ef6145e323b970984387c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:41+08:00",
+      "elapsed_s": 6.1
+    },
+    "🔥": {
+      "name": "火",
+      "desc": "黄红相间的火焰剧烈燃烧蹿动并迸出火星，常用于表达极度愤怒发火或充满激情、气氛火爆",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "688b0ff497d3b93ce7b4ff835cd8f60502bba0d1b42e0d58ecfec7ad25fcb8e9",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:43+08:00",
+      "elapsed_s": 7.0
+    },
+    "🔫": {
+      "name": "手枪",
+      "desc": "画有枪口朝左的银黑左轮及绿色玩具枪，常用于开玩笑威吓、吐槽、宣泄不满或戏谑击毙",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "52dd083ef088aa339102823995163a5371d8f57da939498fb5c50504aa17f5b6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:47+08:00",
+      "elapsed_s": 9.7
+    },
+    "😁": {
+      "name": "呲牙",
+      "desc": "黄色圆脸眯着眼睛、咧嘴露出整排白牙傻笑，常用于表达开心逗趣、调皮或礼貌化解尴尬",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "5f6c7a95dd8918c76b45b7c472f298a55b65a8f864a1582c3f5bbd402797d3c0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:48+08:00",
+      "elapsed_s": 8.2
+    },
+    "😂": {
+      "name": "激动",
+      "desc": "黄色圆脸紧闭双眼咧嘴大笑并流出大颗眼泪，常用于表达极度好笑、笑哭、激动或哭笑不得",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "59e8c1e2e51e2c5dbb41a91c74f528359c52c729d7d6825ce79b2ec746c33e47",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:49+08:00",
+      "elapsed_s": 8.6
+    },
+    "😄": {
+      "name": "高兴",
+      "desc": "黄色圆脸笑眯成弯眼，咧着大嘴露出整排白牙，常用于表达极度开心、欣喜与友好热情",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "546d8706e52d48e91753ec588420da16894cb1abffd078c42d65de20dc635ced",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:50+08:00",
+      "elapsed_s": 8.6
+    },
+    "😉": {
+      "name": "媚眼",
+      "desc": "黄色圆脸面带微笑并单眼眨眼放电，用于表达俏皮可爱、幽默调侃或心照不宣的撩拨互动",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "3476ee748758801452bb36ce40f67f0a2bcb76d03f8c28f2257ec9f1e8b63a3c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:50+08:00",
+      "elapsed_s": 7.4
+    },
+    "😊": {
+      "name": "嘿嘿",
+      "desc": "带腮红的黄色圆脸笑眯眯地抿嘴傻笑，常用于表达害羞憨厚、小得意或俏皮亲近的语境",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "cbadb0c52fcf4d30451f42be4a53536b958a7cb4f02d8fda7a9d69a23a4e2248",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:56+08:00",
+      "elapsed_s": 10.8
+    },
+    "😌": {
+      "name": "羞涩",
+      "desc": "黄色圆脸低垂八字眉、闭目含蓄微笑，表现害羞与腼腆，常用于被夸赞或示好时表示谦逊不好意思",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "73ad35b29fff37e33e7c5e307391942a34994ced500b2992d46b84fc689fe35c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:57+08:00",
+      "elapsed_s": 10.0
+    },
+    "😍": {
+      "name": "花痴",
+      "desc": "黄色圆脸双眼化作跳动的红色爱心并咧嘴大笑，用于表达对人或事物的极度喜爱、心动与崇拜",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c460b7ac1e84cea566dcab27c6518e81644c62eb63191bf13167da62cbf33f15",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:54+08:00",
+      "elapsed_s": 6.2
+    },
+    "😏": {
+      "name": "哼哼",
+      "desc": "黄色圆脸挑眉斜眼、嘴角向上一撇歪嘴笑，常用于表达傲娇、轻蔑、得意或玩笑式挑衅",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "817c6d8978c503939f5a28469ef634e71feadff0fa944d58ecdaba0f5ea10319",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:58+08:00",
+      "elapsed_s": 8.5
+    },
+    "😒": {
+      "name": "不屑",
+      "desc": "黄色圆脸半眯着双眼斜视、嘴角向下撇，面带嫌弃与轻蔑，常用于表达不屑一顾、鄙视或无语反感",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "8aade828603b4bd445168a2a5b54008728110e35c8098b7dd52cb9780bc35407",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:42:59+08:00",
+      "elapsed_s": 8.5
+    },
+    "😓": {
+      "name": "汗",
+      "desc": "黄色圆脸闭眼撇嘴，额头挂着闪动的蓝色大汗珠，常用于表达无奈、尴尬、无语或不知所措",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "fa4a070291cc3c8bd3c2b466065559013072890d01dd01dfb337b22ab086c484",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:01+08:00",
+      "elapsed_s": 11.4
+    },
+    "😔": {
+      "name": "失落",
+      "desc": "黄色圆脸耷拉着八字眉闭目低头，神情沮丧，常用于表达失落、失望、难过或无奈的心情",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "221333d44abc5dcf2eba92279e12d2ee1f4ede299201ca0ce062fd93f248b6ae",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:01+08:00",
+      "elapsed_s": 7.0
+    },
+    "😘": {
+      "name": "飞吻",
+      "desc": "黄色圆脸眨眼嘟嘴并送出一颗红心，常用于表达喜爱、飞吻撒娇、示好或亲昵道别",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "b02ad9367f702b554c73b25455ce882d756624aee1c30ec03a2ea3f6e3b6e711",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:09+08:00",
+      "elapsed_s": 13.0
+    },
+    "😚": {
+      "name": "亲亲",
+      "desc": "面带红晕的黄色圆脸闭眼嘟嘴亲吻，常用于撒娇示爱、表达喜爱或亲昵感激之情",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "9d545efee0dd2c3f0a12f944a77e85cd808f168fa4dafec252666f97e77509fa",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:09+08:00",
+      "elapsed_s": 11.8
+    },
+    "😜": {
+      "name": "淘气",
+      "desc": "黄色圆脸单眼眨眼、吐出粉色舌头做鬼脸，表达调皮戏谑，常用于轻松开玩笑或故意逗乐",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "44f91076e8a6648b12c377b9c9e128cf5f5af54b2bd580213c7206b666a6f69a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:15+08:00",
+      "elapsed_s": 17.1
+    },
+    "😝": {
+      "name": "吐舌",
+      "desc": "黄色圆脸紧闭双眼并吐出粉色长舌头做鬼脸，常用于调皮捣蛋、开玩笑、卖萌搞怪或化解尴尬",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "1550b6b45fe3ac008c58a7fa8fbddbc9a853d9b7b19a683ac224351e6af23ea8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:11+08:00",
+      "elapsed_s": 12.1
+    },
+    "😭": {
+      "name": "大哭",
+      "desc": "黄色圆脸紧闭双眼张大嘴巴，双眼如瀑布般狂飙眼泪，用于表达极度伤心、委屈或夸张崩溃",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "8c843ec7599318461c943a24cd8c8d1702870782665a716d04d02a555f544600",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:09+08:00",
+      "elapsed_s": 7.9
+    },
+    "😰": {
+      "name": "紧张",
+      "desc": "额头发青、挂着大滴冷汗且愁眉张口的黄脸，呆立发懵，传达极度紧张、心虚、焦虑或担忧",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c0c40beec5ae93421845daf413b65b366f83e2ba5c17f4164005aadf41757bf1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:21+08:00",
+      "elapsed_s": 19.0
+    },
+    "😱": {
+      "name": "害怕",
+      "desc": "额头发青的黄脸圆睁白眼、大张着嘴双手托腮惊呼，常用于表达极度惊吓、恐惧或崩溃情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "416e652592c157e8102ff9fa15864aaa2cf178e45a2a7b3f647f2be96bdd1763",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:16+08:00",
+      "elapsed_s": 7.1
+    },
+    "😳": {
+      "name": "瞪眼",
+      "desc": "黄色圆脸瞪圆双眼、嘴巴微张直愣发呆，常用于表达极度震惊、发懵、呆滞或难以置信的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "6e37089abd161021b9cd327f23f6794c89205297bec5d40203be625b82576c74",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:17+08:00",
+      "elapsed_s": 8.1
+    },
+    "🙏": {
+      "name": "合十",
+      "desc": "穿蓝色衣袖的黄色双手掌心相对合十，常用于表达请求拜托、诚挚感谢或祈祷祝福等语境",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a8b5175dfb22a329596bea777485f4cc4d6d1826d26fa7c56f84892ea9b3fffa",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:18+08:00",
+      "elapsed_s": 8.8
+    },
+    "🚀": {
+      "name": "火箭",
+      "desc": "白身红翼的小火箭尾部喷着烈火向右上飞冲，常用于表示神速、立刻赶到或一飞冲天",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "42a984ae4330004d1c1a01f3b6d69852c5719e169f262c80ea845400aa7951fb",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:17+08:00",
+      "elapsed_s": 6.2
+    },
+    "🚄": {
+      "name": "列车",
+      "desc": "蓝白相间的流线型高铁车头飞速疾驰，常用于表示乘车出行、踏上旅程或火速赶往某处",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "50aac77969273f0b666989d75cc18ba2906b58ad6cdf96f6877c9fe3d105cfa0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:26+08:00",
+      "elapsed_s": 11.1
+    },
+    "🚌": {
+      "name": "公交",
+      "desc": "橙白相间的复古公交车在行驶，常用于表示坐车通勤、外出赶路在路上，或调侃发车、带人上车",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "18572b963a86cb5c9557d5d0c5e2fcd1bf27ba4f05b628e41b342d875e961052",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:28+08:00",
+      "elapsed_s": 11.7
+    },
+    "🚗": {
+      "name": "汽车",
+      "desc": "卡通红色小轿车向前行驶，常用于表示出门乘车、自驾出行，或网络中调侃老司机发车",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "6762a62a9ab753d7d02b5fd0886f64c9bb65fad5a5629d11f2175757b4e502e6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:27+08:00",
+      "elapsed_s": 9.8
+    },
+    "🚤": {
+      "name": "快艇",
+      "desc": "黄色快艇插着红旗疾驰，常用于表示迅速开溜跑路、兜风度假或形容速度极快",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "6f0387717c5a2732c6f7e7702c816965cef0b6023639c939e83882837dceef5d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:24+08:00",
+      "elapsed_s": 7.4
+    },
+    "🚥": {
+      "name": "信号灯",
+      "desc": "横排亮起的绿黄红三色交通信号灯，常用于叫停违规敏感话题、提醒注意或表示允许通行",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "3b0e2df1dca6acf355e13546dfc66b609a0d8c0e80ab1aa265564110f912b790",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:26+08:00",
+      "elapsed_s": 8.4
+    },
+    "🚧": {
+      "name": "路障",
+      "desc": "黄黑相间斜纹的施工路障立在原地阻挡，常用于表示禁止通行、阻拦打断或话题终止",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "1ae70718f4b502caf360226ba4806bb408b8203539443dcd8fd9cea267d4ea1a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:28+08:00",
+      "elapsed_s": 7.3
+    },
+    "🚬": {
+      "name": "吸烟",
+      "desc": "黄嘴白身的点燃香烟正冒出缕缕白烟，常用于表达沧桑、无奈、沉思或疲惫心累的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "99a658f4d0b28a970f33dbdc09397947fd90e827df0affd1aa9c15201855fd9d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:36+08:00",
+      "elapsed_s": 11.3
+    },
+    "🚲": {
+      "name": "自行车",
+      "desc": "画面为蓝白车架黑轮胎的自行车，常用于表示骑车出行、运动锻炼，或借要啥自行车调侃知足",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "2af4d56745d3ad6c338168458a9de979ce38eddc136b8e6b51afe2c32100de97",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:35+08:00",
+      "elapsed_s": 9.5
+    },
+    "🚹": {
+      "name": "男性",
+      "desc": "蓝底方块内静立的白色极简小人图标，常用于表明男性身份、指代男卫生间或讨论男士相关话题",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "195cba55ee14d61e62ee7d563378f1575e1ca38e2128f1680f2b3ce8d8cd9050",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:38+08:00",
+      "elapsed_s": 11.7
+    },
+    "🚺": {
+      "name": "女性",
+      "desc": "粉色方块中白色穿裙子的女性符号静止站立，常用于表示女性身份、涉及性别话题或指代女厕",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "1f8fc3dcf00b4fcb6e6a0005389ae41af0cf9c45e27ab2d47b9734fe3e7a918f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:33+08:00",
+      "elapsed_s": 6.1
+    },
+    "🚽": {
+      "name": "马桶",
+      "desc": "掀开盖子的白色抽水马桶，常用于表示要去上厕所暂时离开，或吐槽事物恶心垃圾想冲走",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "9d2f842a4bd315270c2f953623294509cf629e3932f9e2fbe19619fee8472798",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:35+08:00",
+      "elapsed_s": 7.9
+    },
+    "🛀": {
+      "name": "浴缸",
+      "desc": "戴绿色浴帽的黄脸泡在白色花洒浴缸里洗澡，常用于表示去洗澡、暂离聊天或惬意放松",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "8c5ebb9be1371e1d20506d08c05b761706b6f74e07924216ba4ddd164779dec8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:43:36+08:00",
+      "elapsed_s": 8.0
+    },
+    "1": {
+      "name": "撇嘴",
+      "desc": "黄色圆脸皱着八字眉，波浪状小嘴微微撇动颤抖，常用于表达委屈、无奈、难过或撒娇示弱",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "ad9fd2eb5575be4a691dd09b9bfa3fa18af141ca35d4f90556c6eddc009be99a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:27:48+08:00",
+      "elapsed_s": 8.0
+    },
+    "2": {
+      "name": "色",
+      "desc": "黄色圆脸双眼呈红色爱心跳动，咧大嘴流出口水，用于表达对美色或美食的花痴、垂涎与喜爱",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "39b59d87f2d568df0f70fea60848ac7956f6e988d361ec5c51339eaa49a655c3",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:27:51+08:00",
+      "elapsed_s": 10.8
+    },
+    "3": {
+      "name": "发呆",
+      "desc": "黄色圆脸瞪大眼睛挂着鼻涕又猛地吸回，常用于表示走神发呆、看呆放空或震惊无语",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "80aa3933b754204d90746319d88fa20456255245ca8a75cdc69a480a1f17d1d5",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:27:50+08:00",
+      "elapsed_s": 9.4
+    },
+    "4": {
+      "name": "得意",
+      "desc": "黄色圆脸戴黑墨镜挑眉歪嘴笑且白牙闪光，常用于自夸、装酷耍帅及炫耀成功的得意语境",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "9ff73959412edc4b2aaf8e2e75d2e02d3f3dfc10afd47c1c3b8a6b8f091f0c3e",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:27:51+08:00",
+      "elapsed_s": 10.9
+    },
+    "5": {
+      "name": "流泪",
+      "desc": "黄色圆脸闭眼张嘴，双眼如喷泉般狂飙眼泪，用于表达悲伤、痛哭崩溃、委屈或夸张求安慰",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "05ec3b5315d8f7523dd1387f0466582cfcbea52a9b90cd028f7c423a019de2d6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:27:51+08:00",
+      "elapsed_s": 10.9
+    },
+    "6": {
+      "name": "害羞",
+      "desc": "黄色圆脸从眨动水汪汪大眼变为脸红闭目微笑，常用于被夸赞或示好时表达娇羞与不好意思",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "3356d6b776b6433c02e569ee4456b8d26432ec85c394597c91c849cd7b728cff",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:04+08:00",
+      "elapsed_s": 15.5
+    },
+    "7": {
+      "name": "闭嘴",
+      "desc": "嘴贴白色交叉胶布的黄脸圆睁双眼并眨动，常用于表达保守秘密、不敢多言或被迫噤声",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e9ab13ea572f5a5c7d05351dc01967f47b1a68bdc6b7445394321b93c3eb54c3",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:01+08:00",
+      "elapsed_s": 10.9
+    },
+    "8": {
+      "name": "睡",
+      "desc": "黄色圆脸紧闭双眼，头顶飘z伴随蓝色鼻泡伸缩打呼，表示犯困、准备睡觉、道晚安或感到无聊",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "f56536408ded1e3c46491ae6c638c0d81746f95cc1a903be006f94561104b7cf",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:02+08:00",
+      "elapsed_s": 10.6
+    },
+    "9": {
+      "name": "大哭",
+      "desc": "黄色圆脸撇着嘴，眨着泪汪汪的大眼睛用力挤泪，常用于表达委屈、难过或撒娇求安慰",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "841682604e734c49c700c8e21a05a950a13413dbfcc0e24f525fca32aabb1fc1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:02+08:00",
+      "elapsed_s": 10.9
+    },
+    "10": {
+      "name": "尴尬",
+      "desc": "满脸通红的圆脸眨眼向上看，鬓角滑落一大颗冷汗，用于表达尴尬、窘迫、不知所措或冷场",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "86ef394ff61e4828837449bd2f7433d0cc76b564ca80667b55edd6dbad1dca98",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:00+08:00",
+      "elapsed_s": 8.9
+    },
+    "11": {
+      "name": "发怒",
+      "desc": "浑身被火焰包裹的红色圆脸瞪着白眼大张嘴咆哮，常用于表达极度愤怒、怒火中烧",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "5c3d547b3ac69385408d9011dce6ddebecb4d19d10cc8434c58f29d25f7376fc",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:09+08:00",
+      "elapsed_s": 11.7
+    },
+    "12": {
+      "name": "调皮",
+      "desc": "黄色圆脸带红晕，挑起眉毛歪头吐舌头做鬼脸，用于俏皮卖萌、打趣调侃或开玩笑",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "0fa5f3b383766c99d91953c696e9753cd596e638f7c9f7aeb9fde59026d64e75",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:08+08:00",
+      "elapsed_s": 7.9
+    },
+    "13": {
+      "name": "呲牙",
+      "desc": "黄色圆脸带着红晕眯眼大笑，咧大嘴露出整排白牙轻微颤动，常表开心、开玩笑或客套解尴尬",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "ffe8017a2f0ab08117b335d60deadb06ad098ccc6850c2468370383d7552948b",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:10+08:00",
+      "elapsed_s": 9.5
+    },
+    "14": {
+      "name": "微笑",
+      "desc": "黄色圆脸微笑着轻柔眨眼，看似礼貌示好，常用于表达尴尬、无语、敷衍嘲讽或冷淡假笑",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "6cf701f77415b4437b4d9aa0cf9decac27b4ef6a5c40fa074e6f16c12fa945ea",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:17+08:00",
+      "elapsed_s": 15.2
+    },
+    "15": {
+      "name": "难过",
+      "desc": "黄色圆脸嘴角向下深撇并缓缓闭上双眼，传达失落、委屈或沮丧情绪，常用于遭遇挫折与表达难过",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "92dc7d7c10a37f452d5eb939211253a486b15aa5c540dff230aa9cc69ba304ee",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:11+08:00",
+      "elapsed_s": 8.6
+    },
+    "16": {
+      "name": "酷",
+      "desc": "黄色圆脸戴着黑墨镜微皱眉头、嘟嘴轻微点头晃脑，常用于表达装酷、耍帅、得意或自信",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e08ad617bb41caa8799a9adb0faee81cc1998c380e1249136e072326a4434e61",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:19+08:00",
+      "elapsed_s": 15.0
+    },
+    "18": {
+      "name": "抓狂",
+      "desc": "黄色圆脸涨红紧闭双眼张嘴大叫，双手在旁疯狂抓挠，表达极度焦躁、崩溃与抓狂的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "403b4c9e24511c361aa29919af113fcad19400bc97b8020d07b69da9fa7a439f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:19+08:00",
+      "elapsed_s": 10.5
+    },
+    "19": {
+      "name": "吐",
+      "desc": "面色发青、翻着白眼的黄脸大口狂吐蓝色液体，表达极度恶心、嫌弃、反感或被雷到的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "4a4543075e2919c5c5687b0ca5b0ccf89b7dcacf9126991b3074aa2dc24675b2",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:19+08:00",
+      "elapsed_s": 10.4
+    },
+    "20": {
+      "name": "偷笑",
+      "desc": "黄色圆脸眯眼微笑并用小手捂嘴轻颤，常用于表达暗自窃喜、调侃打趣或忍不住偷笑的语境",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "f8c50981ecad374b96f9f381f780c3c29a4ad0ab229f3c505c1d20649dbeaac0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:19+08:00",
+      "elapsed_s": 9.0
+    },
+    "21": {
+      "name": "可爱",
+      "desc": "黄色圆脸面带红晕，笑眼弯弯地眯眼微笑，常用于表达害羞卖萌、开心满足或友好示好",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "4109688409bfeb32d8e7e8580c5c8c957f16ff298367c27b29306b41a17d6aa7",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:22+08:00",
+      "elapsed_s": 11.0
+    },
+    "22": {
+      "name": "白眼",
+      "desc": "黄色圆脸嘟着小嘴并向上翻白眼，用于表达无语、不屑、鄙视或无可奈何的吐槽情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e430898c4e9f20a6e4265007fbeba9dbfceee4e3c83058e988588aa776343e83",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:28+08:00",
+      "elapsed_s": 10.8
+    },
+    "23": {
+      "name": "傲慢",
+      "desc": "黄色圆脸撇着嘴翻白眼随后闭眼，传达出傲慢、轻蔑、不以为然或娇嗔赌气的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "368431ac685492fe6bd728d7e6e6c85f144edd2be260457f57781a64df67c0fb",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:29+08:00",
+      "elapsed_s": 10.5
+    },
+    "24": {
+      "name": "饥饿",
+      "desc": "面带红晕的黄色笑脸伸舌头舔唇，表现嘴馋、想吃美食的饥饿感，常用于表达垂涎或调侃",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "9d4cb773a0a56eba618dcabe3877ba610bc40185ce2af92cf331c0c448a976a6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:29+08:00",
+      "elapsed_s": 10.5
+    },
+    "25": {
+      "name": "困",
+      "desc": "顶着浓重黑眼圈的黄脸疲惫地缓缓眨眼，表达极度困倦、熬夜疲劳或想睡觉的虚脱状态",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "3747a776d081b7f92d9b58e89b8793b0721f106ced65d66282cf27af3b5b3b20",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:28+08:00",
+      "elapsed_s": 8.8
+    },
+    "26": {
+      "name": "惊恐",
+      "desc": "通红的圆脸瞪大泪眼冒着冷汗、嘴角颤抖，传达极度惊恐、慌乱、害怕或担忧的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c4c4a2230c5eb2810a066f54aef7aa4fd526b5966b97d5658757ffec8f3f84f7",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:33+08:00",
+      "elapsed_s": 13.3
+    },
+    "27": {
+      "name": "流汗",
+      "desc": "黄色圆脸紧锁眉头并闭眼叹气，额角流下一大滴蓝汗，表达尴尬、无奈、无语或心虚的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "f46ac7d1071fe7cdbda224298762e3f608cd6d145920fcbe827202a9392fdc78",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:31+08:00",
+      "elapsed_s": 9.3
+    },
+    "28": {
+      "name": "憨笑",
+      "desc": "黄色圆脸眯眼挑眉、张大嘴露齿傻笑，常用于表达憨厚开心、自嘲或化解尴尬的友好语境",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a2c48382c7b788a6ad39c8de3e8ae56c165ae97e365df714f3a69e96263dcd84",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:40+08:00",
+      "elapsed_s": 11.9
+    },
+    "29": {
+      "name": "悠闲",
+      "desc": "戴绿色军盔与墨镜的黄脸悠闲抽烟或叼草，常表达轻松惬意、从容看戏或漫不经心的态度",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "fdaff3bbe8d1252aef138d32e0ca147cd44e9700ccb34350d079c35383b6dad2",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:39+08:00",
+      "elapsed_s": 10.8
+    },
+    "30": {
+      "name": "奋斗",
+      "desc": "头系红色头带的黄色圆脸皱眉较劲，用于表达下定决心、克服困难或全力拼搏的斗志",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "475d678a6999fea9ca8117802556db7fde053e3c0421194d9b4b87a7d4691a66",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:50+08:00",
+      "elapsed_s": 21.0
+    },
+    "31": {
+      "name": "咒骂",
+      "desc": "黄色圆脸倒竖双眉，从咬牙切齿到张大嘴咆哮飞溅唾沫，用于宣泄极度愤怒、破口大骂与抓狂",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "8b8cbec2f9f43b81662657a61d0a85cee8681f247229a2f6be95505773d89fa2",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:41+08:00",
+      "elapsed_s": 11.1
+    },
+    "32": {
+      "name": "疑问",
+      "desc": "带问号的黄脸托腮眨眼望天，表现困惑与思索，常用于表达不解、纳闷或提出疑问",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a2500f59ce611b7b04d06bc76c9577bf3ae78283b408d485b04e15fdf9471cf5",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:41+08:00",
+      "elapsed_s": 10.3
+    },
+    "33": {
+      "name": "嘘",
+      "desc": "黄色圆脸睁大双眼嘟着嘴，竖起食指贴在唇前做噤声动作，常用于提醒保密、安静或别声张",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "158857a9fa90311a539b4ab15e386b495b373346479db19847eb4a02d5321aa7",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:41+08:00",
+      "elapsed_s": 8.8
+    },
+    "34": {
+      "name": "晕",
+      "desc": "黄色圆脸双眼呈蚊香圈快速旋转、小嘴微张，表达头晕目眩、眼花缭乱或极度困惑不知所措",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "b5454f7376d69d92f66033828ee31c6376eafd70a7a82b74cf9d16aa74094c0b",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:47+08:00",
+      "elapsed_s": 7.9
+    },
+    "35": {
+      "name": "折磨",
+      "desc": "黄色圆脸闭眼咬牙瘪嘴，双手握拳在脸侧痛苦捶打颤抖，表达极度难受、抓狂纠结或备受折磨",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "22b547c36684d160ad72ece26ac6988b8afcc56a8a42165455484fb785c33871",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:54+08:00",
+      "elapsed_s": 14.8
+    },
+    "36": {
+      "name": "衰",
+      "desc": "顶着杂毛的灰黑圆脸挂着泪滴呆滞眨眼，常用于遇到倒霉事时表达无语、沮丧与无奈自嘲",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "144b2d2ad96c872736ea5ed4a1098c42726495ed64cd2566f4c017cc7fdf0f68",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:52+08:00",
+      "elapsed_s": 11.2
+    },
+    "37": {
+      "name": "骷髅",
+      "desc": "灰白色、黑眼窝的卡通骷髅头静止直视，常用于表达受到精神暴击、生无可恋、极度无语或笑死",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "d939114ee5e4930bb1f4376621405f260f9cc4e02d5f0b312802cb6a7ba41d9d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:51+08:00",
+      "elapsed_s": 9.6
+    },
+    "38": {
+      "name": "敲打",
+      "desc": "半露的小黄脸被木锤猛敲脑袋痛哭飙泪，常用于开玩笑地敲打警告对方或表示懊恼自责",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "7b89a4f0934ce9c8529ef04f366b19440e66cbb7ec545b30af776e75bb0cf23f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:51+08:00",
+      "elapsed_s": 9.7
+    },
+    "39": {
+      "name": "再见",
+      "desc": "黄色笑脸抬起手左右挥动，用于礼貌道别或结束对话，也常带不想聊了、无语告退的戏谑情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "6b90d8153b45a30bc2a0dc39b6235a722b1e91c38a99a68b4866aadbbe0a7218",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:57+08:00",
+      "elapsed_s": 10.4
+    },
+    "41": {
+      "name": "发抖",
+      "desc": "围着红围巾的QQ企鹅圆睁双眼瑟瑟发抖，用于表达极度寒冷、害怕恐惧或弱小无助的心情",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "9bc11b536f3118c7a47e08cb1f714c2f26009b463b8d1d889ed87d2119727371",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:28:58+08:00",
+      "elapsed_s": 7.7
+    },
+    "42": {
+      "name": "爱情",
+      "desc": "戴红围巾与粉围巾蝴蝶结的两只企鹅嘴对嘴亲吻冒红心，用于情侣秀恩爱、表白或表达甜蜜爱意",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "5fbe9f524fce5439d19cdefb909bd6bbfd6c7d2ed18cb6e3e4baaff03b55c032",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:04+08:00",
+      "elapsed_s": 13.5
+    },
+    "43": {
+      "name": "跳跳",
+      "desc": "戴红围巾的黑白小企鹅左右欢快蹦跳，传达开心雀跃与兴奋情绪，常用于庆祝好事",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "7f623f9d7724db95c9bea64d48990c0228cead8b6c628a81970ca4c25c18ecd6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:01+08:00",
+      "elapsed_s": 9.8
+    },
+    "46": {
+      "name": "猪头",
+      "desc": "粉嫩圆脸小猪睁着圆眼呆立注视，常用于玩笑调侃对方愚笨、打趣互损或表达亲昵撒娇",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "1aaa167375f5ac78e2a58a3d785343f484d81704d1f89a40ba1fda5a29e4b5e0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:03+08:00",
+      "elapsed_s": 11.1
+    },
+    "49": {
+      "name": "拥抱",
+      "desc": "穿绿衣黑圆眼的黄脸小人张开双臂摆动求抱，常用于给予安慰关怀或撒娇求抱抱",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "7386bbf25bce9d55404adca8a70f93a64f26107d27b35bb99c4781b6943f4b92",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:07+08:00",
+      "elapsed_s": 12.4
+    },
+    "53": {
+      "name": "蛋糕",
+      "desc": "插着点燃蜡烛的粉黄奶油生日蛋糕火苗闪烁跳动，常用于发送生日祝福或表达庆贺喜悦",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "b8909776024d2d79c367c3c11464242a48dcf77af2caa0e4cfd92584b5a0b001",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:13+08:00",
+      "elapsed_s": 15.7
+    },
+    "55": {
+      "name": "炸弹",
+      "desc": "带有红色引线的黑色球形炸弹，点燃并爆炸，传达极度愤怒或抓狂，常用于宣泄不满及玩笑式攻击",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "032aa6d736beea1e7f59f609e628d590b93dc4b4b2dad3a57a14fc682e8a810d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:16+08:00",
+      "elapsed_s": 18.1
+    },
+    "56": {
+      "name": "刀",
+      "desc": "画面为一把银刃红柄的锋利大刀斜立，常用于表达愤怒、开玩笑警告想砍人或幽默互怼",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "7c9299c791c3c28426f40c36102a035f6e9a9a3ad9bab4beaef6b18dea761cdd",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:11+08:00",
+      "elapsed_s": 10.1
+    },
+    "59": {
+      "name": "便便",
+      "desc": "一坨黄褐色大便冒着臭气且有苍蝇盘旋，常用于表达恶心、嫌弃、吐槽事物极差或玩笑损人",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "1a79999a2bffb9fc5b47a6a65141b9f15f39305c5dc164f4c37994d30c7f8b78",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:16+08:00",
+      "elapsed_s": 13.0
+    },
+    "60": {
+      "name": "咖啡",
+      "desc": "精致白瓷杯中盛着袅袅冒热气的咖啡，常用于表示休息小憩、闲聊放松、提神或礼貌寒暄",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "3953618061aff703db750ea84f838472bcba94b30b639397479f94bb35e8875a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:14+08:00",
+      "elapsed_s": 9.2
+    },
+    "63": {
+      "name": "玫瑰",
+      "desc": "一朵带绿茎叶的鲜艳红玫瑰静止盛开，常用于表达爱意、示好、致谢或礼貌问候与祝福",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "00c3eea384a332a5dc9f3920e848eaf1ae1af4c646f3c635f26c61c3e3fd4358",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:17+08:00",
+      "elapsed_s": 10.3
+    },
+    "64": {
+      "name": "凋谢",
+      "desc": "红瓣绿茎的玫瑰花耷拉垂头并凋零，常用于表达失落、沮丧、难过或心碎的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "39b2f98734859f25087bde21722c5dc8de21d0f77017589e4fbb23539e6ba8fe",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:19+08:00",
+      "elapsed_s": 8.4
+    },
+    "66": {
+      "name": "爱心",
+      "desc": "一颗饱满鲜红的爱心有节奏地跳动，表达喜爱、爱意、感谢或温暖关怀，常用于示爱与友好互动",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "75bf200190f557371793028c3da900242de600b3d1f981aceaebde1795154c78",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:23+08:00",
+      "elapsed_s": 9.7
+    },
+    "67": {
+      "name": "心碎",
+      "desc": "一颗红心从中间锯齿状破裂成两半并下坠，常用于表达失恋、极度伤心难过或深受打击",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "f3d7a82dbdbd78f411d63164ee2c2c7e3204d8e43c9e7eeb469e41d230b36abe",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:22+08:00",
+      "elapsed_s": 8.1
+    },
+    "74": {
+      "name": "太阳",
+      "desc": "橙黄色带光芒的卡通太阳面带微笑，表现出温暖与晴朗，常用于互道早安、表达积极好心情",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "2683d650dcd785a7b449e1c9899089e59b5da93f95f4b2db0740f732f71ce407",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:25+08:00",
+      "elapsed_s": 9.1
+    },
+    "75": {
+      "name": "月亮",
+      "desc": "蓝底黄色圆脸逐渐变成挂着弯月与星星的夜空，常用于深夜问候、道晚安或表示准备睡觉",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a2e0a1829b77bd340a7578ad821147c7695270de857b1a4ba9092f9b65ba407b",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:26+08:00",
+      "elapsed_s": 10.3
+    },
+    "76": {
+      "name": "赞",
+      "desc": "一个橙边肤色手掌竖起大拇指并上下晃动点赞，常用于表达夸奖、认可、赞同或表示收到",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "088c53141c69bee6fc7f7edc5ffe3dcada6dd499b05f60f5bf1ceac625c477f7",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:24+08:00",
+      "elapsed_s": 7.4
+    },
+    "77": {
+      "name": "踩",
+      "desc": "肤色握拳手掌竖起大拇指向下连续戳动，表达差评、否定、反对或鄙视的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e6911fe4e306cd41933f46e5b5c3e51123cf8387f0e3f0e1d344feb5e96faca7",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:27+08:00",
+      "elapsed_s": 8.0
+    },
+    "78": {
+      "name": "握手",
+      "desc": "两只浅黄色手掌紧握并上下摇晃，常用于表达友好问候、达成合作、感谢或赞同共识",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "fe6fdee912a69e2a30e7f0b4a9bd6aa754950dc098e420c77759f672ecc922f1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:28+08:00",
+      "elapsed_s": 6.7
+    },
+    "79": {
+      "name": "胜利",
+      "desc": "肉色手掌比出V字剪刀手并轻快上下晃动，用于表达胜利、达成目标的喜悦、庆祝或友好比耶",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c84f49dafc8ffac1d48b6c7601a3464f62025dbd6f391592586a3aca4f623325",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:30+08:00",
+      "elapsed_s": 7.1
+    },
+    "85": {
+      "name": "飞吻",
+      "desc": "戴红围巾的黑白QQ企鹅嘴边飘出红心送飞吻，常用于表达爱意、亲昵示好或喜爱感谢",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "3917f7cfe646a34bb341abba9a3e9ceca298db910d3c85e48f59ffcef419b820",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:34+08:00",
+      "elapsed_s": 9.8
+    },
+    "86": {
+      "name": "怄火",
+      "desc": "戴红围巾的企鹅仰头张大嘴狂怒咆哮，用于表达极度郁闷、烦躁、抓狂或发泄心中怒火",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "0bf39edaafe06d18c24a57b804ff4bc18c5a90072397051f252a7c93933bc5b8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:34+08:00",
+      "elapsed_s": 9.2
+    },
+    "89": {
+      "name": "西瓜",
+      "desc": "红瓤绿皮带黑籽的三角形西瓜切片，保持静止，常用于表示吃瓜围观、看热闹八卦或夏日解暑",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "73c1c6effd897122b3d7a2a08517a916c332530a19326584aa359b86ae054984",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:37+08:00",
+      "elapsed_s": 11.3
+    },
+    "96": {
+      "name": "冷汗",
+      "desc": "黄色圆脸八字眉眨眼并冒出蓝色汗珠，眼神向上瞟，常用于表达尴尬、无语、无奈或不知所措",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e1b3bf8f6538244f0f55edc224bc79c1b68fe8be921e6f326a88b4f35da4be93",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:40+08:00",
+      "elapsed_s": 12.4
+    },
+    "97": {
+      "name": "擦汗",
+      "desc": "耷眉斜眼的黄脸侧挂蓝色冷汗并抬手擦去，常用于表达尴尬、无语、无奈或虚惊一场",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "0f0b99604b9ed12c29ee127c9023b1fa4d876924e649c85b2e609e8900c398c7",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:44+08:00",
+      "elapsed_s": 15.7
+    },
+    "98": {
+      "name": "抠鼻",
+      "desc": "黄色圆脸半眯着眼用手指抠鼻孔，常用于表达轻蔑不屑、无语敷衍或事不关己的调侃",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a99019327d9087377710229ecff7ef101f3dc626664d7a27afaa35ce91c7b246",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:40+08:00",
+      "elapsed_s": 10.3
+    },
+    "99": {
+      "name": "鼓掌",
+      "desc": "闭眼张嘴、面带红晕的黄脸欢快拍手鼓掌，常用于表示赞赏、祝贺、喝彩或热烈捧场",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "ead50b67695ad87d32bc57086e1336c5ff6bc19f472d69d600501987dc5a4546",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:46+08:00",
+      "elapsed_s": 11.6
+    },
+    "100": {
+      "name": "糗大了",
+      "desc": "黄色圆脸嘟嘴吹口哨装傻，转为瞪大双眼脸红滴冷汗，传达出丑被揭穿的心虚与极度尴尬",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "5057d062ff0f61b910bac2282e0386ef73210388eaa482679123313e0cbc356b",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:45+08:00",
+      "elapsed_s": 11.1
+    },
+    "101": {
+      "name": "坏笑",
+      "desc": "红脸蛋的黄色圆脸上下挑动眉毛并大咧露齿，常用于恶作剧、戏谑调侃或得逞后的暗爽得意",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "1d1f25d457f919a16705c25c814fb614e02f3ca01715bc5e8723fc5d039021b0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:47+08:00",
+      "elapsed_s": 9.6
+    },
+    "102": {
+      "name": "左哼哼",
+      "desc": "黄色圆脸侧过头向左嘟嘴哼气，脸带红晕，常用于表达傲娇、赌气、撒娇或轻微不满的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "b3870936e616df32c3e1d8b81b1c74b11746a66bf532b64ad625de747e37186d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:48+08:00",
+      "elapsed_s": 8.4
+    },
+    "103": {
+      "name": "右哼哼",
+      "desc": "黄色圆脸挑眉斜眼、噘起嘴巴后猛地向右扭过头去，常用于傲娇撒娇、赌气不服或假装生气",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "bac332aaec0bb6e180a50dd64f5d554af77262be5a58074c65be20fa454bc2d5",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:50+08:00",
+      "elapsed_s": 9.7
+    },
+    "104": {
+      "name": "哈欠",
+      "desc": "黄色圆脸闭眼张大嘴、抬手捂嘴打哈欠，常用于表达困倦疲惫、感到无聊或对话题不感兴趣",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "94e0ef386ba30e5df4ce9ebef3097a69e179865643d636591b992fd44bf64fce",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:55+08:00",
+      "elapsed_s": 11.2
+    },
+    "105": {
+      "name": "鄙视",
+      "desc": "皱眉撇嘴的黄色圆脸双手大拇指向下连续晃动，表达强烈的鄙视、看不起、差评或喝倒彩",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "971544b0152955fd088e7f11f328ec7fcecf16bd47246fd71ad08367ebee5174",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:52+08:00",
+      "elapsed_s": 6.6
+    },
+    "106": {
+      "name": "委屈",
+      "desc": "黄色圆脸挂着八字眉，双手食指在胸前轻轻对戳，常用于表达委屈受挫、心虚或害羞撒娇",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "3cdcec17f53fd486931122dc36e58a6c2c04ff226d1b387d6e74dfc76da4a11d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:54+08:00",
+      "elapsed_s": 8.2
+    },
+    "107": {
+      "name": "快哭了",
+      "desc": "黄色圆脸耷拉着八字眉下撇着嘴，泪眼汪汪地眨眼，常用于表达委屈、难过或撒娇求安慰",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "96dc676cd0f6483c756343c7f69e37370befad1c198d9932dcc7aa5b133900f4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:56+08:00",
+      "elapsed_s": 9.1
+    },
+    "108": {
+      "name": "阴险",
+      "desc": "黄色圆脸斜眼挑动高低眉并咧嘴露出大板牙坏笑，常用于调侃戏谑、密谋使坏或看热闹",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "2bd8f90bd94a7ca5c7db663fb87342f450f7891c4e2b82d473b411fafd79ec8d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:29:57+08:00",
+      "elapsed_s": 8.3
+    },
+    "109": {
+      "name": "左亲亲",
+      "desc": "泛着腮红的黄色圆脸闭眼向左用力嘟嘴亲吻，常用于撒娇、示好或向对方表达喜爱与亲昵",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "95c26e3e43971a61aeb682f64943ef71d9e5c29f51cb9dcd3ee1938e4446992a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:01+08:00",
+      "elapsed_s": 11.0
+    },
+    "110": {
+      "name": "吓",
+      "desc": "黄脸倒竖眉毛、面色泛青并圆瞪双眼，张大嘴巴发颤，表达受到惊吓、极度震惊或难以置信",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "00d66e226c00e7e70e04810a6521f7f44e2b2f9e4f8b11ae6103658376b73685",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:05+08:00",
+      "elapsed_s": 12.7
+    },
+    "111": {
+      "name": "可怜",
+      "desc": "黄色圆脸双手趴着眨动泪光闪烁的超大眼并撇嘴，表达委屈可怜、撒娇求助或恳请同情的心情",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "73541392f5bf9a25b7aea1b5f690f7579f4aa7ff675888b5ccbfa6c0a1bcfcb6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:05+08:00",
+      "elapsed_s": 11.6
+    },
+    "112": {
+      "name": "菜刀",
+      "desc": "木柄银刃的金属菜刀不断向下挥砍，常用于表达极度愤怒、抓狂或玩笑式威胁想砍人",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c4897a53c7e841bd0e17aad5e45c9ec12eafbdb14cf499c807eb97d073e82f03",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:05+08:00",
+      "elapsed_s": 10.1
+    },
+    "114": {
+      "name": "篮球",
+      "desc": "橙色篮球在街机投篮轨道上弹起，常用于邀约打球、运动话题或群聊比拼手气互动",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "598b5a7634e3aaa4cc06dfd2d008a6b97a9213b7df6c10bca37594d1682094af",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:10+08:00",
+      "elapsed_s": 13.4
+    },
+    "116": {
+      "name": "示爱",
+      "desc": "鲜红饱满的嘴唇正一张一合做亲吻动作，传达飞吻与爱意，常用于情侣间调情、撒娇或示爱",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "689901ed45b17819b8373e7124f0d30771a1086f2cc3ec03fd5ebf7000dfb3fe",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:09+08:00",
+      "elapsed_s": 12.8
+    },
+    "118": {
+      "name": "抱拳",
+      "desc": "肉色双手一手握拳一手覆掌上下晃动作揖，常用于表达敬佩、感谢、拜托或江湖式的客气致意",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "f42b4e890355c2fd4df707869d2121b1dfc4e09f47cf549ebb46ce950241950d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:09+08:00",
+      "elapsed_s": 8.9
+    },
+    "119": {
+      "name": "勾引",
+      "desc": "肉色手掌半握且食指连续弯曲勾动，做招引手势，常用于挑衅示威、撩拨暧昧或叫对方过来",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a5875d042c2d5e99c298ae0ea91b77cde6c3c49ba2d548221b41631e71c1d68d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:17+08:00",
+      "elapsed_s": 12.4
+    },
+    "120": {
+      "name": "拳头",
+      "desc": "肉色紧握的拳头微微上下顿动，常用于表达加油鼓劲、坚定决心或调侃示威想揍人",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "1dd71c4b763d5fadc7a2e57402b1f829dc91efa58626fd4efa5bea7a6c030ff8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:14+08:00",
+      "elapsed_s": 8.9
+    },
+    "121": {
+      "name": "差劲",
+      "desc": "肉色手掌握拳并竖起小拇指轻微晃动，常用于表达鄙视、嫌弃、嘲讽或吐槽对方水平太差",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "7869f19729e2273bb5532f032c735463e7a0688bdbbbfd90cf8c7a4cc2797985",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:14+08:00",
+      "elapsed_s": 8.2
+    },
+    "122": {
+      "name": "爱你",
+      "desc": "橙边肉色手掌比出竖起拇指、食指与小指的爱你手势并左右摇晃，常用于表达喜爱、感谢与亲昵",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "6a388cfdb9201b8cd72da86791c8498f2b61fde701028a7b9cc3459c271216d6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:18+08:00",
+      "elapsed_s": 8.4
+    },
+    "123": {
+      "name": "NO",
+      "desc": "肉色手掌伸出食指左右摇晃，常用于表达否定、拒绝、反对或示意不可以的语境",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "85b8d81fd89389d1166b0039fe0880964fcabbe56ea9e09f648a8aa715381363",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:17+08:00",
+      "elapsed_s": 7.6
+    },
+    "124": {
+      "name": "OK",
+      "desc": "肉色手掌比出食指与拇指相扣的OK手势，常用于聊天中表达同意、赞成、收到或没问题",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "846dc0b58f4320b23de325cb37aa42e178cadba27c1028a552c4bd7d0a72f56d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:18+08:00",
+      "elapsed_s": 8.0
+    },
+    "125": {
+      "name": "转圈",
+      "desc": "戴红围巾的黑白QQ企鹅张开双臂欢快原地转圈，常用于表达极度开心、兴奋或期待",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "047a44710006d7d1b5479e0e2e38407ee1d869050f28b8b161adfa2da921c0ca",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:28+08:00",
+      "elapsed_s": 14.0
+    },
+    "129": {
+      "name": "挥手",
+      "desc": "系红围巾的小企鹅依依不舍地挥动白手绢，常用于聊天中表达告别、再见或幽默夸张的送别",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e9788b406d887e50a62c4dd4e48ec11071f4b6e607d9515370527c82477483b9",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:23+08:00",
+      "elapsed_s": 9.0
+    },
+    "137": {
+      "name": "鞭炮",
+      "desc": "挂着的红底金边鞭炮被点燃噼啪炸响，洋溢着喜庆热闹的气氛，常用于逢年过节或祝贺喜事",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "00116ecf1cdad164645e58828619f385acf2a98c021e5330a03c471a77d82768",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:28+08:00",
+      "elapsed_s": 10.7
+    },
+    "144": {
+      "name": "喝彩",
+      "desc": "蓝紫色条纹的礼花筒喷出缤纷彩带与纸屑，传达庆祝与欢呼之情，常用于道贺或活跃喜庆气氛",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "b0787db2c32347c0b8fd4ba0ba86964276bd8b80b8ed49973ad3da37b7332fec",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:26+08:00",
+      "elapsed_s": 8.4
+    },
+    "146": {
+      "name": "爆筋",
+      "desc": "棕红色的动漫十字爆筋符号，呈额角青筋暴起状，常用于表达极度愤怒、烦躁与忍无可忍",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "97e8598ec5875eee1741748b8ed838201977d2892236387573fb9c082006f4b8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:37+08:00",
+      "elapsed_s": 19.6
+    },
+    "147": {
+      "name": "棒棒糖",
+      "desc": "红黄绿螺旋花纹的圆盘棒棒糖，静止放置，常用于哄人示好、给予奖励或表达甜蜜开心",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "bd547a9682d999d76b021561a84cc65ffcd8e9e60cbb14bdff00acc1c3c22c6f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:35+08:00",
+      "elapsed_s": 17.0
+    },
+    "148": {
+      "name": "喝奶",
+      "desc": "装有白奶、粉盖黄嘴的倾斜婴儿奶瓶，常用于聊天中卖萌装嫩、自称宝宝或调侃对方幼稚",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c02b4775f7820eb797fda9142839f44fd8be07d7bdbb421e8fb744c85c4b1545",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:43+08:00",
+      "elapsed_s": 19.8
+    },
+    "169": {
+      "name": "手枪",
+      "desc": "银灰枪身配深色握把的左轮手枪对准右方，常用于开玩笑威胁要毙了对方或自嘲绝望崩溃",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e7e7a232b97cf2271c35cc0c5cb1328aa1fb90c62ee4d414d548ceec05fbd333",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:38+08:00",
+      "elapsed_s": 12.1
+    },
+    "171": {
+      "name": "茶",
+      "desc": "盛着绿茶的蓝白青花瓷碗正冒着热气，常用于表达悠闲惬意、看戏吃瓜或消气冷静",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "11c5ef1b4d704794ef18004ae1eb06e7a8de410ac1a1357d82bbed47c9aff9d4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:42+08:00",
+      "elapsed_s": 14.2
+    },
+    "172": {
+      "name": "眨眼睛",
+      "desc": "黄色圆脸眨眼后俏皮地挤眼吐舌做鬼脸，传达搞怪情绪，常用于开玩笑、捉弄或幽默调侃",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "dfc8eb3e11ee4f0b88651799894a26200985a2cb298a8eb660c8632b257ea647",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:46+08:00",
+      "elapsed_s": 18.6
+    },
+    "173": {
+      "name": "泪奔",
+      "desc": "黄色圆脸喷涌蓝色泪水并抬手抹泪痛哭，常用于表达极度难过、委屈崩溃或夸张卖惨",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "d141fc7eeadcdc691e7de290662f5a09f75c9d6828cde9eb5ab0fbdc4fd6fe98",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:49+08:00",
+      "elapsed_s": 14.2
+    },
+    "174": {
+      "name": "无奈",
+      "desc": "黄色圆脸面带红晕八字眉，双手向两侧一摊趴下苦笑，用于表达无可奈何、妥协认命或哭笑不得",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "8435a45ea1c7d321c4322690ab964ec55d0a62d144f2f41bb8f3a082b3ad4618",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:47+08:00",
+      "elapsed_s": 10.0
+    },
+    "175": {
+      "name": "卖萌",
+      "desc": "长着圆耳朵的黄色小脸眯眼泛红晕、张开猫咪嘴欢快晃动，常用于撒娇卖萌、表达开心或讨好",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "08d825ac8abbb8a723ae48344eaeb5b9775c4d90a688a692377afe009cdede3e",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:45+08:00",
+      "elapsed_s": 7.8
+    },
+    "176": {
+      "name": "小纠结",
+      "desc": "泛着红晕、蹙着八字眉的黄色圆脸不断眨眼微笑，表达害羞纠结、不好意思或勉为其难的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "315a2aaf72b98444095238abc821d9b26f79e7d632c7627382e3a395568cd530",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:54+08:00",
+      "elapsed_s": 12.1
+    },
+    "177": {
+      "name": "喷血",
+      "desc": "黄色圆脸双眼翻白、脸色发青并张嘴大口喷血，常用于表达受到极大刺激、气到内伤或极度震惊崩溃",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "6fc9621ee648dbd1a9a9fe1986bf2a3998fbf9af66cebc9afc0886c3611e9a15",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:54+08:00",
+      "elapsed_s": 11.1
+    },
+    "178": {
+      "name": "斜眼笑",
+      "desc": "面带红晕的黄色圆脸眼珠斜瞟、嘴角微笑，常用于表达戏谑、调侃、心照不宣或反讽",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "ab1f09c05490d96221e65c03fb9de43d91dee24f91f3d8da5e2cf0cd678fbb05",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:01+08:00",
+      "elapsed_s": 15.9
+    },
+    "179": {
+      "name": "doge",
+      "desc": "带腮红的黄色圆脸抿着猫咪嘴斜眼看并眨眼，常用于表达卖萌、心虚、傲娇或暗中观察的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e569525657ff7811941be50d169eb7c25ffae0791864ef66ddf7d1f561489bef",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:58+08:00",
+      "elapsed_s": 12.1
+    },
+    "180": {
+      "name": "惊喜",
+      "desc": "黄色圆脸从眯眼瞬间瞪大双眼张大嘴巴，表达出乎意料的极度惊喜、喜出望外与狂喜之情",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "6af48fe0a301fa39c479e722d4b47c7b3c247a2c5362b64d2ebbadef45b990dc",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:58+08:00",
+      "elapsed_s": 10.5
+    },
+    "181": {
+      "name": "戳一戳",
+      "desc": "呆萌小黄脸被手指轮番戳弄脑袋和脸颊，常用于聊天中打招呼、提醒对方或开玩笑撒娇求关注",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "36babd3276c9d5fadf31dcd09623108608e19e771fdf8946aba7bf0b52bf3182",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:30:56+08:00",
+      "elapsed_s": 7.4
+    },
+    "182": {
+      "name": "笑哭",
+      "desc": "黄色圆脸眯眼张嘴大笑微颤、眼角流着蓝眼泪，常用于表达极度好笑或化解尴尬与无奈自嘲",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "13bd539c05333e11663eaba68078f9d0d713f853c085e6498d09b76cfc0f2283",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:05+08:00",
+      "elapsed_s": 10.6
+    },
+    "183": {
+      "name": "我最美",
+      "desc": "黄色小脸面带红晕闭眼张嘴，双手食指戳着脸颊开心地左右摇晃，用于卖萌撒娇或自恋自夸",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "448bbe725b06e4d36a4d866c615037ef24103801d00b34663f4dcd630b7abf67",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:06+08:00",
+      "elapsed_s": 11.9
+    },
+    "185": {
+      "name": "羊驼",
+      "desc": "白色毛茸茸的八字眉羊驼迈着短腿快步小跑，神情委屈呆萌，常用于表达委屈、无辜或无奈吐槽",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "319f90b79bf4d30df6c7723d0ee59655eba3ab94a751a106c6c7d9ee25663329",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:08+08:00",
+      "elapsed_s": 11.4
+    },
+    "187": {
+      "name": "幽灵",
+      "desc": "白色圆头小幽灵在空中上下漂浮并眨眼，常用于表达路过飘过、潜水冒泡或灵魂出窍的呆滞无语",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "bec4361510d861f742985251c421ee9a9ee7adb766e2f19c025c98eb6a4a5a0f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:07+08:00",
+      "elapsed_s": 9.5
+    },
+    "193": {
+      "name": "大笑",
+      "desc": "戴红围巾的黑白企鹅张着黄嘴欢快大笑，传达极度开心与被逗乐，常用于爆笑语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "8c6acf7ae938bebad61f6fb19774b31a8523ce2270e996740023dd5cbcf51cb2",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:12+08:00",
+      "elapsed_s": 13.9
+    },
+    "194": {
+      "name": "不开心",
+      "desc": "戴红围巾的黑白QQ企鹅耷拉着眼、委屈地低头踢脚，常用于表达失落、难过或撒娇求安慰",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "de72f4f45a7ca2b2112db4f7ca80e70e0117d59888e31f5cfb6d272978db3517",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:11+08:00",
+      "elapsed_s": 9.6
+    },
+    "198": {
+      "name": "呃",
+      "desc": "戴红围巾的黑白QQ企鹅抬翅摸嘴且眼神呆愣，常用于表达尴尬、语塞、迟疑或无言以对",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "cbfd2a5e4ae46d02cc55e3fd0ab55f7aa5f2498acd9ee6f53494262880854dbd",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:21+08:00",
+      "elapsed_s": 16.9
+    },
+    "200": {
+      "name": "求求",
+      "desc": "黑白线条简笔小熊连连点头鞠躬作揖，常用于请求帮助、拜托他人或求饶的情境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "99d182e7e3c5539f4933c825bc512acaca580aeaae6df8e55a6b093f99dc41d6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:16+08:00",
+      "elapsed_s": 9.5
+    },
+    "201": {
+      "name": "点赞",
+      "desc": "一只黑眼圆耳的白熊连续举爪竖大拇指点赞，常用于表达认可、夸奖与支持鼓励",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "62ee133c1f2e1f27d2cae1773f874bc9ff0f9dda096bbff45eb97795f596e61e",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:21+08:00",
+      "elapsed_s": 14.1
+    },
+    "202": {
+      "name": "无聊",
+      "desc": "一只白色小熊头像在原地水平自转打圈，表达无所事事、发呆放空或百无聊赖的无聊心情",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "255992f611e20e4d498c3fc9c61425e593dcb1f24e7b6911f6643add114323a4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:16+08:00",
+      "elapsed_s": 8.7
+    },
+    "203": {
+      "name": "托脸",
+      "desc": "像素白熊用双手托腮将脸挤扁，常用于表达卖萌撒娇、无聊发呆或静静吃瓜倾听",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "856c711dda545d638ff0a6e5d2469bbede773a2c1ae20015242a9edcda0fe67f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:24+08:00",
+      "elapsed_s": 12.7
+    },
+    "204": {
+      "name": "吃",
+      "desc": "白色小熊正呆萌地张嘴咀嚼吃东西，常表示正在用餐、吃零食，或表达围观吃瓜之意",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "f3baaf14d35f256694a332aaf10175b14c1a4fcfca82748f0b8bd61fdfe100fe",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:20+08:00",
+      "elapsed_s": 7.4
+    },
+    "206": {
+      "name": "害怕",
+      "desc": "蓝白黄嘴企鹅头罩透明玻璃杯瑟瑟发抖并冒冷汗，常用于表达恐惧、受惊、胆怯或认怂求饶",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "09067a5bba47cfcd6ad4eaffec7fd756225618189296455ed792f1e95dcecd37",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:27+08:00",
+      "elapsed_s": 11.8
+    },
+    "210": {
+      "name": "飙泪",
+      "desc": "戴白毛边兜帽与青色手套的卡通人张嘴狂飙泪水，常用于表达极度委屈、痛苦崩溃或撒娇假哭",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "b3d302aa1ba22cc3411955880a2738ae54e773a1e4d5f12b665720115d94cecb",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:34+08:00",
+      "elapsed_s": 17.3
+    },
+    "211": {
+      "name": "我不看",
+      "desc": "穿橙色兜帽衣、戴绿手套的小人反复捂眼偷看，常用于看八卦或刺激画面时表达害羞又好奇的调侃",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "8b8320a501802ced7ac7da99274ce5428a6716aa18e68a29d0c146c7575c83ed",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:33+08:00",
+      "elapsed_s": 13.4
+    },
+    "212": {
+      "name": "托腮",
+      "desc": "脸泛红晕的黄脸表情双手交叉托下巴轻晃，常用于表达乖巧倾听、好奇期待或发呆吃瓜",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a4adcce0e2de097736733030b9ee8fb879920c9e26654d16184addba7806f3ae",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:31+08:00",
+      "elapsed_s": 9.3
+    },
+    "214": {
+      "name": "啵啵",
+      "desc": "白色圆脸小人面带腮红与唇印并闭眼嘟嘴，表达亲昵害羞与喜爱，常用于撒娇索吻或示爱",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "d6adf6e00d08abc437759c3dba37fe926d4f621f83c00a0b968c3c4142489aad",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:31+08:00",
+      "elapsed_s": 9.5
+    },
+    "215": {
+      "name": "糊脸",
+      "desc": "带腮红的白色小人被橙黄色蛋糕糊在脸上，常用于庆生整蛊、朋友互损调侃或自嘲无语的打闹语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "03c5153e4cede07649a5f0e2350754d7d1c37a70e150aaf4ebc53ff52aacbfc4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:36+08:00",
+      "elapsed_s": 12.5
+    },
+    "216": {
+      "name": "拍头",
+      "desc": "大手轻拍抚摸着脸颊粉红、闭眼微笑的白色小人头顶，表现乖顺与被宠溺，用于安慰或亲昵",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "c25cdff25a320bfb5a3090dd01d35e3c3fb5c16551ccd3343eb572769abbdb0a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:47+08:00",
+      "elapsed_s": 20.0
+    },
+    "217": {
+      "name": "扯一扯",
+      "desc": "带粉腮红的白色小团子双手将嘴巴往两侧横向扯开做鬼脸，常用于调皮卖萌、搞怪或开玩笑扯淡",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "df37a7682da33e7e80d0532f5f561abdff5fe3a454eff9ca21ffac8e6641701f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:41+08:00",
+      "elapsed_s": 10.1
+    },
+    "218": {
+      "name": "舔一舔",
+      "desc": "白色圆脸面带红晕，大张嘴伸出红舌头舔屏，常用于表达垂涎、花痴示爱或调侃调戏的语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "f41884537bff2e1a3b49765d094d25933f04816624f6b2af768fa16e679424e4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:39+08:00",
+      "elapsed_s": 7.8
+    },
+    "219": {
+      "name": "蹭一蹭",
+      "desc": "带粉色腮红的白色圆形团子正贴脸蹭蹭，常用于撒娇、示好、求安慰或表达亲昵依恋",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "38b57d1fdc1a04e0201c492111c8e8ceca266abaa5f45d156ed7acef73de83fe",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:43+08:00",
+      "elapsed_s": 9.5
+    },
+    "221": {
+      "name": "顶呱呱",
+      "desc": "白色红晕脸小人眯眼坏笑，双手竖大拇指比赞，用于夸奖、赞叹对方很棒或戏谑佩服",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "e263902d1098b2140209a85c6a890971b27a0ab0946e69fd2323873b54620e8f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:46+08:00",
+      "elapsed_s": 12.6
+    },
+    "222": {
+      "name": "抱抱",
+      "desc": "带粉红腮红的白色闭眼小人侧身向前环抱，传达亲昵与温暖，常用于撒娇求抱或安慰关怀对方",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "784e546d1673d01b1e62401a573b4fb8c2a7e150864d1a0a109f74809eb5dcf9",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:54+08:00",
+      "elapsed_s": 17.6
+    },
+    "223": {
+      "name": "暴击",
+      "desc": "白色圆脸小人戴红色拳套连续出拳猛击，眼神犀利，用于表达痛揍反击、回怼或调侃发泄怒火",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "88f460d375602aa133b41f15a5fe9d8d9b9114ace2ad977f492e2cc8f628bccd",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:47+08:00",
+      "elapsed_s": 8.5
+    },
+    "224": {
+      "name": "开枪",
+      "desc": "粉腮眯眼的白色小人双手持枪对准屏幕，常用于开玩笑式的核善威胁、灭口或警告语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "f6fbcefa774c2d067f7fd47715b515081214665a5f3ded1317c6b0e1536921bf",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:10+08:00",
+      "elapsed_s": 29.5
+    },
+    "225": {
+      "name": "撩一撩",
+      "desc": "带腮红和坏笑的白圆脸手持黄色羽毛轻挠撩拨，传达调戏挑逗之意，常用于暧昧互动或戏谑开玩笑",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "e90c7cb1a8587ca6c5502b8c90228748b8e2419796093eda4808c381677f8a50",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:56+08:00",
+      "elapsed_s": 13.2
+    },
+    "226": {
+      "name": "拍桌",
+      "desc": "含泪大笑的圆脸猛烈拍桌激起火星，表达极度爆笑、拍案叫绝或笑到不能自已的情绪",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "6b3d9af1943cdfd60f1ab6b2db1e7da62155c187a4a24036e78330f76a99d937",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:57+08:00",
+      "elapsed_s": 11.0
+    },
+    "227": {
+      "name": "拍手",
+      "desc": "黑白简笔圆脸小人侧身微笑鼓掌，用于表达赞同、喝彩、鼓励、捧场或礼貌庆祝",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "0557e8f2d0196c89064ae12866339300a7b70713474270136e7d28e18cb164c4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:56+08:00",
+      "elapsed_s": 8.2
+    },
+    "229": {
+      "name": "干杯",
+      "desc": "面带红晕的白色圆脸微笑着举起黄色啤酒杯干杯，常用于庆祝、敬意或友好赞同的语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "0b919d2fad15bca9a03dcc27beb41b3fb273c479ca996004c4997235449f2143",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:31:57+08:00",
+      "elapsed_s": 9.4
+    },
+    "230": {
+      "name": "嘲讽",
+      "desc": "白色的圆脸小幽灵挑眉斜眼并咧嘴坏笑，传达幸灾乐祸与得瑟，常用于调侃或阴阳怪气地嘲讽",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "a05c0f5b01d1ccf1d0420c33d39b110707da6490bec595d1332acab7ca1ce28d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:10+08:00",
+      "elapsed_s": 15.7
+    },
+    "231": {
+      "name": "哼",
+      "desc": "白色带粉腮红的圆脸闭眼撇嘴侧身哼气，表达傲娇、赌气、闹别扭或撒娇式的小不满",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "4b856a41ebe378acf9b111912a97cc45ef3f623c192abfce2a34c06d136ea585",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:07+08:00",
+      "elapsed_s": 11.8
+    },
+    "232": {
+      "name": "佛系",
+      "desc": "白底粉腮的圆脸闭目双手合十，传达心如止水、随缘看淡、不争不抢的佛系与释怀情绪",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "7b2e519b219c7700b001066d47fd11a6711310e79bf7e6c87d7efe1344418c08",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:06+08:00",
+      "elapsed_s": 10.4
+    },
+    "233": {
+      "name": "掐一掐",
+      "desc": "白底圆脸被双手掐住脖子、翻白眼并吐出长红舌，表达极度窒息、崩溃抓狂或被气疯求放过的语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "fbeeeb53ec45560a698d652cbaa845fdfd71c3404484921e868d077450b35408",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:09+08:00",
+      "elapsed_s": 12.3
+    },
+    "235": {
+      "name": "颤抖",
+      "desc": "白色幽灵形象眼含泪水挂着冷汗且瑟瑟发抖，用于传达极度害怕、受惊恐慌或委屈可怜的情绪",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "9a18d6cfafa6294c6ab8a5abc11505a0be2b3fbb027b6ad6c1384dcbcc2b8644",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:10+08:00",
+      "elapsed_s": 12.6
+    },
+    "237": {
+      "name": "偷看",
+      "desc": "粉腮圆脸从墙后探出半边头斜眼偷瞄，常用于暗中观察、吃瓜八卦、试探或害羞窥视的情境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "4c19302ca54290e191c901d22c26170d4b2bc2de39bdb09a55ee2e1966ee35e5",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:15+08:00",
+      "elapsed_s": 8.8
+    },
+    "238": {
+      "name": "扇脸",
+      "desc": "白色圆脸五官歪斜、嘴角流涎且右脸被扇得红肿，常用于表现被打懵、理亏自嘲被打脸或装傻认罚",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "1861fac8e176eba104492c8000823b4f2c032212cff30da851b7f7da8ad8cfc7",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:21+08:00",
+      "elapsed_s": 13.2
+    },
+    "239": {
+      "name": "原谅",
+      "desc": "头戴绿帽的绿脸呆滞斜视，源自原谅梗，常用于调侃被绿、自嘲无奈或戏谑妥协",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "0737ab64e2776a4e6747e70501554ebb017aed8d71cbd7d6258ec33488f9b6a5",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:16+08:00",
+      "elapsed_s": 7.1
+    },
+    "240": {
+      "name": "喷脸",
+      "desc": "白色戴墨镜小人正啃西瓜吐籽喷人，常用于围观吃瓜、戏谑调侃或恶搞互损的轻松语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "423473dd6317899ae05c9271509000c4ab56181e3a2a81c80c1631c121e336cc",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:24+08:00",
+      "elapsed_s": 14.6
+    },
+    "241": {
+      "name": "生日快乐",
+      "desc": "大眼水汪汪的面带红晕圆脸，手捧点燃蜡烛的小蛋糕微笑，传达温馨感动，常用于生日祝福语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "c79f22d33fc20f8d5074f811795a16e89cb327e27d48ae95c5d393639f972a89",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:20+08:00",
+      "elapsed_s": 10.5
+    },
+    "243": {
+      "name": "甩头",
+      "desc": "黑发白脸红晕小人眯眼大笑左右甩头，用于表达得意得瑟、欢脱自嗨与自恋开心的情绪",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "85f048c6bfd2c4154b7beb0e260fd6579b4847f708b2308cac2c8aeb401100cc",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:19+08:00",
+      "elapsed_s": 8.4
+    },
+    "244": {
+      "name": "扔狗",
+      "desc": "粉腮白团子吃力举起头顶的黄色小狗欲扔出，多用于朋友间调侃嫌弃、戏谑扔狗砸人或表达无语",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "bbb90cf3c2e8c8814304f858d6465994ec4e92e656b898ba22c78bd8ca044386",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:23+08:00",
+      "elapsed_s": 8.2
+    },
+    "262": {
+      "name": "脑阔疼",
+      "desc": "黄色圆脸紧皱双眉闭眼，单手捏揉眉心鼻梁，表达头痛、心累、无语及难以招架的无奈",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "f199b182c5c78551a38312ede2bd2860d9567015fabdab9bb469fd0557e60097",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:24+08:00",
+      "elapsed_s": 7.8
+    },
+    "263": {
+      "name": "沧桑",
+      "desc": "黄色圆脸托腮且迅速长出络腮胡，眼神忧郁疲惫，常用于表达心累、无奈与历经岁月沧桑",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "f9154530a18aa9713378594ea98a1fe0fdd85cc5e18ce685960871316d9d7194",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:28+08:00",
+      "elapsed_s": 9.1
+    },
+    "264": {
+      "name": "捂脸",
+      "desc": "黄色圆脸单手捂眼大笑并掉泪，常用于表达哭笑不得、尴尬、无奈与自嘲的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "7630ea343460d5c5870f3a3db3d773c4e65181bb52bf55efe2ff1885c6579def",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:34+08:00",
+      "elapsed_s": 13.5
+    },
+    "265": {
+      "name": "辣眼睛",
+      "desc": "黄色圆脸手持黑色手机，看了一眼后嫌恶地皱眉紧闭双眼，用于表达看到辣眼或离谱内容的嫌弃",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "3b3d1b1f0a8878aa55396802e34cb7338b7499d388ad15ff0279cde6b1363f59",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:31+08:00",
+      "elapsed_s": 10.0
+    },
+    "266": {
+      "name": "哦哟",
+      "desc": "黄脸留着青色胡茬和大鼻孔，挑眉斜视且鼻孔翕动，表达戏谑调侃、嫌弃或阴阳怪气的态度",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c87da55fd50cc7709d119352956d4c39aab78482b01242676ec19afce8c7d415",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:33+08:00",
+      "elapsed_s": 9.7
+    },
+    "267": {
+      "name": "头秃",
+      "desc": "委屈八字眉的黄脸两侧头发逐渐掉落至全秃，常用于自嘲压力大、操心焦虑或疲惫心累",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "4849bce66dd573d12ca642978e32df3b69e321065be1c0a8e337ad609777b975",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:35+08:00",
+      "elapsed_s": 11.3
+    },
+    "268": {
+      "name": "问号脸",
+      "desc": "黄色圆脸头上冒出三个问号并趴着托腮，常用于表示满头问号、发懵困惑却保持礼貌微笑",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e8235c8f08c72a078938bd6a0d6167cdaa00cf21057e1cb8cf9b757d8cde4c04",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:38+08:00",
+      "elapsed_s": 13.6
+    },
+    "269": {
+      "name": "暗中观察",
+      "desc": "黄脸从灰色墙边探出半个头微笑着偷瞄，常用于潜水窥屏、暗中吃瓜或戏谑围观的语境",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "2c6500959955357b70f51ee9f8b985656f16f86f4da908dced4a8c16ac1da13e",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:43+08:00",
+      "elapsed_s": 15.4
+    },
+    "270": {
+      "name": "emm",
+      "desc": "黄色圆脸泛着红晕，眉毛耷拉微蹙，嘴角抿起勉强微笑，常表尴尬语塞、腼腆害羞或无奈附和",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e598347a7b2cf6e637971ccf193238cf63831d1bd4b63ec8531ae3c6f6d9ce17",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:39+08:00",
+      "elapsed_s": 8.6
+    },
+    "271": {
+      "name": "吃瓜",
+      "desc": "斜眼黄脸表情手拿红瓤西瓜大口咀嚼，常用于置身事外围观八卦、坐等看热闹的语境",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "57a5e6544ae8321763c35640b5308bc6feb76d1b3850f2c1ac43121e55f8e243",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:42+08:00",
+      "elapsed_s": 9.6
+    },
+    "272": {
+      "name": "呵呵哒",
+      "desc": "黄色圆脸从微笑翻转成倒立并翻白眼，常用于表达无奈、无语、讽刺或阴阳怪气的苦笑",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "3eacfacea35ba4d3f13119756cdb2659b3a481f357d13c116eef0dd785284a6a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:43+08:00",
+      "elapsed_s": 8.9
+    },
+    "273": {
+      "name": "我酸了",
+      "desc": "头顶绿叶的黄色柠檬斜着眼面无表情，以柠檬精形象表达对他人好运或甜蜜的羡慕嫉妒与吃醋泛酸",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "14a30d7fda00898a4653634d67760366742395f7a1c4a0ae7263470a2db1ea8d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:46+08:00",
+      "elapsed_s": 10.8
+    },
+    "277": {
+      "name": "汪汪",
+      "desc": "黄白色柴犬斜眼偷瞄并微笑，脸颊泛红，常用于戏谑、反讽、阴阳怪气或看破不说破的调侃语境",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e875701c522d254a083d1eb67a6e169201180d81c353fc4a8f4fa754d3adc3a4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:49+08:00",
+      "elapsed_s": 11.5
+    },
+    "278": {
+      "name": "汗",
+      "desc": "白色圆脸小人斜视耷拉着眼皮并伸手擦去脸侧蓝色冷汗，常用于表达尴尬、无语和无奈",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "7b3a284449678e2f48dfaa6fb69292bc2a96b05de82d0463e85a11e3ef368b41",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:50+08:00",
+      "elapsed_s": 10.3
+    },
+    "281": {
+      "name": "无眼笑",
+      "desc": "黄色圆脸保持微笑并上下翻白眼，用于表达极度无语、无可奈何或假笑嫌弃的讽刺情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "06b01b28522eb1342a05c6c8c04c7be996b835dd5582ab8346861e28d8a09a93",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:57+08:00",
+      "elapsed_s": 15.0
+    },
+    "282": {
+      "name": "敬礼",
+      "desc": "严肃皱眉的黄色圆脸举手敬军礼，常用于表达听令遵命、由衷致敬或保证坚决完成任务",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "6cab0aed7d3f089245cfcd67b9044a3f79b44c84b7d98031841b11a2a54bc3b1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:12+08:00",
+      "elapsed_s": 29.7
+    },
+    "283": {
+      "name": "狂笑",
+      "desc": "黄色圆脸翻着白眼、张大嘴左右摇晃狂笑，常用于放肆大笑、极度得意或嘲弄、幸灾乐祸",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "d79f831f489c3c3c81a9d63dd4b49330d1be5e130efacfbb4cd82fa6fc9585db",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:50+08:00",
+      "elapsed_s": 6.5
+    },
+    "284": {
+      "name": "面无表情",
+      "desc": "无五官的黄色圆脸闪烁切换为电视彩条画面，用于表达极度无语、大脑宕机或无话可说",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "eaccc9999770a79b7efece552a8b30e529ee0e3dd511d0801002f009d9764e4d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:32:54+08:00",
+      "elapsed_s": 7.7
+    },
+    "285": {
+      "name": "摸鱼",
+      "desc": "黄色圆脸贼兮兮地左右张望并抚摸一条蓝色的鱼，常用于表达在工作或学习中偷懒划水",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "8c6064f0ffe296cb5e89674c3ce13336ec888f5459f6adf433243ff29e83c4d2",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:00+08:00",
+      "elapsed_s": 11.1
+    },
+    "286": {
+      "name": "魔鬼笑",
+      "desc": "黄色圆脸转头黑化，面泛青光并露出空洞白眼与咧嘴阴森大笑，多用于表达腹黑、阴险或不怀好意",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "3cf5636e1093d7f7f51841b43bb9f21b899b34214b611b7cc3bdc2e45c9f8059",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:08+08:00",
+      "elapsed_s": 18.2
+    },
+    "287": {
+      "name": "哦",
+      "desc": "面无表情的黄脸端起白茶杯喝茶，用于表达冷淡敷衍、吃瓜看戏或事不关己的不予置评",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "2042a4c43f1e7e3581317885055fc63d1ef7440399aa55fffb0c007091fde365",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:06+08:00",
+      "elapsed_s": 16.6
+    },
+    "288": {
+      "name": "请",
+      "desc": "黄色圆脸微笑着端递冒热气的茶杯，常用于礼貌客气地示意请、请喝茶或请对方发言",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "03a745f3148455c4cb4ce544cd3240e13e48c7836a69663a0a775b94b2f650f2",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:03+08:00",
+      "elapsed_s": 8.9
+    },
+    "289": {
+      "name": "睁眼",
+      "desc": "黄色圆脸用双手强行撑开眼皮瞪大眼睛，常用于表达困极硬撑、熬夜修仙或强打精神吃瓜",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "5be3637837955dbbe48cd52b2a093ace42f4eb803523c5b600bd22f8b83a4650",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:07+08:00",
+      "elapsed_s": 9.6
+    },
+    "290": {
+      "name": "敲开心",
+      "desc": "粉腮大眼的白色圆脸手持小锤欢快地敲头，满脸笑容，用于表达狂喜、极度开心或兴奋",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "194c002c61c8b06025e7f8aae0bf65da5c70d4396470a80e313cde0473bced2f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:18+08:00",
+      "elapsed_s": 18.0
+    },
+    "292": {
+      "name": "让我康康",
+      "desc": "戴眼镜的白色腮红团子推了推镜框斜眼坏笑，传达好奇与窥探欲，常用于想看八卦或求看照片",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "befd9ec17de983c91bc401a0a348ffdefa656e4a37cd4b214293978304071134",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:16+08:00",
+      "elapsed_s": 13.1
+    },
+    "293": {
+      "name": "摸锦鲤",
+      "desc": "大眼小黄脸正伸手抚摸怀里的红橙色锦鲤，常用于祈求好运、蹭欧气以及期盼事情顺利",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "b47a66caa4b0b71ee5c2798f18443fb7dd6edb5e2ac9091b85d10e86f4f91e4f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:16+08:00",
+      "elapsed_s": 9.8
+    },
+    "294": {
+      "name": "期待",
+      "desc": "黄色圆脸笑眯眯地向上看，两只小手并拢轻微晃动，表达满心期待、盼望与憧憬的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "cddcca731eed1da573cc68da142e227ed47eb235b397c806d77c1cd829024ba4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:23+08:00",
+      "elapsed_s": 15.6
+    },
+    "295": {
+      "name": "拿到红包",
+      "desc": "黄色圆脸双手捧着红包陶醉地亲吻贴脸蹭，表达抢到红包或得财时兴奋满足、喜爱与感谢",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e12ef88a98a637d5dd6ee8a29d0cf9627f9b46941a19b128bea3376c754d5414",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:21+08:00",
+      "elapsed_s": 13.3
+    },
+    "297": {
+      "name": "拜谢",
+      "desc": "黄色圆脸表情举手趴下伏地磕头拜谢，常用于表达极度感谢、五体投地的敬佩与膜拜",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a77e1d1f825aa991973420b61e0f501ffc34bdaa3ead214f5bc2b8be4e3a5b0c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:24+08:00",
+      "elapsed_s": 11.5
+    },
+    "298": {
+      "name": "元宝",
+      "desc": "黄色小团一口吞掉金元宝并撑成元宝状咀嚼，表现吸金与满足，常用于招财暴富或接红包语境",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "06546716e2a5c767ac89f052458f5a5740e8bd5bc99ee27dbd24341ce1cb937a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:31+08:00",
+      "elapsed_s": 15.3
+    },
+    "299": {
+      "name": "牛啊",
+      "desc": "黄色圆脸表情利落甩开写有牛字的折扇半遮面，常用于赞叹、佩服对方，夸赞其厉害与太牛了",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "556aad5cfb9f0d6ef61172c3a1c43ec8cb7ba85889a84584de8a48b938394105",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:28+08:00",
+      "elapsed_s": 12.4
+    },
+    "300": {
+      "name": "胖三斤",
+      "desc": "带腮红和双下巴的黄色圆脸微笑着轻微眨眼，常用于自嘲吃撑长胖或表达憨态可掬的卖萌",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "131f15295e71d522967146e2ce82d0dc601091629af400844a2283c047395769",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:30+08:00",
+      "elapsed_s": 11.3
+    },
+    "301": {
+      "name": "好闪",
+      "desc": "黄色圆脸被强光照耀而眯眼抬手遮挡，常用于调侃被秀恩爱、炫耀闪瞎了眼的语境",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "7319858559add08ae70818ad2c14da9fd0af9e3047108484fd8efcb1d029336a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:31+08:00",
+      "elapsed_s": 9.7
+    },
+    "302": {
+      "name": "左拜年",
+      "desc": "戴红瓜皮帽的黄脸闭眼笑眯眯地抱拳作揖，传递喜庆客气，常用于春节拜年祝福或客套致谢",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "1a1af2e231731b08f602fe56370307de1203558c870ece4a084ef72e68808acc",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:33+08:00",
+      "elapsed_s": 10.1
+    },
+    "303": {
+      "name": "右拜年",
+      "desc": "头戴红色瓜皮帽的黄色笑脸眯眼作揖拜年，常用于节日贺喜、请求拜托或表达感激与客气",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "526a4692b0dfb8c12762c2138474883365d26cd87c35a5c7f8ef059a7782d009",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:36+08:00",
+      "elapsed_s": 11.8
+    },
+    "305": {
+      "name": "右亲亲",
+      "desc": "带腮红的黄脸闭眼嘟嘴向右亲吻，表现害羞与亲昵，常用于撒娇、示爱或情侣互动",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "6d19441ed2ea04799208b47d05e6eab2ca5888a4ac9ab2a3e7609505848d8c4c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:37+08:00",
+      "elapsed_s": 8.3
+    },
+    "306": {
+      "name": "牛气冲天",
+      "desc": "戴黄色牛角头套的企鹅眨巴大眼睛，常用于牛年贺岁、夸赞对方厉害或祝愿牛气冲天",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "3b698abf87846646735719f2ce098808ecc0ceade9d75769bb0fcae0efcb0a0c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:37+08:00",
+      "elapsed_s": 7.8
+    },
+    "307": {
+      "name": "喵喵",
+      "desc": "戴红项圈金铃铛的橘白招财猫挥动肉垫小爪招手，常用于打招呼、卖萌示好或祈求好运",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "f3315522bbb047c6187751f11c2cb45f6350cfdbd91c991adcd54fbc84a9a665",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:40+08:00",
+      "elapsed_s": 9.6
+    },
+    "311": {
+      "name": "打call",
+      "desc": "黄色笑脸双手挥舞荧光棒兴奋呐喊，常用于表达强烈支持、喝彩与加油助威",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "b670d237466c200d882f92f67941f5fa2de99e8279d5f32cf6f77d40a8e89b0f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:39+08:00",
+      "elapsed_s": 8.3
+    },
+    "312": {
+      "name": "变形",
+      "desc": "黄色笑脸扭曲变形且脸色发绿瘪成难受苦脸，常用于表达反胃恶心、身体不适或被恶心到的无语",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "630938bda8303b3b3f3b603522558c96f3e7a06ec312f5845a6b294f7d55e370",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:43+08:00",
+      "elapsed_s": 10.0
+    },
+    "314": {
+      "name": "仔细分析",
+      "desc": "戴黑墨镜的黄色圆脸托下巴若有所思地晃动，常用于假装高深、煞有介事地推敲细节或吃瓜分析",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c8f3e1cda5f00518c946b6d9bf7c14a4579bd4e66221ca606e1ed4faae4f8b6f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:47+08:00",
+      "elapsed_s": 11.4
+    },
+    "317": {
+      "name": "菜汪",
+      "desc": "包裹在绿色卷心菜里的柴犬转动眼珠斜瞟，常用于自嘲自己菜、戏谑逗趣或暗中观察",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "eacc7e2351564febe5bf54b3807495a58c65a9a65ab9592a095d35c63f070e62",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:47+08:00",
+      "elapsed_s": 10.4
+    },
+    "318": {
+      "name": "崇拜",
+      "desc": "黄色圆脸泛着红晕冒爱心，眨巴闪亮大眼微笑仰望，常用于表达对某人的崇拜、赞赏或倾慕",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "968c083ba353c18ba5a90a7822dda0b12e79e9c0a2a2b7f3f58841941b1e23d0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:55+08:00",
+      "elapsed_s": 17.8
+    },
+    "319": {
+      "name": "比心",
+      "desc": "带腮红的黄脸双手做手指比心并交替眨眼微笑，常用于撒娇卖萌、友好示爱或表达喜爱与感谢",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "88a1a60724baf8c8c3547f8ba2bb954beb7cd78f53599de972b219e979ef1692",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:48+08:00",
+      "elapsed_s": 8.9
+    },
+    "320": {
+      "name": "庆祝",
+      "desc": "黄脸头戴蓝白条纹派对帽，眯眼吹响蓝色派对哨，表达兴奋欢悦，常用于道喜、庆功或生日祝福",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "09e9528d5f75d7c2a9d44d61f716aab25ac9b1a37de53f195cf428b5aab8a847",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:57+08:00",
+      "elapsed_s": 16.6
+    },
+    "322": {
+      "name": "拒绝",
+      "desc": "戴眼镜的黄色圆脸双手在身前交叉比叉，眼神冷漠，常用于果断表达拒绝、否定或不行",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "169830728e2e3ec4ca30a6fdc9b1b2e3c2a1baf30c52541738222f0a2f801c8e",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:52+08:00",
+      "elapsed_s": 9.6
+    },
+    "323": {
+      "name": "嫌弃",
+      "desc": "黄色圆脸挑眉皱额、眯眼歪嘴龇牙，常用于表达嫌弃、鄙夷、看不下去或觉得肉麻反感",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "9fa8c6fb8c877aba712449f7062e929c1c308c458bc75feafa843afad7162aee",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:56+08:00",
+      "elapsed_s": 9.2
+    },
+    "324": {
+      "name": "吃糖",
+      "desc": "黄色圆脸手拿红白棒棒糖舔食并露出满足笑容，常用于卖萌撒娇、表达甜蜜喜悦或嗑到糖",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "caee0525331c47af5bc337816bc90e609837089209a10d7dd54f5bfd734c2118",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:33:58+08:00",
+      "elapsed_s": 10.9
+    },
+    "325": {
+      "name": "惊吓",
+      "desc": "额头泛蓝发青的黄脸双眼发白，双手托腮张嘴发抖，常用于表达极度惊吓、震惊或吓坏的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "42c8e8a02c60ea66a95438cdc17364e957429b5ce317f56c5b0b7ff6aa626fbb",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:00+08:00",
+      "elapsed_s": 11.3
+    },
+    "326": {
+      "name": "生气",
+      "desc": "深灰色铁皮机器人双眼放光、头顶冒火挥舞双臂，常用于表达极度气愤、暴怒或抓狂的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "77345fb0b375d9b5a416251336f2d4c3aab3a76392aa3bcfc158e2282907b557",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:03+08:00",
+      "elapsed_s": 11.1
+    },
+    "332": {
+      "name": "举牌牌",
+      "desc": "大眼黄脸双手举着彩色小牌眨眼微笑，传达期待与呼吁，常用于强调观点、应援或求关注",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c530158bb5d05e3c59a8b66653771b94d1fb8005e264ad8028c1a3e5daeda8f8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:08+08:00",
+      "elapsed_s": 12.3
+    },
+    "333": {
+      "name": "烟花",
+      "desc": "夜空中璀璨绽放的彩色烟花，闪烁耀眼火花，常用于逢年过节或庆祝喜事时表达热烈祝贺与喜悦",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "6aad03f6c9d2bcf183a25d6b80d6fc57338c23b367a247fdd21018d156437d13",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:04+08:00",
+      "elapsed_s": 7.9
+    },
+    "334": {
+      "name": "虎虎生威",
+      "desc": "QQ企鹅戴着橙色虎头帽睁大眼睛，模样呆萌神气，常用于新年祝福、加油打气或卖萌装威风",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "5a0a2ca0e8da7aa2ef3355fdc69ae1041a71195086d916941e7cf9c286f1c922",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:07+08:00",
+      "elapsed_s": 9.9
+    },
+    "336": {
+      "name": "豹富",
+      "desc": "长着铜钱斑纹的金黄豹头转动眼珠微笑，谐音暴富，常用于表达求财暴富的渴望与得意调侃",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "6fcde8cdb0e019be2433628487824b6c5cb6f5fdb95086fd43276693cf7db894",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:09+08:00",
+      "elapsed_s": 10.4
+    },
+    "337": {
+      "name": "花朵脸",
+      "desc": "大眼黄脸瞬间绽开七彩花瓣并开怀大笑闪烁星光，常用于表达心花怒放、被夸开心与卖萌",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "0c321b9db5b3bcb8d0819488bbce977143babff4f4c71c26f8ec6c6686f7a6c4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:11+08:00",
+      "elapsed_s": 11.1
+    },
+    "338": {
+      "name": "我想开了",
+      "desc": "黄色圆脸双手捧着的粉色莲花逐渐盛开并泛出金光，常用于表达释怀看开、放下执念的佛系心境",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "4d0e533c37f1e1ffb76aedfdd857354aa47756e1ea6ce63d8cfa6448c0153699",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:17+08:00",
+      "elapsed_s": 13.5
+    },
+    "339": {
+      "name": "舔屏",
+      "desc": "眼冒桃心的黄色圆脸贴着屏幕伸舌头狂舔，常用于对帅哥美女或喜爱事物表达极度花痴与垂涎",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "096056d88b997798a21f5702c37ef7a8ed7ce4b15a23be5a86a6620179e24354",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:25+08:00",
+      "elapsed_s": 20.4
+    },
+    "341": {
+      "name": "打招呼",
+      "desc": "黄色大眼圆脸从蓝色窗后探出头微笑挥手，传达俏皮友好，常用于开场问候或试探找人",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "f06406e6cd9ad8fd5944c6b8d8f6b0e6029d612fb916e9cce121246a04527348",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:20+08:00",
+      "elapsed_s": 13.0
+    },
+    "342": {
+      "name": "酸Q",
+      "desc": "戴带叶黄柠檬头套的企鹅眼神委屈且外壳闪光，谐音栓Q，用于表达酸了羡慕、无奈或戏谑感谢",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "4e101625972e22d8d78f8f783d31a5aaa6b83b2f3907f9c0cc5259cb7aebf635",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:22+08:00",
+      "elapsed_s": 14.9
+    },
+    "343": {
+      "name": "我方了",
+      "desc": "黄色圆脸化身方块并紧张颤抖，谐音我慌了，常用于表达遭遇突发状况时的慌乱与不知所措",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e68b85107c489e41aafaa98ef1932b99608ff8493edc0be3c087d00179882f43",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:18+08:00",
+      "elapsed_s": 9.2
+    },
+    "344": {
+      "name": "大怨种",
+      "desc": "黄白相间的柴犬凑近苦笑并尴尬冒汗，传达委屈与无奈，常用于自嘲吃亏倒霉或当了冤大头",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "14892b88751b52548ff3126a7642dacf7ca8d8608b3d830f43b478fab332d4cc",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:22+08:00",
+      "elapsed_s": 11.6
+    },
+    "345": {
+      "name": "红包多多",
+      "desc": "黄色圆脸眉开眼笑地晃动手中一把红色红包，透出得意与财迷喜悦，常用于求红包或庆祝发财",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "6b9c43dd829fe2d811b1a8ae54cd1132d6a74b27cf5e2d1daed7ccdce31e479e",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:28+08:00",
+      "elapsed_s": 11.5
+    },
+    "346": {
+      "name": "你真棒棒",
+      "desc": "黄色小脸翻着白眼撇嘴，脸色发绿变蓝地敷衍拍手，常用于阴阳怪气、嘲讽无语的反向夸奖",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "db07ec3f69b38afc3b9d5c50af44c1a8c7a4328f9f941aadb241263e3842b289",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:33+08:00",
+      "elapsed_s": 14.8
+    },
+    "347": {
+      "name": "大展宏兔",
+      "desc": "企鹅戴着白色兔耳头套左右轻晃卖萌，常用于兔年贺岁祝愿大展宏图，或日常卖萌撒娇",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "773cc6f11a5be20c38edcde60d489e3f9a6d6c43743c7832cbb3ddca23980717",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:30+08:00",
+      "elapsed_s": 9.6
+    },
+    "348": {
+      "name": "福萝卜",
+      "desc": "倒置的红皮绿缨圆萝卜身上印着金色福字，寓意福到了，常用于新春拜年、传递喜庆与祈求好运",
+      "sources": [
+        "qzone-gif"
+      ],
+      "img_sha256": "7634a25aed03f2c085349299b3e6b762fb717d2060cf19ff52ed6193fb2fc1a5",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:31+08:00",
+      "elapsed_s": 8.4
+    },
+    "349": {
+      "name": "坚强",
+      "desc": "戴黑墨镜的黄脸掀开眼镜大哭又戴回装酷，常用于表达强忍委屈、假装没事的苦笑与自嘲",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "480d559f3d09b68f87cf852f22884e9d79407ffb335a292b61f466a56cb5fc4a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:32+08:00",
+      "elapsed_s": 9.4
+    },
+    "350": {
+      "name": "贴贴",
+      "desc": "两个带红晕的黄色圆脸眨眼微笑着亲密蹭脸贴在一起，常用于表达撒娇、喜爱与亲近",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "b4f3dd78801a8581d5e73f5d9c67df2fc823966800feedf009c982ebf19b19d1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:35+08:00",
+      "elapsed_s": 10.0
+    },
+    "351": {
+      "name": "敲敲",
+      "desc": "黄色圆脸小人被褐色木槌敲打脑袋，闭眼忍痛，常用于表达自责认错、委屈挨揍或提醒清醒",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "add38994664de18f1dd93a3161c3f048c65960144e84f4aefaf2f015d2702cd0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:45+08:00",
+      "elapsed_s": 16.3
+    },
+    "352": {
+      "name": "咦",
+      "desc": "黄色圆脸嘴角大幅下撇并嫌弃地斜视后缩，常用于表达对某事感到恶心、反感、嫌弃与抗拒",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "f77838cce16615615b848471051c48fa12a0b5010812fa88de1f68ce1aabf635",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:44+08:00",
+      "elapsed_s": 14.5
+    },
+    "353": {
+      "name": "拜托",
+      "desc": "黄色圆脸微泛红晕，睁大眼睛双手合十上下作揖，用于求人帮忙、恳请原谅或表达拜托期盼",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "f3dc7c388977614951c49a9ad2588272b90b1070303b74b0834b2f985e477e0f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:43+08:00",
+      "elapsed_s": 12.0
+    },
+    "354": {
+      "name": "尊嘟假嘟",
+      "desc": "黄色圆脸嘟嘴向上看并眨眼，双手食指相对互戳，常用于卖萌撒娇或试探求证事情真伪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "6eb3f6eba2197f80bbe5abce63937e9dd38d886a6ae726b61611e20c0a679d07",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:42+08:00",
+      "elapsed_s": 9.8
+    },
+    "355": {
+      "name": "耶",
+      "desc": "黄色圆脸眨单眼开怀大笑，抬手比剪刀手耶，常用于卖萌俏皮、庆祝胜利或表达开心顺利",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "1c70435eb133f58295f8286157a606889b2131754086f7f1abf3cf21125038a1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:39+08:00",
+      "elapsed_s": 6.5
+    },
+    "356": {
+      "name": "666",
+      "desc": "黄色圆脸挑眉坏笑，胸前有红色666，双手比六上下晃动，用于赞赏或调侃对方厉害、操作很溜",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "4f62dee96b3bde1ff93319cab616f4c0cd048f9669c37ca9c0bd923c47c1f151",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:48+08:00",
+      "elapsed_s": 13.2
+    },
+    "357": {
+      "name": "裂开",
+      "desc": "呆滞的黄色圆脸瞬间石化、开裂并碎成一堆灰渣，常用于表达极度震惊、无语或心态崩溃破防",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "29bfeb041475f39ea9552771f90a205ecd16cca234fa04f5a15b848d052d52ab",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:51+08:00",
+      "elapsed_s": 11.5
+    },
+    "358": {
+      "name": "骰子",
+      "desc": "画着一颗悬空投掷的白色立体骰子，带有红黑点数，常用于比大小、做随机抉择或趣味博弈",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "3fca61c72ffc79737d33b4aafb3e6c0ac88547d16fee9042bdb977e1024c6cdd",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:48+08:00",
+      "elapsed_s": 6.3
+    },
+    "359": {
+      "name": "包剪锤",
+      "desc": "橙色描边的肉色手紧握成拳头，正做出石头动作，常用于猜拳互动、加油打气或表达力量与决心",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "d644145ee214578b1d96a84cf31f94659466fb050923dc0deecc2e9cb6be1d23",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:53+08:00",
+      "elapsed_s": 9.9
+    },
+    "360": {
+      "name": "亲亲",
+      "desc": "黄色柴犬趴在巨大红心上闭眼嘟嘴飞吻，传达喜爱、亲昵与撒娇，常用于表达爱意或感激",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "ba3e518006bc0a18dceb9d158e4767cc6363ab71c9b93a89545286407c1ed49e",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:57+08:00",
+      "elapsed_s": 12.5
+    },
+    "361": {
+      "name": "狗狗笑哭",
+      "desc": "黄色柴犬闭眼仰头张大嘴巴大笑飙泪，传达被逗乐到极点、捧腹大笑或哭笑不得的幽默情绪",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "485095045b55654aa457191ad814b928b744c10f0fe69f39b64e6453067d842b",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:54+08:00",
+      "elapsed_s": 8.8
+    },
+    "362": {
+      "name": "好兄弟",
+      "desc": "黄黑两只柴犬对着绿色对焦框贴头自拍比心，用于表达兄弟情深、好友亲密与默契调侃",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "1e6ff350e972332d5d913a589f691841d164fef48d2c33b0d0ce31abcf7f26a1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:58+08:00",
+      "elapsed_s": 10.4
+    },
+    "363": {
+      "name": "狗狗可怜",
+      "desc": "黄白相间的小狗耷拉着耳朵趴着，水汪汪大眼向上望，常用于委屈、撒娇求饶或恳求拜托",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "a44ef5614834630a182e51ebd647d421f959386e15717885c7b260f715620d04",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:34:59+08:00",
+      "elapsed_s": 10.4
+    },
+    "364": {
+      "name": "超级赞",
+      "desc": "黄色柴犬兴奋大笑，双手竖起巨大的彩虹大拇指点赞，周身彩纸飞扬，表达极致的夸赞与强烈认同",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "6a8cd9a061c3741522e6a88256e4303fecd5b51f6bc59186c48347f14f595958",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:04+08:00",
+      "elapsed_s": 12.9
+    },
+    "365": {
+      "name": "狗狗生气",
+      "desc": "头顶通红的黄狗瞪圆白眼、大张锯齿尖牙咆哮，表达极度愤怒、抓狂或破防崩溃",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "1132674c878ebdd8fbef9f9ca5f71e3196333318d5a32dc1f10198ffc29e86fa",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:04+08:00",
+      "elapsed_s": 11.4
+    },
+    "366": {
+      "name": "芒狗",
+      "desc": "戴黑框眼镜、眼冒漩涡的橙色芒果狗在敲电脑，表达加班赶工导致头晕脑胀、疲惫崩溃的状态",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "d6d54864fb7adb32ab9843bd3f12e920f3c7f2c57bf430b640393627cde705ec",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:06+08:00",
+      "elapsed_s": 12.2
+    },
+    "367": {
+      "name": "狗狗疑问",
+      "desc": "黄白色柴犬斜眼撇嘴，身旁有紫色问号，表达怀疑、困惑与无语，常用于质疑让人费解的言行",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "f1f762da5b568bce33656784a56474390d7e4a90326a07f28efbf4adb4363f11",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:09+08:00",
+      "elapsed_s": 12.9
+    },
+    "368": {
+      "name": "奥特笑哭",
+      "desc": "白色蓝边小章鱼外星人眯眼大笑并飞出泪花，常表达哭笑不得、无奈又被逗乐的情绪",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "7b015af2997f3e98dc5a71a78051fb4187a378ae39b52e90604c5c66248f07eb",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:07+08:00",
+      "elapsed_s": 8.3
+    },
+    "369": {
+      "name": "彩虹",
+      "desc": "白色嘟嘴小章鱼头顶浮现闪烁的彩色虹桥，神态呆萌，常用于表达美好、开心、憧憬或卖萌夸赞",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "ee1c48c359e067e9dc49b7386ea4fdb98cfbaceb4a9d408c6ea7601bfea21228",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:08+08:00",
+      "elapsed_s": 9.4
+    },
+    "370": {
+      "name": "祝贺",
+      "desc": "蓝白章鱼戴着夸张派对眼镜，触手挥舞沙锤与彩旗在彩纸中欢庆，用于表达热烈祝贺与狂欢喜悦",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "c014748519b13b7b59a65cd06ffce46180b19907f8f933419a42550e09187890",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:13+08:00",
+      "elapsed_s": 9.9
+    },
+    "371": {
+      "name": "冒泡",
+      "desc": "粉白相间的小企鹅从蓝色水面探出头，常用于潜水后上线露个脸、打招呼或刷存在感",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "385cd4dca0580cc0997d8a8ac460afaf768d449ede4e0b9a97e19837beb14b9c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:13+08:00",
+      "elapsed_s": 8.5
+    },
+    "372": {
+      "name": "气呼呼",
+      "desc": "一只头顶涨红冒青筋符号的白蓝小章鱼怒目撇嘴，用于表达极度愤怒、气急败坏或傲娇炸毛",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "276bcd267d1092a0b9490ffb4a3d67e3b9858a5ea691f9963e9d1c6927b0c4e1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:18+08:00",
+      "elapsed_s": 11.8
+    },
+    "373": {
+      "name": "忙",
+      "desc": "白体橙嘴的萌物坐在桌前疯狂敲击笔记本键盘，表示焦头烂额、忙于工作赶进度而无暇闲聊",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "57922ee36b65f453afdd2b1f84ca67d6275a6462befe99d11e52d51bea1aa7f4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:19+08:00",
+      "elapsed_s": 12.6
+    },
+    "374": {
+      "name": "波波流泪",
+      "desc": "粉白色单眼圆鱼两侧眼泪如瀑布般狂喷大哭，常用于表达极度委屈、崩溃悲伤或夸张卖惨",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "b7c5aa5de2b02657880e74caeca7b825434e7339aa778eda3cf0a808a8a5bb41",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:20+08:00",
+      "elapsed_s": 11.9
+    },
+    "375": {
+      "name": "超级鼓掌",
+      "desc": "蓝边白企鹅配橙色圆嘴，挥动多手狂热鼓掌呈残影，用于表达极度赞赏、热烈喝彩与支持",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "113c02e360383f7a5a040847004c2d04911f5c91237d128a62188613b20a1c85",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:25+08:00",
+      "elapsed_s": 15.5
+    },
+    "376": {
+      "name": "跺脚",
+      "desc": "戴红围巾的黑白企鹅闭眼叉腰身旁冒闪电，正气愤跺脚，表达生气、抓狂、焦急或气急败坏",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "6a87c7c1356071a67080fa436ba8da7a04bba72bf62285bb22477d825989ed8f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:24+08:00",
+      "elapsed_s": 11.5
+    },
+    "377": {
+      "name": "嗨",
+      "desc": "戴红围巾、大眼黄嘴的QQ企鹅从门边探出半个身子，常用于俏皮打招呼或试探性冒泡露面",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "99ed4b3bfb54c6792670be7335b24318c68901ad9413ac9857fd218f2052f863",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:24+08:00",
+      "elapsed_s": 10.1
+    },
+    "378": {
+      "name": "企鹅笑哭",
+      "desc": "戴红围巾的黑白企鹅歪头眯眼大笑并眼角飙泪，常用于表达哭笑不得、自嘲或化解尴尬",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "1db0b997bfea60791ca74c7e5a17a84b23a911a12bc0c47872d9abd54dd43a88",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:28+08:00",
+      "elapsed_s": 10.3
+    },
+    "379": {
+      "name": "企鹅流泪",
+      "desc": "戴着红围巾的黑白企鹅双眼飙出瀑布般的泪水，常用于传达极度委屈、崩溃或夸张悲伤的情绪",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "82be5132c7fe2feeb9788ca70b758d318b223101cd5a48931f775c2852c72dbb",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:30+08:00",
+      "elapsed_s": 11.2
+    },
+    "380": {
+      "name": "真棒",
+      "desc": "戴红围巾的黑白企鹅笑眯眯地侧躺并竖起闪光大拇指，用于表达赞赏、鼓励与极力认可",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "9aed19735b059e33747a251f7812b29f98561a6765edb5ecaf5c950e169b5e60",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:33+08:00",
+      "elapsed_s": 13.0
+    },
+    "381": {
+      "name": "路过",
+      "desc": "戴红围巾的黑白QQ企鹅笑嘻嘻迈步走过，常用于打酱油、纯围观或不插话的路过语境",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "eb2d6a7a76b7fbeacb8f5331039ae62a0e6ad36a4f5487a344444fbc1a607b47",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:34+08:00",
+      "elapsed_s": 10.5
+    },
+    "382": {
+      "name": "emo",
+      "desc": "戴红围巾的QQ企鹅泪眼汪汪地仰面漂在蓝水上，表达委屈、难过或摆烂放空的emo情绪",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "5f74b1fa0f32fda38e231483d2eac2d54b9a71f6b321ab10a59351844f025777",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:36+08:00",
+      "elapsed_s": 11.8
+    },
+    "383": {
+      "name": "企鹅爱心",
+      "desc": "戴红围巾的黑企鹅在粉色大爱心前眯眼飞吻送红心，常用于表达喜爱、示爱与感谢之情",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "4b7caec5a8f2afd73af76deae0e0f0c7c1761e31237865ca719e0c4d7e891fed",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:33+08:00",
+      "elapsed_s": 7.7
+    },
+    "384": {
+      "name": "晚安",
+      "desc": "戴紫色星星睡帽的黄色圆脸闭眼流口水熟睡并冒打鼾符号，表示极度困倦，用于道晚安或去睡觉",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "f95f72bf210481af6d6dcc62407fba1ca04998a0bf18e409e86c215d08e3130c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:41+08:00",
+      "elapsed_s": 13.1
+    },
+    "385": {
+      "name": "太气了",
+      "desc": "橙色方脸怒目圆睁大张嘴，嘴内无限嵌套咆哮怒火脸，传达气到爆炸、极度愤慨抓狂的情绪",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "6630d0be35bdfd214139ed81c919405a89cdc5784ea950c17640af9175e370d8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:41+08:00",
+      "elapsed_s": 10.9
+    },
+    "386": {
+      "name": "呜呜呜",
+      "desc": "黄边绿脸紧贴玻璃大眼含泪瘪嘴，传达委屈、难过情绪，常用于可怜巴巴地撒娇求安慰",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "9a439b4d1bc3ed8fd2937263626821a76a70b3dde95b341ab6ccd9270a4eff51",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:49+08:00",
+      "elapsed_s": 16.1
+    },
+    "387": {
+      "name": "太好笑",
+      "desc": "黄色圆脸笑得眯起眼睛并飙出泪珠，张大嘴大笑，用于表达极度滑稽好笑或捧腹大笑的情绪",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "431c6d8100b71940e5cefd166850c06249f07e1b4c431c4afd5d3b1c9171cf8f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:41+08:00",
+      "elapsed_s": 8.5
+    },
+    "388": {
+      "name": "太头疼",
+      "desc": "黄色圆脸紧闭双眼，单手捏着鼻梁揉眉心，用于表达面对棘手状况时的头疼、心累与无语无奈",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "2ec17053525ff5195983598457a5dfe990574e45aad3580d6d178dfc2dd3ed69",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:47+08:00",
+      "elapsed_s": 12.5
+    },
+    "389": {
+      "name": "太赞了",
+      "desc": "闭眼咧嘴大笑的黄色小脸竖起带红色放射光芒的大拇指，表示强烈赞美、佩服与极度认可",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "d46c3846fcf9ab426b3ae5dd695a0f2620ef95a5b30e193bde1d5fe8cfd5c525",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:44+08:00",
+      "elapsed_s": 8.4
+    },
+    "390": {
+      "name": "太头秃",
+      "desc": "黄色圆脸呈地中海秃头，八字眉垂眼撇嘴，用于表达压力过大、焦虑发愁与自嘲无奈的心情",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "1cd8a1a03389d13688dd2087965b1a29f3f2f0f0408491429612f53a6d120f96",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:55+08:00",
+      "elapsed_s": 13.8
+    },
+    "391": {
+      "name": "太沧桑",
+      "desc": "长着胡茬的黄脸托腮叹息，身旁飘着枯叶，传达出饱经风霜的沧桑疲惫与感叹岁月的无奈",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "165ff5b3f126173dab64bd085e749ad69141286d6834094093384e712743ac1c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:51+08:00",
+      "elapsed_s": 9.8
+    },
+    "392": {
+      "name": "龙年快乐",
+      "desc": "黄色卡通中国龙在空中腾跃飞舞，神情欢快喜庆，常用于龙年新春互道祝福与烘托喜庆氛围",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "df8c7b64668c6c2d66e03c0cf0b692d28220620f1d83d410ad68905d8c665ac1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:50+08:00",
+      "elapsed_s": 8.1
+    },
+    "393": {
+      "name": "新年中龙",
+      "desc": "黄身红鬃蓝须的中国龙脚踩祥云张口腾飞，传达喜庆与活力，常用于新年祝福或接龙互动",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "e75ef487e220e6a864bee729adbef2287ac38811c2a9ef0920eab7cd20ab2a2a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:53+08:00",
+      "elapsed_s": 9.2
+    },
+    "394": {
+      "name": "新年大龙",
+      "desc": "腾跃起伏的祥龙身旁伴随跃起的锦鲤，传递祥瑞欢庆氛围，常用于新春拜年与祝愿好运",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "59a1fc97fb9ec8f197610be7f381ebc3391e0c57251cfa1dd67605952ea70eda",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:59+08:00",
+      "elapsed_s": 12.1
+    },
+    "395": {
+      "name": "略略略",
+      "desc": "戴彩色爆炸头和小丑红鼻子的柴犬在耳旁晃动双手吐舌扮鬼脸，常用于调皮挑衅或戏谑逗乐",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "44fafc9480c691b475f80649273d4256bc1aa611923667b4d1ad6ad6d1e361c2",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:35:57+08:00",
+      "elapsed_s": 8.6
+    },
+    "396": {
+      "name": "狼狗",
+      "desc": "黄白毛色、红眼尖牙的狼狗斜眼龇牙冷笑，用于表达凶狠警惕、挑衅或玩笑性质的奶凶示威",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "d62715803b3b25ac9350b8972044530690abf61e65fad2544dc22a334de9a40d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:02+08:00",
+      "elapsed_s": 12.0
+    },
+    "397": {
+      "name": "抛媚眼",
+      "desc": "黄色柴犬狗头嘴衔红玫瑰并闪光挑眉，常用于开玩笑撩人、戏谑调情或幽默耍帅",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "c6f9de02ea70d30a97a61e1c86de8f77b21cd636d989b0f8f400ec1b1e7bf7b0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:04+08:00",
+      "elapsed_s": 13.2
+    },
+    "398": {
+      "name": "超级ok",
+      "desc": "白色橙嘴小鸟身体比出巨型OK手势且头顶蓝色ok字，用于表达强烈赞同、爽快答应或没问题",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "d4489173ac2ac925ef85959032aa7fac9fb9912a9a7287531c63db9070c7fb76",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:12+08:00",
+      "elapsed_s": 18.1
+    },
+    "399": {
+      "name": "tui",
+      "desc": "蓝边白身章鱼半眯着眼、噘橙色圆嘴向旁吐黑籽，用于表达嫌弃、鄙视、不屑或打趣时的唾弃",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "357548823ee66b205b764f6963918c769e91ff047f8a85f67e5b912456365623",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:07+08:00",
+      "elapsed_s": 12.5
+    },
+    "400": {
+      "name": "快乐",
+      "desc": "戴红围巾的黑白企鹅闭眼沉醉在漫天红心中，传达极度甜蜜与幸福，用于表达喜爱或感动",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "5fb0b84403a186c1ddfaed9789b1d1301df0e20f272519812509478cea27a14b",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:11+08:00",
+      "elapsed_s": 13.8
+    },
+    "401": {
+      "name": "超级转圈",
+      "desc": "戴红围巾的黑白QQ企鹅在金光中欢快张臂转圈，常用于表达极度开心、狂喜、庆祝或欢迎",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "687d36ff7536586796d51c7ee2d93bce65367cf16a761e0673aca53c15a6a741",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:07+08:00",
+      "elapsed_s": 7.8
+    },
+    "402": {
+      "name": "别说话",
+      "desc": "微笑的大黄脸从后环抱小黄脸并捂住其嘴，多用于宠溺或戏谑地制止对方发言、让其闭嘴",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "7c550596829b4d0507583c0fbb24bcefdd56e91a9b9b69cadb2d11c63173cdbb",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:15+08:00",
+      "elapsed_s": 13.3
+    },
+    "403": {
+      "name": "出去玩",
+      "desc": "黄色圆脸满眼星光、手握绿枝欢呼，用于表达迫不及待想出门踏青游玩的期待与雀跃",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "92b8a071094f8698fe0dc962f2ba8e951796d3e6918255c0656ae60d8137c139",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:19+08:00",
+      "elapsed_s": 14.3
+    },
+    "404": {
+      "name": "闪亮登场",
+      "desc": "戴星形墨镜、涂红唇的粉花在两朵小白花簇拥下走秀，表达高调自信、隆重登场的傲娇情绪",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "4eb9377668cbb419314efc2e090844b8c262da50fbe1b9a9f725f43e57668438",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:16+08:00",
+      "elapsed_s": 9.8
+    },
+    "405": {
+      "name": "好运来",
+      "desc": "粉瓣黄脸红唇的花朵在好运来金光中高举双手大笑，表达祈求转运或庆祝幸运逢喜的狂喜情绪",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "93baeb497ed90f1965606cfc74724e13d391ed49f200b4c4fe616eab343907d8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:20+08:00",
+      "elapsed_s": 12.2
+    },
+    "406": {
+      "name": "姐是女王",
+      "desc": "戴金冠白披风的粉红花手持权杖闭眼托腮嘟嘴，常用于表达极度自信、自恋或霸气的女王气场",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "411ba6deff2ba8bc9e57aa87e676f9b73bc473c68f70dabf295186ba4a6abfe7",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:26+08:00",
+      "elapsed_s": 15.1
+    },
+    "407": {
+      "name": "我听听",
+      "desc": "粉花红唇黄脸抬绿手侧耳倾听，常用于好奇八卦、热切吃瓜或洗耳恭听的轻松语境",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "cf42338a4e262ce145dd22b781ce0d759cb47411063f87e5f0d17fee973b2851",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:28+08:00",
+      "elapsed_s": 16.9
+    },
+    "408": {
+      "name": "臭美",
+      "desc": "粉红花朵小人手举镜子托腮照镜并冒爱心，传达自恋得意与被夸赞后的傲娇窃喜",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "ba2fedcac9b18f16a76c91392c2e84aea227e0bc5b6cebc634d6548759275ea3",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:24+08:00",
+      "elapsed_s": 9.0
+    },
+    "409": {
+      "name": "送你花花",
+      "desc": "手递出长着浓妆大眼与红唇的粉瓣拟人花，神情夸张谄媚，常用于搞笑示好或调侃式讨好对方",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "74f41bc60f96037cb7c579a3ca9a550c2232db845fc49f7d991e045ab5ba7e0c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:28+08:00",
+      "elapsed_s": 11.2
+    },
+    "410": {
+      "name": "么么哒",
+      "desc": "粉色花朵黄脸戴着星光墨镜噘红唇吹出爱心，常用于热情飞吻、撒娇及表达喜爱与感谢",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "09884ed14bef86bf01956c59486af0d4e147ece576c077d175939bfe9ee40645",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:30+08:00",
+      "elapsed_s": 10.9
+    },
+    "411": {
+      "name": "一起嗨",
+      "desc": "头戴粉花、配墨镜红唇的黄脸在迪斯科球旁摇摆，表现极度兴奋，常用于聚会狂欢或活跃气氛",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "3fb50a53cb9d689f7442a60591a2a7d4bfd03cbfc5bf78a7dc2fd99d2cf123af",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:32+08:00",
+      "elapsed_s": 12.3
+    },
+    "412": {
+      "name": "开心",
+      "desc": "戴彩星墨镜、涂红唇的粉色花朵雀跃扭动奔跑，传达极度兴奋、狂喜或得意洋洋的开心语境",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "846eb20b584953fb18813d0dbb88fc0d3a91d46d5c565bdad2c59e332191ac03",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:38+08:00",
+      "elapsed_s": 14.1
+    },
+    "413": {
+      "name": "摇起来",
+      "desc": "粉瓣黄脸的小花戴彩虹星镜，嘟着红唇摇摆跳舞，常用于表达狂欢、嗨皮、得瑟或庆祝氛围",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "a387d96a9873733b249e23d4ba395b8bdbdc74d09a0ac1cb7ff5e6fd4bfcedd3",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:35+08:00",
+      "elapsed_s": 9.1
+    },
+    "415": {
+      "name": "划龙舟",
+      "desc": "裹绿粽叶、绑红头带的小粽子在红龙舟上卖力敲鼓，常用于加油鼓劲、奋力冲刺或端午祝福",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "36e705080ba6bc045cf282aaf0d8ff9a48432f7440e9ce7691caad79b9930dbf",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:37+08:00",
+      "elapsed_s": 9.8
+    },
+    "416": {
+      "name": "中龙舟",
+      "desc": "两只系红头带的绿色粽子在红龙舟上奋力击鼓挥舞冲字旗，常用于加油打气、冲刺与端午祝福",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "8ec93269640bdd3b17f42fa813de7013c23ab2eb706496e4e5aea276c7bb9494",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:34+08:00",
+      "elapsed_s": 5.8
+    },
+    "417": {
+      "name": "大龙舟",
+      "desc": "黄色圆脸小人乘龙舟齐心奋力划桨，充满干劲，多用于端午节祝福、团队加油打气或催进度",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "c553ac5687c388bb3677f26975ba4f8ca3209054c65fe24c7dbbad130639e250",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:38+08:00",
+      "elapsed_s": 8.5
+    },
+    "418": {
+      "name": "填罐罐",
+      "desc": "粉紫渐变云朵罐底刚填入少许彩色小球，常用于表达能量告急、心情见底或求好友安慰互动",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "cbbc4dfbc0aef2b50e21b6793238722103c34c99cb6487098cab1bfd285a201f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:45+08:00",
+      "elapsed_s": 13.1
+    },
+    "419": {
+      "name": "火车",
+      "desc": "绿皮火车满载着戴墨镜和花帽的黄脸表情向前行驶，常用于表示出门旅行、回家或调侃发车",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "b379b678b9796a60de7693bb4bf633cbea63bca2e3ee6a839782600d9c2bc8ca",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:41+08:00",
+      "elapsed_s": 6.4
+    },
+    "420": {
+      "name": "中火车",
+      "desc": "绿皮火车满载神态各异的小黄脸向前行驶，常用于表达结伴出游、回家探亲或团队发车",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "341a8ca0ec504708c3172c3ddbc30a502ef09ee94b27dd2bdfa797d045b278ce",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:44+08:00",
+      "elapsed_s": 8.8
+    },
+    "421": {
+      "name": "大火车",
+      "desc": "蓝红色卡通蒸汽小火车喷着白烟疾驰，常用于调侃老司机发车、大家跟风排队或催促快点出发",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "93947282f0301c6e9c3ebd0087005b2463023347c6f2ec0155c5fca220a20c16",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:50+08:00",
+      "elapsed_s": 13.0
+    },
+    "422": {
+      "name": "粽于等到你",
+      "desc": "卡通粽子乘着龙舟在水上奋力划桨赶来，表达终于等到对方的欣喜与热切，常用于端午及欢迎",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "c553ac5687c388bb3677f26975ba4f8ca3209054c65fe24c7dbbad130639e250",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:51+08:00",
+      "elapsed_s": 13.0
+    },
+    "423": {
+      "name": "复兴号",
+      "desc": "画着复兴号高铁载着黄脸乘客疾驰过长城，常用于表达乘车出游、出差或返乡的期待与喜悦",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "842fb4c25f2dce8b631ebfd073d5276c2f1dde2b0cdf227757bca9d58466b9c7",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:50+08:00",
+      "elapsed_s": 12.2
+    },
+    "424": {
+      "name": "续标识",
+      "desc": "一只手指用力按下红色圆形按钮，常用于QQ好友间提醒打卡聊天，以维持连续互动火花标识",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "4945dcf36e1085898c6048ec997a29dd2124b86f1521df007650b521653dac0e",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:50+08:00",
+      "elapsed_s": 9.7
+    },
+    "425": {
+      "name": "求放过",
+      "desc": "穿绿衣的黄脸小人泪眼汪汪跪地连连磕头，表达委屈求饶，常用于认怂道歉或恳求对方放过",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "cba93087f837775b0e7d8c7edf64734acb6579e4d570f632e4f97eefa62bd758",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:01+08:00",
+      "elapsed_s": 17.3
+    },
+    "426": {
+      "name": "玩火",
+      "desc": "黄脸斜眼挑眉坏笑，手中红玫瑰与火焰交替变换，多用于霸总式调情、戏谑撩人或打趣挑衅",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "b0428142f45f6569816a54e63f8bede649ee076fdfbd524a9c9f443a5f614e77",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:36:58+08:00",
+      "elapsed_s": 12.9
+    },
+    "427": {
+      "name": "偷感",
+      "desc": "面带阴影的大眼黄脸穿绿衣缩头鬼祟张望，常用于表达心虚、暗中观察或怕被关注的偷感",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "4cd1ceb83d7c3450a75c6991a2c4ca1a7134d0a2939a47d8e84ae367eff356ea",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:13+08:00",
+      "elapsed_s": 23.0
+    },
+    "428": {
+      "name": "收到",
+      "desc": "黄色黑眼圈胡茬脸有气无力地比出OK手势，常用于疲惫打工人无奈且勉强地应承工作任务",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "3bf88b700e9e73476a56c608e92c11a7ed1f86e95cd376407fe3d2b94c736a10",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:01+08:00",
+      "elapsed_s": 10.7
+    },
+    "429": {
+      "name": "蛇年快乐",
+      "desc": "饰有吉祥纹样的黄色卡通蛇正吐舌扭动身躯，常用于蛇年新春表达喜庆欢乐与节日祝福",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "faa3179628b6634b526b805318baed0ab857d0fb1240eb71b54fae908c49f9ec",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:05+08:00",
+      "elapsed_s": 14.8
+    },
+    "430": {
+      "name": "蛇身",
+      "desc": "彩色几何花纹的黄蛇吐着舌头蜿蜒，呆萌搞怪，常用于蛇年祝贺、卖萌互动或调侃语境",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "d6fb16dc7190dc810a452804ae1774c05d01cdbeeb1f31e513831fdf05494000",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:03+08:00",
+      "elapsed_s": 12.3
+    },
+    "431": {
+      "name": "蛇尾",
+      "desc": "浅灰蓝色简笔小蛇吐着信子蜿蜒爬行，常用于群聊拼接长蛇刷屏、蛇年接龙或幽默调侃语境",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "49c1f7b4ed613d9ef4b913fd265b9df3c80082eecc79618a0d9ca7d5d365bffc",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:09+08:00",
+      "elapsed_s": 10.8
+    },
+    "432": {
+      "name": "灵蛇献瑞",
+      "desc": "头戴金饰的红色剪纸灵蛇身印万事顺利伴祥云蜿蜒，传递喜庆吉祥，常用于蛇年新春拜年祝福",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "17fe5953d0fdfebb88da17cafee66657f9fc8b7f8d27c17ee4f5755e28c5cac4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:11+08:00",
+      "elapsed_s": 10.2
+    },
+    "433": {
+      "name": "大鸽",
+      "desc": "蓝紫鸽子穿西装戴墨镜翘腿坐黑沙发扶眼镜，姿态霸气，常用于装酷、得瑟或表现大佬登场",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "94bed123c648dc87e8e8aa69e9854772b4eeabcf2c9f1e7bcf3e6ffc7a10ced6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:14+08:00",
+      "elapsed_s": 12.7
+    },
+    "434": {
+      "name": "鸽来了",
+      "desc": "戴墨镜、长着肌肉双臂的灰蓝色鸽子大步走来，神情嚣张，常用于理直气壮放鸽子或霸气出场",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "d924ec3ad06afcf25b7cc72dd9fa20100d1c1859bc935d8b8eb8c511bc3ac90e",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:15+08:00",
+      "elapsed_s": 11.5
+    },
+    "435": {
+      "name": "关我鸟事",
+      "desc": "头戴蓝紫鸟头套的肌肉男耸肩摊手，常用于表达事不关己、无所谓与漠不关心的态度",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "7f50eabf983989b5492c1cee0c6b47e3c9bf22835d0c0fd6abf6e8f3ae93f9fe",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:22+08:00",
+      "elapsed_s": 16.6
+    },
+    "436": {
+      "name": "跟鸽走",
+      "desc": "长着肌肉臂的灰鸽搭肩搂着黄色小鸡并肩前行背影，常用于大哥带飞、罩着你或跟我混的自信语境",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "357e110396d3a8a1b441840c12c61376807b23403c83e0ab6c33ba44d0109589",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:22+08:00",
+      "elapsed_s": 13.1
+    },
+    "437": {
+      "name": "鸽鸽生气",
+      "desc": "蓝头灰身的鸽子长着健硕肌肉臂，握拳叉腰咬牙瞪眼，表达极度愤怒、暴躁抓狂或示威警告",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "a801b53f09af704c567f064a9190b3db6d377af0f600df6d278c9f24291be114",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:20+08:00",
+      "elapsed_s": 8.5
+    },
+    "438": {
+      "name": "可靠",
+      "desc": "黄色小鸟依偎在结实的肌肉手臂旁微笑，传达出安心与信任，常用于夸赞对方靠谱、有安全感",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "7a2a0afa8303add36f72ab5d9c3fdea412ab34a422090e58a4c0e3ecc6fb97db",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:26+08:00",
+      "elapsed_s": 12.3
+    },
+    "439": {
+      "name": "鸽瞅瞅",
+      "desc": "戴黑墨镜的蓝紫色鸽子从掩体后探头偷瞄，表达暗中观察、吃瓜看戏或装酷审视的意味",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "87dcb039686145a25aa731ec2ef1bf95f10555aa444a0e7250d8c2bf9431c6bb",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:25+08:00",
+      "elapsed_s": 11.3
+    },
+    "440": {
+      "name": "鸽喜欢",
+      "desc": "蓝紫色鸽子穿西装举红酒杯，神情迷离带爱心，常用于幽默示好、调情或表达喜爱与赞赏",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "5c7296ff303259dc1a062b850f9643db75576cf67d5f7a4a3b29fcc493132a04",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:25+08:00",
+      "elapsed_s": 10.2
+    },
+    "441": {
+      "name": "相信鸽",
+      "desc": "背后带金光的紫头肌肉鸽子眼神坚定地握拳，表达信誓旦旦、势在必得，常用于让人相信自己",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "8bec4f2d58fdd59365b545a7eb48c821815e1fa6442f7059d4c24adb9004cad7",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:30+08:00",
+      "elapsed_s": 10.6
+    },
+    "442": {
+      "name": "鸽王",
+      "desc": "戴王冠红斗篷的肌肉鸽子得意展示臂肌，常用于戏谑调侃理直气壮地爽约放鸽子",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "65770ed2686b8d489293bd37763c3ce59c4645f3680b1616e95820726b3b90c2",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:34+08:00",
+      "elapsed_s": 12.3
+    },
+    "443": {
+      "name": "戳一下",
+      "desc": "肉色手掌伸出食指向前轻戳并带有粉橙色弧线，常用于打招呼、催促或亲昵引起对方注意",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "56e38708680a36be5a2c1d1b197fea7d2c570381cdc9e8bf08865859fdd30605",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:31+08:00",
+      "elapsed_s": 8.8
+    },
+    "444": {
+      "name": "超级6",
+      "desc": "肤色手掌比出数字六手势且上方有粉红666，表达惊叹与佩服，用于夸奖对方很厉害或操作极秀",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "79596b0b431835f6aa12821f5cb90ea05024a9bf610bac65f91faea1b1d5df18",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:39+08:00",
+      "elapsed_s": 14.0
+    },
+    "445": {
+      "name": "比个心",
+      "desc": "肤色单手拇指与食指交叉托起粉红爱心，做比心手势，常用于表达喜爱、感谢、示好与撒娇",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "e9476c2e3c39920e047c7243c643b251536c902f9e23ba18e8d34ef33c3d0631",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:36+08:00",
+      "elapsed_s": 10.5
+    },
+    "446": {
+      "name": "超级心碎",
+      "desc": "肉色手做比心动作并捏着一颗裂开的粉红爱心，用于表达极度伤心、失望、受打击或委屈的情绪",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "33e16e2337bb051442f4be2df654695ac25755ee03895d8cb19161df272de0b6",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:34+08:00",
+      "elapsed_s": 8.1
+    },
+    "447": {
+      "name": "太赞了",
+      "desc": "肤色手掌竖起大拇指并伴有彩色光芒，做出点赞动作，常用于表达极度赞赏、夸奖与强烈认可",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "114b35da1bca2e69fe364286d244a0a1498446d0e12812199004df87886a3c8b",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:37+08:00",
+      "elapsed_s": 6.7
+    },
+    "448": {
+      "name": "放大招",
+      "desc": "双掌向前推出红黄相间的光波火球，常用于开玩笑攻击、宣泄怒火或亮出绝招反击对方",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "ac5535f7126623b413dce8ade6894da456e8ea09e72c0d05cffb51e5b9c708ef",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:39+08:00",
+      "elapsed_s": 8.8
+    },
+    "449": {
+      "name": "+1",
+      "desc": "橙色对话气泡内印着白色加一图标，常用于赞同、附和前人观点或表示算我一个、跟帖支持",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "c0ffa0c8325c023b3deced51f139d0e960fe638b33c314cd9075c8d758344e86",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:46+08:00",
+      "elapsed_s": 12.2
+    },
+    "450": {
+      "name": "撇嘴",
+      "desc": "黄色圆脸紧闭双眼撇嘴扭头又委屈睁眼回望，常用于表达难过、受委屈、无奈或撒娇诉苦",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "9f880476eba242d529b18fe562f9a3b41f92cd97fd593cfd941bfa4eee730c5c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:46+08:00",
+      "elapsed_s": 11.5
+    },
+    "451": {
+      "name": "色",
+      "desc": "黄色圆脸双眼化为红心，咧嘴大笑流口水，常用于面对帅哥美女或美食时表达垂涎与极度痴迷",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "653ce515df4dc08fd55595f779d647583ccaa8f2fa373b66663aebc99238116c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:46+08:00",
+      "elapsed_s": 10.4
+    },
+    "452": {
+      "name": "微笑",
+      "desc": "黄色圆脸面带微笑并向下眨眼，表面礼貌，实则常用于传达无语、尴尬、敷衍或冷嘲讽刺",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "698473ceb50c88049800143f0d12d4854de6f05e3dbd6ae67fd9cbf07768048f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:46+08:00",
+      "elapsed_s": 9.2
+    },
+    "453": {
+      "name": "发呆",
+      "desc": "黄色圆脸皱眉瞪眼、挂着蓝鼻涕发愣眨眼，常用于表达放空走神、懵圈无语或犯傻卖萌",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "9010bb7c733476bce2db2d6b957fff69b1b9cca123f647eff044cc00897274f8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:50+08:00",
+      "elapsed_s": 11.3
+    },
+    "454": {
+      "name": "得意",
+      "desc": "戴黑墨镜的黄色笑脸滑下墨镜眨眼后戴回闪光，常用于装酷耍帅、自鸣得意或调侃炫耀",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "9a48e0416a637bded6cd33e4b925e394418fd17440e13eaabe2761c7765349a8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:49+08:00",
+      "elapsed_s": 10.0
+    },
+    "455": {
+      "name": "害羞",
+      "desc": "脸颊泛红的黄脸眨动长睫毛大眼，羞涩闭眼又微笑睁开，用于被夸或示好时表达害羞与撒娇卖萌",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "074a4a63d2ff161571553f853974396b2137baf3d38cb7da1c72369e50ff0021",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:01+08:00",
+      "elapsed_s": 15.5
+    },
+    "456": {
+      "name": "闭嘴",
+      "desc": "瞪大双眼的黄色圆脸嘴贴交叉胶布并不安张望，常用于表达保守秘密、不敢多言或示意对方噤声",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "bfecbea2058548e24807bdea8c6bf4ca71003b8fa3ed6faca6269f5c71b8681e",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:04+08:00",
+      "elapsed_s": 18.1
+    },
+    "457": {
+      "name": "睡",
+      "desc": "闭着眼的黄色圆脸头顶冒Z且吹着蓝色鼻涕泡熟睡，常用于表达困倦、道晚安或觉得无聊",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "39e1a373b0c208d9a93b08e4c0e522bb105ecb3977cfbd672a6ea471e74786be",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:54+08:00",
+      "elapsed_s": 8.4
+    },
+    "458": {
+      "name": "我吗",
+      "desc": "黄色圆脸睁大眼向上看并用手指向自己，传达被点名时疑惑、惊讶与无辜反问的情绪",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "ee6993c9284510772157fd2a5adb0029d477a0cf29ec2ffe10921c26945fbc08",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:37:57+08:00",
+      "elapsed_s": 10.9
+    },
+    "459": {
+      "name": "优雅",
+      "desc": "浓睫红唇的黄脸正漫不经心吹拂粉色长美甲，多用于做作装优雅、凡尔赛炫耀或傲慢嘲讽",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "1355f82a0a44d2745a96b3957c3ee5f752c735ddfbcd165acd33884a724aa75f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:00+08:00",
+      "elapsed_s": 10.3
+    },
+    "460": {
+      "name": "硬撑",
+      "desc": "黄色圆脸挑眉撇嘴，眼皮沉重下垂却勉强睁着，用于表达极度困倦疲惫但仍不得不硬撑的心累",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "3a3e659a0535649230fe7c71bb5f62fe0c863e6194f57b2566f255bd4d2a7aff",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:01+08:00",
+      "elapsed_s": 10.9
+    },
+    "461": {
+      "name": "宕机",
+      "desc": "黄色圆脸瞪大双眼张着嘴，额头带有加载图标发呆，常用于表达大脑短路、发懵或反应不过来",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "01b45c617c03896b250401ca05f888aedfa076fc4b2247a93e69bfbc948ea671",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:07+08:00",
+      "elapsed_s": 12.3
+    },
+    "462": {
+      "name": "无语",
+      "desc": "黄色圆脸眯眼咧嘴干笑且挂着蓝色冷汗，传达尴尬、汗颜与无可奈何，常用于感到无语的语境",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "43a5d5097314ae482e847a00b7bf0bc79076e09c421d980649ecd736d203f95c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:10+08:00",
+      "elapsed_s": 13.3
+    },
+    "463": {
+      "name": "新年快乐",
+      "desc": "黄色圆脸微笑手举写着新年的红色卷轴，表情欢喜亲切，常用于春节或跨年时表达拜年祝福",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "f24d5a086e4ba8adb411d74f9434608109e22e2a38761501a0ddddc3b6dc3b34",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:09+08:00",
+      "elapsed_s": 8.8
+    },
+    "464": {
+      "name": "马上到",
+      "desc": "黄色得意笑脸开着戴墨镜的红色小马跑车疾驰，借谐音戏谑调侃自己正火速赶来、马上就到",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "325949465240600a985e8c05e235323ef941d18707beb6a83f118dd20ca7b07f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:17+08:00",
+      "elapsed_s": 15.5
+    },
+    "465": {
+      "name": "拆红包",
+      "desc": "黄色圆脸紧闭双眼兴奋张嘴，手拆冒金光的红色红包，表达见钱眼开、抢到红包时的惊喜与狂喜",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "5dfd91c1d03f0f881f8771af65f8e728691c8d4c478a1926b42185dd8bc0b8c5",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:10+08:00",
+      "elapsed_s": 9.2
+    },
+    "466": {
+      "name": "羞羞哒",
+      "desc": "长睫毛的黄色小人斜眼含笑、手托腮颊，传达娇羞卖萌，常用于暧昧调情或害羞语境",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "80dded086242812af082695c9e897b6a24b9e7ab37c4382784d890a9fec6bafd",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:13+08:00",
+      "elapsed_s": 9.6
+    },
+    "467": {
+      "name": "摇花手",
+      "desc": "戴蓝色杀马特假发的黄脸在头顶摇花手，常用于土嗨搞怪、得意得瑟或调侃活跃气氛",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "ec12f0e5ff3f4ed3cd8ca46429feb1cde3d5c18eccbe8b8d6595c0d7686da976",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:20+08:00",
+      "elapsed_s": 13.7
+    },
+    "468": {
+      "name": "失眠",
+      "desc": "黄脸眼圈泛红且双手扒着被沿，躺在被窝里呆滞望天，传达深夜睡不着、焦虑失眠的无奈",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "c0e8ae1f26e7155982f04af9f37a6f03acbb8dfeb7f29330f28d7ef1e65eeab1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:21+08:00",
+      "elapsed_s": 12.2
+    },
+    "469": {
+      "name": "坚毅",
+      "desc": "棱角分明的黄色光头硬汉脸食指抵唇比嘘，神情自信，常用于戏谑装酷或暗示闭嘴保密",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "f26afcedf946e81e524860701f7f2d2f309278617dbf1a6bc97a355a6ec3f247",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:23+08:00",
+      "elapsed_s": 12.8
+    },
+    "470": {
+      "name": "马到成功",
+      "desc": "企鹅头戴红粉相间的小马头套睁大双眼，常用于祝愿对方考试工作顺利、马到成功与加油打气",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "23b4c42de47cd294cd39ce055beaff9e9506103ce335d448e952c0819e1294a0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:24+08:00",
+      "elapsed_s": 13.6
+    },
+    "471": {
+      "name": "深情",
+      "desc": "黄脸带红晕且口衔红玫瑰，挑眉眨眼伴有星光，常用于搞笑自恋、油腻耍帅或玩笑式的调情示爱",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "6c56891d0165d1a4db2daa6595593f99e29a23273918f78d4f254dbb766c877c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:26+08:00",
+      "elapsed_s": 12.1
+    },
+    "472": {
+      "name": "心动",
+      "desc": "眼睛发亮的穿绿衣黄脸小人捧着剧烈跳动放大的爱心，表达被撩到、极度心动与爱慕",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c5dbd5b591372bf00cff8aca85a2294308eab43bc5ca1dd44569c0cb71f0bc44",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:28+08:00",
+      "elapsed_s": 11.4
+    },
+    "473": {
+      "name": "爱意",
+      "desc": "黄色圆脸双手托腮、眼含星光脸泛红晕，周身飘浮红心，传达被萌化的极度喜爱、心动与爱慕之情",
+      "sources": [
+        "qface-png"
+      ],
+      "img_sha256": "7913a3951d1d0812d4fc344f813c4bc6901ec027dd645c1bd2516fccab46bc48",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:32+08:00",
+      "elapsed_s": 11.9
+    },
+    "474": {
+      "name": "给你一拳",
+      "desc": "瞪眼皱眉的黄色圆脸举拳向前猛揍，用于表达愤怒不满或好友间嬉闹开玩笑的揍人警告",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "6c09b6794d1679dc3f22f617630d24c861efade2a4fce4794c9b87d09b5f1745",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:32+08:00",
+      "elapsed_s": 10.9
+    },
+    "475": {
+      "name": "干饭",
+      "desc": "黄脸手持碗筷张大嘴疯狂扒饭、塞鼓腮帮，传达急切与饥饿感，多用于表示去吃饭或正在干饭",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "b50178570e93b8d78c7e3eb52ef71f8f446c9660c5663668e3846bc31dee4bf0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:40+08:00",
+      "elapsed_s": 17.2
+    },
+    "476": {
+      "name": "不是吧",
+      "desc": "穿绿衣的黄脸小人坐在电脑前，突然凑近屏幕瞪大眼睛，常用于表达震惊、质疑与难以置信",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "841ad679e6d5e550e0131dd9405c39707f95b7660d73be4fea2ada1f8fc824af",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:32+08:00",
+      "elapsed_s": 8.3
+    },
+    "477": {
+      "name": "你懂的",
+      "desc": "黄色圆脸眯起双眼斜视侧瞟并抿嘴坏笑，常用于暗示、调侃或表达心领神会、心照不宣的默契",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c6cf51ea5aeb9b9b54bee1d2fa1a0c822273969bccdfff0af62b21a86b46625c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:39+08:00",
+      "elapsed_s": 13.4
+    },
+    "478": {
+      "name": "对的对的",
+      "desc": "黄色圆脸手举绿色对勾标牌开心地连连点头，用于极度赞同对方观点、表示完全正确",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e19a5d27be50a6a321cf575ac1a2e81a16512fb79a7df13a38a2b8e4069315e3",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:37+08:00",
+      "elapsed_s": 9.1
+    },
+    "479": {
+      "name": "不对不对",
+      "desc": "面色发青呆滞的黄脸晃着手中红色叉号牌摇头，常用于急忙纠错、否定或制止离谱说法",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "007d8b279f5209972d2a935ab4994d2177093171b2ab2ddca057d0ee3140c29f",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:42+08:00",
+      "elapsed_s": 10.0
+    },
+    "480": {
+      "name": "散味儿",
+      "desc": "黄色圆脸皱眉闭目、面部发绿，正抬手在鼻前扇风，用于嫌弃对方言论太油腻或恶心难闻",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "31754efdccbe82b565b73e0ba8ea98852b7f21987ae0c3d1b775022ac2015c10",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:45+08:00",
+      "elapsed_s": 13.1
+    },
+    "481": {
+      "name": "学习",
+      "desc": "戴眼镜流汗的黄脸小人手拿笔狂翻蓝皮书，表现紧张苦读，常用于表示做笔记、受教或临时抱佛脚",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "adf4919a8b182237fa682d3deb9b79b59b64d002d4e2f3525cbd03853ae1b210",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:42+08:00",
+      "elapsed_s": 9.4
+    },
+    "482": {
+      "name": "热化了",
+      "desc": "面色泛红滴汗的黄色圆脸向下融化瘫软，常用于抱怨天气酷热难耐或表达极度疲惫虚脱",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "35ea6712152ac661aea21077eb36f6e05982780b5b23966b63db1f135358cfd1",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:50+08:00",
+      "elapsed_s": 13.4
+    },
+    "483": {
+      "name": "略",
+      "desc": "脸颊泛红的黄脸小人两手微抬，翻个白眼后扭头撇嘴，用于表达傲娇、无语、嫌弃或略过不理",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "224603aeebe991c7f22cfc68e8ca23b7912889ce8432be5b7b5ef2b0fe122e00",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:55+08:00",
+      "elapsed_s": 16.1
+    },
+    "484": {
+      "name": "比爱心",
+      "desc": "水汪汪大眼的黄脸害羞地用双手在头顶比出红心，常用于卖萌、示好、表达极度喜爱或感谢",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "b4fa706216d55473bf4561ad57aa7d08b9c4287385f22d12ac50731dc8f85993",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:49+08:00",
+      "elapsed_s": 8.3
+    },
+    "485": {
+      "name": "开学啦",
+      "desc": "背着绿书包的黄色笑脸坐在课桌后兴奋举手眨眼，常用于开学报到、上课打卡及表达期待",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "8c3d915119e7aebef973eeaa19275adceb10ff3594250125ecadd481f4d6b9cd",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:52+08:00",
+      "elapsed_s": 10.1
+    },
+    "486": {
+      "name": "开学啦2",
+      "desc": "背着书包的黄色圆脸学生趴在课桌前兴奋举手欢笑，常用于表达开学、上课或一起学习的期待与快乐",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "fcaceb07674109db2af7ab7c79d10475941218d513a55ac251a1eff2d5c18d98",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:52+08:00",
+      "elapsed_s": 10.0
+    },
+    "487": {
+      "name": "开学啦3",
+      "desc": "黄色圆脸大眼萌物趴在课桌后晃头眨眼，常用于表达乖巧听讲、卖萌期待或准备上课的情绪与场景",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a5a7650d8585f1c54a220ce8cb9faca074757ee1d033ac8e207575afdd218ec4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:38:59+08:00",
+      "elapsed_s": 13.8
+    },
+    "488": {
+      "name": "开学大吉",
+      "desc": "黄色圆脸头戴开学大吉红发带，骑着红色锦鲤上下摇晃，用于开学或考试祈求逢考必过、好运连连",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "409e1dc10fadb65ae628dc68b8f419bcc085c02fcabd81c2ac21750a9444405a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:00+08:00",
+      "elapsed_s": 11.3
+    },
+    "489": {
+      "name": "知识增加",
+      "desc": "背粉书包穿绿衣的黄脸瞪眼呆立，背后神光放射闪烁，用于调侃学到离奇新知识、大受震撼或顿悟",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "6c5648505681d0f219692b28201d925379b6c5d6f0eb5b05a2fdf5b08c111b99",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:03+08:00",
+      "elapsed_s": 12.6
+    },
+    "490": {
+      "name": "能送我吗",
+      "desc": "背着绿书包的黄脸八字眉带红晕，双手向前托起乞求，常用于撒娇或装可怜向对方求赠送",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "e11d89d0eb36ba4dd5733ae47f2e03f4a0cc38f5bc5f545a121101b2d3bee495",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:03+08:00",
+      "elapsed_s": 10.8
+    },
+    "491": {
+      "name": "自信学霸",
+      "desc": "戴黑框眼镜的黄脸挑眉坏笑并单指推眼镜，常用于表现胸有成竹、看穿一切、专业自信或调侃装逼",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "02771dfb786fb71b3f7f28406ef2585d1c29abce37c0938ca087037835a52a2e",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:02+08:00",
+      "elapsed_s": 10.1
+    },
+    "492": {
+      "name": "让我细品",
+      "desc": "头顶倒扣蓝皮书的小黄脸举着放大镜仔细端详，用于表示探究细节、深入审视或吃瓜推敲",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "be0a33daa3cb1e108f3f79cff8aa9f0dbe51d6c86de3499be6f99f7a5cc975a4",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:04+08:00",
+      "elapsed_s": 9.1
+    },
+    "493": {
+      "name": "又是早八",
+      "desc": "黄色圆脸裹着蓝白被子皱眉赖床，身旁闹钟作响，常用于表达被迫早起上学上班的痛苦与困倦",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "4d64a04a1b78578d5802ce9506f667ed7d3d076a06aa0a6a59aef2fe1842154a",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:09+08:00",
+      "elapsed_s": 9.8
+    },
+    "494": {
+      "name": "举杯邀月",
+      "desc": "戴红围巾的企鹅在金黄圆月前举杯敬酒，常用于中秋佳节或庆祝场景中表达祝福、敬意与客套",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "033f73eb931917dcdc7c106040d2933dfe6e4d71e43b0470e8d5430f79c4c2b0",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:09+08:00",
+      "elapsed_s": 8.6
+    },
+    "495": {
+      "name": "兔来",
+      "desc": "黄色兔子花灯一闪一闪地发光并眨眼，充满喜气，常用于兔年迎新纳福或表达美好祝愿",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "468f98179dfcfbc8b9a66599af15b1a3554f741cfb526909e363e19a53ec7c59",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:11+08:00",
+      "elapsed_s": 8.8
+    },
+    "496": {
+      "name": "阴晴圆缺",
+      "desc": "黄色月亮由挑眉滑稽笑瞬间变成蓝灰面瘫冷脸，传达乐极生悲、瞬间下头或无语变脸的情绪",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "0b11f20b28b0e70a01380524b35ffb83dea4d0da76f6e7fcd3581a82d702b6fb",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:12+08:00",
+      "elapsed_s": 9.1
+    },
+    "497": {
+      "name": "休假了",
+      "desc": "疲惫的黄色圆脸额头被盖上休假印章后瞬间喜笑颜开，常用于表达放假解脱的狂喜与轻松",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "750f090b1c6b7871b881e697ce9624cbeb49e376a5c5ac50b02e7d03b26128ae",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:13+08:00",
+      "elapsed_s": 9.6
+    },
+    "498": {
+      "name": "中!",
+      "desc": "小黄脸突然亮出发光的巨大点赞手势与中字，常用于表达强烈赞赏、爽快答应或高度认可",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a184b6d88854a723e3ded410a8a742805f1edfea0eed4192ce33a6987149ce3c",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:12+08:00",
+      "elapsed_s": 8.4
+    },
+    "499": {
+      "name": "观月C位",
+      "desc": "戴红围巾的企鹅背影伸手指向夜空明月与落花，常用于中秋节邀约赏月或表达浪漫节日氛围",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c85f6f6f5855689f5927de54df553b4b45a1cbef7f4e717b2a589a74ea76a55b",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:20+08:00",
+      "elapsed_s": 11.4
+    },
+    "500": {
+      "name": "秋秋赏月",
+      "desc": "蓝色小企鹅坐在载有圆月的小舟上啃月饼，传达惬意满足的情绪，常用于中秋祝福或表达悠闲享受",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "6117c88b374fe8959167ea845360cc234a359eb8c29dd8725591945592e994e3",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:25+08:00",
+      "elapsed_s": 16.0
+    },
+    "501": {
+      "name": "秋秋之约",
+      "desc": "两只圆萌的蓝色小鸟在舟上伴着明月桂花吃月饼，温馨惬意，常用于中秋节日祝福或浪漫相约",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "846d7a3cc1a4df9faabccb9ccdf2b7563ebe36dc3165dba1ad172211b3a848d8",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:29+08:00",
+      "elapsed_s": 18.2
+    },
+    "502": {
+      "name": "秋秋泛舟",
+      "desc": "圆滚滚的蓝色小鸟乘木船在月下抱坛痛饮，常用于表达悠闲惬意、佛系放松或对月独酌的心境",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "352397f42fc74247baf07690312fd8b767c310ec2c6be9d37480171b8f025547",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:38+08:00",
+      "elapsed_s": 26.9
+    },
+    "503": {
+      "name": "秋愿达成",
+      "desc": "彩色小企鹅们在满月下同乘花船并放飞黄色祈愿灯，常用于中秋团聚祝福或庆祝愿望达成",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "43022a03d86efdc3b5d33c7604befcc83caf7aa837aa1c47af9848b1a53fd76d",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:27+08:00",
+      "elapsed_s": 14.2
+    },
+    "504": {
+      "name": "同你玩",
+      "desc": "戴耳麦的黑帽男、金发与银发游戏角色凑在一起欢快晃动，常用于约好友组队联机开黑",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "d1446ff344b80a00788279f7da40474bcd59026d8b6239abb5774cbd6ee49836",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:23+08:00",
+      "elapsed_s": 10.6
+    },
+    "505": {
+      "name": "送花花",
+      "desc": "戴黑迷彩帽和耳麦的胡茬男帅气抛出红玫瑰漫天撒花，常用于幽默示爱、赞赏、致谢或献殷勤",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "5795f5b876fd288955f941f7c8b7db0f6823f99d55dd96b50c2f933cf7114d72",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:31+08:00",
+      "elapsed_s": 11.4
+    },
+    "506": {
+      "name": "捡到宝了",
+      "desc": "戴耳机的金发小人兴奋举着闪亮大钻石，传达喜获珍宝、抽到极品或捡大便宜的狂喜与炫耀",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "a10d601a239dbaf364ffc29f5bf3248d8e1e427445e8b44725658bbc4727eade",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:33+08:00",
+      "elapsed_s": 9.7
+    },
+    "507": {
+      "name": "被发现了",
+      "desc": "白发紫瞳小人躲在草丛偷窥被抓包后惊愕探头，常用于潜水或吃瓜被发现时的心虚与慌张",
+      "sources": [
+        "qface-png",
+        "qzone-gif"
+      ],
+      "img_sha256": "c488567e2f863ac8cf46513ba07c82d4a339661393fb894ec3f39e1853d00d95",
+      "model": "gemini-3.8-flash",
+      "ts": "2026-10-22T23:39:37+08:00",
+      "elapsed_s": 12.0
+    }
+  }
+}

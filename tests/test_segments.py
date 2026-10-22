@@ -14,9 +14,18 @@ class Query:
         return query
 
 
+def _codec_for_mode(logger, mode: str):
+    return QQInboundCodec(
+        logger,
+        Query(),
+        ProfileState(SNOWLUMA_PROFILE),
+        lambda: SimpleNamespace(plugin=SimpleNamespace(qq_face_parse_mode=mode)),
+    )
+
+
 @pytest.fixture
 def codec(logger):
-    return QQInboundCodec(logger, Query(), ProfileState(SNOWLUMA_PROFILE), lambda: SimpleNamespace(plugin=SimpleNamespace(qq_face_parse_mode="description")))
+    return _codec_for_mode(logger, "description")
 
 
 @pytest.mark.asyncio
@@ -52,6 +61,33 @@ async def test_all_snowluma_segments_decode(codec, segment_type, data, expected)
 async def test_unknown_segment_degrades_to_placeholder(codec):
     converted, _ = await codec.convert_segments({"message": [{"type": "future_segment", "data": {}}]}, "1")
     assert converted == [{"type": "text", "data": "[不支持的消息段: future_segment]"}]
+
+
+@pytest.fixture
+def vision_overlay(monkeypatch):
+    from snowluma_reverse.data import face_vision
+
+    monkeypatch.setattr(
+        face_vision.STORE,
+        "_overlay",
+        {"187": {"name": "幽灵", "desc": "白色小幽灵上下漂浮眨眼"}},
+    )
+
+
+@pytest.mark.asyncio
+async def test_face_vision_mode_uses_offline_description(logger, vision_overlay):
+    converted, _ = await _codec_for_mode(logger, "vision").convert_segments(
+        {"message": [{"type": "face", "data": {"id": "187"}}]}, "1"
+    )
+    assert converted == [{"type": "text", "data": "（QQ表情·幽灵｜白色小幽灵上下漂浮眨眼）"}]
+
+
+@pytest.mark.asyncio
+async def test_face_vision_mode_falls_back_when_unlisted(logger, vision_overlay):
+    converted, _ = await _codec_for_mode(logger, "vision").convert_segments(
+        {"message": [{"type": "face", "data": {"id": "9999"}}]}, "1"
+    )
+    assert converted == [{"type": "text", "data": "[表情]"}]
 
 
 def test_unsupported_outbound_snowluma_segments_degrade_to_text():

@@ -101,6 +101,28 @@ max_message_size = 16777216
 
 `token` 与 `allowed_ips` **至少配置一项**，两者都为空时插件拒绝启动监听。
 
+#### QQ 表情解析（`qq_face_parse_mode`）
+
+| 取值 | 输出形态 | 说明 |
+| --- | --- | --- |
+| `description` | `[幽灵]` | 中文名占位，最省 token |
+| `emoji` | `👻` / `[幽灵]` | 能对上 Unicode 的用真 emoji |
+| `vision` | `（QQ表情·幽灵｜白色圆润的小幽灵上下漂浮眨眼，神情呆滞，常用于表达潜水冒泡、装死、无语）` | 离线生成的视觉描述，最贴近原图 |
+
+`vision` 需要先离线生成描述表（运行期只查表，零延迟）：
+
+```bash
+export PYRE_Z_API_KEY=sk-...
+uv run python scripts/build_face_vision.py            # 全量；幂等，只补新增/变更
+uv run python scripts/build_face_vision.py --sample 30  # 抽 30 条先看措辞
+```
+
+- 素材两级：QFace 128px 静态图 + 腾讯 qzone 24px 动作帧条（5 帧放大拼条），**同一次调用里一起送**，
+  静态图定形象、动作帧定动作；缺一路自动降级。
+- 产物 `snowluma_reverse/data/face_vision.json`（只含描述文本，**不落腾讯图片素材**）。
+- 表里缺某个表情（新表情/未生成）时自动回退 `emoji` → `[中文名]`，不会中断收发。
+- 图片缓存落在 `.cache/face_vision/`（已 gitignore）。
+
 ### 3.5 SnowLuma 侧
 
 在 SnowLuma WebUI 的 OneBot 连接里新建 **WebSocket 客户端（反向 WS）**：

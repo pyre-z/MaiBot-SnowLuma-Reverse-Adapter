@@ -11,8 +11,8 @@ from pydantic import model_validator
 
 from .base import _normalize_string, SUPPORTED_CONFIG_VERSION
 from .sections import (
-    QQChatAbilitiesConfig, QQDebugConfig, QQFilterConfig, QQMuteConfig, QQNoticeConfig,
-    QQPluginOptions, QQReverseServerConfig, QQServerConfig,
+    QQChatAbilitiesConfig, QQDebugConfig, QQFaceVisionConfig, QQFilterConfig, QQMuteConfig,
+    QQNoticeConfig, QQPluginOptions, QQReverseServerConfig, QQServerConfig,
 )
 from ..constants import DEFAULT_CLIENT_PORT
 LOGGER = logging.getLogger("snowluma_adapter.config")
@@ -34,6 +34,7 @@ class QQPluginSettings(PluginConfigBase):
     filters: QQFilterConfig = Field(default_factory=QQFilterConfig)
     debug: QQDebugConfig = Field(default_factory=QQDebugConfig)
     mute: QQMuteConfig = Field(default_factory=QQMuteConfig)
+    face_vision: QQFaceVisionConfig = Field(default_factory=QQFaceVisionConfig)
 
     @model_validator(mode="before")
     @classmethod
@@ -122,6 +123,7 @@ class QQPluginSettings(PluginConfigBase):
 
         return {
             "chat_abilities": chat_abilities_section,
+            "face_vision": _as_mapping(raw_mapping.get("face_vision")),
             "client": client_section,
             "debug": debug_section,
             "filters": filters_section,
