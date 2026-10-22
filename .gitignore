@@ -13,7 +13,8 @@ config.toml
 config.toml.backup
 config.toml.backup.*
 config_back/
-data/
+/data/
+.cache/
 config2.toml
 logs/**
 .vscode
