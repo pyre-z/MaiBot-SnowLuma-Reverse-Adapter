@@ -1,7 +1,7 @@
 """SnowLuma 适配器（统一 QQ 连接器）插件。
 
 以 SnowLuma 适配器的模块结构为基底，合并 SnowLuma 适配器的特性：
-1. 作为客户端连接 SnowLuma / NapCat / OneBot v11 正向 WebSocket 服务，
+1. 作为 OneBot v11 反向 WebSocket 服务端监听端口，等 SnowLuma / NapCat 反向连入，
    连接后通过 ``get_version_info`` 自动判定对端并应用对应能力画像。
 2. 将入站消息、通知事件与元事件转换为 Host 侧结构。
 3. 将 Host 出站消息转换为按画像定制的 OneBot 动作序列并发送。
@@ -59,7 +59,6 @@ class SnowLumaAdapterPlugin(
         self._query_service: Optional[QQQueryService] = None
         self._event_router: Optional[QQEventRouter] = None
         self._runtime_bundle: Optional[QQRuntimeBundle] = None
-        self._runtime_mode: Optional[str] = None
         self._debug_logger: Optional[AdaDebugLogger] = None
 
     def get_components(self) -> List[Dict[str, Any]]:
@@ -91,7 +90,7 @@ class SnowLumaAdapterPlugin(
         await self._stop_connection()
 
     async def on_config_update(self, scope: str, config_data: Dict[str, Any], version: str) -> None:
-        """在配置更新后热重载连接（含 client_type 热切换）。
+        """在配置更新后热重载反向监听。
 
         Args:
             scope: 配置变更范围。
@@ -196,10 +195,8 @@ class SnowLumaAdapterPlugin(
                 on_heartbeat_timeout=self._event_router.handle_heartbeat_timeout,
                 profile_state=profile_state,
                 load_settings=self._load_settings,
-                transport_mode=settings.plugin.transport_mode,
             )
-            self._runtime_bundle.transport.configure(settings.transport_config(), profile_state)
-            self._runtime_mode = settings.plugin.transport_mode
+            self._runtime_bundle.transport.configure(settings.server, profile_state)
             self._event_router.bind_runtime(self._runtime_bundle)
             self._bind_runtime_aliases(self._runtime_bundle)
 
@@ -215,7 +212,7 @@ class SnowLumaAdapterPlugin(
         Returns:
             ClientProfile: 初始画像。
         """
-        declared_type = settings.client.client_type
+        declared_type = settings.plugin.client_type
         return PROFILE_BY_TYPE.get(declared_type, PROFILE_BY_TYPE["napcat"])
 
     async def _sync_tool_components_state(self) -> None:
@@ -265,12 +262,8 @@ class SnowLumaAdapterPlugin(
         return cast(QQPluginSettings, self.config)
 
     async def _restart_connection_if_needed(self) -> None:
-        """按配置重启传输；模式切换时重建传输与运行时依赖。"""
+        """按配置重启反向监听。"""
         settings = self._load_settings()
-        if self._runtime_bundle is not None and self._runtime_mode != settings.plugin.transport_mode:
-            await self._runtime_bundle.transport.stop()
-            self._runtime_bundle = None
-            self._runtime_mode = None
         self._ensure_runtime_components()
         runtime_bundle = self._require_runtime_bundle()
 
@@ -293,7 +286,7 @@ class SnowLumaAdapterPlugin(
         if not settings.notice.enabled:
             self.ctx.logger.info("通知事件转发已整体关闭：所有通知都不会传入 Host")
 
-        runtime_bundle.transport.configure(settings.transport_config(), runtime_bundle.profile_state)
+        runtime_bundle.transport.configure(settings.server, runtime_bundle.profile_state)
         await runtime_bundle.transport.start()
 
     async def _stop_connection(self) -> None:

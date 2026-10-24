@@ -186,6 +186,6 @@ async def probe_client_profile(
     if client_type is None:
         raise RuntimeError(
             f"对端 app_name='{app_name or '<空>'}' 无法识别为 napcat 或 snowluma，"
-            "请在 client.client_type 中显式指定，或确认对端为受支持的实现"
+            "请在 plugin.client_type 中显式指定，或确认对端为受支持的实现"
         )
     return client_type, app_name, app_version

@@ -77,7 +77,7 @@ class QQLlmToolsMixin:
             chat_type="private",
             user_id=normalized_user_id,
             account_id=account_id,
-            scope=settings.transport_config().connection_id,
+            scope=settings.server.connection_id,
         )
         if not isinstance(open_session_result, Mapping) or not bool(open_session_result.get("success", False)):
             error = str(open_session_result.get("error") or "").strip() if isinstance(open_session_result, Mapping) else ""

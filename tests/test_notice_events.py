@@ -95,7 +95,7 @@ async def test_bot_offline_reports_disconnected(logger):
             calls.append("notice")
 
     runtime = SimpleNamespace(runtime_state=State())
-    settings = SimpleNamespace(transport_config=lambda: SimpleNamespace(connection_id=""))
+    settings = SimpleNamespace(server=SimpleNamespace(connection_id=""))
     router = Router(SimpleNamespace(), logger, "test", lambda: settings)
     router.bind_runtime(runtime)
     await router.handle_notice_event({"notice_type": "bot_offline", "self_id": "100", "user_id": "100"})

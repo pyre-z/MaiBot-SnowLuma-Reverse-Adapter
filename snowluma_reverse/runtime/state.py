@@ -2,7 +2,7 @@
 
 from typing import Any, Optional, Protocol
 
-from ..config import QQServerConfig
+from ..config import QQReverseServerConfig
 
 
 class _GatewayCapabilityProtocol(Protocol):
@@ -56,12 +56,12 @@ class QQRuntimeStateManager:
         """返回当前已就绪连接的作用域。"""
         return self._reported_scope if self._runtime_state_connected else None
 
-    async def report_connected(self, account_id: str, server_config: QQServerConfig) -> bool:
+    async def report_connected(self, account_id: str, server_config: QQReverseServerConfig) -> bool:
         """向 Host 上报当前消息网关连接已就绪。
 
         Args:
             account_id: 当前 当前连接对应的机器人账号 ID。
-            server_config: 当前生效的 对端服务端配置。
+            server_config: 当前生效的反向服务端配置。
 
         Returns:
             bool: 若 Host 接受了运行时状态更新，则返回 ``True``。
@@ -87,7 +87,7 @@ class QQRuntimeStateManager:
                 platform="qq",
                 account_id=normalized_account_id,
                 scope=server_config.connection_id,
-                metadata={"ws_url": server_config.build_ws_url()},
+                metadata={"ws_url": server_config.endpoint_url()},
             )
         except Exception as exc:
             self._logger.warning(f"消息网关上报连接就绪状态失败: {exc}")

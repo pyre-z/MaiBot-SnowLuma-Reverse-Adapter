@@ -143,7 +143,7 @@ class QQEventRouter:
             return
 
         message_dict["account_id"] = self_id
-        message_dict["scope"] = settings.transport_config().connection_id or None
+        message_dict["scope"] = settings.server.connection_id or None
         external_message_id = str(payload.get("message_id") or "").strip()
         accepted = await self._gateway_capability.route_message(
             gateway_name=self._gateway_name,
@@ -173,12 +173,12 @@ class QQEventRouter:
             self._logger.debug(f"未知通知事件，已跳过: {notice_type}.{sub_type}")
             return
         if notice_type == "bot_offline":
-            await self.route_notice_payload(payload, self_id, settings.transport_config().connection_id)
+            await self.route_notice_payload(payload, self_id, settings.server.connection_id)
             await runtime.runtime_state.report_disconnected()
             return
 
         await runtime.ban_tracker.record_notice(payload)
-        await self.route_notice_payload(payload, self_id, settings.transport_config().connection_id)
+        await self.route_notice_payload(payload, self_id, settings.server.connection_id)
 
     async def route_notice_payload(
         self,
@@ -258,11 +258,11 @@ class QQEventRouter:
             should_report_connected = bool(status.get("online", False)) and bool(status.get("good", False))
 
         if self_id and should_report_connected:
-            await runtime.runtime_state.report_connected(self_id, settings.client)
+            await runtime.runtime_state.report_connected(self_id, settings.server)
         elif meta_event_type == "heartbeat" and not should_report_connected:
             await runtime.runtime_state.report_disconnected()
 
-        await runtime.heartbeat_monitor.observe_meta_event(payload, settings.transport_config().heartbeat_interval)
+        await runtime.heartbeat_monitor.observe_meta_event(payload, settings.server.heartbeat_interval)
         await runtime.notice_codec.handle_meta_event(payload)
 
     async def bootstrap_adapter_runtime_state(self) -> None:
@@ -280,7 +280,7 @@ class QQEventRouter:
             self._logger.error(f"客户端类型探测失败，消息网关保持未就绪: {exc}")
             return
 
-        declared_type = settings.client.client_type
+        declared_type = settings.plugin.client_type
         if declared_type != "auto" and declared_type != detected_type:
             # 按配置声明继续运行，不静默改判；提醒用户配置与对端不一致。
             self._logger.warning(
@@ -301,8 +301,8 @@ class QQEventRouter:
             try:
                 login_info = await runtime.query_service.get_login_info()
                 self_id = self._extract_self_id_from_login_response(login_info)
-                await runtime.runtime_state.report_connected(self_id, settings.client)
-                await runtime.heartbeat_monitor.start(self_id, settings.transport_config().heartbeat_interval)
+                await runtime.runtime_state.report_connected(self_id, settings.server)
+                await runtime.heartbeat_monitor.start(self_id, settings.server.heartbeat_interval)
                 await runtime.ban_tracker.start()
                 return
             except asyncio.CancelledError:

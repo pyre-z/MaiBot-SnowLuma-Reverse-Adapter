@@ -10,12 +10,11 @@ from .sections import (
     QQNoticeConfig,
     QQPluginOptions,
     QQReverseServerConfig,
-    QQServerConfig,
 )
 from .settings import QQPluginSettings
 
 __all__ = [
     "QQChatAbilitiesConfig", "QQDebugConfig", "QQFilterConfig", "QQMuteConfig",
     "QQNoticeConfig", "QQPluginOptions", "QQPluginSettings", "QQReverseServerConfig",
-    "QQServerConfig", "SUPPORTED_CONFIG_VERSION",
+    "SUPPORTED_CONFIG_VERSION",
 ]

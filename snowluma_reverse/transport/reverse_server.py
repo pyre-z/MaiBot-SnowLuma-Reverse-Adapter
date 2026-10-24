@@ -1,7 +1,7 @@
 """OneBot v11 反向 WebSocket 服务端传输层。
 
-与 ``transport.py``（适配器主动连接对端）相反，本模块让适配器监听端口，
-由 SnowLuma / NapCat 以 OneBot 反向 WebSocket 客户端身份连入。
+本模块让适配器监听端口，由 SnowLuma / NapCat 以 OneBot 反向 WebSocket
+客户端身份连入。
 
 协议要点：
 
@@ -41,8 +41,7 @@ except ImportError:  # pragma: no cover - 运行环境缺少依赖时
 class QQTransportServer:
     """OneBot 反向 WebSocket 服务端。
 
-    对外接口与 :class:`~.transport.QQTransportClient` 保持一致，便于宿主按配置
-    在两种传输方式之间切换。
+    对外接口与 :class:`~.base.Transport` 协议保持一致，宿主只装配这一种传输实现。
     """
 
     def __init__(

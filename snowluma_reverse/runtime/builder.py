@@ -19,7 +19,7 @@ from ..services import (
     QQOfficialBotGuard,
     QQQueryService,
 )
-from ..transport.factory import create_transport
+from ..transport import QQTransportServer
 from .bundle import QQRuntimeBundle
 
 
@@ -47,7 +47,6 @@ class QQRuntimeBuilder:
         on_heartbeat_timeout: Callable[[str], Awaitable[None]],
         profile_state: ProfileState,
         load_settings: Callable[[], QQPluginSettings],
-        transport_mode: str = "client",
     ) -> QQRuntimeBundle:
         """创建一套完整的运行时组件。
 
@@ -59,19 +58,17 @@ class QQRuntimeBuilder:
             on_heartbeat_timeout: 心跳超时回调。
             profile_state: 当前连接的客户端画像容器。
             load_settings: 返回当前生效插件配置的回调。
-            transport_mode: 传输方向，``client`` 主动连接对端，``server`` 监听等对端连入。
 
         Returns:
             QQRuntimeBundle: 已完成依赖注入的运行时组件集合。
         """
         notice_filter = QQNoticeFilter(self._logger)
         regex_filter = QQRegexFilter(self._logger)
-        transport = create_transport(
-            transport_mode,
-            logger=self._logger,
-            on_connection_opened=on_connection_opened,
-            on_connection_closed=on_connection_closed,
-            on_payload=on_payload,
+        transport = QQTransportServer(
+            self._logger,
+            on_connection_opened,
+            on_connection_closed,
+            on_payload,
         )
         action_service = QQActionService(self._logger, transport, profile_state)
         query_service = QQQueryService(action_service, self._logger)

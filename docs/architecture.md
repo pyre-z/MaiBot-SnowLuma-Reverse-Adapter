@@ -6,7 +6,7 @@
 | --- | --- |
 | `plugin.py` / `snowluma_reverse/plugin.py` | 插件加载入口、生命周期、工具与命令注册、网关衔接 |
 | `config/` | 配置 section、迁移、校验与当前传输配置选择 |
-| `transport/` | 正向客户端、反向服务端、鉴权与模式工厂 |
+| `transport/` | 反向服务端与握手鉴权 |
 | `protocol/` | OneBot 入站消息、出站消息和通知编解码 |
 | `runtime/` | 运行时依赖构建、事件路由、连接状态与心跳 |
 | `services/` / `apis/` | 动作查询、管理服务与公开 QQ API |
@@ -24,14 +24,16 @@ SnowLuma → 握手鉴权 → 画像探测 → 网关激活 → 事件队列 →
                              ↕ action / echo ↕
 ```
 
-## 两种传输模式
+## 传输方向
 
-`client` 模式由适配器连接 OneBot 正向 WebSocket 服务，配置来自 `[client]`；`server` 模式由 SnowLuma 主动连接适配器监听端口，配置来自 `[server]`。二者共享 action、编解码及网关运行时，模式热切换时先停止旧传输再重建。
+只保留反向 WebSocket 服务端：适配器监听端口，SnowLuma 主动连入，配置来自 `[server]`。
+上游的正向客户端（适配器拨号）已移除，`[client]` 段不再存在，`client_type` 迁到 `[plugin]`
+用于声明对端实现（auto / napcat / snowluma）。action、编解码与网关运行时全部复用同一套实现。
 
 ## 拉取向导
 
-1. 在 `[plugin]` 选择 `transport_mode`，启用插件。
-2. 正向模式配置 `[client]` 地址和令牌；反向模式配置 `[server]` 监听地址、端口、令牌或 IP 白名单。
+1. 在 `[plugin]` 启用插件，按需固定 `client_type`（默认 auto）。
+2. 配置 `[server]` 监听地址、端口、令牌或 IP 白名单。
 3. SnowLuma 反向连接配置对应 URL 与相同令牌，并提供 `X-Self-ID`。
 4. 用 `/healthz` 检查监听状态；携带令牌时可查看已连接账号。
 5. 按 README 中的部署示例配置宿主端口映射和反向代理。

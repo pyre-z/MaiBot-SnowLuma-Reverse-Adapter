@@ -11,7 +11,7 @@ OneBot v11 反向 WebSocket 客户端身份连入**，适合 MaiBot 在容器/�
 
 | 维度 | 上游 | 本项目 |
 | --- | --- | --- |
-| 传输方向 | 仅正向 WS 客户端 | 反向 WS 服务端（默认），可切回正向 |
+| 传输方向 | 仅正向 WS 客户端 | 仅反向 WS 服务端 |
 | 连接发起方 | 适配器 | SnowLuma |
 | TLS | 不支持（URL 硬编码 `ws://`） | 由反向代理终止，容器内保持明文 |
 | 鉴权 | 出站携带 token | 入站校验 token + 来源 IP 白名单 |
@@ -85,7 +85,7 @@ WebUI → 插件 → 本适配器：
 ```toml
 [plugin]
 enabled = true
-transport_mode = "server"   # 关键：切换到反向模式
+client_type = "auto"        # 对端实现：auto 自动探测，也可固定 napcat / snowluma
 
 [server]
 listen_host = "0.0.0.0"
@@ -100,6 +100,9 @@ max_message_size = 16777216
 ```
 
 `token` 与 `allowed_ips` **至少配置一项**，两者都为空时插件拒绝启动监听。
+
+> 从 2.x 升级：配置结构升到 `3.0.0`，`[plugin].transport_mode` 与 `[client]` 段已移除。
+> 插件自动迁移（`client_type` 搬到 `[plugin]`，其余连接参数丢弃），无需手工改文件。
 
 #### QQ 表情解析（`qq_face_parse_mode`）
 
@@ -180,8 +183,8 @@ uv run ruff check .
 - 非法 CIDR 不导致启动失败，且不会误放行；
 - 空消息、空段数组、`group_id=0`、非法 JSON 与非字典载荷不会使队列或读循环崩溃。
 
-还覆盖双通道 token、IP/CIDR 白名单、`expect_self_id` 和 `/healthz` 信息保护，以及配置迁移与模式选择。
-测试数量以 `uv run pytest -q` 实时输出为准（当前为 64 passed）。
+还覆盖双通道 token、IP/CIDR 白名单、`expect_self_id` 和 `/healthz` 信息保护，以及配置迁移。
+测试数量以 `uv run pytest -q` 实时输出为准（当前为 77 passed）。
 
 真实宿主端到端（MaiBot v1.3.14 / SDK 2.16 / aiohttp 3.14）：模拟客户端连入容器内监听，
 依次触发 `get_version_info` → `get_login_info` → `get_group_info`，随后推送的群消息在
@@ -192,7 +195,8 @@ uv run ruff check .
 - 仅支持 WebSocket，不支持 OneBot HTTP 上报；
 - 单账号；多 QQ 号需要多个 MaiBot 实例或后续做连接隔离；
 - TLS 需由反向代理终止，插件自身不监听 `wss://`；
-- 上游的 `[client]` 正向模式仍保留，`transport_mode = "client"` 可切回。
+- 只提供反向 WS 服务端：上游的正向 WS 客户端已移除，旧 `[client]` 配置段不再生效
+  （升级时仅迁移其中的 `client_type`，其余连接参数丢弃）。
 
 ## 8. 上游业务能力（沿用）
 

@@ -6,12 +6,12 @@ from typing import Any, Protocol
 
 
 class Transport(Protocol):
-    """正向与反向 OneBot 传输共同实现的接口。"""
+    """反向 OneBot 传输实现的接口。"""
 
     @classmethod
     def is_available(cls) -> bool: ...
 
-    def configure(self, config: Any, profile_state: Any = None) -> None: ...
+    def configure(self, server_config: Any, profile_state: Any = None) -> None: ...
 
     async def start(self) -> None: ...
 

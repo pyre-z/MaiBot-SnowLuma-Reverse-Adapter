@@ -15,7 +15,7 @@ class QQMessageGatewayMixin:
         route_type="duplex",
         platform="qq",
         protocol="snowluma",
-        description="SnowLuma / NapCat 正向 WebSocket 双工消息网关",
+        description="SnowLuma / NapCat 反向 WebSocket 双工消息网关",
     )
     async def handle_snowluma_gateway(
         self,

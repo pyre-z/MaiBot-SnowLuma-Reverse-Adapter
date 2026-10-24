@@ -2,6 +2,19 @@
 
 本项目从 `MaiBot-SnowLuma-Adapter` 1.1.8 派生，上游历史见 `UPSTREAM-CHANGELOG.md`。
 
+## 3.0.0
+
+### 破坏性变更
+
+- 移除正向 WebSocket 客户端（`transport/forward_client.py` 与 `transport/factory.py`），
+  适配器只保留反向 WS 服务端：SnowLuma / NapCat 连入，适配器监听。
+- 移除 `[plugin].transport_mode` 与整个 `[client]` 配置段；`client_type` 迁至 `[plugin].client_type`，
+  其余连接参数（server / port / token / reconnect_delay_sec / build_ws_url）随正向客户端一并删除。
+- `transport_config()` 不再按模式分派，运行时状态上报改用 `[server]` 的 `connection_id` 与
+  `endpoint_url()`。
+- 配置结构版本升到 `3.0.0`，旧配置由迁移器自动改写：`[client].client_type` 搬到 `[plugin]`，
+  其它 `[client]` 内容与旧版 `luma_client` / `napcat_server` / `connection` 段落直接丢弃并打 warning。
+
 ## 2.1.0
 
 ### 新特性

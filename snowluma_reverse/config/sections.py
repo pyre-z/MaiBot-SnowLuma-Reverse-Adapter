@@ -10,15 +10,13 @@ from pydantic import ValidationInfo, field_validator
 
 from .base import _normalize_positive_float, _normalize_positive_int, _normalize_string, _normalize_string_list, _schema_i18n, _notice_field
 from ..constants import (
-    DEFAULT_ACTION_TIMEOUT_SEC, DEFAULT_CLIENT_HOST, DEFAULT_CLIENT_PORT,
-    DEFAULT_HEARTBEAT_INTERVAL_SEC, DEFAULT_MAX_MESSAGE_SIZE, DEFAULT_RECONNECT_DELAY_SEC,
+    DEFAULT_ACTION_TIMEOUT_SEC, DEFAULT_HEARTBEAT_INTERVAL_SEC, DEFAULT_MAX_MESSAGE_SIZE,
     DEFAULT_SERVER_LISTEN_HOST, DEFAULT_SERVER_LISTEN_PATH, DEFAULT_SERVER_LISTEN_PORT,
     SUPPORTED_CONFIG_VERSION,
 )
 
 LOGGER = logging.getLogger("snowluma_adapter.config")
 CLIENT_TYPE_VALUES = Literal["auto", "napcat", "snowluma"]
-TRANSPORT_MODE_VALUES = Literal["client", "server"]
 
 class QQChatAbilitiesConfig(PluginConfigBase):
     """聊天能力（LLM 工具）开关配置。"""
@@ -229,33 +227,49 @@ class QQPluginOptions(PluginConfigBase):
             "order": 3,
         },
     )
-    transport_mode: TRANSPORT_MODE_VALUES = Field(
-        default="client",
-        description=(
-            "传输方向：client 由适配器主动连接对端正向 WebSocket；"
-            "server 由适配器监听端口，SnowLuma 反向连入。"
-        ),
+    client_type: CLIENT_TYPE_VALUES = Field(
+        default="auto",
+        description="对端客户端类型：auto 连接后自动判定，也可固定为 napcat 或 snowluma。",
         json_schema_extra={
             "hint": (
-                "[client] 适配器主动连 SnowLuma（上游默认行为）；"
-                "[server] 适配器当服务端，SnowLuma 用 OneBot 反向 WebSocket 连进来。"
+                "auto 在每次连入后用 get_version_info 自动判定对端实现；"
+                "固定值仅做一致性校验，与对端不符时按声明值运行并打印告警。"
             ),
             "i18n": _schema_i18n(
-                label_en="Transport mode",
-                label_ja="トランスポート方向",
+                label_en="Peer client type",
+                label_ja="対向クライアント種別",
                 hint_en=(
-                    "[client] the adapter dials the peer's forward WebSocket (upstream default); "
-                    "[server] the adapter listens and SnowLuma dials in via reverse WebSocket."
+                    "auto detects the peer via get_version_info after each connect; "
+                    "a fixed value is cross-checked against the detected implementation."
                 ),
                 hint_ja=(
-                    "[client] は対向の正方向 WebSocket へ接続します（上流の既定）；"
-                    "[server] はアダプターが待ち受け、SnowLuma が逆方向 WebSocket で接続します。"
+                    "auto は接続後に get_version_info で対向を判定します；"
+                    "固定値の場合は判定結果と一致するか検証します。"
                 ),
             ),
-            "label": "传输模式",
+            "label": "对端类型",
             "order": 4,
         },
     )
+
+    @field_validator("client_type", mode="before")
+    @classmethod
+    def _normalize_client_type(cls, value: Any) -> CLIENT_TYPE_VALUES:
+        """规范化客户端类型字段。
+
+        Args:
+            value: 原始配置值。
+
+        Returns:
+            CLIENT_TYPE_VALUES: 合法的客户端类型；非法时回退到 auto。
+        """
+
+        normalized_value = _normalize_string(value).lower()
+        if normalized_value in {"auto", "napcat", "snowluma"}:
+            return normalized_value  # type: ignore[return-value]
+        if normalized_value:
+            LOGGER.warning(f"无效的 client_type 值 '{value}'，已回退到 'auto'")
+        return "auto"
     config_version: str = Field(
         default=SUPPORTED_CONFIG_VERSION,
         description="当前配置结构版本。",
@@ -352,248 +366,6 @@ class QQDebugConfig(PluginConfigBase):
         },
     )
 
-
-class QQServerConfig(PluginConfigBase):
-    """正向 WebSocket 连接配置（SnowLuma / NapCat 通用）。"""
-
-    __ui_label__: ClassVar[str] = "客户端连接"
-    __ui_order__: ClassVar[int] = 2
-
-    client_type: CLIENT_TYPE_VALUES = Field(
-        default="auto",
-        description="对端客户端类型：auto 连接后自动判定，也可固定为 napcat 或 snowluma。",
-        json_schema_extra={
-            "hint": "auto模式会自动确定连接的客户端类型",
-            "i18n": _schema_i18n(
-                label_en="Client type",
-                label_ja="クライアント種別",
-                hint_en=(
-                    "auto detects the peer via get_version_info after each connect; "
-                    "a fixed value is cross-checked against the detected implementation."
-                ),
-                hint_ja=(
-                    "auto は接続後に get_version_info で対向を判定します；"
-                    "固定値の場合は判定結果と一致するか検証します。"
-                ),
-            ),
-            "label": "客户端类型",
-            "order": 0,
-        },
-    )
-    server: str = Field(
-        default=DEFAULT_CLIENT_HOST,
-        description="OneBot WebSocket 服务主机地址。",
-        json_schema_extra={
-            "hint": "通常为运行 SnowLuma / 对端的宿主机地址，默认使用本机回环地址。",
-            "i18n": _schema_i18n(
-                label_en="Server address",
-                label_ja="サーバーアドレス",
-                hint_en="Usually the host running SnowLuma or NapCat. Defaults to the local loopback address.",
-                hint_ja="通常は SnowLuma / NapCat を実行しているホストです。既定ではローカルのループバックアドレスを使用します。",
-                placeholder_en="127.0.0.1",
-                placeholder_ja="127.0.0.1",
-            ),
-            "label": "服务地址",
-            "order": 1,
-            "placeholder": "127.0.0.1",
-        },
-    )
-    port: int = Field(
-        default=DEFAULT_CLIENT_PORT,
-        description="OneBot WebSocket 服务端口。",
-        json_schema_extra={
-            "hint": "与对端正向 WebSocket 服务监听端口保持一致。",
-            "i18n": _schema_i18n(
-                label_en="Port",
-                label_ja="ポート",
-                hint_en="Keep this consistent with the forward WebSocket listening port.",
-                hint_ja="対向の正方向 WebSocket 待受ポートと一致させてください。",
-            ),
-            "label": "端口",
-            "order": 2,
-        },
-    )
-    token: str = Field(
-        default="",
-        description="访问令牌，未启用鉴权时可留空。",
-        json_schema_extra={
-            "hint": "若对端开启了访问令牌校验，请在这里填写相同的 token。",
-            "i18n": _schema_i18n(
-                label_en="Access token",
-                label_ja="アクセストークン",
-                hint_en="If access token verification is enabled, enter the same token here.",
-                hint_ja="アクセストークン検証を有効にしている場合は、同じ token をここに入力してください。",
-                placeholder_en="Optional",
-                placeholder_ja="空欄可",
-            ),
-            "input_type": "password",
-            "label": "访问令牌",
-            "order": 3,
-            "placeholder": "可留空",
-        },
-    )
-    heartbeat_interval: float = Field(
-        default=DEFAULT_HEARTBEAT_INTERVAL_SEC,
-        description="协议层心跳保活间隔，单位为秒。",
-        json_schema_extra={
-            "hint": "用于 WebSocket 协议级 ping 保活，必须大于 0。",
-            "i18n": _schema_i18n(
-                label_en="Heartbeat interval (sec)",
-                label_ja="ハートビート間隔（秒）",
-                hint_en="Protocol-level WebSocket ping keepalive interval. Must be greater than 0.",
-                hint_ja="WebSocket プロトコルレベルの ping 保活間隔です。0 より大きい値にしてください。",
-            ),
-            "label": "心跳间隔（秒）",
-            "order": 4,
-            "step": 1,
-        },
-    )
-    reconnect_delay_sec: float = Field(
-        default=DEFAULT_RECONNECT_DELAY_SEC,
-        description="连接断开后的重连等待时间，单位为秒。",
-        json_schema_extra={
-            "hint": "连接断开后会等待该时长再尝试重新连接。",
-            "i18n": _schema_i18n(
-                label_en="Reconnect delay (sec)",
-                label_ja="再接続待機（秒）",
-                hint_en="After a disconnect, wait this long before trying to reconnect.",
-                hint_ja="接続が切断された後、再接続を試すまでこの時間待機します。",
-            ),
-            "label": "重连等待（秒）",
-            "order": 5,
-            "step": 1,
-        },
-    )
-    action_timeout_sec: float = Field(
-        default=DEFAULT_ACTION_TIMEOUT_SEC,
-        description="调用 OneBot 动作接口的超时时间，单位为秒。",
-        json_schema_extra={
-            "hint": "发送消息、查询信息等动作会在超时后报错。",
-            "i18n": _schema_i18n(
-                label_en="Action timeout (sec)",
-                label_ja="アクションタイムアウト（秒）",
-                hint_en="Actions such as sending messages or querying info fail after this timeout.",
-                hint_ja="メッセージ送信や情報取得などのアクションは、この時間を超えるとエラーになります。",
-            ),
-            "label": "动作超时（秒）",
-            "order": 6,
-            "step": 1,
-        },
-    )
-    connection_id: str = Field(
-        default="",
-        description="可选连接标识，用于区分多条适配器链路。",
-        json_schema_extra={
-            "hint": "当存在多条连接时，可用它作为路由作用域标识。",
-            "i18n": _schema_i18n(
-                label_en="Connection ID",
-                label_ja="接続識別子",
-                hint_en="When multiple connections exist, use this as the routing scope identifier.",
-                hint_ja="複数の接続がある場合、ルーティングスコープの識別子として使用できます。",
-                placeholder_en="For example: primary",
-                placeholder_ja="例：primary",
-            ),
-            "label": "连接标识",
-            "order": 7,
-            "placeholder": "例如：primary",
-        },
-    )
-
-    def build_ws_url(self) -> str:
-        """构造正向 WebSocket 地址（不含鉴权参数，鉴权在传输层按画像附加）。
-
-        Returns:
-            str: 供适配器作为客户端连接的 WebSocket 地址。
-        """
-
-        return f"ws://{self.server}:{self.port}"
-
-    @field_validator("client_type", mode="before")
-    @classmethod
-    def _normalize_client_type(cls, value: Any) -> CLIENT_TYPE_VALUES:
-        """规范化客户端类型字段。
-
-        Args:
-            value: 原始配置值。
-
-        Returns:
-            CLIENT_TYPE_VALUES: 合法的客户端类型；非法时回退到 auto。
-        """
-
-        normalized_value = _normalize_string(value).lower()
-        if normalized_value in {"auto", "napcat", "snowluma"}:
-            return normalized_value  # type: ignore[return-value]
-        if normalized_value:
-            LOGGER.warning(f"无效的 client_type 值 '{value}'，已回退到 'auto'")
-        return "auto"
-
-    @field_validator("server", mode="before")
-    @classmethod
-    def _normalize_server(cls, value: Any) -> str:
-        """规范化服务地址字段。
-
-        Args:
-            value: 原始配置值。
-
-        Returns:
-            str: 去除首尾空白后的服务地址；若为空则回退到默认主机。
-        """
-
-        normalized_value = _normalize_string(value)
-        return normalized_value or DEFAULT_CLIENT_HOST
-
-    @field_validator("port", mode="before")
-    @classmethod
-    def _normalize_port(cls, value: Any) -> int:
-        """规范化端口字段。
-
-        Args:
-            value: 原始配置值。
-
-        Returns:
-            int: 合法的正整数端口；非法时回退到默认端口。
-        """
-
-        return _normalize_positive_int(value, DEFAULT_CLIENT_PORT)
-
-    @field_validator("token", "connection_id", mode="before")
-    @classmethod
-    def _normalize_text_fields(cls, value: Any) -> str:
-        """规范化文本字段。
-
-        Args:
-            value: 原始配置值。
-
-        Returns:
-            str: 去除首尾空白后的字符串值。
-        """
-
-        return _normalize_string(value)
-
-    @field_validator(
-        "heartbeat_interval",
-        "reconnect_delay_sec",
-        "action_timeout_sec",
-        mode="before",
-    )
-    @classmethod
-    def _normalize_positive_float_fields(cls, value: Any, info: ValidationInfo) -> float:
-        """规范化正浮点数字段。
-
-        Args:
-            value: 原始配置值。
-            info: Pydantic 字段校验上下文。
-
-        Returns:
-            float: 合法的正浮点数；非法时回退到对应默认值。
-        """
-
-        default_values: Dict[str, float] = {
-            "action_timeout_sec": DEFAULT_ACTION_TIMEOUT_SEC,
-            "heartbeat_interval": DEFAULT_HEARTBEAT_INTERVAL_SEC,
-            "reconnect_delay_sec": DEFAULT_RECONNECT_DELAY_SEC,
-        }
-        return _normalize_positive_float(value, default_values[str(info.field_name)])
 
 class QQReverseServerConfig(PluginConfigBase):
     """反向 WebSocket 服务端配置（适配器监听，SnowLuma 主动连入）。"""
