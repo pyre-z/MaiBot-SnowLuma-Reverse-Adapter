@@ -22,14 +22,28 @@ QQ_TEXT_FACE_PATTERN = re.compile(
     + r")(?!\w)"
 )
 
+# 出站小表情 token：``[小表情#187]``。与入站锚点 ``[小表情·幽灵#187]`` 严格区分，
+# 因此模型引用消息原文时不会被误转成真表情。
+QQ_FACE_TOKEN_PATTERN = re.compile(r"\[小表情#([^\]\n]{1,16})\]")
+
 
 class QQOutboundSegmentEncoder:
     """将 Host 消息段转换为 OneBot 消息段。"""
 
-    def __init__(self, enable_text_face_conversion: Optional[Callable[[], bool]] = None) -> None:
-        """初始化出站消息段编码器。"""
+    def __init__(
+        self,
+        enable_text_face_conversion: Optional[Callable[[], bool]] = None,
+        enable_text_face_token: Optional[Callable[[], bool]] = None,
+    ) -> None:
+        """初始化出站消息段编码器。
+
+        Args:
+            enable_text_face_conversion: 返回「``/表情名`` 文本转表情」开关的回调。
+            enable_text_face_token: 返回「``[小表情#ID]`` token 转表情」开关的回调。
+        """
         self._logger = logging.getLogger(__name__)
         self._enable_text_face_conversion = enable_text_face_conversion
+        self._enable_text_face_token = enable_text_face_token
         self._segment_builders: Dict[str, Callable[[Mapping[str, Any]], List[Dict[str, Any]]]] = {
             "at": self._build_at_segments,
             "dict": self._build_dict_segments,
@@ -124,27 +138,55 @@ class QQOutboundSegmentEncoder:
     def _build_text_segments(self, item: Mapping[str, Any]) -> List[Dict[str, Any]]:
         """构造文本消息段。
 
+        支持两种文本内联小表情写法，各自独立开关：
+
+        * ``/幽灵`` → 按中文名查表（``enable_text_face_conversion``）
+        * ``[小表情#187]`` → 按 ID 直转（``enable_text_face_token``），工具专用写法
+
+        未收录的数字 ID 与非数字 ID 一律保留原文，避免把普通文本吃掉。
+
         Args:
             item: Host 侧文本消息段。
 
         Returns:
-            List[Dict[str, Any]]: 构造后的 OneBot 文本消息段列表。
+            List[Dict[str, Any]]: 构造后的 OneBot 消息段列表。
         """
         text_value = str(item.get("data") or "")
-        if self._enable_text_face_conversion is None or not self._enable_text_face_conversion():
+        matches: List[tuple[int, int, str]] = []
+        if self._flag_enabled(self._enable_text_face_conversion):
+            matches.extend(
+                (match.start(), match.end(), QQ_FACE_IDS_BY_NAME[match.group(1)])
+                for match in QQ_TEXT_FACE_PATTERN.finditer(text_value)
+            )
+        if self._flag_enabled(self._enable_text_face_token):
+            for match in QQ_FACE_TOKEN_PATTERN.finditer(text_value):
+                face_id = match.group(1).strip()
+                if not face_id.isdecimal() or face_id not in QQ_FACE_DESCRIPTIONS:
+                    continue
+                matches.append((match.start(), match.end(), face_id))
+
+        if not matches:
             return [{"type": "text", "data": {"text": text_value}}]
 
-        # 仅拆分完整匹配的 /表情名，保留空格、标点及未知名称的原始文本。
+        matches.sort(key=lambda entry: entry[0])
         segments: List[Dict[str, Any]] = []
         cursor = 0
-        for match in QQ_TEXT_FACE_PATTERN.finditer(text_value):
-            if match.start() > cursor:
-                segments.append({"type": "text", "data": {"text": text_value[cursor:match.start()]}})
-            segments.append({"type": "face", "data": {"id": QQ_FACE_IDS_BY_NAME[match.group(1)]}})
-            cursor = match.end()
-        if cursor < len(text_value) or not segments:
+        for start, end, face_id in matches:
+            if start < cursor:
+                continue
+            if start > cursor:
+                segments.append({"type": "text", "data": {"text": text_value[cursor:start]}})
+            segments.append({"type": "face", "data": {"id": face_id}})
+            cursor = end
+        if cursor < len(text_value):
             segments.append({"type": "text", "data": {"text": text_value[cursor:]}})
         return segments
+
+    @staticmethod
+    def _flag_enabled(flag: Optional[Callable[[], bool]]) -> bool:
+        """判断开关回调是否允许当前转换。"""
+
+        return flag is not None and bool(flag())
 
     def _build_at_segments(self, item: Mapping[str, Any]) -> List[Dict[str, Any]]:
         """构造 @ 消息段。

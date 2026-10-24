@@ -210,6 +210,24 @@ class QQPluginOptions(PluginConfigBase):
             "order": 2,
         },
     )
+    enable_text_face_token: bool = Field(
+        default=True,
+        description="发送时将 [小表情#ID] 文本转换为 QQ 原生小表情，未收录的 ID 保持原样。",
+        json_schema_extra={
+            "label": "启用小表情 token",
+            "hint": "emoticon-vision 插件挑表情时会返回 [小表情#187] 这类 token；"
+            "模型原样写进回复即可变成原生表情。只有数字且已收录的 ID 会被转换。",
+            "i18n": _schema_i18n(
+                label_en="Enable emoticon token",
+                label_ja="小表情トークンを有効化",
+                hint_en="Convert [小表情#187] tokens from the emoticon-vision plugin into native QQ faces; "
+                "unknown or non-numeric IDs stay as plain text.",
+                hint_ja="emoticon-vision が返す [小表情#187] 形式を QQ 絵文字に変換します；"
+                "未収録・非数字の ID はそのまま送信します。",
+            ),
+            "order": 3,
+        },
+    )
     enable_text_at_conversion: bool = Field(
         default=False,
         description="将群聊发送文本中的 @QQ号、@群名片或 @昵称转换为实际 @。真实 @ 的相邻去重始终生效。",

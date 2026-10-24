@@ -99,3 +99,46 @@ def test_unsupported_outbound_snowluma_segments_degrade_to_text():
         {"type": "text", "data": {"text": "[mface]"}},
         {"type": "text", "data": {"text": "[inline_keyboard]"}},
     ]
+
+
+def test_face_token_converts_known_numeric_id():
+    encoder = QQOutboundSegmentEncoder(enable_text_face_token=lambda: True)
+    assert encoder.convert_segments([{"type": "text", "data": "先[小表情#187]再"}]) == [
+        {"type": "text", "data": {"text": "先"}},
+        {"type": "face", "data": {"id": "187"}},
+        {"type": "text", "data": {"text": "再"}},
+    ]
+
+
+def test_face_token_keeps_unknown_and_symbolic_ids():
+    encoder = QQOutboundSegmentEncoder(enable_text_face_token=lambda: True)
+    raw = "[小表情#99999][小表情#☀][小表情#][小表情#abc]"
+    assert encoder.convert_segments([{"type": "text", "data": raw}]) == [
+        {"type": "text", "data": {"text": raw}}
+    ]
+
+
+def test_face_token_switch_off_keeps_text():
+    encoder = QQOutboundSegmentEncoder(enable_text_face_token=lambda: False)
+    assert encoder.convert_segments([{"type": "text", "data": "[小表情#187]"}]) == [
+        {"type": "text", "data": {"text": "[小表情#187]"}}
+    ]
+
+
+def test_face_token_ignores_inbound_anchor():
+    encoder = QQOutboundSegmentEncoder(enable_text_face_token=lambda: True)
+    raw = "[小表情·幽灵#187]"
+    assert encoder.convert_segments([{"type": "text", "data": raw}]) == [
+        {"type": "text", "data": {"text": raw}}
+    ]
+
+
+def test_face_token_and_name_conversion_combine():
+    encoder = QQOutboundSegmentEncoder(
+        enable_text_face_conversion=lambda: True,
+        enable_text_face_token=lambda: True,
+    )
+    assert encoder.convert_segments([{"type": "text", "data": "/幽灵[小表情#0]"}]) == [
+        {"type": "face", "data": {"id": "187"}},
+        {"type": "face", "data": {"id": "0"}},
+    ]
