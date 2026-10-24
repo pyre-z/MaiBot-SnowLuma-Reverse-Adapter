@@ -11,7 +11,6 @@
 
 from __future__ import annotations
 
-from pathlib import Path
 from typing import Any, ClassVar, Dict, List, Mapping, Optional, cast
 
 from maibot_sdk import MaiBotPlugin, PluginConfigBase
@@ -29,9 +28,6 @@ from .constants import SNOWLUMA_GATEWAY_NAME
 from .gateway import QQMessageGatewayMixin
 from .tools import QQLlmToolsMixin
 from .debug import AdaDebugLogger
-from .media import face_vision_worker
-from .media.face_vision_store import STORE
-from .media.face_vision_worker import FaceVisionWorker
 from .profile import PROFILE_BY_TYPE, ClientProfile, ProfileState
 from .runtime import QQEventRouter, QQRuntimeBuilder, QQRuntimeBundle
 from .services import QQActionService, QQQueryService
@@ -82,11 +78,9 @@ class SnowLumaAdapterPlugin(
         """在插件加载时根据配置决定是否启动连接。"""
         await self._sync_tool_components_state()
         await self._restart_connection_if_needed()
-        await self._start_face_vision()
 
     async def on_unload(self) -> None:
         """在插件卸载时关闭连接。"""
-        await face_vision_worker.stop()
         await self._stop_connection()
 
     async def on_config_update(self, scope: str, config_data: Dict[str, Any], version: str) -> None:
@@ -103,7 +97,6 @@ class SnowLumaAdapterPlugin(
         self.set_plugin_config(config_data)
         if version:
             self.ctx.logger.debug(f"适配器收到配置更新通知: {version}")
-        await self._sync_face_vision_config()
         await self._sync_tool_components_state()
         await self._restart_connection_if_needed()
 
@@ -121,50 +114,6 @@ class SnowLumaAdapterPlugin(
         """
         status = str(response.get("status") or "").strip().lower()
         return status == "ok" and response.get("retcode", 0) == 0
-
-    async def _start_face_vision(self) -> None:
-        """按配置启动运行时表情补描述 worker；失败只告警，绝不影响消息收发。"""
-        config = getattr(self.config, "face_vision", None)
-        if config is None:
-            return
-        try:
-            data_dir = Path(str(self.ctx.paths.data_dir))
-            STORE.attach_overlay(data_dir)
-            STORE.reload()
-            worker = FaceVisionWorker(
-                STORE,
-                data_dir,
-                self.ctx.logger,
-                enabled=config.enabled,
-                desc_max_chars=config.desc_max_chars,
-                max_attempts=config.max_attempts,
-                timeout_s=config.timeout_s,
-                index_refresh_hours=config.index_refresh_hours,
-                model_config_path=config.model_config_path,
-            )
-            await face_vision_worker.start(worker)
-        except Exception as error:  # noqa: BLE001 - 补描述属于增强能力，不能拖垮适配器
-            self.ctx.logger.warning(f"[表情描述] 运行时补描述启动失败: {error}")
-
-    async def _sync_face_vision_config(self) -> None:
-        """配置热更新：worker 已存在就改参数，不存在就按新配置启动。"""
-        config = getattr(self.config, "face_vision", None)
-        if config is None:
-            return
-        worker = face_vision_worker.WORKER
-        if worker is None:
-            await self._start_face_vision()
-            return
-        worker.reconfigure(
-            enabled=config.enabled,
-            desc_max_chars=config.desc_max_chars,
-            max_attempts=config.max_attempts,
-            timeout_s=config.timeout_s,
-            index_refresh_hours=config.index_refresh_hours,
-            model_config_path=config.model_config_path,
-        )
-        STORE.reload()
-        await worker.start()
 
     def _ensure_runtime_components(self) -> None:
         """确保运行时依赖对象已经完成初始化。"""

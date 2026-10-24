@@ -2,6 +2,19 @@
 
 本项目从 `MaiBot-SnowLuma-Adapter` 1.1.8 派生，上游历史见 `UPSTREAM-CHANGELOG.md`。
 
+## 4.0.0
+
+### 破坏性变更
+
+- **QQ 表情视觉描述整体移出**：删除 `media/face_vision_{assets,worker,store}.py`、`data/face_vision.py`、
+  `data/face_vision.json`（537 条）、`scripts/build_face_vision.py` 与 `[face_vision]` 配置段；
+  VLM 调用、素材下载、运行时补算改由独立插件 `pyre-z.emoticon-vision` 负责。
+- `qq_face_parse_mode` 只剩 `description` / `emoji` 两个取值；旧配置里的 `vision` 自动回落到 `description`。
+- `description` 模式的输出从 `[幽灵]` 改为锚点 `[小表情·幽灵#187]`（未收录为 `[小表情·未知表情#ID]`），
+  由 `emoticon-vision` 插件在 `chat.receive.after_process` 里替换成
+  `[小表情·幽灵：外观描述|发呆|无语]`。
+- 配置结构版本 3.0.0 → 4.0.0。
+
 ## 3.0.0
 
 ### 破坏性变更

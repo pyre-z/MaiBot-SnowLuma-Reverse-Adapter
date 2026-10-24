@@ -10,7 +10,7 @@
 | `protocol/` | OneBot 入站消息、出站消息和通知编解码 |
 | `runtime/` | 运行时依赖构建、事件路由、连接状态与心跳 |
 | `services/` / `apis/` | 动作查询、管理服务与公开 QQ API |
-| `media/` / `data/` | Silk 语音处理与 QQ 静态表情数据 |
+| `media/` / `data/` | Silk 语音处理与 QQ 表情中文名/emoji 表（视觉描述由 emoticon-vision 插件提供） |
 
 ## 连接生命周期
 

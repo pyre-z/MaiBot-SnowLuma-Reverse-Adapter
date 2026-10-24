@@ -170,26 +170,26 @@ class QQPluginOptions(PluginConfigBase):
             "order": 0,
         },
     )
-    qq_face_parse_mode: Literal["description", "emoji", "vision"] = Field(
+    qq_face_parse_mode: Literal["description", "emoji"] = Field(
         default="description",
-        description="QQ 自带表情解析模式：中文描述 / 近似 Unicode emoji / VLM 视觉描述。",
+        description="QQ 自带表情解析模式：中文描述锚点 / 近似 Unicode emoji。",
         json_schema_extra={
             "label": "QQ表情解析模式",
             "hint": (
-                "[vision]用离线生成的视觉描述（如“[QQ小表情·幽灵｜白色小幽灵上下漂浮眨眼…”），"
-                "最贴近原图但要先跑 scripts/build_face_vision.py；"
-                "缺失时自动回退 [emoji] 再到 [流泪] 形式。"
+                "[description] 输出 `[小表情·幽灵#187]` 锚点，装 `emoticon-vision` 插件后会被替换成"
+                " `[小表情·幽灵：外观描述|情绪|情绪]`；未装插件时保持锚点，模型也知道这是哪个表情。"
+                "[emoji] 能对上时用 Unicode emoji，否则回退同样的锚点。"
             ),
             "i18n": _schema_i18n(
                 label_en="QQ face parsing",
                 label_ja="QQ 標準顔文字の解析",
                 hint_en=(
-                    "description converts face segments to [流泪]-style text; "
-                    "emoji prefers an approximate Unicode emoji."
+                    "[description] emits a [小表情·name#id] anchor that the emoticon-vision plugin "
+                    "expands into a visual description; [emoji] prefers an approximate Unicode emoji."
                 ),
                 hint_ja=(
-                    "description は顔文字を [流泪] 形式のテキストに変換し、"
-                    "emoji は近い Unicode 絵文字を優先します。"
+                    "[description] は [小表情·名称#ID] アンカーを出力し、emoticon-vision プラグインが"
+                    "外観説明に展開します；[emoji] は近い Unicode 絵文字を優先します。"
                 ),
             ),
             "order": 1,
@@ -950,54 +950,3 @@ class QQMuteConfig(PluginConfigBase):
         """规范化正整数时长字段。"""
         defaults: Dict[str, int] = {"min_duration": 60, "max_duration": 2592000}
         return _normalize_positive_int(value, defaults[str(info.field_name)])
-
-
-class QQFaceVisionConfig(PluginConfigBase):
-    """QQ 表情视觉描述（``qq_face_parse_mode = "vision"``）。
-
-    内置表由 ``scripts/build_face_vision.py`` 离线全量生成；这里控制的是
-    **运行时兜底**：遇到表里没有的新表情时，后台下载素材并用 MaiBot 默认 VLM 补描述。
-    """
-
-    __ui_label__: ClassVar[str] = "QQ表情视觉描述"
-    __ui_order__: ClassVar[int] = 6
-
-    enabled: bool = Field(
-        default=True,
-        description="遇到描述表里没有的 QQ 表情时，后台自动下载素材并生成描述。",
-        json_schema_extra={
-            "hint": "异步执行，不影响当前消息；首条消息仍按 emoji / 中文名回退。关闭后只使用内置表。",
-            "label": "运行时自动补描述",
-            "order": 0,
-        },
-    )
-    desc_max_chars: int = Field(
-        default=45,
-        description="单条描述的字符上限。",
-        json_schema_extra={"label": "描述字数上限", "order": 1},
-    )
-    max_attempts: int = Field(
-        default=2,
-        description="同一个表情生成失败后的最大尝试次数。",
-        json_schema_extra={"hint": "超过后本次运行不再重试，避免反复调用视觉模型。", "label": "失败重试上限", "order": 2},
-    )
-    timeout_s: int = Field(
-        default=90,
-        description="单次视觉模型请求超时（秒）。",
-        json_schema_extra={"label": "请求超时（秒）", "order": 3},
-    )
-    index_refresh_hours: int = Field(
-        default=24,
-        description="QFace 表情索引缓存的刷新间隔（小时）。",
-        json_schema_extra={"hint": "缓存落插件数据目录；到期后首次需要取图时才刷新。", "label": "索引刷新间隔（小时）", "order": 4},
-    )
-    model_config_path: str = Field(
-        default="",
-        description="MaiBot 的 model_config.toml 路径，留空自动探测。",
-        json_schema_extra={
-            "hint": "留空时依次尝试 $MAIBOT_MODEL_CONFIG、/MaiMBot/config/model_config.toml、./config/model_config.toml；"
-                    "VLM 取 [model_task_config.vlm] 里第一个 OpenAI 兼容模型。",
-            "label": "模型配置文件路径",
-            "order": 5,
-        },
-    )

@@ -34,7 +34,7 @@ def codec(logger):
     [
         ("text", {"text": "hello"}, "hello"),
         ("at", {"qq": "1"}, None),
-        ("face", {"id": "9999"}, "[表情]"),
+        ("face", {"id": "9999"}, "[小表情·未知表情#9999]"),
         ("image", {"file": ""}, "[image]"),
         ("record", {"file": "x"}, "[voice]"),
         ("video", {"file": "x"}, None),
@@ -63,31 +63,31 @@ async def test_unknown_segment_degrades_to_placeholder(codec):
     assert converted == [{"type": "text", "data": "[不支持的消息段: future_segment]"}]
 
 
-@pytest.fixture
-def vision_overlay(monkeypatch):
-    from snowluma_reverse.data import face_vision
-
-    monkeypatch.setattr(
-        face_vision.STORE,
-        "_overlay",
-        {"187": {"name": "幽灵", "desc": "白色小幽灵上下漂浮眨眼"}},
-    )
-
-
 @pytest.mark.asyncio
-async def test_face_vision_mode_uses_offline_description(logger, vision_overlay):
-    converted, _ = await _codec_for_mode(logger, "vision").convert_segments(
+async def test_description_mode_emits_anchor_with_name_and_id(logger):
+    converted, _ = await _codec_for_mode(logger, "description").convert_segments(
         {"message": [{"type": "face", "data": {"id": "187"}}]}, "1"
     )
-    assert converted == [{"type": "text", "data": "[QQ小表情·幽灵｜白色小幽灵上下漂浮眨眼]"}]
+    assert converted == [{"type": "text", "data": "[小表情·幽灵#187]"}]
 
 
 @pytest.mark.asyncio
-async def test_face_vision_mode_falls_back_when_unlisted(logger, vision_overlay):
-    converted, _ = await _codec_for_mode(logger, "vision").convert_segments(
+async def test_description_mode_marks_unknown_face(logger):
+    converted, _ = await _codec_for_mode(logger, "description").convert_segments(
         {"message": [{"type": "face", "data": {"id": "9999"}}]}, "1"
     )
-    assert converted == [{"type": "text", "data": "[表情]"}]
+    assert converted == [{"type": "text", "data": "[小表情·未知表情#9999]"}]
+
+
+@pytest.mark.asyncio
+async def test_emoji_mode_prefers_unicode_emoji(logger):
+    from snowluma_reverse.data.faces import QQ_FACE_EMOJIS
+
+    face_id, emoji = next(iter(QQ_FACE_EMOJIS.items()))
+    converted, _ = await _codec_for_mode(logger, "emoji").convert_segments(
+        {"message": [{"type": "face", "data": {"id": face_id}}]}, "1"
+    )
+    assert converted == [{"type": "text", "data": emoji}]
 
 
 def test_unsupported_outbound_snowluma_segments_degrade_to_text():

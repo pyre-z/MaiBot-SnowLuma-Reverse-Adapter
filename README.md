@@ -108,23 +108,16 @@ max_message_size = 16777216
 
 | 取值 | 输出形态 | 说明 |
 | --- | --- | --- |
-| `description` | `[幽灵]` | 中文名占位，最省 token |
-| `emoji` | `👻` / `[幽灵]` | 能对上 Unicode 的用真 emoji |
-| `vision` | `[QQ小表情·幽灵｜白色圆润的小幽灵上下漂浮眨眼，神情呆滞，常用于表达潜水冒泡、装死、无语]` | 离线生成的视觉描述，最贴近原图 |
+| `description`（默认） | `[小表情·幽灵#187]` | 带中文名与表情 ID 的锚点，交给 `emoticon-vision` 插件替换成视觉描述 |
+| `emoji` | `👻` / `[小表情·幽灵#187]` | 能对上 Unicode 的用真 emoji，否则回退同样的锚点 |
 
-`vision` 需要先离线生成描述表（运行期只查表，零延迟）：
+锚点格式是 `[小表情·<中文名>#<表情 ID>]`，未收录的表情渲染为 `[小表情·未知表情#<ID>]`。
+配套插件 `pyre-z.emoticon-vision` 会把它替换成
+`[小表情·幽灵：一只白色小幽灵上下漂浮、双眼发直|发呆|无语]`（全角冒号分段、半角竖线分情绪标签）。
+**没装那个插件也不会坏**：模型看到的就是带名字和 ID 的锚点。
 
-```bash
-export PYRE_Z_API_KEY=sk-...
-uv run python scripts/build_face_vision.py            # 全量；幂等，只补新增/变更
-uv run python scripts/build_face_vision.py --sample 30  # 抽 30 条先看措辞
-```
-
-- 素材两级：QFace 128px 静态图 + 腾讯 qzone 24px 动作帧条（5 帧放大拼条），**同一次调用里一起送**，
-  静态图定形象、动作帧定动作；缺一路自动降级。
-- 产物 `snowluma_reverse/data/face_vision.json`（只含描述文本，**不落腾讯图片素材**）。
-- 表里缺某个表情（新表情/未生成）时自动回退 `emoji` → `[中文名]`，不会中断收发。
-- 图片缓存落在 `.cache/face_vision/`（已 gitignore）。
+视觉描述的索引、素材抓取与 VLM 生成都在 `emoticon-vision` 插件里（含离线全量构建与运行时补算），
+本适配器不再持有任何 VLM 配置或描述表。
 
 ### 3.5 SnowLuma 侧
 
@@ -184,7 +177,7 @@ uv run ruff check .
 - 空消息、空段数组、`group_id=0`、非法 JSON 与非字典载荷不会使队列或读循环崩溃。
 
 还覆盖双通道 token、IP/CIDR 白名单、`expect_self_id` 和 `/healthz` 信息保护，以及配置迁移。
-测试数量以 `uv run pytest -q` 实时输出为准（当前为 77 passed）。
+测试数量以 `uv run pytest -q` 实时输出为准（当前为 68 passed）。
 
 真实宿主端到端（MaiBot v1.3.14 / SDK 2.16 / aiohttp 3.14）：模拟客户端连入容器内监听，
 依次触发 `get_version_info` → `get_login_info` → `get_group_info`，随后推送的群消息在

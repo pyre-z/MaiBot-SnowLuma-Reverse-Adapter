@@ -11,7 +11,7 @@ from pydantic import model_validator
 
 from .base import _normalize_string, SUPPORTED_CONFIG_VERSION
 from .sections import (
-    QQChatAbilitiesConfig, QQDebugConfig, QQFaceVisionConfig, QQFilterConfig, QQMuteConfig,
+    QQChatAbilitiesConfig, QQDebugConfig, QQFilterConfig, QQMuteConfig,
     QQNoticeConfig, QQPluginOptions, QQReverseServerConfig,
 )
 
@@ -31,7 +31,6 @@ class QQPluginSettings(PluginConfigBase):
     filters: QQFilterConfig = Field(default_factory=QQFilterConfig)
     debug: QQDebugConfig = Field(default_factory=QQDebugConfig)
     mute: QQMuteConfig = Field(default_factory=QQMuteConfig)
-    face_vision: QQFaceVisionConfig = Field(default_factory=QQFaceVisionConfig)
 
     @model_validator(mode="before")
     @classmethod
@@ -91,13 +90,16 @@ class QQPluginSettings(PluginConfigBase):
         legacy_client_type = _normalize_string(client_section.get("client_type"))
         if legacy_client_type and not _normalize_string(plugin_section.get("client_type")):
             plugin_section["client_type"] = legacy_client_type
+        # 视觉描述模式已迁到 emoticon-vision 插件；旧配置统一回落到 description 锚点模式。
+        if _normalize_string(plugin_section.get("qq_face_parse_mode")).lower() == "vision":
+            LOGGER.warning("qq_face_parse_mode=vision 已移除，改为 description（锚点交由 emoticon-vision 插件替换）")
+            plugin_section["qq_face_parse_mode"] = "description"
         # 旧配置携带历史版本号时会触发版本校验失败；迁移时统一改写为当前版本。
         if _normalize_string(plugin_section.get("config_version")) not in {"", SUPPORTED_CONFIG_VERSION}:
             plugin_section["config_version"] = SUPPORTED_CONFIG_VERSION
 
         return {
             "chat_abilities": chat_abilities_section,
-            "face_vision": _as_mapping(raw_mapping.get("face_vision")),
             "debug": debug_section,
             "filters": filters_section,
             "mute": mute_section,
