@@ -8,6 +8,7 @@ import logging
 import re
 
 from ...data.faces import QQ_FACE_DESCRIPTIONS
+from .pangu import apply_pangu_spacing
 
 SYNTHETIC_MESSAGE_ID_PREFIX = "qq-"
 
@@ -42,6 +43,8 @@ class QQOutboundSegmentEncoder:
         enable_text_face_conversion: Optional[Callable[[], bool]] = None,
         enable_text_face_token: Optional[Callable[[], bool]] = None,
         enable_text_face_name_token: Optional[Callable[[], bool]] = None,
+        enable_pangu_spacing: Optional[Callable[[], bool]] = None,
+        enable_pangu_spacing_digits: Optional[Callable[[], bool]] = None,
     ) -> None:
         """初始化出站消息段编码器。
 
@@ -49,11 +52,15 @@ class QQOutboundSegmentEncoder:
             enable_text_face_conversion: 返回「``/表情名`` 文本转表情」开关的回调。
             enable_text_face_token: 返回「``[小表情#ID]`` token 转表情」开关的回调。
             enable_text_face_name_token: 返回「``[汗]`` 这类表情名兜底」开关的回调。
+            enable_pangu_spacing: 返回「盘古之白」开关的回调。
+            enable_pangu_spacing_digits: 返回「数字也参与盘古之白」开关的回调；未接线时默认开启。
         """
         self._logger = logging.getLogger(__name__)
         self._enable_text_face_conversion = enable_text_face_conversion
         self._enable_text_face_token = enable_text_face_token
         self._enable_text_face_name_token = enable_text_face_name_token
+        self._enable_pangu_spacing = enable_pangu_spacing
+        self._enable_pangu_spacing_digits = enable_pangu_spacing_digits
         self._segment_builders: Dict[str, Callable[[Mapping[str, Any]], List[Dict[str, Any]]]] = {
             "at": self._build_at_segments,
             "dict": self._build_dict_segments,
@@ -163,6 +170,11 @@ class QQOutboundSegmentEncoder:
             List[Dict[str, Any]]: 构造后的 OneBot 消息段列表。
         """
         text_value = str(item.get("data") or "")
+        if self._flag_enabled(self._enable_pangu_spacing):
+            text_value = apply_pangu_spacing(
+                text_value,
+                spacing_digits=self._digit_spacing_enabled(),
+            )
         matches: List[tuple[int, int, str]] = []
         if self._flag_enabled(self._enable_text_face_conversion):
             matches.extend(
@@ -203,6 +215,13 @@ class QQOutboundSegmentEncoder:
         """判断开关回调是否允许当前转换。"""
 
         return flag is not None and bool(flag())
+
+    def _digit_spacing_enabled(self) -> bool:
+        """判断数字是否参与盘古之白；未接线时按开启处理。"""
+
+        if self._enable_pangu_spacing_digits is None:
+            return True
+        return bool(self._enable_pangu_spacing_digits())
 
     def _build_at_segments(self, item: Mapping[str, Any]) -> List[Dict[str, Any]]:
         """构造 @ 消息段。

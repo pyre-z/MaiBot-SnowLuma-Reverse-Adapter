@@ -237,3 +237,75 @@ def test_private_outbound_pure_at_falls_back_to_empty_text():
     actions = _outbound_actions(codec, [{"type": "at", "data": {"target_user_id": "10001000"}}])
     _, params = actions[0]
     assert params["message"] == [{"type": "text", "data": {"text": ""}}]
+
+
+def test_pangu_spacing_basic_and_idempotent():
+    from snowluma_reverse.protocol.outbound.pangu import apply_pangu_spacing
+
+    cases = {
+        "这是Flash吧": "这是 Flash 吧",
+        "中文English混合": "中文 English 混合",
+        "输出68元/MTok": "输出 68 元/MTok",
+        "中文 English 已带空格": "中文 English 已带空格",
+        "纯中文没有字母": "纯中文没有字母",
+    }
+    for source, expected in cases.items():
+        assert apply_pangu_spacing(source) == expected
+        assert apply_pangu_spacing(expected) == expected
+
+
+def test_pangu_spacing_digits_switch():
+    from snowluma_reverse.protocol.outbound.pangu import apply_pangu_spacing
+
+    assert apply_pangu_spacing("说了5个人", spacing_digits=True) == "说了 5 个人"
+    assert apply_pangu_spacing("说了5个人", spacing_digits=False) == "说了5个人"
+    assert apply_pangu_spacing("说ABC了", spacing_digits=False) == "说 ABC 了"
+
+
+def test_pangu_spacing_protects_tokens_urls_and_code():
+    from snowluma_reverse.protocol.outbound.pangu import apply_pangu_spacing
+
+    unchanged = [
+        "[小表情#271]吃瓜中",
+        "看这个https://bot.example.com/onebot/v11/ws就行了",
+        "用/捂脸试试",
+        "代码`x=1`和`中文`混排",
+    ]
+    for source in unchanged:
+        assert apply_pangu_spacing(source) == source
+    # 方括号本身不被插入空格，但括号外的中英边界照常处理
+    assert apply_pangu_spacing("[思考]这不QQ表情") == "[思考]这不 QQ 表情"
+
+
+def test_encoder_pangu_keeps_face_token_split():
+    encoder = QQOutboundSegmentEncoder(
+        enable_text_face_token=lambda: True,
+        enable_pangu_spacing=lambda: True,
+    )
+    assert encoder.convert_segments([{"type": "text", "data": "中文[小表情#271]English"}]) == [
+        {"type": "text", "data": {"text": "中文"}},
+        {"type": "face", "data": {"id": "271"}},
+        {"type": "text", "data": {"text": "English"}},
+    ]
+
+
+def test_encoder_pangu_switch_off_keeps_text():
+    encoder = QQOutboundSegmentEncoder(enable_pangu_spacing=lambda: False)
+    assert encoder.convert_segments([{"type": "text", "data": "这是Flash吧"}]) == [
+        {"type": "text", "data": {"text": "这是Flash吧"}}
+    ]
+
+
+def test_private_at_kept_when_strip_switch_off():
+    from snowluma_reverse.protocol.outbound.message_codec import QQOutboundCodec
+
+    codec = QQOutboundCodec(ProfileState(SNOWLUMA_PROFILE), enable_private_at_strip=lambda: False)
+    actions = _outbound_actions(
+        codec,
+        [
+            {"type": "at", "data": {"target_user_id": "10001000"}},
+            {"type": "text", "data": "看这个"},
+        ],
+    )
+    _, params = actions[0]
+    assert [segment["type"] for segment in params["message"]] == ["at", "text"]

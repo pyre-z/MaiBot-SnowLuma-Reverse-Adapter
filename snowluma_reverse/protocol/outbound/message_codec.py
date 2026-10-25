@@ -34,6 +34,9 @@ class QQOutboundCodec:
         enable_text_face_conversion: Optional[Callable[[], bool]] = None,
         enable_text_face_token: Optional[Callable[[], bool]] = None,
         enable_text_face_name_token: Optional[Callable[[], bool]] = None,
+        enable_pangu_spacing: Optional[Callable[[], bool]] = None,
+        enable_pangu_spacing_digits: Optional[Callable[[], bool]] = None,
+        enable_private_at_strip: Optional[Callable[[], bool]] = None,
         enable_text_at_conversion: Optional[Callable[[], bool]] = None,
         get_group_members: Optional[Callable[[str], Awaitable[Optional[List[Dict[str, Any]]]]]] = None,
     ) -> None:
@@ -44,13 +47,21 @@ class QQOutboundCodec:
             enable_text_face_conversion: 返回当前文本表情转换开关的回调。
             enable_text_face_token: 返回 ``[小表情#ID]`` token 转换开关的回调。
             enable_text_face_name_token: 返回 ``[汗]`` 这类表情名兜底开关的回调。
+            enable_pangu_spacing: 返回「盘古之白」开关的回调。
+            enable_pangu_spacing_digits: 返回「数字也参与盘古之白」开关的回调。
+            enable_private_at_strip: 返回「私聊剥离 at 段」开关的回调。
             enable_text_at_conversion: 返回当前文本 @ 转换开关的回调。
             get_group_members: 异步查询当前群成员列表的回调。
         """
         self._segment_encoder = QQOutboundSegmentEncoder(
-            enable_text_face_conversion, enable_text_face_token, enable_text_face_name_token
+            enable_text_face_conversion,
+            enable_text_face_token,
+            enable_text_face_name_token,
+            enable_pangu_spacing,
+            enable_pangu_spacing_digits,
         )
         self._profile_state = profile_state
+        self._enable_private_at_strip = enable_private_at_strip
         self._enable_text_at_conversion = enable_text_at_conversion
         self._get_group_members = get_group_members
 
@@ -217,10 +228,18 @@ class QQOutboundCodec:
 
         if not target_user_id:
             raise ValueError("出站私聊消息缺少 target_user_id")
-        segments = self._drop_private_at_segments(segments)
+        if self._private_at_strip_enabled():
+            segments = self._drop_private_at_segments(segments)
         if profile.msg_action_style == MSG_ACTION_STYLE_GENERIC:
             return "send_msg", {"message_type": "private", "user_id": target_user_id, "message": segments}
         return "send_private_msg", {"message": segments, "user_id": target_user_id}
+
+    def _private_at_strip_enabled(self) -> bool:
+        """判断私聊是否剥离 at 段；未接线时按开启处理。"""
+
+        if self._enable_private_at_strip is None:
+            return True
+        return bool(self._enable_private_at_strip())
 
     @staticmethod
     def _drop_private_at_segments(segments: List[Dict[str, Any]]) -> List[Dict[str, Any]]:

@@ -260,7 +260,58 @@ class QQPluginOptions(PluginConfigBase):
                 hint_ja="現在のグループ内で QQ 番号・グループ名・ニックネームを完全一致で検索します。"
                 "不明・同名はそのままにし、隣接する同じユーザーへのメンションを統合します。",
             ),
-            "order": 3,
+            "order": 5,
+        },
+    )
+    enable_pangu_spacing: bool = Field(
+        default=True,
+        description="发送前在中文与英文/数字之间补一个空格（盘古之白），不碰标点、不重复加空格。",
+        json_schema_extra={
+            "label": "盘古之白",
+            "hint": "「这是Flash吧」会变成「这是 Flash 吧」；小表情 token、URL、反引号代码保持原样，已带空格的不会再加。",
+            "i18n": _schema_i18n(
+                label_en="Pangu spacing",
+                label_ja="パングー・スペース",
+                hint_en="Insert a space between CJK and Latin/digit text before sending; "
+                "face tokens, URLs and inline code stay untouched, already-spaced text is idempotent.",
+                hint_ja="送信前に中国語と英数字の間に半角スペースを入れます；"
+                "小表情トークン・URL・インラインコードは変更せず、既存のスペースは増やしません。",
+            ),
+            "order": 6,
+        },
+    )
+    enable_pangu_spacing_digits: bool = Field(
+        default=True,
+        description="盘古之白是否也处理中文与阿拉伯数字之间（「5个人」→「5 个人」）。",
+        json_schema_extra={
+            "label": "数字也加空格",
+            "hint": "关闭后只处理中文与英文字母之间，数字紧贴中文时保持原样。仅在开启「盘古之白」时生效。",
+            "i18n": _schema_i18n(
+                label_en="Space around digits",
+                label_ja="数字にもスペース",
+                hint_en="Also space CJK against Arabic numerals; turn off to only space Latin letters. "
+                "Only effective when Pangu spacing is on.",
+                hint_ja="中国語と半角数字の間にもスペースを入れます；オフにすると英字のみ対象。"
+                "「パングー・スペース」が有効なときのみ作用します。",
+            ),
+            "order": 7,
+        },
+    )
+    enable_private_at_strip: bool = Field(
+        default=True,
+        description="私聊发送前剥离 at 段：QQ 拒收私聊里的 at 元素，不剥离会导致整条消息发送失败。",
+        json_schema_extra={
+            "label": "私聊剥离 @ 段",
+            "hint": "模型给 reply 带 attach_at 时会产出 at 段，QQ 私聊拒收。保持开启只丢 at、正文照常发出。",
+            "i18n": _schema_i18n(
+                label_en="Strip mentions in private chats",
+                label_ja="個人チャットのメンションを除去",
+                hint_en="QQ rejects `at` elements in private messages, which drops the whole message. "
+                "Keep this on to strip the mention and still deliver the text.",
+                hint_ja="QQ は個人チャットの at 要素を拒否し、メッセージ全体が送信できません。"
+                "オンにすると at のみ除去して本文は送信します。",
+            ),
+            "order": 8,
         },
     )
     client_type: CLIENT_TYPE_VALUES = Field(
@@ -284,7 +335,7 @@ class QQPluginOptions(PluginConfigBase):
                 ),
             ),
             "label": "对端类型",
-            "order": 5,
+            "order": 9,
         },
     )
 
