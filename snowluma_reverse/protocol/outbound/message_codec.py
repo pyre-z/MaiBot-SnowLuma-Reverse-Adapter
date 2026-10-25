@@ -11,6 +11,7 @@
 
 from __future__ import annotations
 
+import logging
 from typing import Any, Awaitable, Callable, Dict, List, Mapping, Optional, Tuple
 
 from ...profile import MSG_ACTION_STYLE_GENERIC
@@ -20,6 +21,8 @@ from .segment_encoder import QQOutboundSegmentEncoder
 OutboundAction = Tuple[str, Dict[str, Any]]
 
 SYNTHETIC_MESSAGE_ID_PREFIX = "qq-"
+
+LOGGER = logging.getLogger(__name__)
 
 
 class QQOutboundCodec:
@@ -214,9 +217,34 @@ class QQOutboundCodec:
 
         if not target_user_id:
             raise ValueError("出站私聊消息缺少 target_user_id")
+        segments = self._drop_private_at_segments(segments)
         if profile.msg_action_style == MSG_ACTION_STYLE_GENERIC:
             return "send_msg", {"message_type": "private", "user_id": target_user_id, "message": segments}
         return "send_private_msg", {"message": segments, "user_id": target_user_id}
+
+    @staticmethod
+    def _drop_private_at_segments(segments: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """私聊出站丢弃 at 段。
+
+        QQ 侧对私聊消息里的 ``at`` 元素直接整条拒收
+        （``message element "at" cannot be sent in a private chat``），
+        模型给 ``reply`` 带了 ``attach_at`` 时就会触发，导致正文一起丢掉。
+        这里兜底剥离 at，正文照常发送；剥完为空时退回空文本段，保持可发送结构。
+
+        Args:
+            segments: 已转换的 OneBot 消息段列表。
+
+        Returns:
+            List[Dict[str, Any]]: 不含 at 的消息段列表。
+        """
+
+        kept = [item for item in segments if item.get("type") != "at"]
+        dropped = len(segments) - len(kept)
+        if dropped:
+            LOGGER.warning(f"私聊出站丢弃 {dropped} 个 at 段：QQ 不支持私聊 @，避免整条消息被拒")
+        if not kept:
+            kept = [{"type": "text", "data": {"text": ""}}]
+        return kept
 
     def _build_file_upload_action(
         self,

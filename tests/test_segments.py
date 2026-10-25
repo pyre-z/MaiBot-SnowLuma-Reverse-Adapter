@@ -186,3 +186,54 @@ def test_face_name_token_ignores_anchor_and_id_token():
         {"type": "text", "data": {"text": "[小表情·幽灵#187]"}},
         {"type": "face", "data": {"id": "187"}},
     ]
+
+
+def _outbound_actions(codec, raw_message, *, group_id="", user_id="10001000"):
+    message = {
+        "account_id": "10002000",
+        "message_info": {"group_info": {"group_id": group_id} if group_id else {}},
+        "raw_message": raw_message,
+    }
+    route = {"group_id": group_id, "user_id": user_id}
+    return codec.build_outbound_actions(message, route)
+
+
+def test_private_outbound_drops_at_but_keeps_text():
+    from snowluma_reverse.protocol.outbound.message_codec import QQOutboundCodec
+
+    codec = QQOutboundCodec(ProfileState(SNOWLUMA_PROFILE))
+    actions = _outbound_actions(
+        codec,
+        [
+            {"type": "at", "data": {"target_user_id": "10001000"}},
+            {"type": "text", "data": "确实抠[吃瓜]"},
+        ],
+    )
+    _, params = actions[0]
+    assert [segment["type"] for segment in params["message"]] == ["text"]
+    assert params["message"][0]["data"]["text"] == "确实抠[吃瓜]"
+
+
+def test_group_outbound_keeps_at():
+    from snowluma_reverse.protocol.outbound.message_codec import QQOutboundCodec
+
+    codec = QQOutboundCodec(ProfileState(SNOWLUMA_PROFILE))
+    actions = _outbound_actions(
+        codec,
+        [
+            {"type": "at", "data": {"target_user_id": "10001000"}},
+            {"type": "text", "data": "看这个"},
+        ],
+        group_id="123456",
+    )
+    _, params = actions[0]
+    assert [segment["type"] for segment in params["message"]] == ["at", "text"]
+
+
+def test_private_outbound_pure_at_falls_back_to_empty_text():
+    from snowluma_reverse.protocol.outbound.message_codec import QQOutboundCodec
+
+    codec = QQOutboundCodec(ProfileState(SNOWLUMA_PROFILE))
+    actions = _outbound_actions(codec, [{"type": "at", "data": {"target_user_id": "10001000"}}])
+    _, params = actions[0]
+    assert params["message"] == [{"type": "text", "data": {"text": ""}}]

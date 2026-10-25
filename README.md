@@ -225,6 +225,12 @@ QQ 原生小表情，混排、多个 token、群聊/私聊/合并转发都生效
 `/捂脸不存在` 不会被部分转换。⚠️ QQ 的表情名存在重名（如 `发呆` 同时对应 3 和 453），
 名字写法只能命中其中一个，需要精确指定时用 `[小表情#453]`。
 
+### 私聊不出 @
+
+QQ 拒收私聊消息里的 `at` 元素（`message element "at" cannot be sent in a private chat`），
+整条消息会发送失败。适配器在私聊出站时剥离 `at` 段、保留正文并记一条 warning；
+群聊行为不变。起因是模型给 `reply` 工具带了 `attach_at` 参数。
+
 ### 文本转 @
 
 「插件设置」开启「启用文本转@」（默认关闭），对应 `[plugin].enable_text_at_conversion = true`。

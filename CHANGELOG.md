@@ -2,6 +2,18 @@
 
 本项目从 `MaiBot-SnowLuma-Adapter` 1.1.8 派生，上游历史见 `UPSTREAM-CHANGELOG.md`。
 
+## 4.2.1
+
+### 修复
+
+- 私聊出站丢弃 `at` 段：QQ 对私聊消息里的 `at` 元素直接整条拒收
+  （`message element "at" cannot be sent in a private chat`），模型给 `reply` 带 `attach_at` 时
+  正文会一起丢掉。现在私聊场景剥离 `at`、正文照常发送；群聊行为不变；剥完为空时退回空文本段。
+
+### 说明
+
+- 配置结构版本不变（仍 4.2.0），无需改 `config.toml`。
+
 ## 4.2.0
 
 ### 新增
