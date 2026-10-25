@@ -314,6 +314,23 @@ class QQPluginOptions(PluginConfigBase):
             "order": 8,
         },
     )
+    enable_trailing_punctuation_strip: bool = Field(
+        default=True,
+        description="发送前删掉正文结尾单个「。」或「：」，符合聊天口语；连续标点视为刻意、问号感叹号都不动。",
+        json_schema_extra={
+            "label": "去掉结尾句号/冒号",
+            "hint": "「好的。」→「好的」、「我总结一下：」→「我总结一下」；「真的。。。」这种连续标点保留原样。",
+            "i18n": _schema_i18n(
+                label_en="Drop trailing period/colon",
+                label_ja="文末の句点・コロンを削除",
+                hint_en="Strips a single trailing 「。」/「：」; repeated marks like 「。。。」 count as "
+                "deliberate emphasis and stay, as do mid-sentence punctuation, 「？」 and 「！」.",
+                hint_ja="文末の「。」「：」を1つだけ削除します；「。。。」のような連続記号は意図的な強調として残します。"
+                "文中の句読点や「？」「！」も変更しません。",
+            ),
+            "order": 9,
+        },
+    )
     client_type: CLIENT_TYPE_VALUES = Field(
         default="auto",
         description="对端客户端类型：auto 连接后自动判定，也可固定为 napcat 或 snowluma。",
@@ -335,7 +352,7 @@ class QQPluginOptions(PluginConfigBase):
                 ),
             ),
             "label": "对端类型",
-            "order": 9,
+            "order": 10,
         },
     )
 

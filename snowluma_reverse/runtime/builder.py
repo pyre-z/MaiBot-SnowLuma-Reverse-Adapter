@@ -98,6 +98,7 @@ class QQRuntimeBuilder:
             enable_text_face_name_token=lambda: load_settings().plugin.enable_text_face_name_token,
             enable_pangu_spacing=lambda: load_settings().plugin.enable_pangu_spacing,
             enable_pangu_spacing_digits=lambda: load_settings().plugin.enable_pangu_spacing_digits,
+            enable_trailing_punctuation_strip=lambda: load_settings().plugin.enable_trailing_punctuation_strip,
             enable_private_at_strip=lambda: load_settings().plugin.enable_private_at_strip,
             enable_text_at_conversion=lambda: load_settings().plugin.enable_text_at_conversion,
             get_group_members=query_service.get_group_member_list,

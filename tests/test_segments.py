@@ -309,3 +309,46 @@ def test_private_at_kept_when_strip_switch_off():
     )
     _, params = actions[0]
     assert [segment["type"] for segment in params["message"]] == ["at", "text"]
+
+
+def test_strip_trailing_chat_punctuation():
+    from snowluma_reverse.protocol.outbound.text_style import strip_trailing_chat_punctuation as strip
+
+    cases = {
+        "好的。": "好的",
+        "我总结一下：": "我总结一下",
+        "好的： ": "好的",
+        "真的。。。": "真的。。。",
+        "好吧。。": "好吧。。",
+        "好。：": "好。：",
+        "第一。第二": "第一。第二",
+        "真的吗？": "真的吗？",
+        "确实！": "确实！",
+        "。": "。",
+        "纯文本": "纯文本",
+        "": "",
+    }
+    for source, expected in cases.items():
+        assert strip(source) == expected
+
+
+def test_encoder_strips_trailing_punctuation():
+    encoder = QQOutboundSegmentEncoder(
+        enable_text_face_token=lambda: True,
+        enable_trailing_punctuation_strip=lambda: True,
+    )
+    assert encoder.convert_segments([{"type": "text", "data": "好的。"}]) == [
+        {"type": "text", "data": {"text": "好的"}}
+    ]
+    # 末尾是表情时，最后一个文本段同样清理
+    assert encoder.convert_segments([{"type": "text", "data": "好的。[小表情#271]"}]) == [
+        {"type": "text", "data": {"text": "好的"}},
+        {"type": "face", "data": {"id": "271"}},
+    ]
+
+
+def test_encoder_trailing_punctuation_switch_off():
+    encoder = QQOutboundSegmentEncoder(enable_trailing_punctuation_strip=lambda: False)
+    assert encoder.convert_segments([{"type": "text", "data": "好的。"}]) == [
+        {"type": "text", "data": {"text": "好的。"}}
+    ]

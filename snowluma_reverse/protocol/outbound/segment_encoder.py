@@ -9,6 +9,7 @@ import re
 
 from ...data.faces import QQ_FACE_DESCRIPTIONS
 from .pangu import apply_pangu_spacing
+from .text_style import strip_trailing_chat_punctuation
 
 SYNTHETIC_MESSAGE_ID_PREFIX = "qq-"
 
@@ -45,6 +46,7 @@ class QQOutboundSegmentEncoder:
         enable_text_face_name_token: Optional[Callable[[], bool]] = None,
         enable_pangu_spacing: Optional[Callable[[], bool]] = None,
         enable_pangu_spacing_digits: Optional[Callable[[], bool]] = None,
+        enable_trailing_punctuation_strip: Optional[Callable[[], bool]] = None,
     ) -> None:
         """初始化出站消息段编码器。
 
@@ -54,6 +56,7 @@ class QQOutboundSegmentEncoder:
             enable_text_face_name_token: 返回「``[汗]`` 这类表情名兜底」开关的回调。
             enable_pangu_spacing: 返回「盘古之白」开关的回调。
             enable_pangu_spacing_digits: 返回「数字也参与盘古之白」开关的回调；未接线时默认开启。
+            enable_trailing_punctuation_strip: 返回「删掉结尾句号/冒号」开关的回调。
         """
         self._logger = logging.getLogger(__name__)
         self._enable_text_face_conversion = enable_text_face_conversion
@@ -61,6 +64,7 @@ class QQOutboundSegmentEncoder:
         self._enable_text_face_name_token = enable_text_face_name_token
         self._enable_pangu_spacing = enable_pangu_spacing
         self._enable_pangu_spacing_digits = enable_pangu_spacing_digits
+        self._enable_trailing_punctuation_strip = enable_trailing_punctuation_strip
         self._segment_builders: Dict[str, Callable[[Mapping[str, Any]], List[Dict[str, Any]]]] = {
             "at": self._build_at_segments,
             "dict": self._build_dict_segments,
@@ -121,7 +125,23 @@ class QQOutboundSegmentEncoder:
 
         if not outbound_segments:
             outbound_segments.append({"type": "text", "data": {"text": ""}})
+        if self._flag_enabled(self._enable_trailing_punctuation_strip):
+            self._strip_trailing_chat_punctuation(outbound_segments)
         return outbound_segments
+
+    @staticmethod
+    def _strip_trailing_chat_punctuation(segments: List[Dict[str, Any]]) -> None:
+        """删除最后一段文本结尾的 ``。`` / ``：``。"""
+
+        for segment in reversed(segments):
+            if segment.get("type") != "text":
+                continue
+            data = segment.get("data")
+            if not isinstance(data, dict):
+                return
+            original = str(data.get("text") or "")
+            data["text"] = strip_trailing_chat_punctuation(original)
+            return
 
     def _logger_debug(self, message: str) -> None:
         """Emit a debug explanation when a host-only segment is flattened."""

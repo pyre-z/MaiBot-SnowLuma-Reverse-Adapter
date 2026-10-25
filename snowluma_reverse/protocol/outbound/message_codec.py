@@ -36,6 +36,7 @@ class QQOutboundCodec:
         enable_text_face_name_token: Optional[Callable[[], bool]] = None,
         enable_pangu_spacing: Optional[Callable[[], bool]] = None,
         enable_pangu_spacing_digits: Optional[Callable[[], bool]] = None,
+        enable_trailing_punctuation_strip: Optional[Callable[[], bool]] = None,
         enable_private_at_strip: Optional[Callable[[], bool]] = None,
         enable_text_at_conversion: Optional[Callable[[], bool]] = None,
         get_group_members: Optional[Callable[[str], Awaitable[Optional[List[Dict[str, Any]]]]]] = None,
@@ -49,6 +50,7 @@ class QQOutboundCodec:
             enable_text_face_name_token: 返回 ``[汗]`` 这类表情名兜底开关的回调。
             enable_pangu_spacing: 返回「盘古之白」开关的回调。
             enable_pangu_spacing_digits: 返回「数字也参与盘古之白」开关的回调。
+            enable_trailing_punctuation_strip: 返回「删掉结尾句号/冒号」开关的回调。
             enable_private_at_strip: 返回「私聊剥离 at 段」开关的回调。
             enable_text_at_conversion: 返回当前文本 @ 转换开关的回调。
             get_group_members: 异步查询当前群成员列表的回调。
@@ -59,6 +61,7 @@ class QQOutboundCodec:
             enable_text_face_name_token,
             enable_pangu_spacing,
             enable_pangu_spacing_digits,
+            enable_trailing_punctuation_strip,
         )
         self._profile_state = profile_state
         self._enable_private_at_strip = enable_private_at_strip
