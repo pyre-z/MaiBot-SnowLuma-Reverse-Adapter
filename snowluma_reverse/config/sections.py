@@ -228,6 +228,24 @@ class QQPluginOptions(PluginConfigBase):
             "order": 3,
         },
     )
+    enable_text_face_name_token: bool = Field(
+        default=True,
+        description="发送时将 [汗]、[吃瓜] 这类表情名文本转换为 QQ 原生小表情，表情表里没有的名字保持原样。",
+        json_schema_extra={
+            "label": "启用表情名兜底",
+            "hint": "模型有时会把 QQ 表情写成 [汗]、[吃瓜] 这类旧样式；开启后只转换表情表里存在的名字，"
+            "[图片]、[注] 等普通方括号内容不受影响。",
+            "i18n": _schema_i18n(
+                label_en="Enable face-name fallback",
+                label_ja="表情名フォールバックを有効化",
+                hint_en="Convert legacy [汗]/[吃瓜]-style names that exist in the face table into native QQ faces; "
+                "other bracketed text such as [图片] stays unchanged.",
+                hint_ja="旧式の [汗]/[吃瓜] など表情表にある名前を QQ 絵文字に変換します；"
+                "[图片] など他の括弧書きはそのまま送信します。",
+            ),
+            "order": 4,
+        },
+    )
     enable_text_at_conversion: bool = Field(
         default=False,
         description="将群聊发送文本中的 @QQ号、@群名片或 @昵称转换为实际 @。真实 @ 的相邻去重始终生效。",
@@ -266,7 +284,7 @@ class QQPluginOptions(PluginConfigBase):
                 ),
             ),
             "label": "对端类型",
-            "order": 4,
+            "order": 5,
         },
     )
 

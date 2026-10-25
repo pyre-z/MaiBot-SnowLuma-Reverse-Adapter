@@ -26,6 +26,13 @@ QQ_TEXT_FACE_PATTERN = re.compile(
 # 因此模型引用消息原文时不会被误转成真表情。
 QQ_FACE_TOKEN_PATTERN = re.compile(r"\[小表情#([^\]\n]{1,16})\]")
 
+# 出站表情名兜底：模型常把 QQ 内置表情写成 ``[汗]``、``[吃瓜]`` 这类旧式中文写法，
+# 而 token 约定只认 ``[小表情#ID]``。这里只匹配表情表里真实存在的名字（最长优先），
+# 命中才转表情，``[图片]``、``[注]`` 这类普通方括号文本保持原文。
+QQ_FACE_NAME_TOKEN_PATTERN = re.compile(
+    r"\[(" + "|".join(re.escape(name) for name in sorted(QQ_FACE_IDS_BY_NAME, key=len, reverse=True)) + r")\]"
+)
+
 
 class QQOutboundSegmentEncoder:
     """将 Host 消息段转换为 OneBot 消息段。"""
@@ -34,16 +41,19 @@ class QQOutboundSegmentEncoder:
         self,
         enable_text_face_conversion: Optional[Callable[[], bool]] = None,
         enable_text_face_token: Optional[Callable[[], bool]] = None,
+        enable_text_face_name_token: Optional[Callable[[], bool]] = None,
     ) -> None:
         """初始化出站消息段编码器。
 
         Args:
             enable_text_face_conversion: 返回「``/表情名`` 文本转表情」开关的回调。
             enable_text_face_token: 返回「``[小表情#ID]`` token 转表情」开关的回调。
+            enable_text_face_name_token: 返回「``[汗]`` 这类表情名兜底」开关的回调。
         """
         self._logger = logging.getLogger(__name__)
         self._enable_text_face_conversion = enable_text_face_conversion
         self._enable_text_face_token = enable_text_face_token
+        self._enable_text_face_name_token = enable_text_face_name_token
         self._segment_builders: Dict[str, Callable[[Mapping[str, Any]], List[Dict[str, Any]]]] = {
             "at": self._build_at_segments,
             "dict": self._build_dict_segments,
@@ -138,12 +148,13 @@ class QQOutboundSegmentEncoder:
     def _build_text_segments(self, item: Mapping[str, Any]) -> List[Dict[str, Any]]:
         """构造文本消息段。
 
-        支持两种文本内联小表情写法，各自独立开关：
+        支持三种文本内联小表情写法，各自独立开关：
 
         * ``/幽灵`` → 按中文名查表（``enable_text_face_conversion``）
         * ``[小表情#187]`` → 按 ID 直转（``enable_text_face_token``），工具专用写法
+        * ``[汗]`` → 按中文名兜底（``enable_text_face_name_token``），兼容模型旧式写法
 
-        未收录的数字 ID 与非数字 ID 一律保留原文，避免把普通文本吃掉。
+        未收录的数字 ID、非数字 ID 与表情表里没有的方括号文本一律保留原文，避免把普通文本吃掉。
 
         Args:
             item: Host 侧文本消息段。
@@ -164,6 +175,11 @@ class QQOutboundSegmentEncoder:
                 if not face_id.isdecimal() or face_id not in QQ_FACE_DESCRIPTIONS:
                     continue
                 matches.append((match.start(), match.end(), face_id))
+        if self._flag_enabled(self._enable_text_face_name_token):
+            matches.extend(
+                (match.start(), match.end(), QQ_FACE_IDS_BY_NAME[match.group(1)])
+                for match in QQ_FACE_NAME_TOKEN_PATTERN.finditer(text_value)
+            )
 
         if not matches:
             return [{"type": "text", "data": {"text": text_value}}]

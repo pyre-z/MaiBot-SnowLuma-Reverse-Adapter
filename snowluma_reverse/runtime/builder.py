@@ -95,6 +95,7 @@ class QQRuntimeBuilder:
             profile_state,
             enable_text_face_conversion=lambda: load_settings().plugin.enable_text_face_conversion,
             enable_text_face_token=lambda: load_settings().plugin.enable_text_face_token,
+            enable_text_face_name_token=lambda: load_settings().plugin.enable_text_face_name_token,
             enable_text_at_conversion=lambda: load_settings().plugin.enable_text_at_conversion,
             get_group_members=query_service.get_group_member_list,
         )

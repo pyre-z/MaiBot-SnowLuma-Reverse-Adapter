@@ -142,3 +142,47 @@ def test_face_token_and_name_conversion_combine():
         {"type": "face", "data": {"id": "187"}},
         {"type": "face", "data": {"id": "0"}},
     ]
+
+
+def test_face_name_token_converts_legacy_chinese_name():
+    encoder = QQOutboundSegmentEncoder(enable_text_face_name_token=lambda: True)
+    assert encoder.convert_segments([{"type": "text", "data": "何止贵，简直吞金兽[汗]"}]) == [
+        {"type": "text", "data": {"text": "何止贵，简直吞金兽"}},
+        {"type": "face", "data": {"id": "278"}},
+    ]
+
+
+def test_face_name_token_matches_longest_name_first():
+    encoder = QQOutboundSegmentEncoder(enable_text_face_name_token=lambda: True)
+    assert encoder.convert_segments([{"type": "text", "data": "[流汗][吃瓜]"}]) == [
+        {"type": "face", "data": {"id": "27"}},
+        {"type": "face", "data": {"id": "271"}},
+    ]
+
+
+def test_face_name_token_keeps_unknown_brackets():
+    encoder = QQOutboundSegmentEncoder(enable_text_face_name_token=lambda: True)
+    raw = "[图片][注][表情包][汗汗]"
+    assert encoder.convert_segments([{"type": "text", "data": raw}]) == [
+        {"type": "text", "data": {"text": raw}}
+    ]
+
+
+def test_face_name_token_switch_off_keeps_text():
+    encoder = QQOutboundSegmentEncoder(enable_text_face_name_token=lambda: False)
+    raw = "何止贵，简直吞金兽[汗]"
+    assert encoder.convert_segments([{"type": "text", "data": raw}]) == [
+        {"type": "text", "data": {"text": raw}}
+    ]
+
+
+def test_face_name_token_ignores_anchor_and_id_token():
+    encoder = QQOutboundSegmentEncoder(
+        enable_text_face_token=lambda: True,
+        enable_text_face_name_token=lambda: True,
+    )
+    raw = "[小表情·幽灵#187][小表情#187]"
+    assert encoder.convert_segments([{"type": "text", "data": raw}]) == [
+        {"type": "text", "data": {"text": "[小表情·幽灵#187]"}},
+        {"type": "face", "data": {"id": "187"}},
+    ]

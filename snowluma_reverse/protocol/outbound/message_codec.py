@@ -30,6 +30,7 @@ class QQOutboundCodec:
         profile_state: Any,
         enable_text_face_conversion: Optional[Callable[[], bool]] = None,
         enable_text_face_token: Optional[Callable[[], bool]] = None,
+        enable_text_face_name_token: Optional[Callable[[], bool]] = None,
         enable_text_at_conversion: Optional[Callable[[], bool]] = None,
         get_group_members: Optional[Callable[[str], Awaitable[Optional[List[Dict[str, Any]]]]]] = None,
     ) -> None:
@@ -39,10 +40,13 @@ class QQOutboundCodec:
             profile_state: 当前连接的客户端画像容器。
             enable_text_face_conversion: 返回当前文本表情转换开关的回调。
             enable_text_face_token: 返回 ``[小表情#ID]`` token 转换开关的回调。
+            enable_text_face_name_token: 返回 ``[汗]`` 这类表情名兜底开关的回调。
             enable_text_at_conversion: 返回当前文本 @ 转换开关的回调。
             get_group_members: 异步查询当前群成员列表的回调。
         """
-        self._segment_encoder = QQOutboundSegmentEncoder(enable_text_face_conversion, enable_text_face_token)
+        self._segment_encoder = QQOutboundSegmentEncoder(
+            enable_text_face_conversion, enable_text_face_token, enable_text_face_name_token
+        )
         self._profile_state = profile_state
         self._enable_text_at_conversion = enable_text_at_conversion
         self._get_group_members = get_group_members
