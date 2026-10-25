@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any, Mapping, Optional
 
 from ...types import QQSegment
-from ...media.voice import is_silk_voice_binary, transcode_silk_voice_binary
+from ...media.voice import is_wav_voice_binary, transcode_voice_binary_to_wav
 
 class QQInboundMediaMixin:
     async def _build_image_like_segment(
@@ -49,8 +49,10 @@ class QQInboundMediaMixin:
     async def _build_record_segment(self, segment_data: Mapping[str, Any]) -> QQSegment:
         """构造语音消息段。
 
-        画像决定 ``get_record`` 的 out_format：直接要 wav；
-        SnowLuma 要 mp3，且服务端可能仍返回 silk，统一走 silk 转码链。
+        画像决定 ``get_record`` 的 out_format：NapCat 要 wav；SnowLuma 要 mp3，
+        且服务端可能仍返回 silk。不论拿到什么编码，非 WAV 一律转成合法 WAV ——
+        MaiBot 上传时把文件硬编码命名 ``audio.wav``，网关按 WAV 头算时长，
+        内容不是 WAV 会直接 500（``invalid wav file``）。
 
         Args:
             segment_data: OneBot ``record`` 段的 ``data`` 字典。
@@ -85,13 +87,13 @@ class QQInboundMediaMixin:
         if not binary_data:
             return self._build_text_segment("[voice]")
 
-        if self._profile_state.profile.transcode_silk_voice and is_silk_voice_binary(binary_data):
-            mp3_data = await transcode_silk_voice_binary(binary_data)
-            if mp3_data:
-                binary_data = mp3_data
+        if self._profile_state.profile.transcode_silk_voice and not is_wav_voice_binary(binary_data):
+            wav_data = await transcode_voice_binary_to_wav(binary_data)
+            if wav_data:
+                binary_data = wav_data
             else:
                 self._logger.warning(
-                    "silk 语音转码失败：请安装插件依赖 silk-python 并确认 ffmpeg 可用，已降级为占位文本"
+                    "语音转 WAV 失败：请安装插件依赖 silk-python 并确认 ffmpeg 可用，已降级为占位文本"
                 )
                 return self._build_text_segment("[voice]")
 

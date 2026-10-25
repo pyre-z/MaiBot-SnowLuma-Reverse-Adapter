@@ -1,6 +1,6 @@
 [project]
 name = "snowluma-reverse-adapter"
-version = "4.5.0"
+version = "4.5.1"
 description = "MaiBot 的 SnowLuma 反向 OneBot v11 适配器"
 requires-python = ">=3.11"
 dependencies = ["aiohttp>=3.9", "maibot-plugin-sdk>=2.16,<3", "pillow>=10"]

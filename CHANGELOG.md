@@ -2,6 +2,22 @@
 
 本项目从 `MaiBot-SnowLuma-Adapter` 1.1.8 派生，上游历史见 `UPSTREAM-CHANGELOG.md`。
 
+## 4.5.1
+
+### 修复
+
+- **语音转文字全量失败（网关 `invalid wav file`）**：SnowLuma 画像下 silk 语音此前被转成 **MP3**，
+  而 MaiBot 的语音识别工具把上传文件硬编码命名为 `audio.wav`，网关按 WAV 头计算时长，
+  内容不是 WAV 时直接 500（`error getting audio duration: invalid wav file`），
+  消息降级成 `[语音消息，转录失败]`。
+  现在 `media/voice.py` 统一产出**合法 WAV**：silk 走 pysilk 解 PCM 后用 `wave` 套 RIFF 头
+  （不依赖 ffmpeg）；其他非 WAV 编码走 ffmpeg 落临时文件再读回（管道输出无法回填 RIFF 长度字段）。
+  `_build_record_segment` 的判定条件从「是 silk 才转」改为「不是 WAV 就转」，兜住服务端返回 mp3 的情况。
+
+### 说明
+
+- 配置结构版本不变，`config.toml` 无需迁移。
+
 ## 4.5.0
 
 ### 变更
