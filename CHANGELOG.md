@@ -2,6 +2,23 @@
 
 本项目从 `MaiBot-SnowLuma-Adapter` 1.1.8 派生，上游历史见 `UPSTREAM-CHANGELOG.md`。
 
+## 4.5.0
+
+### 变更
+
+- **结构调整，行为零变更**：`config/sections.py`（1056 行、7 个配置类）拆成 `config/sections/` 包
+  （`plugin_options` / `server` / `notice` / `filters` / `debug` / `mute` 等按配置段分文件）；
+  `apis/group.py`（930 行、52 个方法）拆成 `apis/group/` 包（`QQGroupBanMixin` / `QQGroupMemberMixin` /
+  `QQGroupNoticeMixin` / `QQGroupInfoMixin` / `QQGroupManageMixin`），由 `QQGroupApiMixin` 组合导出，
+  `from snowluma_reverse.apis import QQGroupApiMixin` 与旧路径仍是同一个对象。
+- `pyproject.toml` 版本号从 `2.1.0` 修正为 `4.5.0`，与 `_manifest.json` 对齐（此前长期漂移）。
+
+### 说明
+
+- 配置结构版本不变，仍为 4.4.0；`config.toml` 无需迁移，字段名、顺序、`label` / `hint` / `i18n` 全部保持原样。
+- 升级时需**删除**旧的 `snowluma_reverse/config/sections.py` 与 `snowluma_reverse/apis/group.py`，
+  否则旧模块会与同名包并存。
+
 ## 4.4.0
 
 ### 新增

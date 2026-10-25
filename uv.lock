@@ -1353,7 +1353,7 @@ wheels = [
 
 [[package]]
 name = "snowluma-reverse-adapter"
-version = "2.1.0"
+version = "4.4.0"
 source = { editable = "." }
 dependencies = [
     { name = "aiohttp" },
