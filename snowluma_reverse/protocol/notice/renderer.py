@@ -38,7 +38,7 @@ class QQNoticeTextRenderer:
         group_id = str(payload.get("group_id") or "").strip()
 
         if notice_type in {"group_recall", "friend_recall"}:
-            return await self._build_recall_notice_text(payload, resolve_display_name, group_id, notice_type)
+            return await self._build_recall_notice_text(payload, resolve_display_name, group_id, notice_type, self_id)
         if notice_type == "notify" and sub_type == "poke":
             return await self._build_poke_notice_text(payload, resolve_display_name, group_id, self_id)
         if notice_type == "notify" and sub_type == "group_name":
@@ -83,14 +83,33 @@ class QQNoticeTextRenderer:
         resolve_display_name: DisplayNameResolver,
         group_id: str,
         notice_type: str,
+        self_id: str = "",
     ) -> str:
-        """构造撤回通知文本（含消息 ID 后缀）。"""
+        """构造撤回通知文本（含消息 ID 后缀）。
+
+        撤回要区分「谁撤回的」：不比对 ``self_id`` 时，机器人撤回自己的消息会被渲染成
+        「某人撤回了一条消息」，模型在私聊语境里极易理解成「对方撤回了什么」，从而追问或道歉。
+        """
 
         message_id = str(payload.get("message_id") or "").strip()
         suffix = f"（消息ID:{message_id}）" if message_id else ""
         if notice_type == "friend_recall":
-            user_name = await resolve_display_name("", str(payload.get("user_id") or "").strip(), "QQ用户")
+            user_id = str(payload.get("user_id") or "").strip()
+            if self_id and user_id == self_id:
+                return f"[事件-好友撤回] 你撤回了自己的一条消息{suffix}"
+            user_name = await resolve_display_name("", user_id, "QQ用户")
             return f"[事件-好友撤回] {user_name} 撤回了一条消息{suffix}"
+
+        operator_id = str(payload.get("operator_id") or "").strip()
+        user_id = str(payload.get("user_id") or "").strip()
+        if self_id and operator_id == self_id:
+            if user_id == self_id:
+                return f"[事件-群消息撤回] 你撤回了自己的一条消息{suffix}"
+            recalled_name = await resolve_display_name(group_id, user_id, "QQ用户")
+            return f"[事件-群消息撤回] 你撤回了 {recalled_name} 的消息{suffix}"
+        if self_id and user_id == self_id:
+            operator_name = await resolve_display_name(group_id, operator_id, "QQ用户")
+            return f"[事件-群消息撤回] {operator_name} 撤回了你的消息{suffix}"
 
         operator_name = await resolve_display_name(group_id, str(payload.get("operator_id") or "").strip(), "QQ用户")
         user_name = await resolve_display_name(group_id, str(payload.get("user_id") or "").strip(), "QQ用户")
