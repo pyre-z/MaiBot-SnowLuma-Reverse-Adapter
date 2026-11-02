@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any, Awaitable, Callable, Coroutine
 
 from ..protocol.inbound import QQInboundCodec
@@ -26,7 +27,7 @@ from .bundle import QQRuntimeBundle
 class QQRuntimeBuilder:
     """按固定依赖图构建运行时组件。"""
 
-    def __init__(self, gateway_capability: Any, logger: Any, gateway_name: str) -> None:
+    def __init__(self, gateway_capability: Any, logger: Any, gateway_name: str, data_dir: Any = None) -> None:
         """初始化运行时构建器。
 
         Args:
@@ -37,6 +38,7 @@ class QQRuntimeBuilder:
         self._gateway_capability = gateway_capability
         self._logger = logger
         self._gateway_name = gateway_name
+        self._data_dir = Path(str(data_dir)) if data_dir else None
 
     def build(
         self,
@@ -72,7 +74,12 @@ class QQRuntimeBuilder:
         )
         action_service = QQActionService(self._logger, transport, profile_state)
         query_service = QQQueryService(action_service, self._logger)
-        ban_state_store = QQBanStateStore(self._logger)
+        ban_state_path = (
+            self._data_dir / "napcat_adapter" / "ban_state.json" if self._data_dir is not None else None
+        )
+        ban_state_store = QQBanStateStore(self._logger, storage_path=ban_state_path)
+        if ban_state_path is not None:
+            self._logger.info(f"禁言状态存储路径: {ban_state_path}")
         inbound_codec = QQInboundCodec(self._logger, query_service, profile_state, load_settings)
         notice_codec = QQNoticeCodec(self._logger, query_service)
         runtime_state = QQRuntimeStateManager(

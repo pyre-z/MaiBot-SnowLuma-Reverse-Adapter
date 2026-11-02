@@ -11,6 +11,7 @@
 
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any, ClassVar, Dict, List, Mapping, Optional, cast
 
 from maibot_sdk import MaiBotPlugin, PluginConfigBase
@@ -115,6 +116,20 @@ class SnowLumaAdapterPlugin(
         status = str(response.get("status") or "").strip().lower()
         return status == "ok" and response.get("retcode", 0) == 0
 
+    def _resolve_data_dir(self) -> Optional[Path]:
+        """取插件统一持久化数据目录。
+
+        Returns:
+            Optional[Path]: 数据目录；旧版 SDK 不提供 ``paths`` 时返回 ``None``，
+            此时禁言状态回落到插件源码目录的 ``data/``（兼容旧部署）。
+        """
+
+        paths = getattr(self.ctx, "paths", None)
+        data_dir = getattr(paths, "data_dir", None)
+        if not data_dir:
+            return None
+        return Path(str(data_dir))
+
     def _ensure_runtime_components(self) -> None:
         """确保运行时依赖对象已经完成初始化。"""
         if self._debug_logger is None:
@@ -135,6 +150,7 @@ class SnowLumaAdapterPlugin(
                 gateway_capability=self.ctx.gateway,
                 logger=self.ctx.logger,
                 gateway_name=SNOWLUMA_GATEWAY_NAME,
+                data_dir=self._resolve_data_dir(),
             )
             self._runtime_bundle = runtime_builder.build(
                 on_connection_opened=self._event_router.bootstrap_adapter_runtime_state,

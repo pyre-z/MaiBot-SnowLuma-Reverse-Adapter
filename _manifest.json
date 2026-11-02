@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "4.5.1",
+  "version": "4.5.2",
   "name": "SnowLuma 反向适配器 / SnowLuma Reverse Adapter",
   "description": "QQ 反向 WebSocket 适配器：由 SnowLuma 主动连入 MaiBot（衍生自 MaiBot Team 的 SnowLuma 适配器）",
   "author": {

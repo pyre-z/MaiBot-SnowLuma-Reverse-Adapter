@@ -10,8 +10,8 @@ import asyncio
 import json
 
 
-_PROJECT_ROOT = Path(__file__).resolve().parents[2]
-_DEFAULT_STORAGE_PATH = _PROJECT_ROOT / "data" / "napcat_adapter" / "ban_state.json"
+_LEGACY_STORAGE_PATH = Path(__file__).resolve().parents[2] / "data" / "napcat_adapter" / "ban_state.json"
+"""旧式存储位置：插件源码目录下的 ``data/``。仅在未注入统一数据目录时兜底使用。"""
 
 
 @dataclass
@@ -64,25 +64,51 @@ class QQBanRecord:
 class QQBanStateStore:
     """禁言状态持久化仓库。"""
 
-    def __init__(self, logger: Any, storage_path: Path = _DEFAULT_STORAGE_PATH) -> None:
+    def __init__(self, logger: Any, storage_path: Optional[Path] = None) -> None:
         """初始化禁言状态仓库。
 
         Args:
             logger: 插件日志对象。
-            storage_path: 持久化文件路径。
+            storage_path: 持久化文件路径；不传时回落到插件源码目录的 ``data/``（兼容旧部署）。
         """
+
         self._logger = logger
-        self._storage_path = storage_path
+        self._storage_path = Path(storage_path) if storage_path else _LEGACY_STORAGE_PATH
         self._records: Dict[str, QQBanRecord] = {}
         self._records_lock = asyncio.Lock()
 
+    @property
+    def storage_path(self) -> Path:
+        """返回当前生效的持久化路径，便于排查数据落点。"""
+
+        return self._storage_path
+
+    def _resolve_load_path(self) -> Optional[Path]:
+        """选择本次加载的文件，同时把旧式源码目录的数据迁到统一目录。
+
+        Returns:
+            Optional[Path]: 可读取的文件路径；不存在时返回 ``None``。
+        """
+
+        if self._storage_path.exists():
+            return self._storage_path
+        if self._storage_path == _LEGACY_STORAGE_PATH or not _LEGACY_STORAGE_PATH.exists():
+            return None
+        # 已注入统一数据目录：旧文件还在源码目录里，读出来随后由 persist() 写到新位置。
+        self._logger.info(
+            f"检测到旧式禁言状态文件 {_LEGACY_STORAGE_PATH}，将迁移到 {self._storage_path}"
+        )
+        return _LEGACY_STORAGE_PATH
+
     async def load(self) -> None:
         """从本地文件加载禁言记录。"""
-        if not self._storage_path.exists():
+
+        source_path = self._resolve_load_path()
+        if source_path is None:
             return
 
         try:
-            raw_payload = json.loads(self._storage_path.read_text(encoding="utf-8"))
+            raw_payload = json.loads(source_path.read_text(encoding="utf-8"))
         except Exception as exc:
             self._logger.warning(f"禁言状态文件读取失败，将忽略旧记录: {exc}")
             return
@@ -103,6 +129,9 @@ class QQBanStateStore:
             self._records = loaded_records
         if loaded_records:
             self._logger.info(f"禁言状态已加载 {len(loaded_records)} 条记录")
+        if source_path != self._storage_path:
+            # 从旧式目录读到的内容立即落到统一目录，下次启动不再依赖源码目录。
+            await self.persist()
 
     async def snapshot(self) -> List[QQBanRecord]:
         """返回当前记录快照。

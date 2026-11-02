@@ -2,6 +2,15 @@
 
 本项目从 `MaiBot-SnowLuma-Adapter` 1.1.8 派生，上游历史见 `UPSTREAM-CHANGELOG.md`。
 
+## 4.5.2
+
+### 修复
+
+- **禁言状态写进插件源码目录**：`ban_state_store` 之前用 `Path(__file__).parents[2] / "data"` 定位文件，
+  状态落在插件源码目录下，插件升级或重装会一并丢失，宿主运行时还会持续告警「旧式数据目录」。
+  现在由 `ctx.paths.data_dir` 注入统一持久目录（`/data/plugins/<插件 ID>`），
+  旧文件存在时首次加载自动迁移并立即落盘；旧版 SDK 不提供 `paths` 时仍回落到源码目录 `data/`。
+
 ## 4.5.1
 
 ### 修复
