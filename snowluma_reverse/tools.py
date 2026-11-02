@@ -2,13 +2,17 @@
 
 from __future__ import annotations
 
+import aiohttp
+import time
 from typing import Any, Dict, List, Mapping, Optional
 
 from maibot_sdk import Tool
 from maibot_sdk.types import ToolParameterInfo, ToolParamType
 
 from .data.faces import QQ_FACE_DESCRIPTIONS
+from .dress import DressError, fetch_dress, format_summary, pick
 from .profile import MSG_ACTION_STYLE_GENERIC
+from .render import parse_color, render_card, to_base64_source
 
 
 def _matches_scoped_identifier(allowed_values: List[str], current_value: str) -> bool:
@@ -751,4 +755,362 @@ class QQLlmToolsMixin:
             "forwarded_count": len(forward_nodes),
             "message_ids": normalized_message_ids,
         }
+
+    # ─────────────── 个性装扮 / 聊天气泡 ───────────────
+
+    _DRESS_CACHE: Dict[str, Any] = {}
+    _DRESS_TTL_SEC = 3600.0
+    _DRESS_COOKIE_TTL_SEC = 900.0
+
+    async def _resolve_stream_route(self, stream_id: str) -> Optional[Dict[str, str]]:
+        """按 stream_id 反查当前会话的群号 / 对方 QQ。"""
+        target = str(stream_id or "").strip()
+        if not target:
+            return None
+        streams = await self.ctx.chat.get_all_streams(platform="qq")
+        if not isinstance(streams, list):
+            return None
+        for stream in streams:
+            if not isinstance(stream, Mapping):
+                continue
+            candidate = str(stream.get("stream_id") or stream.get("session_id") or "").strip()
+            if candidate != target:
+                continue
+            return {
+                "chat_type": "group" if bool(stream.get("is_group_session")) else "private",
+                "group_id": str(stream.get("group_id") or "").strip(),
+                "user_id": str(stream.get("user_id") or "").strip(),
+            }
+        return None
+
+    async def _send_image_url(self, route: Mapping[str, str], url: str) -> tuple[bool, str]:
+        """把图片直链作为图片段发到指定会话。"""
+        bundle = self._require_runtime_bundle()
+        segments = [{"type": "image", "data": {"file": url}}]
+        generic = bundle.profile.msg_action_style == MSG_ACTION_STYLE_GENERIC
+
+        if route.get("chat_type") == "group":
+            group_id = str(route.get("group_id") or "").strip()
+            if not group_id:
+                return False, "会话缺少群号"
+            action = "send_msg" if generic else "send_group_msg"
+            params: Dict[str, Any] = {"group_id": int(group_id), "message": segments}
+            if generic:
+                params["message_type"] = "group"
+        else:
+            user_id = str(route.get("user_id") or "").strip()
+            if not user_id:
+                return False, "会话缺少用户 QQ 号"
+            action = "send_msg" if generic else "send_private_msg"
+            params = {"user_id": int(user_id), "message": segments}
+            if generic:
+                params["message_type"] = "private"
+
+        try:
+            response = await bundle.action_service.call_action(action, params)
+        except Exception as exc:  # noqa: BLE001
+            return False, str(exc)
+        if not isinstance(response, Mapping) or response.get("retcode") not in (0, None):
+            return False, f"发送失败: {response}"
+        return True, ""
+
+    _DRESS_SLICE_CACHE: Dict[str, Dict[str, bytes]] = {}
+
+    async def _fetch_bytes(self, url: str, timeout: float = 10.0) -> bytes:
+        """下载一个二进制资源（头像 / 九宫格切片）。"""
+        client_timeout = aiohttp.ClientTimeout(total=timeout)
+        async with aiohttp.ClientSession(timeout=client_timeout) as session:
+            async with session.get(url) as response:
+                if response.status != 200:
+                    raise RuntimeError(f"HTTP {response.status}: {url}")
+                return await response.read()
+
+    async def _load_dress(self, uin: int) -> Dict[str, Any]:
+        """带缓存地取某人的装扮（装扮 1h / cookie 15min）。"""
+        cache_key = f"dress:{uin}"
+        cached = self._DRESS_CACHE.get(cache_key)
+        if isinstance(cached, tuple) and time.time() - cached[0] < self._DRESS_TTL_SEC:
+            return cached[1]
+
+        cookie_key = "cookies:vip.qq.com"
+        cached_cookie = self._DRESS_CACHE.get(cookie_key)
+        if isinstance(cached_cookie, tuple) and time.time() - cached_cookie[0] < self._DRESS_COOKIE_TTL_SEC:
+            cookies = cached_cookie[1]
+        else:
+            bundle = self._require_runtime_bundle()
+            try:
+                response = await bundle.action_service.call_action(
+                    "get_credentials", {"domain": "vip.qq.com"}
+                )
+            except Exception as exc:  # noqa: BLE001
+                raise DressError("auth", f"获取登录态失败: {exc}") from exc
+            if not isinstance(response, Mapping) or response.get("retcode") != 0:
+                raise DressError("auth", f"获取登录态失败: {response}")
+            cookies = str((response.get("data") or {}).get("cookies") or "")
+            self._DRESS_CACHE[cookie_key] = (time.time(), cookies)
+
+        data = await fetch_dress(cookies, uin)
+        self._DRESS_CACHE[cache_key] = (time.time(), data)
+        return data
+
+    async def _load_bubble_slices(self, bubble: Mapping[str, Any]) -> Dict[str, bytes]:
+        """按 itemId 缓存气泡九宫格切片。"""
+        item_id = str(bubble.get("item_id") or "")
+        if not item_id:
+            return {}
+        cached = self._DRESS_SLICE_CACHE.get(item_id)
+        if cached:
+            return cached
+
+        slices: Dict[str, bytes] = {}
+        material = bubble.get("material") or {}
+        if isinstance(material, Mapping):
+            for label, url in material.items():
+                if not isinstance(url, str) or not url.startswith("http"):
+                    continue
+                try:
+                    slices[str(label)] = await self._fetch_bytes(url)
+                except Exception:  # noqa: BLE001
+                    continue
+        self._DRESS_SLICE_CACHE[item_id] = slices
+        return slices
+
+    @Tool(
+        "get_qq_dress",
+        platforms="qq",
+        description=(
+            "查询某个 QQ 用户正在使用的个性装扮：聊天气泡、字体、主题、名片、挂件等。"
+            "user_id 留空表示查机器人自己。"
+            "返回装扮名称、itemId 与素材直链；气泡会额外给出九宫格切图地址。"
+            "send_image=true 时把气泡预览图发到当前聊天。"
+        ),
+        parameters=[
+            ToolParameterInfo(
+                name="user_id",
+                param_type=ToolParamType.STRING,
+                description="要查询的 QQ 号；留空表示当前机器人账号。",
+                required=False,
+            ),
+            ToolParameterInfo(
+                name="send_image",
+                param_type=ToolParamType.BOOLEAN,
+                description="是否把查到的气泡预览图发到当前聊天，默认否。",
+                required=False,
+            ),
+        ],
+        enabled=False,
+        visibility="visible",
+    )
+    async def tool_get_qq_dress(
+        self,
+        user_id: Any = "",
+        send_image: Any = False,
+        stream_id: str = "",
+        **kwargs: Any,
+    ) -> Dict[str, Any]:
+        """查询目标用户的个性装扮，可选附带气泡预览图。"""
+        del kwargs
+
+        bundle = self._require_runtime_bundle()
+        raw_user_id = str(user_id or "").strip()
+        nickname = ""
+
+        if raw_user_id:
+            try:
+                target_uin = self._normalize_positive_int(raw_user_id, "user_id")
+            except ValueError as exc:
+                return {"success": False, "error": str(exc)}
+        else:
+            login_info = await bundle.query_service.get_login_info()
+            login_info = login_info if isinstance(login_info, Mapping) else {}
+            try:
+                target_uin = self._normalize_positive_int(login_info.get("user_id"), "user_id")
+            except ValueError:
+                return {"success": False, "error": "无法获取当前登录账号"}
+            nickname = str(login_info.get("nickname") or "")
+
+        try:
+            data = await self._load_dress(target_uin)
+        except DressError as exc:
+            return {"success": False, "error": str(exc), "kind": exc.kind}
+
+        content = format_summary(data, nickname)
+        bubble = pick(data.get("items") or [], 2) or {}
+        preview_url = str(bubble.get("preview_url") or "")
+
+        image_sent = False
+        image_error = ""
+        want_image = str(send_image).strip().lower() in {"1", "true", "yes", "on"}
+        if want_image and preview_url and stream_id:
+            route = await self._resolve_stream_route(stream_id)
+            if route is None:
+                image_error = "未找到当前会话，预览图未发送"
+            else:
+                image_sent, image_error = await self._send_image_url(route, preview_url)
+
+        result: Dict[str, Any] = {
+            "success": True,
+            "content": content,
+            "target_uin": str(data.get("target_uin") or ""),
+            "is_svip": bool(data.get("is_svip")),
+            "items": data.get("items") or [],
+            "bubble": bubble,
+            "preview_url": preview_url,
+            "image_sent": image_sent,
+        }
+        if image_error:
+            result["image_error"] = image_error
+        return result
+
+    @Tool(
+        "render_message_card",
+        platforms="qq",
+        description=(
+            "把当前聊天里的一条消息渲染成聊天卡片图片并发到本会话："
+            "发送者头像 + 该用户的聊天气泡 + 消息文字。"
+            "适合「把这句话画成 QQ 消息」「看看我的气泡配这句话长什么样」。"
+            "注意：头像框与个性字体取不到可用素材，头像框不画、字体用系统中文黑体。"
+        ),
+        parameters=[
+            ToolParameterInfo(
+                name="msg_id",
+                param_type=ToolParamType.STRING,
+                description="要渲染的消息 ID。",
+                required=True,
+            ),
+            ToolParameterInfo(
+                name="with_avatar",
+                param_type=ToolParamType.BOOLEAN,
+                description="是否绘制发送者头像，默认是。",
+                required=False,
+            ),
+            ToolParameterInfo(
+                name="max_chars",
+                param_type=ToolParamType.INTEGER,
+                description="每行最多几个中文字符（半角字符算半个），默认 15。",
+                required=False,
+            ),
+            ToolParameterInfo(
+                name="mirror",
+                param_type=ToolParamType.BOOLEAN,
+                description="头像在左时镜像气泡（尾巴朝左，跟 QQ 收到的消息一致），默认是。",
+                required=False,
+            ),
+        ],
+        enabled=False,
+        visibility="visible",
+    )
+    async def tool_render_message_card(
+        self,
+        msg_id: str = "",
+        with_avatar: Any = True,
+        max_chars: Any = 15,
+        mirror: Any = True,
+        stream_id: str = "",
+        chat_id: str = "",
+        **kwargs: Any,
+    ) -> Dict[str, Any]:
+        """把一条消息渲染成聊天卡片并发送。"""
+        del kwargs
+
+        normalized_msg_id = str(msg_id or "").strip()
+        if not normalized_msg_id:
+            return {"success": False, "error": "缺少目标消息 ID"}
+
+        target_stream_id = str(stream_id or chat_id or "").strip()
+        query = await self.ctx.message.get_by_id(
+            normalized_msg_id,
+            stream_id=target_stream_id,
+            include_binary_data=False,
+        )
+        if not isinstance(query, Mapping):
+            return {"success": False, "error": f"未找到消息: {normalized_msg_id}"}
+
+        payload: Mapping[str, Any] = query
+        if isinstance(query.get("message"), Mapping):
+            payload = query["message"]
+
+        message_info = payload.get("message_info")
+        message_info = message_info if isinstance(message_info, Mapping) else {}
+        user_info = message_info.get("user_info")
+        user_info = user_info if isinstance(user_info, Mapping) else {}
+
+        raw_uin = str(user_info.get("user_id") or "").strip()
+        try:
+            sender_uin = self._normalize_positive_int(raw_uin, "user_id")
+        except ValueError:
+            return {"success": False, "error": "该消息没有有效的发送者 QQ 号"}
+
+        text = str(payload.get("processed_plain_text") or "").strip()
+        if not text:
+            chunks: List[str] = []
+            raw_message = payload.get("raw_message")
+            if isinstance(raw_message, list):
+                for segment in raw_message:
+                    if not isinstance(segment, Mapping):
+                        continue
+                    data = segment.get("data")
+                    data = data if isinstance(data, Mapping) else segment
+                    piece = data.get("text")
+                    if isinstance(piece, str) and piece:
+                        chunks.append(piece)
+            text = "".join(chunks).strip()
+        if not text:
+            return {"success": False, "error": "这条消息没有可渲染的文字内容"}
+
+        route = await self._resolve_stream_route(target_stream_id)
+        if route is None:
+            return {"success": False, "error": "未找到当前会话，无法发送渲染图"}
+
+        try:
+            dress = await self._load_dress(sender_uin)
+        except DressError:
+            dress = {"items": []}
+
+        bubble = pick(dress.get("items") or [], 2) or {}
+        slices = await self._load_bubble_slices(bubble) if bubble else {}
+
+        avatar_bytes = b""
+        want_avatar = str(with_avatar).strip().lower() not in {"false", "0", "no", "off"}
+        if want_avatar:
+            try:
+                avatar_bytes = await self._fetch_bytes(
+                    f"https://q.qlogo.cn/g?b=qq&nk={sender_uin}&s=640", timeout=8.0
+                )
+            except Exception:  # noqa: BLE001
+                avatar_bytes = b""
+
+        want_mirror = str(mirror).strip().lower() not in {"false", "0", "no", "off"}
+
+        try:
+            chars_per_line = max(4, min(int(max_chars), 40))
+        except (TypeError, ValueError):
+            chars_per_line = 15
+
+        try:
+            png = render_card(
+                text=text,
+                slices=slices,
+                avatar_bytes=avatar_bytes,
+                text_color=parse_color(bubble.get("text_color")),
+                max_chars_per_line=chars_per_line,
+                mirror=want_mirror,
+            )
+        except Exception as exc:  # noqa: BLE001
+            return {"success": False, "error": f"渲染失败: {exc}"}
+
+        ok, error = await self._send_image_url(route, to_base64_source(png))
+        if not ok:
+            return {"success": False, "error": f"图片发送失败: {error}"}
+
+        return {
+            "success": True,
+            "content": "已把这条消息渲染成 QQ 消息卡片并发到当前会话。",
+            "msg_id": normalized_msg_id,
+            "sender_uin": str(sender_uin),
+            "bubble_item_id": bubble.get("item_id") or 0,
+            "used_bubble": bool(slices),
+            "image_bytes": len(png),
+        }
+
 
