@@ -10,7 +10,6 @@ from __future__ import annotations
 import shutil
 import struct
 import subprocess
-import sys
 import wave
 from io import BytesIO
 from pathlib import Path

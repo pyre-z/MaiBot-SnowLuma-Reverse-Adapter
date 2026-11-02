@@ -176,6 +176,7 @@ class ConnectionPool:
         routing: str = "sticky",
         preferred_slot: str = "",
         ordered: bool = True,
+        excluded: Sequence[SlotConnection] = (),
     ) -> Optional[SlotConnection]:
         """为一次动作挑选连接。
 
@@ -196,7 +197,8 @@ class ConnectionPool:
             Optional[SlotConnection]: 选中的连接；没有可用连接时返回 ``None``。
         """
 
-        candidates = [item for item in self._slots.values() if item.can_send]
+        excluded_ids = {id(item) for item in excluded}
+        candidates = [item for item in self._slots.values() if item.can_send and id(item) not in excluded_ids]
         if not candidates:
             return None
 
