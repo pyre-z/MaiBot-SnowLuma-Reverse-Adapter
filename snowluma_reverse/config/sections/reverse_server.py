@@ -185,18 +185,18 @@ class QQReverseServerConfig(PluginConfigBase):
     )
 
     slot_idle_timeout_sec: float = Field(
-        default=300.0,
+        default=0.0,
         description=(
             "空闲槽位回收时间：某条 slot 连接超过该秒数没有被用于发送动作就会被关闭；"
-            "事件所在槽位不受影响，0 表示不回收。"
+            "事件所在槽位不受影响。0 表示不回收，默认关闭。"
         ),
         json_schema_extra={
-            "hint": "多连接分流时，长期没人用的 slot 会自动断开以释放连接；设为 0 可关闭该行为。",
+            "hint": "默认 0（不回收）。需要限制长期空闲的连接时再设成 300 之类的秒数。",
             "i18n": _schema_i18n(
                 label_en="Idle slot timeout (sec)",
                 label_ja="アイドルスロット回収（秒）",
-                hint_en="Slots unused for this long are closed to free connections. The event slot is never recycled. 0 disables it.",
-                hint_ja="この秒数使われなかった slot は切断されます。イベント用スロットは対象外です。0 で無効化。",
+                hint_en="Defaults to 0 (disabled). Set a value such as 300 to close long-idle slots; the event slot is never recycled.",
+                hint_ja="既定は 0（無効）。300 などに設定すると、長期間使われない slot を切断します。イベント用スロットは対象外です。",
             ),
             "label": "空闲槽位回收（秒）",
             "order": 10,

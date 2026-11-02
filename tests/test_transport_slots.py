@@ -234,3 +234,20 @@ def test_pick_returns_none_without_send_capable_slot():
     pool = ConnectionPool()
     pool.add(SlotConnection(slot="0", ws=_FakeWS(), role="event"))
     assert pool.pick({}) is None
+
+
+@pytest.mark.asyncio
+async def test_idle_recycling_is_off_by_default(logger):
+    """默认 slot_idle_timeout_sec=0：不启动回收任务，槽位连上就一直保留。"""
+
+    instance, _, config = await start_server(logger)
+    session, ws = await connect(config, slot="5", role="Api")
+    try:
+        assert instance._slot_reaper_task is None
+        await asyncio.sleep(1.2)
+        assert instance._pool.get("5") is not None
+        assert not ws.closed
+    finally:
+        await ws.close()
+        await session.close()
+        await instance.stop()

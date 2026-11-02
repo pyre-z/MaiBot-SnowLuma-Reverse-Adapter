@@ -163,7 +163,7 @@ class QQTransportServer:
         self._runner = runner
         self._site = site
         self._start_slot_reaper()
-        idle_timeout = float(getattr(config, "slot_idle_timeout_sec", 300.0) or 0.0)
+        idle_timeout = float(getattr(config, "slot_idle_timeout_sec", 0.0) or 0.0)
         self._logger.info(
             f"SnowLuma 反向适配器已监听 ws://{config.listen_host}:{config.listen_port}"
             f"{listen_path} 与 {listen_path}/{{slot}}"
@@ -698,7 +698,7 @@ class QQTransportServer:
     def _slot_reap_interval(self) -> float:
         """计算槽位回收任务的巡检间隔。"""
 
-        timeout = float(getattr(self._config, "slot_idle_timeout_sec", 300.0) or 0.0)
+        timeout = float(getattr(self._config, "slot_idle_timeout_sec", 0.0) or 0.0)
         if timeout <= 0:
             return _MAX_SLOT_RECLAIM_INTERVAL_SEC
         return max(1.0, min(_MAX_SLOT_RECLAIM_INTERVAL_SEC, timeout / 4.0))
@@ -707,7 +707,7 @@ class QQTransportServer:
         """启动空闲槽位回收任务；空闲阈值为 0 时跳过。"""
 
         self._stop_slot_reaper()
-        timeout = float(getattr(self._config, "slot_idle_timeout_sec", 300.0) or 0.0)
+        timeout = float(getattr(self._config, "slot_idle_timeout_sec", 0.0) or 0.0)
         if timeout <= 0:
             return
         self._slot_reaper_task = self._create_background_task(
@@ -730,7 +730,7 @@ class QQTransportServer:
             config = self._config
             if config is None:
                 continue
-            timeout = float(getattr(config, "slot_idle_timeout_sec", 300.0) or 0.0)
+            timeout = float(getattr(config, "slot_idle_timeout_sec", 0.0) or 0.0)
             if timeout <= 0:
                 continue
             event_connection = self._pool.event_connection()
