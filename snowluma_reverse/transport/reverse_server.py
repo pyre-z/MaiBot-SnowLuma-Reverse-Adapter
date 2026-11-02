@@ -10,7 +10,9 @@
   对端在连接内返回带同名 ``echo`` 的响应；
 * 鉴权支持 ``Authorization: Bearer <token>`` 与 ``?access_token=<token>`` 两种
   OneBot v11 标准方式，并可用来源 IP 白名单兜底；
-* 对端在握手阶段携带 ``X-Self-ID``，用于识别账号并拒绝不同账号的并发接入。
+* 对端在握手阶段携带 ``X-Self-ID``，用于识别账号并拒绝不同账号的并发接入；
+* 路径支持 ``/onebot/v11/ws/{slot}``：每个 slot 一条独立连接、独立发送锁，
+  大消息只阻塞自己那条链路；不带后缀时视为 slot ``0``。
 """
 
 from __future__ import annotations
@@ -18,10 +20,17 @@ from __future__ import annotations
 import asyncio
 import contextlib
 import json
+import re
 from typing import TYPE_CHECKING, Any, Callable, Coroutine, Dict, Optional, Set
 from uuid import uuid4
 
 from .auth import authorize_request, authorize_self_id, is_ip_allowed, token_matches
+from .connection_pool import (
+    ConnectionPool,
+    SlotConnection,
+    normalize_role,
+    normalize_slot,
+)
 
 if TYPE_CHECKING:  # pragma: no cover - 仅用于类型检查
     from ..config import QQReverseServerConfig
@@ -36,6 +45,13 @@ except ImportError:  # pragma: no cover - 运行环境缺少依赖时
     WSMsgType = None  # type: ignore[assignment]
     web = None  # type: ignore[assignment]
     AIOHTTP_AVAILABLE = False
+
+
+_SLOT_PATTERN = re.compile(r"^[0-9A-Za-z_-]{1,32}$")
+"""槽位名允许的字符集，避免把奇怪路径当成 slot。"""
+
+_MAX_SLOT_RECLAIM_INTERVAL_SEC = 15.0
+"""槽位回收任务的巡检间隔上限。"""
 
 
 class QQTransportServer:
@@ -68,12 +84,12 @@ class QQTransportServer:
         self._runner: Optional[Any] = None
         self._site: Optional[Any] = None
         self._app: Optional[Any] = None
-        self._ws: Optional[Any] = None
+        self._pool = ConnectionPool()
+        self._ws: Optional[Any] = None  # 事件连接；其余 slot 只记录在连接池里
         self._active_self_id: str = ""
-        self._pending_actions: Dict[str, asyncio.Future[Dict[str, Any]]] = {}
         self._background_tasks: Set[asyncio.Task[Any]] = set()
-        self._send_lock = asyncio.Lock()
         self._connection_lock = asyncio.Lock()
+        self._slot_reaper_task: Optional[asyncio.Task[Any]] = None
         self._connection_active = False
         self._stop_requested = False
         # 连接建立后需先完成画像探测与网关激活，之后注入的事件才会被 Host 接受。
@@ -126,8 +142,11 @@ class QQTransportServer:
             await self.stop()
 
         self._stop_requested = False
+        listen_path = config.normalized_path().rstrip("/") or config.normalized_path()
         app = web.Application()
-        app.router.add_get(config.normalized_path(), self._handle_websocket)
+        app.router.add_get(listen_path, self._handle_websocket)
+        # 带 slot 后缀的连接各自独立；不带后缀的连接按 slot 0 处理。
+        app.router.add_get(f"{listen_path}/{{slot}}", self._handle_websocket)
         app.router.add_get("/healthz", self._handle_health)
 
         runner = web.AppRunner(app, access_log=None)
@@ -143,20 +162,22 @@ class QQTransportServer:
         self._app = app
         self._runner = runner
         self._site = site
+        self._start_slot_reaper()
+        idle_timeout = float(getattr(config, "slot_idle_timeout_sec", 300.0) or 0.0)
         self._logger.info(
             f"SnowLuma 反向适配器已监听 ws://{config.listen_host}:{config.listen_port}"
-            f"{config.normalized_path()}"
-            f"（鉴权: {'token' if config.token else '仅 IP 白名单'}）"
+            f"{listen_path} 与 {listen_path}/{{slot}}"
+            f"（鉴权: {'token' if config.token else '仅 IP 白名单'}"
+            f"，slot 空闲回收: {f'{idle_timeout:.0f}s' if idle_timeout > 0 else '关闭'}）"
         )
 
     async def stop(self) -> None:
         """停止监听、关闭在途连接并清理后台任务。"""
         self._stop_requested = True
+        self._stop_slot_reaper()
 
-        ws = self._ws
-        if ws is not None and not ws.closed:
-            with contextlib.suppress(Exception):
-                await ws.close(code=WSCloseCode.GOING_AWAY if WSCloseCode else 1001)
+        for connection in self._pool.connections():
+            await self._close_connection(connection, reason="适配器正在停止")
         self._ws = None
         self._active_self_id = ""
 
@@ -170,14 +191,20 @@ class QQTransportServer:
 
         await self._cancel_background_tasks()
         await self._notify_connection_closed()
-        self._fail_pending_actions("连接已关闭")
 
-    async def call_action(self, action_name: str, params: Dict[str, Any]) -> Dict[str, Any]:
-        """通过当前连接发送 OneBot 动作并等待 echo 响应。
+    async def call_action(
+        self,
+        action_name: str,
+        params: Dict[str, Any],
+        *,
+        slot: str = "",
+    ) -> Dict[str, Any]:
+        """从连接池挑选一条连接发送 OneBot 动作并等待 echo 响应。
 
         Args:
             action_name: OneBot 动作名称。
             params: 动作参数。
+            slot: 可选指定槽位；留空时按配置的选路策略选择。
 
         Returns:
             Dict[str, Any]: 对端返回的原始响应字典。
@@ -185,23 +212,50 @@ class QQTransportServer:
         Raises:
             RuntimeError: 当没有已连接的对端时抛出。
         """
-        ws = self._ws
+
         config = self._config
-        if ws is None or ws.closed or config is None:
+        if config is None:
+            raise RuntimeError("对端未连接")
+
+        connection = self._pool.pick(
+            params,
+            routing=str(getattr(config, "slot_routing", "sticky") or "sticky"),
+            preferred_slot=slot,
+            # 查询类动作不参与会话保序，直接挑最空闲的连接，避免排在别人后面。
+            ordered=not action_name.startswith(("get_", "can_", "check_")),
+        )
+        if connection is None:
+            raise RuntimeError("对端未连接")
+
+        return await self._call_action_on(connection, action_name, params)
+
+    async def _call_action_on(
+        self,
+        connection: SlotConnection,
+        action_name: str,
+        params: Dict[str, Any],
+    ) -> Dict[str, Any]:
+        """在指定连接上发送动作，只占用该连接自己的发送锁。"""
+
+        config = self._config
+        if config is None or not connection.open:
             raise RuntimeError("对端未连接")
 
         echo_id = uuid4().hex
         loop = asyncio.get_running_loop()
         response_future: asyncio.Future[Dict[str, Any]] = loop.create_future()
-        self._pending_actions[echo_id] = response_future
+        connection.pending[echo_id] = response_future
+        connection.in_flight += 1
 
         request_payload = {"action": action_name, "params": params, "echo": echo_id}
         try:
-            async with self._send_lock:
-                await ws.send_str(json.dumps(request_payload, ensure_ascii=False))
+            async with connection.send_lock:
+                await connection.ws.send_str(json.dumps(request_payload, ensure_ascii=False))
             return await asyncio.wait_for(response_future, timeout=config.action_timeout_sec)
         finally:
-            self._pending_actions.pop(echo_id, None)
+            connection.pending.pop(echo_id, None)
+            connection.in_flight = max(0, connection.in_flight - 1)
+            connection.touch()
 
     # ------------------------------------------------------------------
     # HTTP / WebSocket 处理
@@ -216,14 +270,25 @@ class QQTransportServer:
         Returns:
             aiohttp 响应对象，包含监听与连接状态。
         """
-        result = {
+        result: Dict[str, Any] = {
             "ok": True,
             "listening": self._runner is not None,
-            "connected": self._ws is not None and not self._ws.closed,
+            "connected": self._pool.has_connection(),
+            "slot_count": len(self._pool.connections()),
         }
         config = self._config
         if config is not None and config.token and token_matches(request, config.token):
             result["self_id"] = self._active_self_id
+            result["slots"] = [
+                {
+                    "slot": item.slot,
+                    "role": item.role,
+                    "self_id": item.self_id,
+                    "in_flight": item.in_flight,
+                    "idle_seconds": round(item.idle_seconds(), 1),
+                }
+                for item in self._pool.connections()
+            ]
         return web.json_response(result)
 
     async def _handle_websocket(self, request: Any) -> Any:
@@ -256,6 +321,17 @@ class QQTransportServer:
             )
             return ws
 
+        slot = normalize_slot(request.match_info.get("slot"))
+        if not _SLOT_PATTERN.match(slot):
+            return web.Response(status=404, text="invalid slot")
+
+        max_slots = int(getattr(config, "max_slots", 8) or 0)
+        if max_slots > 0 and self._pool.get(slot) is None and len(self._pool.connections()) >= max_slots:
+            self._logger.warning(f"拒绝新连接：槽位数量已达上限 {max_slots}（slot={slot}）")
+            return web.Response(status=503, text="too many slots")
+
+        role = normalize_role(request.headers.get("X-Client-Role"))
+
         ws = web.WebSocketResponse(
             heartbeat=config.heartbeat_interval or None,
             # aiohttp 的回读超时会主动断开空闲连接，反向 WS 必须关闭它，
@@ -266,48 +342,71 @@ class QQTransportServer:
         await ws.prepare(request)
 
         peer = self._describe_peer(request)
+        connection = SlotConnection(slot=slot, ws=ws, self_id=self_id, role=role)
 
         async with self._connection_lock:
-            current = self._ws
-            if current is not None and not current.closed:
-                if (
-                    self._active_self_id
-                    and self_id
-                    and self_id != self._active_self_id
-                ):
-                    await ws.close(
-                        code=WSCloseCode.POLICY_VIOLATION if WSCloseCode else 1008,
-                        message=b"another self_id is already connected",
-                    )
-                    self._logger.warning(
-                        f"拒绝账号 {self_id} 接入：当前已有账号 {self._active_self_id} 在线"
-                    )
-                    return ws
-                # 同账号重连：主动释放半死的旧连接，避免事件发往废弃 socket。
+            conflicting = next(
+                (
+                    item
+                    for item in self._pool.connections()
+                    if item.self_id and self_id and item.self_id != self_id
+                ),
+                None,
+            )
+            if conflicting is not None:
+                await ws.close(
+                    code=WSCloseCode.POLICY_VIOLATION if WSCloseCode else 1008,
+                    message=b"another self_id is already connected",
+                )
+                self._logger.warning(
+                    f"拒绝账号 {self_id} 接入：当前已有账号 {conflicting.self_id} 在线"
+                    f"（slot={conflicting.slot}）"
+                )
+                return ws
+
+            replaced = self._pool.add(connection)
+            if replaced is not None:
+                # 同槽位重连：释放旧连接，避免响应发往废弃 socket。
                 with contextlib.suppress(Exception):
-                    await current.close(
+                    await replaced.ws.close(
                         code=WSCloseCode.GOING_AWAY if WSCloseCode else 1001,
                         message=b"replaced by a new connection",
                     )
-
-            self._ws = ws
-            self._active_self_id = self_id
+            carries_events = connection.carries_events
+            if carries_events:
+                event_peer = self._pool.event_connection(exclude=connection)
+                if event_peer is not None:
+                    # 事件通道保持唯一：新的事件连接接管旧的，避免同一事件被投递两次。
+                    self._logger.info(
+                        f"事件连接切换到 slot={slot}，关闭旧的 slot={event_peer.slot}"
+                    )
+                    with contextlib.suppress(Exception):
+                        await event_peer.ws.close(
+                            code=WSCloseCode.GOING_AWAY if WSCloseCode else 1001,
+                            message=b"event channel moved to another slot",
+                        )
+                self._ws = ws
+                self._active_self_id = self_id
 
         self._logger.info(
-            f"SnowLuma 反向连接已建立: {peer}"
+            f"SnowLuma 反向连接已建立: slot={slot} role={role} {peer}"
             f"{f'，X-Self-ID={self_id}' if self_id else ''}"
         )
-        # 新连接重置就绪状态与队列，防止上一轮残留事件被误投递。
-        self._bootstrap_ready.clear()
-        self._payload_queue = asyncio.Queue()
-        worker_task = self._create_background_task(
-            self._payload_worker(), "reverse_adapter.payload_worker"
-        )
-        # 连接建立回调会发起 get_version_info 等动作并等待 echo，必须与读循环并发：
-        # 若在这里同步 await，读循环尚未启动，echo 永远无人接收，链路会卡到动作超时。
-        bootstrap_task = self._create_background_task(
-            self._bootstrap_and_mark_ready(), "reverse_adapter.bootstrap"
-        )
+
+        worker_task: Optional[asyncio.Task[Any]] = None
+        bootstrap_task: Optional[asyncio.Task[Any]] = None
+        if carries_events:
+            # 新事件连接重置就绪状态与队列，防止上一轮残留事件被误投递。
+            self._bootstrap_ready.clear()
+            self._payload_queue = asyncio.Queue()
+            worker_task = self._create_background_task(
+                self._payload_worker(), "reverse_adapter.payload_worker"
+            )
+            # 连接建立回调会发起 get_version_info 等动作并等待 echo，必须与读循环并发：
+            # 若在这里同步 await，读循环尚未启动，echo 永远无人接收，链路会卡到动作超时。
+            bootstrap_task = self._create_background_task(
+                self._bootstrap_and_mark_ready(), "reverse_adapter.bootstrap"
+            )
 
         disconnect_reason = "对端关闭了连接"
         try:
@@ -324,29 +423,38 @@ class QQTransportServer:
 
                 echo_id = str(payload.get("echo") or "").strip()
                 if echo_id:
-                    self._resolve_pending_action(echo_id, payload)
+                    self._resolve_pending_action(connection, echo_id, payload)
                     continue
 
-                self._payload_queue.put_nowait(payload)
+                if carries_events:
+                    self._payload_queue.put_nowait(payload)
+                else:
+                    self._logger.debug(
+                        f"slot={slot} 为发送专用连接，忽略上行事件: "
+                        f"{payload.get('post_type', '')}"
+                    )
         except asyncio.CancelledError:
             disconnect_reason = "适配器正在停止"
             raise
         except Exception as exc:  # 对端异常断开
             disconnect_reason = f"连接异常: {exc}"
         finally:
+            removed = self._pool.remove(connection)
+            self._fail_pending_actions(connection, "连接已中断")
+            for task in (worker_task, bootstrap_task):
+                if task is not None and not task.done():
+                    task.cancel()
             async with self._connection_lock:
-                replaced = self._ws is not None and self._ws is not ws
-                if self._ws is ws:
+                event_gone = self._ws is ws
+                if event_gone:
                     self._ws = None
                     self._active_self_id = ""
-            for task in (worker_task, bootstrap_task):
-                if not task.done():
-                    task.cancel()
-            self._logger.warning(f"SnowLuma 反向连接已断开: {peer}，{disconnect_reason}")
-            # 被新连接顶掉时不算整体断连，避免上层把刚建立的链路标记为离线。
-            if not replaced:
+            self._logger.warning(
+                f"SnowLuma 反向连接已断开: slot={slot} {peer}，{disconnect_reason}"
+            )
+            # 被同槽位新连接顶掉时不算整体断连，避免上层把刚建立的链路标记为离线。
+            if event_gone and removed:
                 await self._notify_connection_closed()
-            self._fail_pending_actions("连接已中断")
 
         return ws
 
@@ -537,25 +645,99 @@ class QQTransportServer:
         except Exception as exc:
             self._logger.warning(f"SnowLuma 反向适配器断连回调失败: {exc}")
 
-    def _resolve_pending_action(self, echo_id: str, payload: Dict[str, Any]) -> None:
+    def _resolve_pending_action(
+        self,
+        connection: SlotConnection,
+        echo_id: str,
+        payload: Dict[str, Any],
+    ) -> None:
         """解析等待中的动作响应。
 
         Args:
+            connection: 收到响应的连接。
             echo_id: 动作请求对应的 echo 标识。
             payload: 对端返回的响应载荷。
         """
-        response_future = self._pending_actions.get(echo_id)
+
+        response_future = connection.pending.get(echo_id)
         if response_future is None or response_future.done():
             return
         response_future.set_result(payload)
 
-    def _fail_pending_actions(self, error_message: str) -> None:
-        """让所有等待中的动作以异常方式结束。
+    def _fail_pending_actions(self, connection: SlotConnection, error_message: str) -> None:
+        """让某条连接上所有等待中的动作以异常方式结束。
 
         Args:
+            connection: 目标连接。
             error_message: 写入异常中的错误信息。
         """
-        for response_future in self._pending_actions.values():
+
+        for response_future in list(connection.pending.values()):
             if not response_future.done():
                 response_future.set_exception(RuntimeError(error_message))
-        self._pending_actions.clear()
+        connection.pending.clear()
+
+    async def _close_connection(self, connection: SlotConnection, reason: str = "") -> None:
+        """关闭一条连接。
+
+        Args:
+            connection: 目标连接。
+            reason: 写入 close 帧的原因。
+        """
+
+        ws = connection.ws
+        if ws is None or ws.closed:
+            return
+        message = reason.encode("utf-8") if reason else None
+        with contextlib.suppress(Exception):
+            await ws.close(
+                code=WSCloseCode.GOING_AWAY if WSCloseCode else 1001,
+                message=message,
+            )
+
+    def _slot_reap_interval(self) -> float:
+        """计算槽位回收任务的巡检间隔。"""
+
+        timeout = float(getattr(self._config, "slot_idle_timeout_sec", 300.0) or 0.0)
+        if timeout <= 0:
+            return _MAX_SLOT_RECLAIM_INTERVAL_SEC
+        return max(1.0, min(_MAX_SLOT_RECLAIM_INTERVAL_SEC, timeout / 4.0))
+
+    def _start_slot_reaper(self) -> None:
+        """启动空闲槽位回收任务；空闲阈值为 0 时跳过。"""
+
+        self._stop_slot_reaper()
+        timeout = float(getattr(self._config, "slot_idle_timeout_sec", 300.0) or 0.0)
+        if timeout <= 0:
+            return
+        self._slot_reaper_task = self._create_background_task(
+            self._slot_reaper_loop(), "reverse_adapter.slot_reaper"
+        )
+
+    def _stop_slot_reaper(self) -> None:
+        """停止空闲槽位回收任务。"""
+
+        task = self._slot_reaper_task
+        self._slot_reaper_task = None
+        if task is not None and not task.done():
+            task.cancel()
+
+    async def _slot_reaper_loop(self) -> None:
+        """周期性关闭长期空闲的非事件槽位。"""
+
+        while not self._stop_requested:
+            await asyncio.sleep(self._slot_reap_interval())
+            config = self._config
+            if config is None:
+                continue
+            timeout = float(getattr(config, "slot_idle_timeout_sec", 300.0) or 0.0)
+            if timeout <= 0:
+                continue
+            event_connection = self._pool.event_connection()
+            protected = [event_connection.slot] if event_connection is not None else []
+            for connection in self._pool.idle_connections(timeout, protected_slots=protected):
+                self._logger.info(
+                    f"回收空闲槽位 slot={connection.slot}"
+                    f"（已空闲 {connection.idle_seconds():.0f}s）"
+                )
+                await self._close_connection(connection, reason="idle slot recycled")

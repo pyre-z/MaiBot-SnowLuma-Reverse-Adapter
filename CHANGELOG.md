@@ -2,6 +2,21 @@
 
 本项目从 `MaiBot-SnowLuma-Adapter` 1.1.8 派生，上游历史见 `UPSTREAM-CHANGELOG.md`。
 
+## 4.6.0
+
+### 新增
+
+- **多连接分流（slot 连接池）**：反向 WS 路径支持 `/onebot/v11/ws/{slot}`，每条连接拥有独立的
+  发送锁与 echo 等待表。大表情/大图片只阻塞自己那条链路，不再把「正在输入」和文字消息一起卡到
+  30 秒超时。snow 侧用 `Role=Api` 的连接承载发送，`Universal`/`Event` 连接保持唯一事件通道。
+- 新增配置 `[server].slot_idle_timeout_sec`（默认 300 秒，0 关闭）、`max_slots`（默认 8，0 不限）、
+  `slot_routing`（`sticky` / `round_robin`）。
+- `/healthz` 增加 `slot_count` 与 `slots` 明细（需带 token）。
+
+### 修复
+
+- 同一条连接上的大帧传输会占住发送锁，导致后续动作排队到 30 秒超时的连带故障。
+
 ## 4.5.2
 
 ### 修复

@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "version": "4.5.2",
+  "version": "4.6.0",
   "name": "SnowLuma 反向适配器 / SnowLuma Reverse Adapter",
-  "description": "QQ 反向 WebSocket 适配器：由 SnowLuma 主动连入 MaiBot（衍生自 MaiBot Team 的 SnowLuma 适配器）",
+  "description": "QQ 反向 WebSocket 适配器：由 SnowLuma 主动连入 MaiBot（衍生自 MaiBot Team 的 SnowLuma 适配器） 支持多连接分流（slot 连接池），大消息不再阻塞其它动作。",
   "author": {
     "name": "PyreZ",
     "url": "https://github.com/pyre-z"

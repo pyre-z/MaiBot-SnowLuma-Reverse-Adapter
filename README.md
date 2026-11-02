@@ -130,15 +130,35 @@ max_message_size = 16777216
 
 SnowLuma 握手时携带 `X-Self-ID`（机器人 QQ 号）与 `Authorization`，插件据此识别账号。
 
+### 3.6 多连接分流（slot）
+
+默认一条连接既收事件又发动作。想让大文件（表情包、图片）不拖慢文字消息，可以再加几条
+**只发不收**的连接，路径后面带上 slot：
+
+| 用途 | URL | Role |
+| --- | --- | --- |
+| 事件 + 通用发送 | `wss://bot.example.com/onebot/v11/ws` | `Universal` |
+| 发送分流 1 | `wss://bot.example.com/onebot/v11/ws/1` | `Api` |
+| 发送分流 2 | `wss://bot.example.com/onebot/v11/ws/2` | `Api` |
+
+- 路径不带 slot 时按 slot `0` 处理，行为与旧版完全一致；
+- 每个 slot 有自己的发送锁与 echo 等待表，一条连接上的大消息只阻塞它自己；
+- `Role=Api` 的连接不会收到事件；`Event` 连接只收不发；
+- 事件通道始终唯一：新的事件连接接管旧的事件连接（旧的收到 1001），避免事件重复投递；
+- 选路由 `[server].slot_routing` 控制：`sticky`（默认，按群号/QQ 号固定槽位、保证先后顺序）
+  或 `round_robin`（负载优先）；
+- 空闲超过 `[server].slot_idle_timeout_sec`（默认 300 秒）的槽位会被自动关闭，
+  事件槽位不受影响；`max_slots`（默认 8）限制槽位总数，`0` 表示不限制。
+
 ## 4. 工作方式
 
 1. SnowLuma 连入，握手通过后插件触发一次连接建立回调（画像探测、运行时状态初始化）。
-2. QQ 消息到达 SnowLuma → 通过这条连接推送事件 → 插件转成 MaiBot 消息。
-3. MaiBot 要发消息 → 插件在**同一条连接**上发送 `{"action": …, "params": …, "echo": …}`
-   → SnowLuma 回带同名 `echo` 的响应。
+2. QQ 消息到达 SnowLuma → 通过事件连接推送事件 → 插件转成 MaiBot 消息。
+3. MaiBot 要发消息 → 插件从连接池挑一条可用连接发送 `{"action": …, "params": …, "echo": …}`
+   → SnowLuma 回带同名 `echo` 的响应；响应只在发起请求的那条连接上被接收。
 
-同账号重连会替换旧连接（旧连接收到 1001）；不同 `X-Self-ID` 的并发连接会被拒绝（1008）。
-本适配器沿用上游的单账号模型，一个插件实例只服务一个 QQ 号。
+同槽位重连会替换旧连接（旧连接收到 1001）；不同 `X-Self-ID` 的并发连接会被拒绝（1008）。
+本适配器沿用上游的单账号模型，一个插件实例只服务一个 QQ 号，多 slot 共享同一账号。
 
 ## 5. 安全
 

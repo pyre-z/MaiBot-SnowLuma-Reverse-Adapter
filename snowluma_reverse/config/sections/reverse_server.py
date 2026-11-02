@@ -184,6 +184,63 @@ class QQReverseServerConfig(PluginConfigBase):
         },
     )
 
+    slot_idle_timeout_sec: float = Field(
+        default=300.0,
+        description=(
+            "空闲槽位回收时间：某条 slot 连接超过该秒数没有被用于发送动作就会被关闭；"
+            "事件所在槽位不受影响，0 表示不回收。"
+        ),
+        json_schema_extra={
+            "hint": "多连接分流时，长期没人用的 slot 会自动断开以释放连接；设为 0 可关闭该行为。",
+            "i18n": _schema_i18n(
+                label_en="Idle slot timeout (sec)",
+                label_ja="アイドルスロット回収（秒）",
+                hint_en="Slots unused for this long are closed to free connections. The event slot is never recycled. 0 disables it.",
+                hint_ja="この秒数使われなかった slot は切断されます。イベント用スロットは対象外です。0 で無効化。",
+            ),
+            "label": "空闲槽位回收（秒）",
+            "order": 10,
+            "step": 1,
+        },
+    )
+    max_slots: int = Field(
+        default=8,
+        description="允许同时存在的最大槽位数量，超出后新连接的 slot 会被拒绝。",
+        json_schema_extra={
+            "hint": "按 SnowLuma 侧配置的连接条数设置；0 表示不限制。",
+            "i18n": _schema_i18n(
+                label_en="Max slots",
+                label_ja="最大スロット数",
+                hint_en="Match the number of connections configured on the SnowLuma side. 0 means unlimited.",
+                hint_ja="SnowLuma 側で設定した接続数に合わせてください。0 は無制限。",
+            ),
+            "label": "最大槽位数量",
+            "order": 11,
+            "step": 1,
+        },
+    )
+    slot_routing: str = Field(
+        default="sticky",
+        description=(
+            "动作选路策略：sticky 按群号/QQ 号把同一会话固定到同一槽位并保证顺序；"
+            "round_robin 在空闲槽位之间轮询，吞吐略高但同一会话可能跨连接。"
+        ),
+        json_schema_extra={
+            "hint": "需要严格保序时用 sticky；只追求分流吞吐时可用 round_robin。",
+            "i18n": _schema_i18n(
+                label_en="Slot routing",
+                label_ja="スロット振り分け",
+                hint_en="sticky keeps one chat on one slot for ordering; round_robin spreads load but may reorder.",
+                hint_ja="sticky は同じ会話を同じスロットに固定します。round_robin は負荷分散優先です。",
+                placeholder_en="sticky / round_robin",
+                placeholder_ja="sticky / round_robin",
+            ),
+            "label": "槽位选路策略",
+            "order": 12,
+            "placeholder": "sticky",
+        },
+    )
+
     def normalized_path(self) -> str:
         """返回规范化后的监听路径。
 
